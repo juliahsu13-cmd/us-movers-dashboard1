@@ -9,6 +9,8 @@
  "missing_indices": [],
  "days_in_page": 12,
  "problems": [],
- "out": "C:\\Claude 臨時讀取\\us_movers_dashboard\\out\\us-movers.html",
- "bytes": 870296
+ "out": "out/us-movers.html",
+ "bytes": 881991,
+ "out_mobile": "out/us-movers-mobile.html",
+ "bytes_mobile": 885329
 }
