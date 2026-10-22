@@ -1,0 +1,2823 @@
+{
+ "2026-10-20": {
+  "ON": {
+   "h": "Stifel 上調目標價至 80 美元，類比股在 TI 財報前被提前買進",
+   "b": "Stifel 把安森美目標價調高到 80 美元。Texas Instruments 10/21 盤後公布財報，車用與工業類比股在財報前先被卡位，安森美 20 日漲幅僅約 2.7%、位階低，漲幅居權值股之首；同日 NXP +3.22%、Microchip +1.91% 同向。",
+   "s": [
+    "ad-hoc-news",
+    "漲跌榜郵件"
+   ]
+  },
+  "HPQ": {
+   "h": "Evercore 上調目標價至 32 美元",
+   "b": "Evercore 將惠普目標價上調至 32 美元，股價收漲 3.21%，表現優於同業。同日 AI 伺服器鏈的戴爾 +1.34%，美超微盤後更大漲，硬體股整體偏強；惠普本身沒有其他公司公告。",
+   "s": [
+    "ad-hoc-news",
+    "MarketWatch"
+   ]
+  },
+  "STX": {
+   "h": "摩根士丹利力挺硬碟股，喊出約 80% 上漲空間",
+   "b": "Morgan Stanley 上調希捷目標價、同時調降 Western Digital 目標價，認為硬碟股在上週重挫後有約 80% 上漲空間。硬碟族群隨之反彈，希捷收漲 2.17%；希捷財報預計下週公布，選擇權隱含財報後波動約 6.6%。",
+   "s": [
+    "Barron's",
+    "Yahoo Finance",
+    "Investing.com"
+   ]
+  },
+  "TSLA": {
+   "h": "財報前卡位；盤後馬斯克稱特斯拉與 SpaceX 研議合併",
+   "b": "特斯拉 10/21 盤後公布第三季財報，市場預期營收持平、獲利下滑，股價仍在財報前收漲 1.54%。收盤後 Fortune、Business Insider 報導馬斯克證實特斯拉與 SpaceX 已成立委員會評估合併，這則消息在收盤後才出現，未反映在當日漲幅。",
+   "s": [
+    "Electrek",
+    "Fortune",
+    "Business Insider"
+   ]
+  },
+  "MRVL": {
+   "h": "分析師調高目標價至 300 美元，盤中一度漲近 7%",
+   "b": "多家券商在投資人日後上調邁威爾目標價，最高看到 300 美元，股價盤中一度漲近 7%，收盤回落到 +1.40%。上週 AI 融資疑慮讓它比投資人日收盤價仍低約 17%，今天屬跌深後續彈，未見新訂單消息。",
+   "s": [
+    "TradingView",
+    "TIKR"
+   ]
+  },
+  "DELL": {
+   "h": "AI 伺服器需求題材延續，盤後隨美超微上修再走高",
+   "b": "戴爾收漲 1.34%，表現優於大盤。收盤後美超微公布初步財報、上修營收展望，帶動戴爾與 HPE 盤後跟漲；但盤後漲幅未計入當日收盤。上週 Barclays 降評的疑慮仍在，今天屬 AI 伺服器題材回溫。",
+   "s": [
+    "MarketWatch",
+    "Moomoo",
+    "Investor's Business Daily"
+   ]
+  },
+  "SWKS": {
+   "h": "BNP Paribas 上調目標價至 80 美元；與 Qorvo 合併完成",
+   "b": "BNP Paribas 將思佳訊目標價上調至 80 美元，股價收漲 1.33%。收盤後消息指出思佳訊已完成與 Qorvo 的合併，Qorvo 股票自 Nasdaq 下市；合併後的財報預計下週二公布。",
+   "s": [
+    "ad-hoc-news",
+    "AD HOC NEWS",
+    "MarketBeat"
+   ]
+  },
+  "QCOM": {
+   "h": "內部備忘錄顯示 11 月起全球裁員，市場解讀為節省成本",
+   "b": "CNBC 等報導高通內部備忘錄，公司將自 11 月起依績效在全球裁員。市場把這解讀為控制成本、改善獲利率，股價收漲 1.26%；同日手機與類比晶片股普遍走強。",
+   "s": [
+    "CNBC",
+    "Benzinga",
+    "Yahoo Finance"
+   ]
+  },
+  "ORCL": {
+   "h": "與阿斯特捷利康合作 AI 醫療，美銀重申看好",
+   "b": "甲骨文宣布與 AstraZeneca 合作 AI 醫療應用，盤中一度漲 2.4%，收漲 1.20%；美國銀行重設目標價、認為仍有約 80% 上漲空間。另一方面，市場對其舉債建 AI 資料中心的疑慮未消，收盤後 WSJ 也報導 Larry Ellison 大舉借款支持其子收購華納兄弟。",
+   "s": [
+    "GuruFocus",
+    "Finbold",
+    "WSJ"
+   ]
+  },
+  "TSM": {
+   "h": "第三季財報後續買盤，AI 需求帶動獲利",
+   "b": "台積電 10/15 公布的第三季財報創紀錄，分析師持續發表看好報告（AI 需求推升營收與毛利率），ADR 收漲 1.16%。當日沒有新的公司事件，屬財報後的延續買盤；同日半導體指數小跌 0.29%。",
+   "s": [
+    "Seeking Alpha",
+    "Yahoo Finance",
+    "MarketBeat"
+   ]
+  },
+  "SMCI": {
+   "h": "盤後公布初步財報、上修季營收約 40 億美元，盤後大漲約 12%",
+   "b": "美超微收盤後公布初步財報，因 AI 平台需求強勁，把本季營收展望上修約 40 億美元、高於市場預期，盤後股價大漲約 12%。正規交易時段只漲 1.15%，大部分反應要到 10/21 才會出現在收盤價。",
+   "s": [
+    "Bloomberg",
+    "CNBC",
+    "Seeking Alpha"
+   ]
+  },
+  "AMZN": {
+   "h": "3M 擴大資料中心光纖合作並給予亞馬遜認股權證",
+   "b": "前一日因摩根士丹利列為首選股大漲 4.98% 後，今天收平（+0.07%）。新消息是 3M 擴大與亞馬遜資料中心的光纖合作，並授予亞馬遜數百萬股認股權證；亞馬遜也擴大假期招聘。漲多後整理，消息對股價影響有限。",
+   "s": [
+    "Reuters",
+    "Barron's",
+    "Investor's Business Daily"
+   ]
+  },
+  "AVGO": {
+   "h": "傳 OpenAI 募資 300 億美元；無公司事件、收平",
+   "b": "博通收平（−0.07%）。市場報導 OpenAI 正募資約 300 億美元，被視為對客製 AI 晶片供應商有利，但同日 AI 資本支出疑慮壓著晶片股，兩者互相抵銷；博通本身沒有新的公司公告。",
+   "s": [
+    "The Motley Fool",
+    "Yahoo Finance"
+   ]
+  },
+  "COHR": {
+   "h": "B. Riley 下調目標價至 297 美元，Bernstein 財報前仍看好",
+   "b": "B. Riley 將高意目標價從 345 美元下調至 297 美元，股價盤前走弱，收盤小跌 0.09%。Bernstein 在下週財報前發表預覽，對高意與 Lumentum 維持優於大盤評等，部分抵銷了下調目標價的影響。",
+   "s": [
+    "ad-hoc-news",
+    "StreetInsider",
+    "Investing.com"
+   ]
+  },
+  "NVDA": {
+   "h": "傳中國科技巨頭下單約 350 億美元合規晶片，股價仍未提振",
+   "b": "報導指出中國大型科技公司下單約 350 億美元的合規版輝達晶片，另有 Anthropic 洽談 450 億美元 AI 協議，但 Barron's 指這些消息都沒能拉抬股價，輝達收跌 0.29%。市場對 AI 資本支出回報的疑慮仍壓著晶片龍頭。",
+   "s": [
+    "Barron's",
+    "TIKR",
+    "The Motley Fool"
+   ]
+  },
+  "MSFT": {
+   "h": "摩根士丹利點出新障礙，BMO 因 Azure 成長上調目標價",
+   "b": "微軟收跌 0.31%，跌幅只有 Alphabet 的三分之一。TheStreet 報導摩根士丹利指出微軟股價面臨新障礙，BMO 則因 Azure 雲端成長上調目標價，多空消息互抵；10/28 將公布財報，市場在財報前觀望。",
+   "s": [
+    "TheStreet",
+    "Investing.com",
+    "Yahoo Finance"
+   ]
+  },
+  "INTC": {
+   "h": "摩根大通上調評等，但 TD Cowen 下調目標價",
+   "b": "摩根大通以管理層執行力改善為由上調英特爾評等，但 TD Cowen 同日下調目標價，加上美國商務部晶片出口限制的不確定性，股價收跌 0.37%。前一日它才隨晶片股大漲 2.43%，今天屬小幅回吐。",
+   "s": [
+    "TIKR",
+    "FXLeaders",
+    "MarketBeat"
+   ]
+  },
+  "AMD": {
+   "h": "Wedbush 重申優於大盤，但無新催化",
+   "b": "Wedbush 重申超微優於大盤評等，但沒有新的公司消息，股價收跌 0.62%，跟隨 AI 晶片龍頭偏弱。市場討論焦點是 Helios 機櫃量產的獲利率路徑；超微前一日大漲 1.76%，今天屬回吐。",
+   "s": [
+    "MarketBeat",
+    "Seeking Alpha"
+   ]
+  },
+  "MU": {
+   "h": "盤中一度走強後收黑；高層申報出售約 2,570 萬美元持股",
+   "b": "Barron's 報導美光盤中一度上漲，但收盤仍跌 0.98%。收盤後申報顯示高層 Scott DeBoer 出售約 2,570 萬美元持股。股價今年已漲約十倍，記憶體族群在上週大跌後的反彈力道不穩。",
+   "s": [
+    "Barron's",
+    "Investing.com",
+    "Moomoo"
+   ]
+  },
+  "AAPL": {
+   "h": "Loop Capital 調降評等，擔心 iPhone 銷售放緩",
+   "b": "Loop Capital 調降蘋果評等，理由是 iPhone 銷售可能放緩，多家媒體跟進報導，股價收跌 1.00%，在大盤上漲日逆勢走弱。蘋果將於 11/2 公布財報，市場開始下修對 iPhone 出貨的預期。",
+   "s": [
+    "CNBC",
+    "Investor's Business Daily",
+    "TradingView"
+   ]
+  },
+  "GOOGL": {
+   "h": "財報前 AI 資本支出與法律風險壓抑股價",
+   "b": "Alphabet 在大盤上漲日收跌 1.13%，是道瓊最大拖累。財報即將公布，市場擔心 AI 資本支出回報與 Google 的反壟斷官司風險；同為雲端資本支出方的 Meta 也下跌 1.59%，亞馬遜則持平。",
+   "s": [
+    "FXLeaders",
+    "MarketWatch",
+    "漲跌榜郵件"
+   ]
+  },
+  "LITE": {
+   "h": "BNP Paribas 上調目標價，但光通訊股仍走弱",
+   "b": "BNP Paribas 把 Lumentum 目標價從 1,380 美元上調到 1,425 美元，Bernstein 也維持看好，但股價仍收跌 1.44%。下週財報前，光通訊族群隨 AI 資本支出疑慮持續被賣，同業高意小跌 0.09%。",
+   "s": [
+    "AD HOC NEWS",
+    "富途牛牛",
+    "Investing.com"
+   ]
+  },
+  "META": {
+   "h": "財報前選擇權預期大波動，平台股遭賣壓",
+   "b": "Meta 收跌 1.59%，是權值股中跌幅最大。Investopedia 與 Benzinga 指出選擇權市場預期 Meta、特斯拉財報後會大幅波動；同日 Alphabet −1.13%、蘋果 −1.00%，平台股在 AI 資本支出疑慮下一起走弱。",
+   "s": [
+    "Investopedia",
+    "Benzinga",
+    "MarketBeat"
+   ]
+  },
+  "brent": {
+   "h": "盤中衝上 5 個月高點後，因伊朗談判傳出進展回落",
+   "b": "胡塞組織與伊朗攻擊荷莫茲海峽周邊船隻與設施，布蘭特盤中一度突破 110 美元、創 5 個月新高；之後美伊談判傳出進展，市場期待外交降溫，期貨收在 108.79 美元、跌 0.69%。WSJ 形容這是「劇烈震盪後收低」的一天。",
+   "s": [
+    "CNBC",
+    "WSJ",
+    "OilPrice.com"
+   ]
+  },
+  "wti": {
+   "h": "伊朗談判消息讓油價震盪收低；跌幅含期貨換月",
+   "b": "西德州原油同樣因美伊談判傳出進展而回落，Rigzone 指伊朗談判加劇波動，WSJ 稱期貨在劇烈震盪中收低。頁面顯示的 −4.37% 有一部分是近月合約由 11 月換到 12 月的價差，實際跌幅小於此數。",
+   "s": [
+    "Rigzone",
+    "WSJ",
+    "CNBC"
+   ]
+  },
+  "dxy": {
+   "h": "美債殖利率回落與伊朗、AI 風險，美元指數小跌",
+   "b": "美元指數跌 0.25% 至 101.73，未能站回 102。路透外匯報導指交易員權衡伊朗局勢與 AI 風險而賣出美元；美債殖利率回落削弱美元利差優勢，英國就業數據優於預期也推升英鎊。",
+   "s": [
+    "Devdiscourse（Reuters）",
+    "FXEmpire",
+    "TMGM"
+   ]
+  },
+  "us10y": {
+   "h": "房市數據疲弱、油價回落，10 年期殖利率降 3bp 至 5.12%",
+   "b": "美國房市數據不如預期，加上伊朗談判消息壓低油價、緩解通膨疑慮，10 年期公債殖利率下降約 3 個基點至 5.12%，但仍在 5% 以上的二十多年高檔。市場仍在辯論殖利率是否已見頂。",
+   "s": [
+    "CNBC",
+    "FXStreet",
+    "TradingView"
+   ]
+  },
+  "us2y": {
+   "h": "經濟學家預期 12 月再升息，2 年期殖利率逆勢升 2bp",
+   "b": "路透調查顯示，幾乎所有經濟學家預期 Fed 10 月按兵不動、12 月再升息一碼，對政策利率最敏感的 2 年期殖利率逆勢上升約 2 個基點至 4.79%。短天期升、長天期降，殖利率曲線因此變平。",
+   "s": [
+    "Reuters",
+    "T. Rowe Price",
+    "ETF Database"
+   ]
+  },
+  "spread": {
+   "h": "長短端反向，10 年－2 年利差收窄 5bp 至 33bp",
+   "b": "10 年期因房市數據疲弱與油價回落而下降，2 年期則因市場預期 Fed 12 月升息而上升，利差收窄約 5 個基點至 33bp，曲線趨平。這反映市場一邊擔心景氣放緩、一邊預期短期利率仍會再升。",
+   "s": [
+    "Reuters",
+    "CNBC"
+   ]
+  },
+  "_summary": {
+   "h": "資金從 AI 基建轉進醫療，道瓊漲 1%；油價衝 5 個月高後回落",
+   "b": "醫療股創歷史新高，道瓊 +1.02% 至 52,495.88，標普 +0.28%；Nasdaq 100 −0.13%、費半 −0.29%，被 Alphabet、蘋果、Meta 等平台股拖累。市場質疑 AI 投資報酬，晶片設備與資料中心電力股再被賣，被 AI 威脅論壓低的應用軟體則反彈。布蘭特盤中逼近 112 美元後因美伊談判進展收在 108.79 美元；10 年期降 3bp、2 年期升 2bp，曲線趨平。權值股中安森美 +3.42%、惠普 +3.21% 領漲，Meta −1.59%、Lumentum −1.44% 較弱；美超微盤後上修營收、大漲約 12%。",
+   "s": [
+    "四封漲跌榜郵件",
+    "CNBC",
+    "WSJ"
+   ]
+  }
+ },
+ "2026-10-06": {
+  "NVDA": {
+   "h": "股價創新高，市值逼近 6 兆美元",
+   "b": "Yahoo Finance、Quartz 報導輝達股價創歷史新高、市值逼近 6 兆美元，並與蘋果、微軟一起撐住大盤；今天收小漲 0.14%，漲幅不大，但仍維持在高點附近。",
+   "s": [
+    "Yahoo Finance",
+    "Quartz",
+    "TradingView"
+   ]
+  },
+  "TSM": {
+   "h": "馬斯克證實 Terafab 洽談但未成交，ADR 小跌",
+   "b": "CNBC 指華爾街認為馬斯克與台積電洽談 Terafab 對英特爾不利；Yahoo Finance 報導馬斯克證實洽談但尚未成交，台積電 ADR 在創新高後小跌 0.72%。",
+   "s": [
+    "CNBC",
+    "Yahoo Finance"
+   ]
+  },
+  "MSFT": {
+   "h": "Melius 因 AI 資安題材上調目標價至 665 美元",
+   "b": "Stocks Down Under 與 Yahoo Finance 報導 Melius 以 AI 資安商機為由把微軟目標價上調至 665 美元，股價盤中一度漲 1.9%，收漲 0.78%。",
+   "s": [
+    "Stocks Down Under",
+    "Yahoo Finance"
+   ]
+  },
+  "AAPL": {
+   "h": "庫克本月出售近 6,390 萬美元持股",
+   "b": "9to5Mac 報導蘋果執行長庫克本月出售約 6,390 萬美元持股；股價收小漲 0.22%，與輝達、微軟一起撐住大盤。",
+   "s": [
+    "9to5Mac",
+    "Yahoo Finance"
+   ]
+  },
+  "GOOGL": {
+   "h": "24/7 Wall St. 稱 Alphabet 是七巨頭中上漲空間最大",
+   "b": "24/7 Wall St. 指 Alphabet 在七巨頭中上漲空間最大，約 64%；另有因 AI 問題揭露後股價下跌 4% 而起的證券集體訴訟通知。Alphabet 收小漲 0.35%。",
+   "s": [
+    "24/7 Wall St.",
+    "PR Newswire",
+    "TradingKey"
+   ]
+  },
+  "AMZN": {
+   "h": "Prime Big Deal Days 開跑，Jim Cramer 喊驚人看法",
+   "b": "亞馬遜啟動 Prime Big Deal Days 購物節，TheStreet 報導 Jim Cramer 對亞馬遜提出出人意料的看法；Google 與 Constellation 的核電協議出爐，亞馬遜同樣需要自行搶電力，股價收漲 1.95%。",
+   "s": [
+    "Yahoo Finance",
+    "TheStreet",
+    "漲跌榜郵件"
+   ]
+  },
+  "META": {
+   "h": "分析師喊 1,000 美元目標價，Muse 創紀錄上線",
+   "b": "Barron's 報導分析師將 Meta 目標價上調至 1,000 美元，看好 AI 回報；Yahoo Finance 指 Muse 個人 AI 助理創紀錄上線。但股價收小跌 0.41%。",
+   "s": [
+    "Barron's",
+    "Yahoo Finance"
+   ]
+  },
+  "TSLA": {
+   "h": "第三季交車 48.6 萬輛重設門檻，與 SpaceX 同步上漲",
+   "b": "Yahoo Finance 報導特斯拉第三季交車 486,532 輛、優於預期；Barron's 指特斯拉與 SpaceX 同步走強，市場揣測未來合併。高盛財報前重申評等，特斯拉收漲 0.51%。",
+   "s": [
+    "Yahoo Finance",
+    "Barron's",
+    "Investing.com"
+   ]
+  },
+  "AVGO": {
+   "h": "邁威爾投資人日替客製 AI 晶片背書，ARK 買進",
+   "b": "邁威爾投資人日主張雲端業者愈來愈偏好客製 AI 晶片，等於替博通背書；Yahoo Finance 報導 Cathie Wood 買進約 1,300 萬美元博通股票。博通收漲 3.67%，連三日走強。",
+   "s": [
+    "Yahoo Finance",
+    "The Motley Fool",
+    "漲跌榜郵件"
+   ]
+  },
+  "AMD": {
+   "h": "Meta Muse 帶動 CPU 需求，Citi 看好再漲 25%",
+   "b": "CNBC 與 Barron's 報導 Meta 的 Muse AI 代理人帶動 CPU 銷售，AMD 股價創新高；Citi 認為因此還有約 25% 上漲空間並上調目標價。AMD 收漲 2.80%。",
+   "s": [
+    "CNBC",
+    "Barron's",
+    "Investopedia"
+   ]
+  },
+  "ORCL": {
+   "h": "AI 雲端族群回升，甲骨文漲 1.6%",
+   "b": "24/7 Wall St. 報導 Nebius 因推論合約大漲 9%、CoreWeave 漲 4%，AI 雲端族群回補，甲骨文跟漲 1.61%；Finbold 發出內部人交易警示。",
+   "s": [
+    "24/7 Wall St.",
+    "Finbold"
+   ]
+  },
+  "INTC": {
+   "h": "馬斯克與台積電洽談 Terafab，英特爾 14A 押注受衝擊",
+   "b": "Yahoo Finance 指馬斯克與台積電洽談 Terafab，讓英特爾押注的 14A 製程更複雜；CNBC 指華爾街認為這對英特爾是壞消息。英特爾收跌 3.18%，彭博則報導英特爾仍會繼續參與 Terafab。",
+   "s": [
+    "Yahoo Finance",
+    "CNBC",
+    "Bloomberg"
+   ]
+  },
+  "SMCI": {
+   "h": "積壓訂單逾 600 億美元，股價小漲",
+   "b": "TradingView 指美超微積壓訂單超過 600 億美元，Pluang 報導公司目標 2027 年股價 70 美元；股價收小漲 0.63%。",
+   "s": [
+    "TradingView",
+    "Pluang"
+   ]
+  },
+  "DELL": {
+   "h": "AI 需求帶動 3 個月漲 32%，Michael Dell 身價大增",
+   "b": "Forbes 報導 Michael Dell 身價因股價上漲增加 100 億美元，Yahoo Finance 指戴爾 3 個月漲約 32%；AI 基建題材延續，戴爾收漲 3.93%。",
+   "s": [
+    "Forbes",
+    "Yahoo Finance",
+    "TradingView"
+   ]
+  },
+  "HPQ": {
+   "h": "前一交易日目標價調升至 50 美元，續漲",
+   "b": "德國媒體報導惠普前一交易日因目標價上調至 50 美元而上漲約 4%；今天續漲 0.83%。另有高層出售約 100 萬美元持股的申報。",
+   "s": [
+    "ad-hoc-news",
+    "Investing.com"
+   ]
+  },
+  "QCOM": {
+   "h": "與華為交易擴大 AI 布局，股價持平",
+   "b": "Yahoo Finance 指高通與華為的交易為其 AI 擴張增添策略深度，AI 基礎設施轉型被低估；股價收平（+0.13%）。",
+   "s": [
+    "Yahoo Finance"
+   ]
+  },
+  "SWKS": {
+   "h": "完成 Qorvo 合併，B. Riley 升評買進、目標價 107 美元",
+   "b": "Yahoo Finance 報導思佳訊完成 Qorvo 合併，預期 5 億美元成本綜效；B. Riley 升評為買進、目標價自 68 美元上調至 107 美元，Citi 也上調目標價。但股價仍收跌 1.33%。",
+   "s": [
+    "Yahoo Finance",
+    "MarketBeat"
+   ]
+  },
+  "MU": {
+   "h": "需要記憶體報價驗證，美光回落",
+   "b": "Barron's 指美光股價下跌，接下來需要記憶體報價的驗證；同日硬碟股因東芝擴產重挫，美光收跌 1.73%。",
+   "s": [
+    "Barron's",
+    "Seeking Alpha"
+   ]
+  },
+  "STX": {
+   "h": "東芝 AI 儲存擴產衝擊硬碟股，希捷重挫 9%",
+   "b": "Yahoo Finance、Barron's 報導東芝擴大 AI 儲存產能，硬碟股遭重擊，希捷收跌 9.18%；IBD 指與 Toshiba 競標 TDK 磁頭事業讓競爭疑慮更複雜。Yahoo Finance 另指執行長在東芝消息前一天賣出約 1,740 萬美元持股。",
+   "s": [
+    "Yahoo Finance",
+    "Barron's",
+    "Investor's Business Daily"
+   ]
+  },
+  "ON": {
+   "h": "股價突破，高盛列為財報前戰術買進",
+   "b": "BigGo 報導高盛把三檔晶片股列為財報前的戰術買進，Barchart 討論安森美押注 AI 電源的 57 億美元布局；股價小漲 0.44%，延續連漲。",
+   "s": [
+    "BigGo Finance",
+    "Barchart",
+    "Moomoo"
+   ]
+  },
+  "MRVL": {
+   "h": "投資人日上調 2028 年營收展望至 200 億美元",
+   "b": "邁威爾在投資人日把 2028 會計年度營收展望調到約 200 億美元（市場共識約 182 億），並提出 2031 年 700–900 億美元目標；股價開盤一度大漲近 10%，收漲 5.81%。",
+   "s": [
+    "Yahoo Finance",
+    "Barron's",
+    "CNBC"
+   ]
+  },
+  "COHR": {
+   "h": "光通訊族群隨邁威爾題材走強",
+   "b": "邁威爾投資人日帶動光互連股，高意收漲 1.41%；24/7 Wall St. 報導 Applied Optoelectronics 在 6 億美元增資完成後大漲 6%。高意沒有公司事件。",
+   "s": [
+    "24/7 Wall St.",
+    "漲跌榜郵件"
+   ]
+  },
+  "LITE": {
+   "h": "分析師升評、一年漲 600% 後再度突破",
+   "b": "CNBC 指這檔光通訊股一年已漲約 600%，又出現技術突破；MarketBeat 報導分析師升評後股價上漲 3.82%。",
+   "s": [
+    "CNBC",
+    "MarketBeat",
+    "Traders Union"
+   ]
+  },
+  "brent": {
+   "h": "IEA 優先釋出柴油庫存，布蘭特守在 100 美元",
+   "b": "CNBC 報導國際能源署成員同意優先釋出柴油庫存，油價一度下跌；路透指美國 EIA 因伊朗戰事消耗全球庫存再度上調油價預測。布蘭特收小漲 0.26% 至 100.58 美元。",
+   "s": [
+    "CNBC",
+    "Reuters"
+   ]
+  },
+  "wti": {
+   "h": "中東供應拉鋸，西德州原油收平",
+   "b": "BigGo 報導中東供應拉鋸持續，紐約原油小幅走高；長天期殖利率回落讓金價反彈。西德州原油收平，報 89.44 美元。",
+   "s": [
+    "BigGo Finance"
+   ]
+  },
+  "dxy": {
+   "h": "法國債務疑慮推升至 18 個月高點後，美元獲利了結回落",
+   "b": "TMGM 報導美元指數因法國債務疑慮一度觸及 18 個月高點，之後 FXEmpire 指獲利了結使美元回落；美元指數收跌 0.33% 至 101.83。",
+   "s": [
+    "TMGM",
+    "FXEmpire",
+    "FOREX.com"
+   ]
+  },
+  "us10y": {
+   "h": "殖利率衝上 24 年高點後回落，本週財政部要標售 1,190 億美元",
+   "b": "Economic Times 報導 10 年與 30 年期殖利率觸及 24 年高點，CNBC 指之後漲勢降溫、殖利率回落；Yahoo Finance 指財政部本週要以 2002 年以來最高殖利率標售 1,190 億美元公債。10 年期收在 5.27%，降約 4 個基點。",
+   "s": [
+    "CNBC",
+    "The Economic Times",
+    "Yahoo Finance"
+   ]
+  },
+  "us2y": {
+   "h": "長債創高時 2 年期反而下降 5bp",
+   "b": "Economic Times 指 10 年與 30 年期殖利率創 24 年高點的同時，2 年期殖利率下降；CNBC 指殖利率漲勢降溫。2 年期收在 4.79%，降約 5 個基點。",
+   "s": [
+    "The Economic Times",
+    "CNBC"
+   ]
+  },
+  "spread": {
+   "h": "長債壓力大於短債，利差擴大至 48bp",
+   "b": "2 年期降 5bp、10 年期降 4bp，10 年－2 年利差擴大約 1 個基點至 48bp；長天期公債供給壓力大，曲線維持偏陡。",
+   "s": [
+    "Yahoo Finance",
+    "RBC Wealth Management"
+   ]
+  },
+  "_summary": {
+   "h": "AI 基建內部換位：電力與互連大漲，硬碟與設備被賣",
+   "b": "Google 與 Constellation 簽下 20 年核電購電協議，電力與電網工程股整組被買；邁威爾投資人日把 2028 年營收展望上調到 200 億美元，光互連與客製晶片跟漲。標普 500 收 7,818.93（+0.58%）再創新高，Nasdaq 100 +0.48%、道瓊 +0.49%，費半只漲 0.34%，因為東芝擴產拖累硬碟、前波漲多的設備股回吐。10 年期殖利率盤中觸及 24 年高點後回落到 5.27%，布蘭特守在 100 美元。權值股中邁威爾 +5.81%、戴爾 +3.93%、博通 +3.67% 領漲，希捷 −9.18% 最重。",
+   "s": [
+    "四封漲跌榜郵件",
+    "美國財政部",
+    "Yahoo Finance"
+   ]
+  }
+ },
+ "2026-10-07": {
+  "NVDA": {
+   "h": "殖利率創 24 年高點，輝達小跌；董事賣股居 AI 富豪之首",
+   "b": "10 年期殖利率盤中觸及 5.365%、2002 年以來最高，獲利在遠期的成長股被折價；輝達收小跌 0.74%。Bloomberg 報導一位輝達董事的內部人賣股金額居 AI 億萬富豪之首。",
+   "s": [
+    "Bloomberg",
+    "漲跌榜郵件"
+   ]
+  },
+  "TSM": {
+   "h": "馬斯克稱 SpaceX 將自行營運 Terafab，排除台積電角色",
+   "b": "Yahoo Finance 與 IBD 報導馬斯克表示 SpaceX 將自行營運 Terafab 晶片廠，「毫無疑問」排除台積電參與營運；英特爾隨之走強，台積電 ADR 跌 2.09%。",
+   "s": [
+    "Yahoo Finance",
+    "Investor's Business Daily",
+    "Barron's"
+   ]
+  },
+  "MSFT": {
+   "h": "推出搭載輝達晶片的 Surface Ultra，四連漲後持平",
+   "b": "Yahoo Finance 報導微軟推出搭載輝達晶片的 Surface Ultra 挑戰蘋果 Mac，股價連漲四天；今天收平（+0.09%），並宣布財報公布日期。",
+   "s": [
+    "Yahoo Finance"
+   ]
+  },
+  "AAPL": {
+   "h": "新執行長賣股，Siri AI 帶動目標價上調至 400 美元",
+   "b": "24/7 Wall St. 報導蘋果新任執行長出售約 850 萬美元持股；另有券商以 Siri AI 重新定價、把目標價提高到 400 美元，IBD 將蘋果列為當日焦點股。股價收漲 0.91%。",
+   "s": [
+    "24/7 Wall St.",
+    "Yahoo Finance",
+    "Investor's Business Daily"
+   ]
+  },
+  "GOOGL": {
+   "h": "雲端積壓訂單逾 5,000 億美元，小漲",
+   "b": "Yahoo Finance 指 Google Cloud 積壓訂單突破 5,000 億美元，可能超越搜尋成為成長引擎；Alphabet 在殖利率衝高日收漲 0.81%，與亞馬遜、蘋果一起撐住 Nasdaq 100。",
+   "s": [
+    "Yahoo Finance",
+    "Seeking Alpha",
+    "漲跌榜郵件"
+   ]
+  },
+  "AMZN": {
+   "h": "Needham 喊買進，小規模裁員，亞馬遜漲 1.4%",
+   "b": "CNBC 訪問 Needham 的 Laura Martin 說明為何看好亞馬遜；Business Insider 報導亞馬遜在多個團隊裁員不到 1,000 人。亞馬遜收漲 1.42%，是道瓊大型科技中漲最多的一檔。",
+   "s": [
+    "CNBC",
+    "Yahoo Finance",
+    "漲跌榜郵件"
+   ]
+  },
+  "META": {
+   "h": "營運長出售 115 萬美元持股，股價跌 2.4%",
+   "b": "Investing.com 報導 Meta 營運長 Javier Olivan 出售約 115 萬美元持股，股價收跌 2.38%；MarketWatch 則指 Muse AI 熱度讓 Meta 出現少見的「黃金交叉」買進訊號。",
+   "s": [
+    "Investing.com",
+    "MarketBeat",
+    "MarketWatch"
+   ]
+  },
+  "TSLA": {
+   "h": "UBS 上調目標價，第三季交車優於預期",
+   "b": "Yahoo Finance 報導 UBS 指出特斯拉多頭布局並上調目標價，第三季交車數也優於預期；但在殖利率衝高日，特斯拉仍小跌 0.75%。",
+   "s": [
+    "Yahoo Finance",
+    "The Motley Fool"
+   ]
+  },
+  "AVGO": {
+   "h": "為 OpenAI 安排 500 億美元融資買其晶片",
+   "b": "Yahoo Finance 報導博通正安排約 500 億美元融資，讓 OpenAI 用來購買博通晶片；前兩日合計漲約 5.8% 後，今天在殖利率創高日只小漲 0.19%。",
+   "s": [
+    "Yahoo Finance",
+    "漲跌榜郵件"
+   ]
+  },
+  "AMD": {
+   "h": "ARK 獲利了結，Citi 上調目標價至 800 美元",
+   "b": "Barchart 報導 Cathie Wood 對 AMD 獲利了結；Citi 把目標價上調至 800 美元，蘇姿丰也再度釋出樂觀訊號。AMD 收小跌 0.55%。",
+   "s": [
+    "Barchart",
+    "Yahoo Finance"
+   ]
+  },
+  "ORCL": {
+   "h": "醫療資料外洩影響近 2,000 萬人，上週創 2001 年來最差",
+   "b": "Yahoo Finance 報導甲骨文醫療資料外洩影響近 2,000 萬人；Equiti 指甲骨文上週因 AI 資本支出疑慮創 2001 年以來最差一週。股價收小跌 0.84%。",
+   "s": [
+    "Yahoo Finance",
+    "Equiti",
+    "Simply Wall Street"
+   ]
+  },
+  "INTC": {
+   "h": "執行長稱將繼續參與 Terafab，晶片股下跌中逆勢收紅",
+   "b": "Barron's 指英特爾在晶片股下跌中逆勢走強：馬斯克說明 SpaceX AI 晶片計畫，英特爾執行長表示會繼續與 Terafab 合作。英特爾收漲 0.55%，前兩日累計跌約 5.7%。",
+   "s": [
+    "Barron's",
+    "TradingView",
+    "Yahoo Finance"
+   ]
+  },
+  "SMCI": {
+   "h": "伺服器股逆勢走強，美超微漲 3.4%",
+   "b": "Yahoo Finance 報導科技股下跌時伺服器製造商逆勢上漲，HPE 漲 3%；美超微收漲 3.41%，跟著美光同步上漲。另有董事申報再次出售持股。",
+   "s": [
+    "Yahoo Finance",
+    "Quiver Quantitative",
+    "Stock Titan"
+   ]
+  },
+  "DELL": {
+   "h": "伺服器股走強，Silver Lake 申報賣股",
+   "b": "戴爾隨伺服器股小漲 0.86%；Stock Titan 報導 Silver Lake 等股東申報出售戴爾持股，公司也推出不需雲端費用即可執行 AI 的桌上型電腦。",
+   "s": [
+    "Yahoo Finance",
+    "Stock Titan"
+   ]
+  },
+  "HPQ": {
+   "h": "納德拉與黃仁勳首次公開展示惠普 AI 電腦",
+   "b": "Stock Titan 報導微軟執行長納德拉與輝達黃仁勳首次公開展示惠普的 AI 電腦執行 Windows；惠普收漲 1.61%，表現優於同業。另有高層出售約 100 萬美元持股。",
+   "s": [
+    "Stock Titan",
+    "Investing.com",
+    "MarketWatch"
+   ]
+  },
+  "QCOM": {
+   "h": "高殖利率壓低手機與類比晶片，跌 2.2%",
+   "b": "高通收跌 2.16%，同日手機與類比同業全數下跌；Yahoo Finance 指在權利金爭議與授權交易下，高通估值已充分反映。",
+   "s": [
+    "MarketBeat",
+    "Yahoo Finance"
+   ]
+  },
+  "SWKS": {
+   "h": "與 Qorvo 220 億美元合併完成，逆勢小漲",
+   "b": "Business Journals 報導思佳訊與 Qorvo 的 220 億美元合併完成；思佳訊隨主要客戶蘋果走強，逆勢小漲 0.77%，同時被移出羅素指數。",
+   "s": [
+    "The Business Journals",
+    "Simply Wall Street",
+    "Yahoo Finance"
+   ]
+  },
+  "MU": {
+   "h": "分析師喊出 3,000 美元目標價，股價逆勢反彈 4%",
+   "b": "24/7 Wall St. 報導一家華爾街券商給出美光 3,000 美元目標價；Barron's 指儘管面臨記憶體廠罷工威脅，美光仍反彈 4.06%，是 SOX 僅 4 檔收紅的成分股之一。",
+   "s": [
+    "24/7 Wall St.",
+    "Barron's",
+    "漲跌榜郵件"
+   ]
+  },
+  "STX": {
+   "h": "東芝擴產警告與 TDK 競標，股價持平",
+   "b": "Barchart 報導東芝擴產對希捷發出重大警告，Yahoo Finance 指在競標 TDK 磁頭事業與東芝擴大 AI 硬碟產能後，希捷已跌 12.4%；今天收小漲 0.24%。",
+   "s": [
+    "Barchart",
+    "Yahoo Finance"
+   ]
+  },
+  "ON": {
+   "h": "六連漲後殖利率衝高，類比股回吐 4.4%",
+   "b": "Trefis 指安森美連漲六天、累計約 14%；10 年期殖利率衝到 2002 年以來高點，景氣敏感的類比與車用晶片先被賣，安森美收跌 4.40%。",
+   "s": [
+    "Trefis",
+    "漲跌榜郵件"
+   ]
+  },
+  "MRVL": {
+   "h": "投資人日後獲一波升評，小跌",
+   "b": "Yahoo Finance 報導邁威爾在投資人日後獲多家券商升評，Oppenheimer 認為長期財務目標提升買進吸引力；在殖利率衝高日，股價收小跌 0.81%。",
+   "s": [
+    "Yahoo Finance",
+    "Morningstar"
+   ]
+  },
+  "COHR": {
+   "h": "近一月漲 8% 後小幅回吐",
+   "b": "Yahoo Finance 指高意近一個月上漲約 8%，今天在殖利率衝高日小跌 1.12%；高層有小額扣稅賣股申報，屬例行。",
+   "s": [
+    "Yahoo Finance",
+    "Investing.com"
+   ]
+  },
+  "LITE": {
+   "h": "技術突破後小幅回吐，機構加碼",
+   "b": "IBD 指 Lumentum 出現技術突破、頂尖基金加碼；股價一年漲約 600%，今天在殖利率衝高日回吐 1.97%。",
+   "s": [
+    "Investor's Business Daily",
+    "Benzinga"
+   ]
+  },
+  "brent": {
+   "h": "伊朗加強攻擊油輪，布蘭特守在 100 美元之上",
+   "b": "CNBC 報導伊朗加強攻擊油輪、颶風威脅墨西哥灣產量，油價盤中大漲；之後國際能源署（IEA）同意加速釋出庫存，布蘭特收小跌 0.38% 至 100.20 美元。EIA 把第四季油價預測上調至 105 美元。",
+   "s": [
+    "CNBC",
+    "Reuters",
+    "Yahoo Finance"
+   ]
+  },
+  "wti": {
+   "h": "IEA 加速釋出儲備，西德州原油收跌 1.3%",
+   "b": "路透報導國際能源署同意加速釋出石油儲備，抵銷中東與颶風風險，西德州原油收跌 1.30% 至 88.28 美元；長天期殖利率上升也壓低金價。",
+   "s": [
+    "Reuters",
+    "BigGo Finance"
+   ]
+  },
+  "dxy": {
+   "h": "全球債市拋售推升殖利率，美元指數創年內新高",
+   "b": "FOREX.com 報導美元指數觸及 2026 年新高，TMGM 指殖利率上升讓美元回到 18 個月高點附近；美元指數收漲 0.40% 至 102.24，市場等待 Fed 會議紀要。",
+   "s": [
+    "FOREX.com",
+    "TMGM",
+    "FXEmpire"
+   ]
+  },
+  "us10y": {
+   "h": "10 年期殖利率創 24 年新高後，因標售強勁回落",
+   "b": "NBC 報導全球債市拋售推升 10 年期殖利率至 24 年新高，WSJ 指財政部借貸成本創 2000 年以來最高；之後 10 年期標售需求強勁，殖利率自高點回落，收在 5.28%，小升 1 個基點。",
+   "s": [
+    "NBC News",
+    "CNBC",
+    "WSJ"
+   ]
+  },
+  "us2y": {
+   "h": "Fed 紀要前，2 年期殖利率小降",
+   "b": "路透調查指儘管殖利率創 1994 年以來最大季漲幅，分析師仍預期殖利率會回落；市場等待 Fed 會議紀要，2 年期殖利率小降 2 個基點至 4.77%。",
+   "s": [
+    "Reuters",
+    "Yahoo Finance"
+   ]
+  },
+  "spread": {
+   "h": "長端拋售、短端持穩，利差擴大 3bp",
+   "b": "全球長債拋售推升 10 年期殖利率，2 年期反而小降，10 年－2 年利差擴大約 3 個基點至 51bp，曲線變陡；30 年期殖利率也創 19 年新高。",
+   "s": [
+    "NBC News",
+    "Equiti"
+   ]
+  },
+  "_summary": {
+   "h": "10 年期殖利率創 2002 年來新高，景氣循環股與類比晶片被折價",
+   "b": "10 年期殖利率盤中升至 5.365%、30 年期 5.73%，雙雙創 24 年新高，獲利落在遠期或靠借錢擴張的族群先被賣：Caterpillar −5.75% 單獨拖累道瓊約 295 點，道瓊 −0.66%；標普 −0.22%、Nasdaq 100 −0.21%、費半 −1.15%。10 年期標售需求強勁後殖利率自高點回落。資金轉向收現金流較近的電力與醫療，記憶體逆勢，美光 +4.06%；權值股中安森美 −4.40%、Meta −2.38%、高通 −2.16% 較弱。美元指數創年內新高。",
+   "s": [
+    "四封漲跌榜郵件",
+    "CNBC",
+    "NBC News"
+   ]
+  }
+ },
+ "2026-10-08": {
+  "NVDA": {
+   "h": "OpenAI 營收低於預期，AI 鏈被賣，輝達跌近 3%",
+   "b": "CNBC 報導輝達、甲骨文、CoreWeave 等 AI 股因 OpenAI 營收報導下跌：金融時報指 OpenAI 年化營收比外界流傳少約 200 億美元。輝達收跌 2.94%；路透另報導川普申報買賣輝達股票，並準備表揚黃仁勳。",
+   "s": [
+    "CNBC",
+    "Reuters",
+    "漲跌榜郵件"
+   ]
+  },
+  "TSM": {
+   "h": "第三季營收創新高、優於指引，ADR 仍跌 3%",
+   "b": "Yahoo Finance、IBD 報導台積電第三季營收創新高，高於公司指引與 19 位分析師預估；但在 OpenAI 營收疑慮的拋售日，ADR 仍跌 3.01%。另有報導指台積電可能與馬斯克的 Terafab 合作。",
+   "s": [
+    "Yahoo Finance",
+    "Investor's Business Daily",
+    "Quiver Quantitative"
+   ]
+  },
+  "MSFT": {
+   "h": "OpenAI 年化營收說法混亂，微軟、甲骨文下跌",
+   "b": "Seeking Alpha 報導市場對 OpenAI 年化營收的說法感到困惑，身為最大外部投資方的微軟跌 1.35%；Barron's 指微軟的 H-1B 問題也拖累 Infosys。",
+   "s": [
+    "Seeking Alpha",
+    "Barron's",
+    "Benzinga"
+   ]
+  },
+  "AAPL": {
+   "h": "AI 鏈被賣時逆勢上漲，Dan Ives 看好",
+   "b": "Nasdaq 重挫 1.25% 的日子，蘋果逆勢漲 1.11%，因它不靠 OpenAI 與雲端資本支出；Dan Ives 指蘋果正醞釀大事，美銀則對投資人提出警告。",
+   "s": [
+    "Yahoo Finance",
+    "漲跌榜郵件"
+   ]
+  },
+  "GOOGL": {
+   "h": "Google Workspace 與雲端推出 AI Agent",
+   "b": "Barron's、Investing.com 報導 Google 把 Gemini 更深入推向企業 AI，Workspace 加入 AI Agent、Google Cloud 推出 Gemini Agent；Alphabet 收小跌 0.63%，跌幅小於微軟與亞馬遜。",
+   "s": [
+    "Barron's",
+    "Investing.com",
+    "Yahoo Finance"
+   ]
+  },
+  "AMZN": {
+   "h": "OpenAI 營收報導下修 AI 雲端預期，亞馬遜跌 2.3%",
+   "b": "OpenAI 營收報導壓低 AI 雲端需求預期，亞馬遜跌 2.25%，跌幅大於微軟與 Alphabet，是道瓊跌幅第二；Yahoo Finance 指其本益比已是多年低點。",
+   "s": [
+    "Yahoo Finance",
+    "漲跌榜郵件"
+   ]
+  },
+  "META": {
+   "h": "佛州要求法院關閉青少年無限滑動，盤中下跌後收平",
+   "b": "24/7 Wall St. 報導佛羅里達州要求法院關閉 Meta 對青少年的無限滑動功能，股價盤中一度跌約 2.4%，收盤小跌 0.06%；Quartz 指川普 8 月申報持有 Meta 股票。",
+   "s": [
+    "24/7 Wall St.",
+    "MarketBeat",
+    "Quartz"
+   ]
+  },
+  "TSLA": {
+   "h": "SpaceX 與特斯拉下跌，馬斯克失去兆萬富翁身分",
+   "b": "Forbes 報導 SpaceX 與特斯拉股價下跌，馬斯克身價蒸發 360 億美元；Barron's 指 Optimus 機器人的保密讓華爾街緊張，歐洲也延後 FSD 表決。特斯拉收跌 0.74%。",
+   "s": [
+    "Forbes",
+    "Barron's",
+    "Yahoo Finance"
+   ]
+  },
+  "AVGO": {
+   "h": "OpenAI 疑慮與融資消息，博通跌 4.4%",
+   "b": "CNBC 將博通列為盤前大幅變動股，Motley Fool、Yahoo Finance 討論其下跌原因；漲跌榜郵件引述路透，博通正為 OpenAI 相關計畫安排約 500 億美元融資，OpenAI 營收不如預期讓償還來源受質疑，股價收跌 4.35%。",
+   "s": [
+    "CNBC",
+    "The Motley Fool",
+    "漲跌榜郵件"
+   ]
+  },
+  "AMD": {
+   "h": "台積電 AI 需求創紀錄也沒能提振，跌 3.9%",
+   "b": "Yahoo Finance 指台積電傳出 AI 需求創紀錄，AMD 仍下跌；Barchart 報導 AMD 正與韓國科技巨頭洽談代工合作。在 OpenAI 營收疑慮下，AMD 收跌 3.90%。",
+   "s": [
+    "Yahoo Finance",
+    "Barchart"
+   ]
+  },
+  "ORCL": {
+   "h": "舉債買 AI 晶片加上 OpenAI 營收缺口，重挫 5.5%",
+   "b": "Yahoo Finance 報導甲骨文為採購 AI 晶片增加舉債，又逢 OpenAI 營收揭露；OpenAI 是甲骨文最大雲端客戶之一，6,640 億美元合約積壓的兌現速度受質疑，股價收跌 5.48%。",
+   "s": [
+    "Yahoo Finance",
+    "CNBC",
+    "Seeking Alpha"
+   ]
+  },
+  "INTC": {
+   "h": "馬斯克 Terafab 洽談轉向台積電，英特爾重挫 5.3%",
+   "b": "Timothy Sykes 與 Motley Fool 報導馬斯克的 Terafab 晶片計畫洽談轉向台積電，打擊英特爾的代工期待；加上 OpenAI 疑慮，英特爾收跌 5.34%。它自去年 12 月已漲約 212%。",
+   "s": [
+    "Timothy Sykes",
+    "The Motley Fool",
+    "TIKR"
+   ]
+  },
+  "SMCI": {
+   "h": "獲利了結讓伺服器漲勢回吐",
+   "b": "24/7 Wall St. 報導獲利了結讓伺服器股的漲勢回吐，美超微下跌、戴爾與 HPE 也走弱；美超微前一日剛漲 3.41%，今天收跌 4.83%。",
+   "s": [
+    "24/7 Wall St.",
+    "MarketWatch"
+   ]
+  },
+  "DELL": {
+   "h": "川普帳戶申報出售最多 100 萬美元戴爾股票",
+   "b": "Yahoo Finance 報導川普一再要美國人「買戴爾」，但最新申報顯示其帳戶賣出最多 100 萬美元戴爾股票；Yorkville 的 Ives 則把戴爾納入 AI 30 名單。戴爾收小跌 0.76%。",
+   "s": [
+    "Yahoo Finance",
+    "Investing.com",
+    "24/7 Wall St."
+   ]
+  },
+  "HPQ": {
+   "h": "AI 拋售日小漲，無具名事件",
+   "b": "惠普收小漲 0.62%，當日沒有找到具名的公司新聞。PC 與印表機業務離 AI 資本支出較遠，在 OpenAI 營收疑慮的賣壓中相對抗跌（推測）。",
+   "s": [
+    "漲跌榜郵件"
+   ]
+  },
+  "QCOM": {
+   "h": "與 Arm 的審判開庭，鉅額賠償受關注",
+   "b": "Euronext 報導高通與 Arm 的審判開庭，市場關注可能的鉅額賠償；Baird 指高通與華為的交易讓它在邊緣 AI 平台領先。高通收小跌 0.63%，跌幅遠小於 AI 晶片。",
+   "s": [
+    "Euronext（Reuters）",
+    "Investing.com"
+   ]
+  },
+  "SWKS": {
+   "h": "完成 Qorvo 股權轉換並發行新債",
+   "b": "Stock Titan 報導 Qorvo 股份轉換為思佳訊股票與現金，Globe and Mail 指思佳訊發行新優先票據整頓債務；股價收跌 3.21%，跟隨半導體走弱。",
+   "s": [
+    "Stock Titan",
+    "The Globe and Mail"
+   ]
+  },
+  "MU": {
+   "h": "三星創紀錄獲利也沒提振，美光跌 4.8%",
+   "b": "Barron's 指三星公布創紀錄獲利，但美光股價仍下跌；D.A. Davidson 雖把目標價上調至 3,000 美元，在 OpenAI 營收疑慮打擊 HBM 與 DRAM 需求預期下，美光收跌 4.79%。",
+   "s": [
+    "Barron's",
+    "CNBC"
+   ]
+  },
+  "STX": {
+   "h": "TDK 磁頭事業出售報導，硬碟股下跌",
+   "b": "Investing.com 報導 TDK 硬碟磁頭事業可能易手，希捷與威騰股價下跌；希捷收跌 4.05%。TDK 同時供貨三家硬碟廠，易手可能改變供貨關係。",
+   "s": [
+    "Investing.com",
+    "TradingKey"
+   ]
+  },
+  "ON": {
+   "h": "NXP 遭 Citi 降評，類比晶片走弱",
+   "b": "Yahoo Finance 報導 NXP 遭 Citi 降評、目標價砍至 110 美元，類比晶片同步走弱；安森美收跌 3.76%。Jim Cramer 則認為安森美是能追上的落後股。",
+   "s": [
+    "Yahoo Finance",
+    "24/7 Wall St."
+   ]
+  },
+  "MRVL": {
+   "h": "OpenAI 疑慮下回吐，President Capital 上調目標價至 420 美元",
+   "b": "President Capital 把邁威爾目標價從 340 美元上調至 420 美元，但在 OpenAI 營收疑慮的拋售中，邁威爾仍收跌 3.52%，回吐投資人日後的部分漲幅。",
+   "s": [
+    "Yahoo Finance",
+    "Trefis"
+   ]
+  },
+  "COHR": {
+   "h": "OpenAI 疑慮加上獲利了結，光通訊重挫",
+   "b": "24/7 Wall St. 報導光通訊股在年度大漲後遭獲利了結，Applied Optoelectronics 跌 9%；高意離 OpenAI 營收疑慮最近，收盤重挫 9.63%。",
+   "s": [
+    "24/7 Wall St.",
+    "Quiver Quantitative",
+    "GuruFocus"
+   ]
+  },
+  "LITE": {
+   "h": "光通訊獲利了結，跌 5.6%",
+   "b": "Lumentum 隨光通訊股獲利了結下跌 5.62%，跌幅小於高意；盤後執行長表示光學元件「完全售罄」，相關股在夜盤反彈，為隔天大漲埋下伏筆。",
+   "s": [
+    "Yahoo Finance",
+    "Quiver Quantitative",
+    "MarketBeat"
+   ]
+  },
+  "brent": {
+   "h": "利雅德爆炸、白宮考慮再攻伊朗，布蘭特大漲 4%",
+   "b": "Transport Topics 報導沙烏地首都發生爆炸、UPI 指白宮考慮對伊朗再度出手，油價大漲，布蘭特收漲 4.07% 至 104.28 美元；之後川普表示期中選舉前不會攻擊伊朗，油價一度回落。",
+   "s": [
+    "Transport Topics",
+    "UPI",
+    "Yahoo Finance"
+   ]
+  },
+  "wti": {
+   "h": "中東疑慮與颶風干擾供應，西德州原油漲 3.6%",
+   "b": "路透報導中東疑慮再起、颶風 Isaias 干擾供應，油價大漲約 4%；Rigzone 指伊朗攻擊油輪升級。西德州原油收漲 3.64% 至 91.49 美元。",
+   "s": [
+    "Reuters",
+    "Rigzone",
+    "WSJ"
+   ]
+  },
+  "dxy": {
+   "h": "美債殖利率回落，美元指數小跌",
+   "b": "Forex Factory 指美債殖利率修正，美元指數走弱；FOREX.com 指美元連四週的漲勢在關鍵壓力下停頓。美元指數收小跌 0.10% 至 102.14，仍在高檔。",
+   "s": [
+    "Forex Factory",
+    "FOREX.com",
+    "BigGo Finance"
+   ]
+  },
+  "us10y": {
+   "h": "10 年期標售需求強勁，殖利率降 6bp",
+   "b": "The Daily Upside 指 390 億美元 10 年期公債標售需求強勁，讓債市喘口氣，24/7 Wall St. 指外國買家拿下約 80%。10 年期殖利率盤前一度升到 5.34%，收盤降約 6 個基點至 5.22%。",
+   "s": [
+    "The Daily Upside",
+    "24/7 Wall St.",
+    "Reuters"
+   ]
+  },
+  "us2y": {
+   "h": "Fed 會議紀要顯示全員支持升息，2 年期小降",
+   "b": "BigGo 報導 Fed 9 月會議紀要顯示所有官員都支持升息、年底前可能再升一碼；理事 Waller 表示需要更多升息但排除連續升息。2 年期殖利率收小降 2 個基點至 4.75%。",
+   "s": [
+    "BigGo Finance",
+    "Breakingthenews"
+   ]
+  },
+  "spread": {
+   "h": "長債標售強勁，利差收窄 4bp",
+   "b": "10 年期標售需求強勁，長端殖利率降 6bp，2 年期只降 2bp，10 年－2 年利差收窄約 4 個基點至 47bp，曲線趨平。",
+   "s": [
+    "The Daily Upside",
+    "BigGo Finance"
+   ]
+  },
+  "_summary": {
+   "h": "OpenAI 營收低於預期，AI 算力鏈全面被賣，油價大漲 4%",
+   "b": "金融時報報導 OpenAI 年化營收比外界流傳少約 200 億美元，替 AI 算力出資的公司先被重估：Nasdaq 100 −1.39%、費半 −3.39%，道瓊卻 +0.10%。同日利雅德爆炸、白宮考慮再攻伊朗，布蘭特大漲 4% 至 104 美元。權值股中高意 −9.63%、英特爾 −5.34%、甲骨文 −5.48%、美光 −4.79%、博通 −4.35% 重挫，蘋果逆勢 +1.11%；10 年期標售強勁，殖利率降 6bp 至 5.22%。",
+   "s": [
+    "四封漲跌榜郵件",
+    "CNBC",
+    "Reuters"
+   ]
+  }
+ },
+ "2026-10-09": {
+  "NVDA": {
+   "h": "OpenAI 疑慮後小幅回穩，IPO 風險仍壓抑 AI 情緒",
+   "b": "Barron's 指輝達股價回穩，但 OpenAI 與 Firmus 的 IPO 疑慮仍讓 AI 情緒不安；WSJ 報導輝達調整自由現金流計算方式，對庫藏股有重大影響。輝達收小跌 0.52%，費半跌 0.41%。",
+   "s": [
+    "Barron's",
+    "WSJ"
+   ]
+  },
+  "TSM": {
+   "h": "財報前觀望，ADR 跌 1%",
+   "b": "CNBC 指本週財報季開跑，銀行與晶片股面臨大考；台積電 10/15 財報前，ADR 隨半導體走弱跌 1.02%，前一日在 OpenAI 營收報導下已承壓。",
+   "s": [
+    "CNBC",
+    "The Motley Fool"
+   ]
+  },
+  "MSFT": {
+   "h": "OpenAI 衝擊消退，微軟反彈 2.4%",
+   "b": "前一日 OpenAI 營收報導讓微軟跌 1.35%，今天衝擊消退、反彈 2.38%，是 OpenAI 最大外部投資方；股價 535 美元，貢獻道瓊約 74 點。另有美國勞工部暫停 H-1B 綠卡申請、義大利調查遊戲業務的負面消息。",
+   "s": [
+    "Yahoo Finance",
+    "The Economic Times",
+    "漲跌榜郵件"
+   ]
+  },
+  "AAPL": {
+   "h": "傳下修 iPhone 18 Pro 零組件訂單，股價下跌",
+   "b": "Barron's、Forbes 報導蘋果因 iPhone 18 Pro 需求疲弱而下修零組件訂單，股價盤中跌約 3%，收跌 1.11%；供應商思佳訊同步重挫，高通持平。",
+   "s": [
+    "Barron's",
+    "Forbes",
+    "24/7 Wall St."
+   ]
+  },
+  "GOOGL": {
+   "h": "推出企業 AI Agent，BMO 看好；Google 晶片對外銷售",
+   "b": "Yahoo Finance 報導 BMO 在企業 AI Agent 發表後看好 Alphabet；Motley Fool 指 Google 開始對外銷售 AI 晶片。Alphabet 收漲 0.97%，ARK 則減持部分持股。",
+   "s": [
+    "Yahoo Finance",
+    "The Motley Fool"
+   ]
+  },
+  "AMZN": {
+   "h": "OpenAI 衝擊消退後大漲 3.3%，AWS 投入聯邦 AI",
+   "b": "前一日 OpenAI 營收報導讓亞馬遜跌 2.25%，今天反彈 3.29%、超過前日跌幅；Yahoo Finance 報導 AWS 以 5,000 萬美元支持聯邦 AI 計畫。反彈集中在雲端與平台，晶片股沒有跟上。",
+   "s": [
+    "Yahoo Finance",
+    "漲跌榜郵件"
+   ]
+  },
+  "META": {
+   "h": "Hunterbrook 揭露放空，Muse 安全疑慮浮現",
+   "b": "Yahoo Finance 報導 Hunterbrook 揭露放空 Meta，替代數據顯示 Muse 熱度降溫，最快成長的 AI 產品也出現安全疑慮；Meta 收小跌 0.31%。",
+   "s": [
+    "Yahoo Finance",
+    "MarketBeat"
+   ]
+  },
+  "TSLA": {
+   "h": "馬斯克主導 Terafab、上海交車連 11 月成長，漲 2%",
+   "b": "Barron's 報導馬斯克宣示主導 Terafab 晶片計畫，Yahoo Finance 指上海交車連續 11 個月成長；特斯拉收漲 2.05%，馬斯克身價重回 1 兆美元以上。",
+   "s": [
+    "Barron's",
+    "Yahoo Finance",
+    "Forbes"
+   ]
+  },
+  "AVGO": {
+   "h": "開放網路產品鎖定 AI 瓶頸，小漲",
+   "b": "Yahoo Finance 報導博通推出開放網路方案、瞄準 AI 頻寬瓶頸，股價小漲 0.39%；Seeking Alpha 認為市場看錯了 OpenAI 與 Anthropic 對博通的影響。",
+   "s": [
+    "Yahoo Finance",
+    "Seeking Alpha"
+   ]
+  },
+  "AMD": {
+   "h": "ARK 減持，前日急殺後續跌",
+   "b": "Yahoo Finance 報導 Cathie Wood 的 ARK 賣出 AMD；AMD 前一日跌 3.90%，今天再跌 2.03%，近 20 日仍漲約 17.8%，賣壓較像獲利了結。",
+   "s": [
+    "Yahoo Finance",
+    "漲跌榜郵件"
+   ]
+  },
+  "ORCL": {
+   "h": "「末日恐慌被誇大」，甲骨文反彈 4.2%",
+   "b": "Seeking Alpha 認為對甲骨文的末日恐慌被過度放大，Quiver 討論股價上漲原因；甲骨文收漲 4.21%，屬夏季重挫後的修復，選擇權市場出現異常交易。",
+   "s": [
+    "Seeking Alpha",
+    "Quiver Quantitative",
+    "Barchart"
+   ]
+  },
+  "INTC": {
+   "h": "一年漲 400% 後計畫出售 150 億美元股票",
+   "b": "investingLive 報導英特爾在股價一年上漲約 400% 後，計畫出售約 150 億美元股票；股價收跌 2.22%，延續前一日 −5.34% 的弱勢。",
+   "s": [
+    "investingLive",
+    "Yahoo Finance"
+   ]
+  },
+  "SMCI": {
+   "h": "執行長梁見後家族依計畫賣股",
+   "b": "Investing.com 報導美超微執行長梁見後出售約 450 萬美元持股，其配偶也依交易計畫出售 10 萬股；公司另延攬 35 年資歷的英特爾老將進入董事會。股價收跌 2.13%。",
+   "s": [
+    "Investing.com",
+    "Stock Titan",
+    "Yahoo Finance"
+   ]
+  },
+  "DELL": {
+   "h": "Silver Lake 與董事申報賣股，股價仍漲 2%",
+   "b": "Stock Titan 報導 Silver Lake 與董事 Egon Durban 申報出售戴爾持股；戴爾也宣布為員工子女的川普帳戶提撥 1,000 美元。股價收漲 2.00%。",
+   "s": [
+    "Stock Titan",
+    "Business Insider"
+   ]
+  },
+  "HPQ": {
+   "h": "大盤上漲日重挫近 7%",
+   "b": "惠普在大盤上漲日重挫 6.91%，Yahoo Finance、Quiver 討論原因；漲跌榜郵件指當日無可辨識驅動，股價已高於分析師共識目標價，較像估值疑慮延續（推測）。",
+   "s": [
+    "TradingKey",
+    "Quiver Quantitative",
+    "漲跌榜郵件"
+   ]
+  },
+  "QCOM": {
+   "h": "蘋果下修訂單、與華為交易遇美國對中限制，持平",
+   "b": "24/7 Wall St. 指蘋果傳下修 iPhone 18 Pro 零組件訂單，思佳訊下跌、高通持平；Yahoo Finance 報導高通與華為的交易恰逢美國收緊對中科技規範。高通收小跌 0.29%。",
+   "s": [
+    "24/7 Wall St.",
+    "Yahoo Finance",
+    "TheStreet"
+   ]
+  },
+  "SWKS": {
+   "h": "蘋果傳下修 iPhone 18 Pro 訂單，主要供應商重挫",
+   "b": "蘋果傳出因 iPhone 18 Pro 需求疲弱下修零組件訂單，蘋果是思佳訊的主要客戶，股價收跌 5.45%；Mizuho 雖上調目標價，仍維持劣於大盤評等。",
+   "s": [
+    "24/7 Wall St.",
+    "MarketBeat",
+    "漲跌榜郵件"
+   ]
+  },
+  "MU": {
+   "h": "記憶體鏈延續弱勢，庫藏股成焦點",
+   "b": "Barron's 指美光續跌，庫藏股可能是後續上漲關鍵；CNBC 報導美光與輝達出現兩筆大額交易。美光收小跌 0.66%，是 10/8 半導體急殺在記憶體的延續。",
+   "s": [
+    "Barron's",
+    "CNBC"
+   ]
+  },
+  "STX": {
+   "h": "Bernstein 稱 TDK 磁頭收購疑慮被誇大",
+   "b": "KuCoin 轉述 Bernstein 報告，認為市場對 TDK 磁頭事業收購的疑慮被誇大，希捷與威騰仍值得買進；希捷收漲 1.05%。",
+   "s": [
+    "KuCoin（Bernstein）",
+    "Yahoo Finance"
+   ]
+  },
+  "ON": {
+   "h": "連三日下跌，高層減持",
+   "b": "Simply Wall Street 報導安森美一位集團總裁出售約 27% 持股；股價連續第三天下跌、收跌 2.37%，三天累計約 −10%，類比群中賣得最久。",
+   "s": [
+    "Simply Wall Street",
+    "漲跌榜郵件"
+   ]
+  },
+  "MRVL": {
+   "h": "AI 互連可成 370 億美元業務，股價小漲",
+   "b": "Yahoo Finance 報導邁威爾稱 AI 晶片互連可成為 370 億美元的業務，並設定 900 億美元的長期營收目標；股價收小漲 0.23%，Benzinga 討論週五上漲原因。",
+   "s": [
+    "Yahoo Finance",
+    "Benzinga"
+   ]
+  },
+  "COHR": {
+   "h": "Lumentum 稱 AI 元件賣到 2029 年，光通訊大漲",
+   "b": "Lumentum 執行長表示 AI 光學元件已賣到 2029 年初，光通訊股同步大漲，高意收漲 3.40%；前一日它才因殖利率上升與 OpenAI 疑慮重挫近 10%，今天屬部分回補。",
+   "s": [
+    "Yahoo Finance",
+    "24/7 Wall St.",
+    "TIKR"
+   ]
+  },
+  "LITE": {
+   "h": "執行長稱跟不上 AI 需求、產能售罄至 2029，股價創新高",
+   "b": "Barron's、Investopedia 報導 Lumentum 執行長表示公司跟不上 AI 需求，光學元件已售罄至 2029 年初，股價大漲 5.22%、創歷史新高，帶動整個光通訊族群。",
+   "s": [
+    "Barron's",
+    "Investopedia",
+    "Benzinga"
+   ]
+  },
+  "brent": {
+   "h": "颶風關閉更多產能，川普暗示期中選舉前不打伊朗",
+   "b": "路透報導颶風來襲前更多墨西哥灣產能關閉，油價收高；WSJ 指川普暗示期中選舉前不會攻擊伊朗，抑制漲幅。布蘭特收漲 0.42% 至 104.72 美元。",
+   "s": [
+    "Reuters",
+    "WSJ",
+    "Transport Topics"
+   ]
+  },
+  "wti": {
+   "h": "颶風停擺七成墨西哥灣產量，西德州原油小漲",
+   "b": "BigGo 報導颶風導致美國墨西哥灣逾七成產量停擺，原油期貨反彈；西德州原油收漲 0.39% 至 91.85 美元。",
+   "s": [
+    "BigGo Finance",
+    "Rigzone",
+    "WSJ"
+   ]
+  },
+  "dxy": {
+   "h": "PPI 偏熱推升美元，收平",
+   "b": "FXStreet 報導 PPI 高於預期，美元在 CPI 公布前反彈；但情緒改善、殖利率回落也壓抑美元，美元指數收小漲 0.07% 至 102.21。",
+   "s": [
+    "FXStreet",
+    "TMGM"
+   ]
+  },
+  "us10y": {
+   "h": "油價壓力與 30 年期標售在即，10 年期升 2bp",
+   "b": "Virginia Business 報導公債連兩日下跌，油價與即將到來的 30 年期標售施壓，10 年期殖利率升約 2 個基點至 5.24%，仍低於 24 年高點；MarketWatch 分析殖利率可能升到 6%。",
+   "s": [
+    "Virginia Business",
+    "Yahoo Finance",
+    "MarketWatch"
+   ]
+  },
+  "us2y": {
+   "h": "2 年期殖利率升 5bp，市場仍押注升息",
+   "b": "2 年期殖利率上升約 5 個基點至 4.80%，升幅大於長債；TheStreet 討論 6% 公債殖利率與股市能否並存。川普表示期中選舉前不打伊朗，緩和了避險需求。",
+   "s": [
+    "Advisor Perspectives",
+    "TheStreet",
+    "BigGo Finance"
+   ]
+  },
+  "spread": {
+   "h": "短債升幅較大，利差收窄 3bp",
+   "b": "2 年期升 5bp、10 年期升 2bp，10 年－2 年利差收窄約 3 個基點至 44bp，曲線趨平；投資人買進 30 年期公債也壓低長端殖利率。",
+   "s": [
+    "IDNFinancials",
+    "Advisor Perspectives"
+   ]
+  },
+  "_summary": {
+   "h": "OpenAI 衝擊消退，雲端與軟體反彈；SpaceX 買頻譜重挫電信",
+   "b": "前一日的 OpenAI 營收衝擊消退，微軟 +2.38%、亞馬遜 +3.29% 收復失土，標普 +0.59%、道瓊 +0.83%、Nasdaq 100 +0.51%，但費半仍跌 0.41%。當天最大單一事件是 SpaceX 買下 800MHz 頻譜要做手機服務，T-Mobile −13.27%、AT&T 與 Verizon 跌逾一成，鐵塔股大漲。Lumentum 稱光學元件賣到 2029 年，光通訊大漲（Lumentum +5.22%、高意 +3.40%）；蘋果傳下修 iPhone 18 Pro 訂單，思佳訊 −5.45%。",
+   "s": [
+    "四封漲跌榜郵件",
+    "Barron's",
+    "WSJ"
+   ]
+  }
+ },
+ "2026-10-12": {
+  "NVDA": {
+   "h": "自歷史高點回落，華為在中國 AI 晶片市占追近",
+   "b": "Barron's 指輝達自歷史高點回落、技術線型示警；路透報導華為縮小差距，輝達在中國的 AI 晶片市占下滑。AI 硬體鏈當天被賣，輝達收跌 1.29%，跌幅約為費半的一半。",
+   "s": [
+    "Barron's",
+    "Reuters",
+    "漲跌榜郵件"
+   ]
+  },
+  "TSM": {
+   "h": "財報前預期獲利成長約 65%，但淨利率下滑",
+   "b": "TIKR 預覽台積電第三季，獲利預估年增約 65%，但淨利率可能降至約 50%；在 AI 硬體被賣的一天，ADR 跌 1.98%。市場等待 10/15 財報。",
+   "s": [
+    "TIKR",
+    "24/7 Wall St."
+   ]
+  },
+  "MSFT": {
+   "h": "傳將大規模部署自研 AI 晶片，股價上漲",
+   "b": "富途報導微軟將大規模部署自研 AI 晶片，Benzinga、Investing.com 討論週一上漲原因；微軟收漲 1.14%，是道瓊點數貢獻最大的一檔（約 +36 點）。",
+   "s": [
+    "Moomoo",
+    "Benzinga",
+    "漲跌榜郵件"
+   ]
+  },
+  "AAPL": {
+   "h": "摩根大通上調目標價、美銀重申買進",
+   "b": "Benzinga 報導摩根大通上調蘋果目標價、美國銀行重申買進評等，並在智慧家庭新品發表前獲正面評價；iPhone 市占在手機市場衰退中升至 22%，股價漲 1.29%、逼近歷史高點。",
+   "s": [
+    "Benzinga",
+    "Investor's Business Daily",
+    "Yahoo Finance"
+   ]
+  },
+  "GOOGL": {
+   "h": "與亞馬遜合計投入 4,200 億美元建資料中心，股價小漲",
+   "b": "Motley Fool 指亞馬遜與 Alphabet 共承諾約 4,200 億美元的資料中心投資；Alphabet 股價小漲 0.30%，沒有其他具名事件。",
+   "s": [
+    "The Motley Fool",
+    "Seeking Alpha"
+   ]
+  },
+  "AMZN": {
+   "h": "傳洽購 AI 新創 Decart（70 億美元）並改組 Alexa 團隊",
+   "b": "IBD 報導亞馬遜洽談以約 70 億美元收購 AI 新創 Decart，TIKR 指 Alexa 領導層改組；前一交易日大漲 3.3% 後，今天回吐 1.11%。",
+   "s": [
+    "Investor's Business Daily",
+    "TIKR",
+    "漲跌榜郵件"
+   ]
+  },
+  "META": {
+   "h": "AI 硬體被賣日，花錢買算力的 Meta 逆勢大漲",
+   "b": "CNBC 將 Meta 列為午盤大幅變動股，開盤即跳漲約 3.8%、收漲 3.38%。在 AI 硬體被賣的日子，Meta 是付錢買算力的一方；市場把對 AI 營收的疑慮轉成對支出方的偏好（推測）。",
+   "s": [
+    "CNBC",
+    "TradingKey",
+    "MarketBeat"
+   ]
+  },
+  "TSLA": {
+   "h": "Jefferies 上調目標價，但收盤下跌",
+   "b": "Jefferies 上調特斯拉目標價，Cybercab 車隊擴張也受關注，股價盤中一度上漲約 2%；Bloomberg 指技術面關注 400 美元關卡。收盤仍跌 1.22%。",
+   "s": [
+    "marketscreener",
+    "Bloomberg",
+    "Yahoo Finance"
+   ]
+  },
+  "AVGO": {
+   "h": "Anthropic 600 億美元融資加大博通押注",
+   "b": "MarketBeat 指 Anthropic 的 600 億美元融資讓博通的押注更大，Yahoo Finance 討論 500 億美元債務交易的影響；在 AI 硬體賣壓下，博通跌 1.88%。",
+   "s": [
+    "MarketBeat",
+    "Yahoo Finance"
+   ]
+  },
+  "AMD": {
+   "h": "OpenAI 營收缺口疑慮，創高後三天跌 6%",
+   "b": "TIKR 指 AMD 創收盤新高後三個交易日下跌約 6%，主因是 OpenAI 營收比預期少約 200 億美元的疑慮；MarketWatch 指新 AI 發表未能提振買氣。AMD 收跌 2.28%。",
+   "s": [
+    "TIKR",
+    "MarketWatch"
+   ]
+  },
+  "ORCL": {
+   "h": "OpenAI 波動中內部人買進 350 萬美元，股價仍跌",
+   "b": "Barron's 報導甲骨文內部人在 OpenAI 相關波動中買進約 350 萬美元持股；Yahoo Finance 指它手握 6,640 億美元訂單、但市場要先看到現金，並示警 AI 資產負債表風險。股價收跌 2.84%。",
+   "s": [
+    "Barron's",
+    "Yahoo Finance"
+   ]
+  },
+  "INTC": {
+   "h": "博通、英特爾執行長示警 AI 融資，晶片股下跌",
+   "b": "IBD 指博通與英特爾執行長都對 AI 資金提出警告，晶片股走弱；英特爾收跌 3.20%，Investing.com 指已進入超賣區。馬斯克也出面釐清 Terafab 計畫。",
+   "s": [
+    "Investor's Business Daily",
+    "Investing.com",
+    "Yahoo Finance"
+   ]
+  },
+  "SMCI": {
+   "h": "AI 伺服器股重挫，跌 4.5%",
+   "b": "Yahoo Finance、Benzinga 討論美超微為何大跌；在 AI 硬體被賣的一天，伺服器組裝商跌幅居前，美超微收跌 4.49%，沒有具名公司事件。",
+   "s": [
+    "Yahoo Finance",
+    "Benzinga"
+   ]
+  },
+  "DELL": {
+   "h": "Agent 平台要等到 2027，股價跌 1.6%",
+   "b": "Yahoo Finance 報導戴爾的 AI Agent 平台需等到 2027 年，股價一度跌 2.8%，收盤跌 1.59%；它今年漲幅遠超大盤，市場檢視 AI 漲勢能否延續。",
+   "s": [
+    "Yahoo Finance",
+    "MarketBeat"
+   ]
+  },
+  "HPQ": {
+   "h": "股價高於分析師平均目標價，續跌",
+   "b": "MarketBeat 指惠普分析師平均目標價只有 25.77 美元、低於股價；GuruFocus 討論前一交易日跌 6.9% 後是否便宜。惠普收跌 1.09%。",
+   "s": [
+    "MarketBeat",
+    "GuruFocus"
+   ]
+  },
+  "QCOM": {
+   "h": "與 Arm 的審判陪審團無法達成一致",
+   "b": "Yahoo Finance 報導高通與 Arm 的授權違約審判以陪審團未能達成一致告終；高通收小跌 0.61%，是晶片股中跌最少的幾檔之一，手機晶片與 AI 互連鏈沒有重疊。",
+   "s": [
+    "Yahoo Finance",
+    "Simply Wall Street"
+   ]
+  },
+  "SWKS": {
+   "h": "Mizuho 目標價仍低於股價，續跌 2%",
+   "b": "思佳訊前一交易日跌 5.45%，今天再跌 2.16%；前一日 Mizuho 雖上調目標價，但仍維持「劣於大盤」、目標價低於股價。沒有新的公司事件。",
+   "s": [
+    "Smartkarma",
+    "MarketWatch"
+   ]
+  },
+  "MU": {
+   "h": "中國長鑫推出新晶片，美光跌近 4%",
+   "b": "Barron's 與 IBD 報導中國記憶體廠長鑫（CXMT）推出新晶片，美光因競爭疑慮下跌 3.88%；董事會同時把庫藏股上限提高到 351.6 億美元，未能扭轉跌勢。",
+   "s": [
+    "Barron's",
+    "Investor's Business Daily",
+    "Yahoo Finance"
+   ]
+  },
+  "STX": {
+   "h": "中國 DRAM 進展引發記憶體賣壓，希捷跌近 4%",
+   "b": "AOL 報導晟碟因中國 DRAM 進展在記憶體賣壓中跌 6%、希捷跌約 4%；希捷收跌 3.80%。硬碟並非中國競爭的直接對象，屬族群連動。",
+   "s": [
+    "AOL",
+    "GuruFocus",
+    "TradingKey"
+   ]
+  },
+  "ON": {
+   "h": "韓股暴跌 7%，AI 疑慮擴散至半導體",
+   "b": "NBC 報導韓國 KOSPI 因半導體股拋售暴跌逾 7%，AI 熱潮疑慮擴散；安森美收跌 1.97%，類比晶片受衝擊小於 AI 硬體。",
+   "s": [
+    "NBC News",
+    "MarketWatch"
+   ]
+  },
+  "MRVL": {
+   "h": "長期展望獲上調評等，但隨 AI 鏈下跌",
+   "b": "Morningstar 因長期指引樂觀上調邁威爾合理價，Seeking Alpha 也升評為買進；但在 AI 硬體賣壓下，邁威爾仍收跌 3.42%。",
+   "s": [
+    "Morningstar",
+    "Seeking Alpha",
+    "Investing.com"
+   ]
+  },
+  "COHR": {
+   "h": "光通訊整層被賣，跌近 8%",
+   "b": "24/7 Wall St. 報導光通訊賣壓集中在產能已售罄的公司，Lumentum 跌 10%；高意收跌 7.87%，媒體歸因多週漲勢後的獲利了結，沒有公司個別利空。",
+   "s": [
+    "24/7 Wall St.",
+    "GuruFocus"
+   ]
+  },
+  "LITE": {
+   "h": "光學產能售罄到 2029 年，反被重新定價，重挫近 10%",
+   "b": "MarketWatch 指 Ciena、Lumentum 等光通訊股是當日最大輸家；Lumentum 先前稱光學元件已賣到 2029 年，市場反而開始質疑長約的需求品質，股價重挫 9.78%。",
+   "s": [
+    "MarketWatch",
+    "CNBC",
+    "Yahoo Finance"
+   ]
+  },
+  "brent": {
+   "h": "沙烏地機場遭致命攻擊，布蘭特站上 106 美元",
+   "b": "CNBC 報導沙烏地機場遭致命攻擊、烏克蘭指控俄國違反能源停火，布蘭特突破 106 美元，收漲 1.84% 至 106.65 美元。路透指攻擊消息蓋過川普的柴油協議；高盛上調 12 月油價目標至 90 美元。",
+   "s": [
+    "CNBC",
+    "Reuters",
+    "Yahoo Finance"
+   ]
+  },
+  "wti": {
+   "h": "颶風逼近、產量停擺，西德州原油漲 2%",
+   "b": "Business Times 報導颶風來襲前更多產能關閉，加上沙烏地遇襲，西德州原油收漲 2.06% 至 93.74 美元；Barchart 指原油大漲、晶片股下跌，股市收低。",
+   "s": [
+    "The Business Times",
+    "Barchart",
+    "Reuters"
+   ]
+  },
+  "dxy": {
+   "h": "避險需求推升美元至年內新高",
+   "b": "FXStreet 報導避險需求激增，美元觸及年內新高、接近 102.50；美元指數收漲 0.36% 至 102.58，之後因俄烏能源停火期待稍微回軟。",
+   "s": [
+    "FXStreet",
+    "TMGM"
+   ]
+  },
+  "us10y": {
+   "h": "哥倫布日債市休市，無官方收盤",
+   "b": "10/12 為哥倫布日，美國公債市場休市，財政部沒有公布當日殖利率，頁面以「—」表示。市場仍在消化殖利率位於 5% 以上二十多年高點的影響。",
+   "s": [
+    "漲跌榜郵件",
+    "Penn Mutual"
+   ]
+  },
+  "us2y": {
+   "h": "哥倫布日債市休市，無官方收盤",
+   "b": "債市休市，2 年期沒有官方收盤值。報導指 Fed、歐洲央行、日銀可能把利率維持在高檔到 2027 年。",
+   "s": [
+    "BigGo Finance"
+   ]
+  },
+  "spread": {
+   "h": "債市休市，無利差資料",
+   "b": "哥倫布日債市休市，財政部未公布殖利率曲線，當日沒有 10 年－2 年利差資料。",
+   "s": [
+    "漲跌榜郵件"
+   ]
+  },
+  "_summary": {
+   "h": "AI 硬體再被賣、光通訊重挫；債市休市，資金轉向防禦",
+   "b": "費半 −2.67%、創三週低，光通訊跌最重：Lumentum −9.78%、高意 −7.87%；中國記憶體廠競爭疑慮也拖累晟碟、美光。Nasdaq 100 −0.71%、標普 −0.06%，道瓊反漲 0.38%，美銀把 Salesforce 直升買進。資金轉進醫材與必需消費；Meta 逆勢 +3.38%，因它是買算力的一方。哥倫布日債市休市，殖利率無新訊號；沙烏地機場遇襲，布蘭特漲 1.84% 至 106.65 美元，美元因避險需求創年內新高。",
+   "s": [
+    "四封漲跌榜郵件",
+    "CNBC",
+    "MarketWatch"
+   ]
+  }
+ },
+ "2026-10-13": {
+  "NVDA": {
+   "h": "OpenAI 疑慮後小幅回升，新 AI 發表未能提振",
+   "b": "MarketWatch 指輝達與 AMD 的新 AI 發表沒能重新點燃買氣；費半當天只跌 0.23%，記憶體與設備被賣、加速器與 CPU 反而收漲，輝達小漲 0.97%。",
+   "s": [
+    "MarketWatch",
+    "漲跌榜郵件"
+   ]
+  },
+  "TSM": {
+   "h": "財報前兩天被記憶體恐慌波及，收平",
+   "b": "TIKR 指台積電在財報前兩天，被一場它本身沒有曝險的記憶體恐慌（中國長鑫新架構）波及；Seeking Alpha 在財報預覽中因資本支出疑慮下調評等。ADR 收小漲 0.17%。",
+   "s": [
+    "TIKR",
+    "Seeking Alpha"
+   ]
+  },
+  "MSFT": {
+   "h": "可望創近一年首次收盤新高",
+   "b": "Quartz 報導微軟股價有望寫下近一年來首次收盤新高，Barron's 指它「突然成為 AI 贏家」；自研 AI 晶片題材持續發酵，股價漲 0.43%。",
+   "s": [
+    "Quartz",
+    "Barron's"
+   ]
+  },
+  "AAPL": {
+   "h": "發表 HomeView 智慧家庭中樞，目標價獲上調",
+   "b": "IBD 報導蘋果推出 HomeView 智慧家庭中樞等新裝置，並在發表前獲上調目標價；但 iPhone 18 需求疲弱的報導仍壓著股價，蘋果收平（+0.09%）。",
+   "s": [
+    "Investor's Business Daily",
+    "The Motley Fool"
+   ]
+  },
+  "GOOGL": {
+   "h": "AI 相關證券集體訴訟，股價小漲",
+   "b": "PR Newswire 發布針對 Alphabet 的證券詐欺集體訴訟通知，起因是先前 AI 問題引發的股價下跌；Yorkville 的 Ives 則看好其 AI 平台。股價小漲 0.30%。",
+   "s": [
+    "PR Newswire",
+    "Seeking Alpha"
+   ]
+  },
+  "AMZN": {
+   "h": "Generac 與亞馬遜簽大單，股價小跌",
+   "b": "Yahoo Finance 報導 Generac 與亞馬遜簽下大型供電合約，亞馬遜也傳出洽談收購 Decart；但當天科技股偏弱，亞馬遜小跌 0.37%。",
+   "s": [
+    "Yahoo Finance"
+   ]
+  },
+  "META": {
+   "h": "Muse 帶動獲券商最高目標價，逆勢漲 2.6%",
+   "b": "Yahoo Finance 報導 Meta 獲華爾街最高目標價，Barron's 認為 Muse AI 帶動後仍有 35% 上漲空間；大盤下跌時 Meta 逆勢漲 2.63%，連兩日走強。",
+   "s": [
+    "Yahoo Finance",
+    "Barron's"
+   ]
+  },
+  "TSLA": {
+   "h": "SpaceX 股價下跌，馬斯克身價跌破兆美元",
+   "b": "Yahoo Finance 報導 SpaceX 股價下滑，馬斯克身價減少逾 280 億美元、不再是兆萬富翁；市場也擔心 Roadster 發表引發賣壓。特斯拉小跌 0.74%。",
+   "s": [
+    "Yahoo Finance",
+    "Barron's"
+   ]
+  },
+  "AVGO": {
+   "h": "陳福陽「賭場」說引發晶片股下跌",
+   "b": "金融時報、衛報報導博通執行長陳福陽把 AI 投資比喻為「賭場」，晶片股隨之走弱；Forbes 指中國長鑫進展與這番警告是 AI 晶片下跌的兩大原因。博通本身收小漲 0.73%。",
+   "s": [
+    "Financial Times",
+    "The Guardian",
+    "Forbes"
+   ]
+  },
+  "AMD": {
+   "h": "為 Fermi 德州 AI 園區提供信用支持，股價回升",
+   "b": "Barron's 與 Yahoo Finance 報導 AMD 為 Fermi 的德州 AI 園區提供信用支持，Fermi 大漲約 20%；AMD 前一日下跌，今天反彈 1.90%，記憶體與設備的賣壓沒有擴散到它。",
+   "s": [
+    "Barron's",
+    "Yahoo Finance"
+   ]
+  },
+  "ORCL": {
+   "h": "大型 AI 晶片交易推升雲端野心，漲 4.2%",
+   "b": "Timothy Sykes 報導甲骨文因大型 AI 晶片交易推動雲端擴張而上漲；Finbold 同日發出內部人交易警示。甲骨文收漲 4.23%，屬夏季重挫後的修復。",
+   "s": [
+    "Timothy Sykes",
+    "Benzinga",
+    "Finbold"
+   ]
+  },
+  "INTC": {
+   "h": "10/22 財報前小幅回升",
+   "b": "英特爾前一日跌 3.2%，今天小漲 1.44%；Barchart 提醒 10/22 財報前的觀察重點，Simply Wall Street 則指博通的 AI 資本警告後股價可能高估約 31%。",
+   "s": [
+    "Barchart",
+    "Simply Wall Street"
+   ]
+  },
+  "SMCI": {
+   "h": "推出 250kW 機櫃散熱，股價仍跌",
+   "b": "美超微在 AI 產品線加入可提供 250kW 散熱的機櫃冷卻單元，但股價收跌 2.28%，跌幅大於大盤；Benzinga 討論週二下跌原因，沒有具體負面事件。",
+   "s": [
+    "Stock Titan",
+    "Benzinga"
+   ]
+  },
+  "DELL": {
+   "h": "今年已漲逾 3.5 倍，自由現金流下滑受關注",
+   "b": "TIKR 指戴爾今年已漲約 358%，但第二季自由現金流下滑 47%；股價小跌 0.74%。Goldman Sachs 重申 570 美元目標價。",
+   "s": [
+    "TIKR",
+    "ad-hoc-news"
+   ]
+  },
+  "HPQ": {
+   "h": "科技股走弱中逆勢漲 2.5%",
+   "b": "惠普收漲 2.54%，表現優於同業；當天科技股走弱、銀行財報亮眼，惠普沒有公司事件，屬資金轉向非 AI 硬體。",
+   "s": [
+    "MarketWatch",
+    "Schaeffer's"
+   ]
+  },
+  "QCOM": {
+   "h": "對 Arm 授權訴訟勝訴，股價上漲",
+   "b": "GuruFocus 報導高通在與 Arm 的授權訴訟中勝訴，股價正面反應，收漲 1.39%；營收不綁 AI 記憶體與設備循環，在記憶體被賣時相對強。",
+   "s": [
+    "GuruFocus",
+    "Benzinga"
+   ]
+  },
+  "SWKS": {
+   "h": "跌深回補，漲 2.5%",
+   "b": "思佳訊近 20 日累跌約 15%，今天漲 2.49%，是費半漲幅第一；買盤轉向沒有 DRAM 報價與設備預算曝險的手機射頻股，沒有公司事件。",
+   "s": [
+    "MarketWatch",
+    "漲跌榜郵件"
+   ]
+  },
+  "MU": {
+   "h": "中國長鑫搶攻伺服器記憶體，馬斯克也點名威脅",
+   "b": "IBD 與 Barron's 報導中國長鑫（CXMT）預告推出伺服器 DRAM 新架構，馬斯克也點出中國晶片威脅，美光連兩日下跌，收跌 3.62%。CNBC 指記憶體相關股連跌第二天。",
+   "s": [
+    "Investor's Business Daily",
+    "Barron's",
+    "CNBC"
+   ]
+  },
+  "STX": {
+   "h": "記憶體與儲存股續跌",
+   "b": "Yahoo Finance 報導希捷與威騰股價重挫，CNBC 指記憶體相關股連跌兩天；希捷收跌 0.80%，盤前曾大幅走低。",
+   "s": [
+    "Yahoo Finance",
+    "CNBC"
+   ]
+  },
+  "ON": {
+   "h": "晶片股超賣，類比股小漲",
+   "b": "Seeking Alpha 列出 10 檔出現超賣訊號的晶片股，Jim Cramer 表示不放棄半導體；安森美收漲 0.91%，類比晶片離記憶體與設備的利空較遠。",
+   "s": [
+    "Seeking Alpha",
+    "CNBC"
+   ]
+  },
+  "MRVL": {
+   "h": "微軟新 AI 晶片可望帶動，股價反彈",
+   "b": "Barron's 認為微軟新 AI 晶片能讓連跌的邁威爾重新振作；邁威爾把 2028 年營收目標上調至 200 億美元，股價收漲 1.08%。今年已漲約 214%。",
+   "s": [
+    "Barron's",
+    "Yahoo Finance",
+    "24/7 Wall St."
+   ]
+  },
+  "COHR": {
+   "h": "前日光通訊重挫後止穩，Rosenblatt 維持 500 美元目標價",
+   "b": "TIKR 回顧前一日高意跌近 8%、Ciena 與 Lumentum 跌約 10%；Rosenblatt 維持買進、目標價 500 美元。高意今天小漲 0.68%，產能已售罄的消息支撐股價。",
+   "s": [
+    "TIKR",
+    "TradingView"
+   ]
+  },
+  "LITE": {
+   "h": "長期 AI 光學承諾引發需求疑問，續跌",
+   "b": "Yahoo Finance 指 Lumentum 長期 AI 光學合約引發新的需求疑問，股價前一日已大跌約 10%；今天再跌 0.75%。MarketWatch 解析光通訊股為何是前一日最大輸家。",
+   "s": [
+    "Yahoo Finance",
+    "MarketWatch",
+    "TIKR"
+   ]
+  },
+  "brent": {
+   "h": "胡塞攻擊沙烏地機場推高後回落，美俄柴油協議受關注",
+   "b": "The Hill 報導胡塞攻擊沙烏地機場後油價一度飆升；路透指市場關注美俄柴油協議與沙烏地－葉門衝突，油價漲跌互見，布蘭特收跌 0.90% 至 105.69 美元，仍在 100 美元之上。",
+   "s": [
+    "The Hill",
+    "Reuters",
+    "CNBC"
+   ]
+  },
+  "wti": {
+   "h": "柴油走強帶動西德州原油小漲",
+   "b": "WSJ 報導柴油上漲帶動西德州原油走高，收漲 0.43% 至 94.14 美元；兩大基準油價走勢分歧，市場同時評估俄國柴油供應前景與沙烏地－胡塞衝突。",
+   "s": [
+    "WSJ",
+    "Reuters"
+   ]
+  },
+  "dxy": {
+   "h": "油價與殖利率回落，美元自 18 個月高點拉回",
+   "b": "FXStreet 報導美元指數自 18 個月高點回落，油價與公債殖利率同步走低；市場等待 CPI 公布，美元指數跌 0.39% 至 102.18。",
+   "s": [
+    "FXStreet",
+    "Devdiscourse（Reuters）",
+    "TMGM"
+   ]
+  },
+  "us10y": {
+   "h": "能源價格趨穩，10 年期殖利率降 3bp",
+   "b": "CNBC 報導能源價格趨穩，10 年期殖利率下降約 3 個基點至 5.21%；殖利率仍在 24 年高點附近，FXStreet 指投資人以創紀錄規模承接這波公債賣壓。",
+   "s": [
+    "CNBC",
+    "FXStreet",
+    "BigGo Finance"
+   ]
+  },
+  "us2y": {
+   "h": "紐約 Fed 的 Williams 稱今年再升一次或已足夠",
+   "b": "紐約聯儲總裁 Williams 表示今年再升息一次或許就夠、2027 年不需再升，PIMCO 的 Ivascyn 則認為殖利率高點還沒到。2 年期殖利率小降 1 個基點至 4.79%。",
+   "s": [
+    "bloomingbit",
+    "Reuters",
+    "The Business Times"
+   ]
+  },
+  "spread": {
+   "h": "長債降幅較大，利差收窄 2bp",
+   "b": "10 年期降 3bp、2 年期降 1bp，10 年－2 年利差收窄約 2 個基點至 42bp。能源價格趨穩壓低長天期通膨預期，曲線略為趨平。",
+   "s": [
+    "CNBC",
+    "Reuters"
+   ]
+  },
+  "_summary": {
+   "h": "設備與記憶體被賣、類比與 CPU 撐盤，大盤持平",
+   "b": "應用材料在投資人日不給設備支出預測，單日 −6.69% 拖累設備股；中國長鑫預告伺服器 DRAM 新產品，美光連跌（−3.62%）。類比、CPU 與能源股收漲，標普 −0.02%、Nasdaq 100 −0.31%、費半僅 −0.23%。道瓊 −0.35%，主因是 Caterpillar 與財報日的嬌生兩檔高價股。紐約 Fed 的 Williams 稱今年再升息一次或已足夠，10 年期殖利率降 3bp 至 5.21%。權值股中甲骨文 +4.23%、Meta +2.63% 較強。",
+   "s": [
+    "四封漲跌榜郵件",
+    "CNBC",
+    "Barron's"
+   ]
+  }
+ },
+ "2026-10-14": {
+  "NVDA": {
+   "h": "CoreWeave 債務恐慌拖累，輝達跌 3%",
+   "b": "Investopedia 報導輝達投資的 CoreWeave 因 AI 債務疑慮暴跌，債券殖利率逼近 15%；9 月 CPI 又高於預期，AI 晶片股同步重挫。輝達收跌 3.16%，跌幅小於靠借錢擴產的下游。",
+   "s": [
+    "Investopedia",
+    "Investing.com",
+    "漲跌榜郵件"
+   ]
+  },
+  "TSM": {
+   "h": "財報前夕 AI 疑慮升溫，ADR 跌 3.4%",
+   "b": "Yahoo Finance 指台積電隔日財報面臨「平息全球 AI 股不安」的高門檻；Bloomberg 報導 CoreWeave 因債務下滑。在 CPI 偏熱與 AI 融資疑慮的拋售日，台積電 ADR 跌 3.40%。",
+   "s": [
+    "Yahoo Finance",
+    "Bloomberg"
+   ]
+  },
+  "MSFT": {
+   "h": "前日創歷史新高後，隨 AI 股回檔",
+   "b": "Barron's 指微軟前一日創歷史新高，並推出自研 AI 晶片；今天在 Oracle、CoreWeave 重挫的 AI 拋售中跌 1.80%，因股價高約 534 美元，拖累道瓊約 58 點。",
+   "s": [
+    "Barron's",
+    "GeekWire",
+    "漲跌榜郵件"
+   ]
+  },
+  "AAPL": {
+   "h": "權值股中唯一收漲，摩根大通在 iPhone 疑慮中調整目標價",
+   "b": "蘋果漲 0.50%，是 Nasdaq 100 權值股中唯一收紅的一檔；它不靠 AI 雲端資本支出，未被這輪賣壓波及。TheStreet 報導摩根大通在 iPhone 銷售疑慮中重設目標價。",
+   "s": [
+    "TheStreet",
+    "漲跌榜郵件"
+   ]
+  },
+  "GOOGL": {
+   "h": "雲端資本支出方被連帶折價，另有證券集體訴訟",
+   "b": "Alphabet 與微軟、亞馬遜同為雲端資本支出方，三檔都跌約 1.7%–1.8%，是同一個 AI 融資因子。PR Newswire 另有針對 Alphabet 的證券集體訴訟通知；股價收跌 1.74%。",
+   "s": [
+    "PR Newswire",
+    "漲跌榜郵件"
+   ]
+  },
+  "AMZN": {
+   "h": "AWS 積壓訂單達 4,960 億美元，仍隨 AI 股下跌",
+   "b": "Motley Fool 指 AWS 積壓訂單達 4,960 億美元、雲端利潤率升至 39%；Barron's 指亞馬遜是避險基金最擁擠的持股。AI 融資疑慮擴散下，亞馬遜仍收跌 1.74%。",
+   "s": [
+    "The Motley Fool",
+    "Barron's",
+    "MarketBeat"
+   ]
+  },
+  "META": {
+   "h": "營運長賣股，財報前跌 3.3%",
+   "b": "MarketBeat 報導 Meta 營運長出售約 69 萬美元持股；同日 Yahoo Finance 有券商喊出新高目標價。在 AI 資本支出疑慮下，Meta 收跌 3.27%，選擇權預期財報後波動約 4.9%。",
+   "s": [
+    "MarketBeat",
+    "Yahoo Finance",
+    "Investing.com"
+   ]
+  },
+  "TSLA": {
+   "h": "Uber 合作議題與財報前觀望，跌 2%",
+   "b": "Barron's 報導 Uber 拋出「兆美元問題」，特斯拉股價下跌；市場也擔心 Roadster 發表後重演賣壓。特斯拉收跌 2.15%，選擇權預期 10/21 財報後波動約 5.1%。",
+   "s": [
+    "Barron's",
+    "Yahoo Finance",
+    "Investing.com"
+   ]
+  },
+  "AVGO": {
+   "h": "AI 晶片拋售擴大，博通跌 3.1%",
+   "b": "Benzinga 討論博通週三下跌的原因：CPI 偏熱推升殖利率，CoreWeave 債務疑慮讓 AI 晶片股整體被賣，博通收跌 3.10%。當天沒有公司事件。",
+   "s": [
+    "Benzinga",
+    "漲跌榜郵件"
+   ]
+  },
+  "AMD": {
+   "h": "AI 交易出現裂痕，AMD 重挫 5.7%",
+   "b": "Barron's 指 AI 交易出現裂痕，AMD 跌幅大於同業；它今年已漲約 183%、近 20 日漲 11.4%，位階高者被賣得更重，收跌 5.73%。輝達同日只跌 3.16%。",
+   "s": [
+    "Barron's",
+    "MarketBeat",
+    "Yahoo Finance"
+   ]
+  },
+  "ORCL": {
+   "h": "舉債建 AI 資料中心遭重新定價，暴跌 8.8%",
+   "b": "甲骨文開盤即跌 6.6%，收盤重挫 8.83%。CoreWeave 債券殖利率逼近 15%、9 月 CPI 偏熱推升升息機率，靠舉債擴建 AI 資料中心、信評僅高於垃圾級一級的甲骨文首當其衝，跌幅是微軟的近五倍。",
+   "s": [
+    "TradingKey",
+    "Benzinga",
+    "漲跌榜郵件"
+   ]
+  },
+  "INTC": {
+   "h": "馬斯克 Terafab 合作傳轉向台積電，英特爾跌 4.6%",
+   "b": "Timothy Sykes 報導馬斯克的 Terafab 晶片製造計畫可能轉向台積電，稀釋英特爾的代工題材；在 AI 晶片賣壓下，英特爾收跌 4.56%。它今年已漲約 175%。",
+   "s": [
+    "Timothy Sykes",
+    "The Motley Fool"
+   ]
+  },
+  "SMCI": {
+   "h": "戴爾遭 Barclays 降評拖累，AI 伺服器股重挫",
+   "b": "24/7 Wall St. 報導 Barclays 把戴爾降評、目標價降至 574 美元，戴爾、HPE、美超微同步重挫；美超微收跌 8.42%，另有供應鏈問題的報導。",
+   "s": [
+    "24/7 Wall St.",
+    "Benzinga",
+    "Pluang"
+   ]
+  },
+  "DELL": {
+   "h": "Barclays 降評、質疑企業 AI 時程，暴跌 11%",
+   "b": "CNBC 報導 Barclays 把戴爾降至持有，認為企業 AI 需求的時程不明、營收偏靠記憶體漲價，戴爾暴跌 11.27%，是一年多來最差的一天，並帶頭資料中心股下跌。",
+   "s": [
+    "CNBC",
+    "Barron's",
+    "Yahoo Finance"
+   ]
+  },
+  "HPQ": {
+   "h": "HPE 遭降評，惠普小跌",
+   "b": "Barclays 同時下調 HPE 評等，HPE 大跌；以 PC 與印表機為主的惠普只跌 0.56%，表現優於同業，沒有公司事件。",
+   "s": [
+    "Yahoo Finance",
+    "MarketWatch"
+   ]
+  },
+  "QCOM": {
+   "h": "與 Arm 訴訟陪審團判決結果分歧",
+   "b": "Yahoo Finance 報導高通與 Arm 的訴訟陪審團判決結果分歧，TradingKey 指股價測試 176 美元支撐；在晶片拋售日，高通收跌 2.40%，跌幅約為費半的六成。",
+   "s": [
+    "Yahoo Finance",
+    "TradingKey",
+    "MarketBeat"
+   ]
+  },
+  "SWKS": {
+   "h": "BNP Paribas 上調目標價至 80 美元，逆勢收紅",
+   "b": "BNP Paribas 把思佳訊目標價從 70 美元上調到 80 美元，股價逆勢小漲 0.43%；它的射頻前端賣給手機，不受 AI 資料中心疑慮影響，是費半中少數收紅者。",
+   "s": [
+    "Yahoo Finance",
+    "Simply Wall Street"
+   ]
+  },
+  "MU": {
+   "h": "中國長鑫競爭疑慮重挫，馬斯克力挺也沒用",
+   "b": "Benzinga 報導美光因中國競爭疑慮遭重挫，Jim Cramer 稱這波賣壓「荒謬」；Barron's 指馬斯克稱讚美光在記憶體上的「聰明決定」，股價仍跌 4.10%，距近期高點約 25%。",
+   "s": [
+    "Benzinga",
+    "Barron's",
+    "Investor's Business Daily"
+   ]
+  },
+  "STX": {
+   "h": "東芝擴產疑慮與中國記憶體風險，跌 4.5%",
+   "b": "TOP1markets 指希捷面臨東芝擴產的供給疑慮與 AI 需求的拉鋸；德國媒體指財報前的族群賣壓壓低股價，希捷收跌 4.50%。",
+   "s": [
+    "TOP1markets",
+    "ad-hoc-news",
+    "TradingKey"
+   ]
+  },
+  "ON": {
+   "h": "晶片股可能蒸發 1 兆美元，安森美跌 4.3%",
+   "b": "Bloomberg 指晶片股跌勢擴大、可能蒸發 1 兆美元市值；Michael Burry 也表示做空那斯達克與晶片股。安森美隨族群下跌 4.34%，沒有公司事件。",
+   "s": [
+    "Bloomberg",
+    "Quartz",
+    "24/7 Wall St."
+   ]
+  },
+  "MRVL": {
+   "h": "新 AI 互連晶片送樣也擋不住賣壓，重挫 8.7%",
+   "b": "Yahoo Finance 指邁威爾新 AI 互連晶片進入客戶送樣，股價仍下跌；客製 AI 晶片綁雲端業者資本支出，CoreWeave 債務恐慌下重挫 8.73%，同時登上 SPX、NDX、SOX 三張跌幅榜。今年已漲約 214%。",
+   "s": [
+    "Yahoo Finance",
+    "漲跌榜郵件"
+   ]
+  },
+  "COHR": {
+   "h": "AI 融資疑慮重擊光通訊，跌 9.2%",
+   "b": "24/7 Wall St. 報導 AI 融資疑慮打擊光通訊股，Applied Optoelectronics 跌 9%、高意跌約 7%、Lumentum 跌 7%；高意收盤重挫 9.19%，自 10/2 高點已回落約 22%。",
+   "s": [
+    "24/7 Wall St.",
+    "TradingView"
+   ]
+  },
+  "LITE": {
+   "h": "光通訊整層被賣，重挫 9.3%",
+   "b": "Lumentum 隨光通訊股重挫 9.28%；24/7 Wall St. 指 AI 融資疑慮直接打擊光模組供應商。它今年漲幅最大、位階最高，利率衝擊日先被賣。",
+   "s": [
+    "24/7 Wall St.",
+    "Investing.com"
+   ]
+  },
+  "brent": {
+   "h": "沙烏地阿美遇襲、伊朗新戰術攻擊油輪，油價上揚",
+   "b": "路透報導沙烏地阿美總部附近傳出爆炸、伊朗改用新戰術鎖定油輪，油價走高；布蘭特收漲 0.35% 至 106.06 美元。Marketplace 指戰事讓油輪運費飆升。",
+   "s": [
+    "Reuters",
+    "WSJ",
+    "investingLive"
+   ]
+  },
+  "wti": {
+   "h": "柴油走強推升西德州原油漲 1%",
+   "b": "WSJ 報導柴油價格上漲帶動西德州原油走高，收漲 1.01% 至 95.09 美元；沙烏地與葉門的攻擊、美俄柴油談判都牽動油價。",
+   "s": [
+    "WSJ",
+    "Reuters",
+    "Rigzone"
+   ]
+  },
+  "dxy": {
+   "h": "CPI 偏熱，美元指數漲 0.4%",
+   "b": "9 月 CPI 高於預期，市場提高 Fed 升息押注，美元指數收漲 0.36% 至 102.55；路透外匯報導 CPI 公布前美元一度走弱，數據出爐後轉強。",
+   "s": [
+    "Devdiscourse（Reuters）",
+    "TMGM"
+   ]
+  },
+  "us10y": {
+   "h": "CPI 偏熱推升殖利率後回落，收小跌 2bp",
+   "b": "Quartz 報導 9 月 CPI 高於預期，10 年期殖利率盤中一度升至約 5.26%–5.30%；Globe and Mail 指殖利率先跳升後回落，反映 Fed 預期仍有耐心。財政部收盤 10 年期 5.19%，小跌 2 個基點。",
+   "s": [
+    "Quartz",
+    "The Globe and Mail",
+    "24/7 Wall St."
+   ]
+  },
+  "us2y": {
+   "h": "升息押注升溫，2 年期殖利率升 3bp",
+   "b": "MarketWatch 指高通膨與殖利率上升讓 Fed 陷入升息兩難；CPI 偏熱後 10 月升息機率升到約五成，對政策最敏感的 2 年期殖利率上升約 3 個基點至 4.82%。",
+   "s": [
+    "MarketWatch",
+    "T. Rowe Price",
+    "漲跌榜郵件"
+   ]
+  },
+  "spread": {
+   "h": "短債升、長債降，利差收窄 5bp",
+   "b": "CPI 偏熱推升升息預期，2 年期升 3bp，10 年期則在盤中跳升後回落 2bp，10 年－2 年利差收窄約 5 個基點至 37bp，曲線趨平。",
+   "s": [
+    "MarketWatch",
+    "The Globe and Mail"
+   ]
+  },
+  "_summary": {
+   "h": "9 月 CPI 偏熱加上 CoreWeave 債務恐慌，AI 硬體鏈重挫",
+   "b": "9 月 CPI 年增 3.7%、高於預期，10 月升息機率升到約五成；CoreWeave 債券殖利率逼近 15%、股價 −15.46%，AI 基建的融資能力被質疑。費半 −4.30%、Nasdaq 100 −2.02%、標普 −1.11%，道瓊只跌 0.09%，因醫療與必需消費承接。Barclays 降評戴爾（−11.27%），甲骨文 −8.83%、邁威爾 −8.73%、光通訊跌近一成。權值股僅蘋果收紅。2 年期殖利率升 3bp、10 年期盤中跳升後回落，曲線趨平。",
+   "s": [
+    "四封漲跌榜郵件",
+    "CNBC",
+    "Reuters"
+   ]
+  }
+ },
+ "2026-10-15": {
+  "NVDA": {
+   "h": "AI 融資疑慮與通膨偏熱，輝達領跌晶片股",
+   "b": "CNBC 報導全球科技股因 AI 融資疑慮重挫，輝達、AMD、戴爾領跌；Yahoo Finance 指偏熱的通膨數據加深晶片賣壓。輝達收跌 1.84%，前一日已跌 3.16%，CoreWeave 債務恐慌是主要背景。",
+   "s": [
+    "CNBC",
+    "Barron's",
+    "Yahoo Finance"
+   ]
+  },
+  "TSM": {
+   "h": "連六季創獲利紀錄卻下跌，展望 2027 偏保守",
+   "b": "CNBC 報導台積電第三季獲利連續第六季創新高、優於預期，並稱 AI 需求「極為強勁」，但 ADR 仍跌 1.80%。Finbold、Barron's 分析賣壓來自 2026 年資本支出未再上調與 AI 晶片疑慮，與馬斯克洽談合作或可抵銷部分疑慮。",
+   "s": [
+    "CNBC",
+    "Barron's",
+    "Finbold"
+   ]
+  },
+  "MSFT": {
+   "h": "財報前多家券商上調目標價，TD Cowen 喊到 625 美元",
+   "b": "TD Cowen 把微軟目標價上調至 625 美元，預期 Azure 將優於預期，多家券商跟進上調；Barron's 指華爾街即使在 AI 交易受壓時仍對微軟放心。殖利率回落、軟體股反彈，微軟漲 1.08%。",
+   "s": [
+    "Yahoo Finance",
+    "Barron's"
+   ]
+  },
+  "AAPL": {
+   "h": "市值首度收在 5 兆美元之上，但摩根大通調整目標價",
+   "b": "Quartz 報導蘋果市值首度以 5 兆美元以上收盤，盤前另有中國核准 AI 功能的報導；但 TheStreet 指摩根大通在 iPhone 銷售疑慮中調整目標價，股價收小跌 0.28%。",
+   "s": [
+    "Quartz",
+    "TheStreet",
+    "TradingView"
+   ]
+  },
+  "GOOGL": {
+   "h": "摩根大通看好 22% 上漲空間，稱 Google 能抵抗 AI 疑慮",
+   "b": "Barron's 報導摩根大通認為 Alphabet 還有約 22% 上漲空間，Google 能在 AI 疑慮中站穩；股價小漲 0.45%。市場仍在問 Alphabet 能否負擔龐大的 AI 支出。",
+   "s": [
+    "Barron's",
+    "Yahoo Finance"
+   ]
+  },
+  "AMZN": {
+   "h": "Anthropic 營收報導加重 AI 疑慮，亞馬遜持平",
+   "b": "IBD 指 Anthropic 營收相關報導加重 AI 股的疑慮，亞馬遜身為 Anthropic 主要投資方，股價僅小漲 0.27%；同日另有裁員消息。軟體股反彈，但雲端資本支出方沒有明顯受惠。",
+   "s": [
+    "Investor's Business Daily",
+    "Barchart"
+   ]
+  },
+  "META": {
+   "h": "財報前觀望，收平",
+   "b": "Meta 收小跌 0.11%，當天沒有具名公司事件。Yahoo Finance 指 10/13 有約 2.1 億美元 ETF 淨買入，也有分析認為估值折價與 AI 算力潛力提供進場點；市場在 10/21 財報前觀望。",
+   "s": [
+    "Yahoo Finance"
+   ]
+  },
+  "TSLA": {
+   "h": "傳特斯拉與 SpaceX 合併可能數週內宣布",
+   "b": "Barron's 與 IBD 引述分析師指特斯拉與 SpaceX 的合併可能在數週內宣布；歐洲 9 月電動車銷量創新高。但財報前股價仍跌 1.29%，Yahoo Finance 認為交車數優於預期不足以支撐買進。",
+   "s": [
+    "Barron's",
+    "Investor's Business Daily",
+    "Yahoo Finance"
+   ]
+  },
+  "AVGO": {
+   "h": "陳福陽稱許多 AI 投資人「在賭場裡」",
+   "b": "Fortune 報導博通執行長陳福陽表示，許多 AI 投資人像身處賭場；Baird 也稱華爾街已厭倦輝達、AMD、博通為 AI 客戶出資。在 AI 融資疑慮下，博通小跌 0.55%。",
+   "s": [
+    "Fortune",
+    "Yahoo Finance"
+   ]
+  },
+  "AMD": {
+   "h": "Anthropic 報導加重 AI 疑慮，AMD 續跌",
+   "b": "Barron's 指 Anthropic 相關報導加重 AI 疑慮，AMD 與晟碟同步下跌，AI 交易出現裂痕；AMD 收跌 1.50%，前一日已大跌 5.73%。",
+   "s": [
+    "Barron's",
+    "CNBC"
+   ]
+  },
+  "ORCL": {
+   "h": "前一日重挫 9% 後反彈，但信用違約保險創新高",
+   "b": "甲骨文前一日因通膨偏熱與 CoreWeave 債務疑慮重挫約 9%，今天反彈 3.00%。但 Yahoo Finance 指其違約保險（CDS）價格創新高，Barron's 也問下一步是否會遭降評，AI 債務疑慮仍在擴散。",
+   "s": [
+    "TIKR",
+    "Yahoo Finance",
+    "Barron's"
+   ]
+  },
+  "INTC": {
+   "h": "台積電總裁暗示可承接英特爾的先進封裝需求",
+   "b": "Stocktwits 報導台積電總裁暗示，若英特爾無法滿足客戶的先進封裝需求，台積電可以接手；Yahoo Finance 指 CoreWeave、英特爾、美光等科技股重挫。英特爾收跌 2.80%，連兩日下跌。",
+   "s": [
+    "Stocktwits",
+    "Yahoo Finance"
+   ]
+  },
+  "SMCI": {
+   "h": "宣布新任財務長，股價續弱",
+   "b": "美超微宣布 Mark Long 出任財務長，Benzinga、Investing.com 討論股價為何週四下跌；在 Dell、HPE 遭降評後的 AI 伺服器賣壓中，美超微收跌 1.93%。",
+   "s": [
+    "Yahoo Finance",
+    "Benzinga",
+    "Investing.com"
+   ]
+  },
+  "DELL": {
+   "h": "Barclays 降評後連兩日重挫",
+   "b": "CNBC 報導 Barclays 擔心「企業 AI 時程」，把戴爾降至持有，戴爾前一日暴跌約 11%、帶頭資料中心股下跌；今天再跌 6.80%。Forbes 指 Michael Dell 單日身價蒸發 160 億美元。",
+   "s": [
+    "CNBC",
+    "Forbes",
+    "Barron's"
+   ]
+  },
+  "HPQ": {
+   "h": "隨軟體與防禦買盤上漲",
+   "b": "惠普收漲 1.28%，表現優於同業；今年以來已漲約 37%。當天沒有公司事件，硬體股中 PC 業者沒有被 AI 伺服器賣壓牽連。",
+   "s": [
+    "MarketWatch",
+    "Yahoo Finance"
+   ]
+  },
+  "QCOM": {
+   "h": "對 Arm 訴訟有利判決與續簽蘋果授權，漲 3.4%",
+   "b": "Simply Wall Street 指法院在 Arm 案作出對高通有利的判決，加上亞馬遜 AI 布局，股價可能被低估約 11%；德國媒體報導高通與蘋果續簽授權。高通收漲 3.35%。",
+   "s": [
+    "Simply Wall Street",
+    "ad-hoc-news",
+    "TradingKey"
+   ]
+  },
+  "SWKS": {
+   "h": "完成合併 Qorvo，手機射頻股反彈",
+   "b": "思佳訊完成與 Qorvo 的合併，股價漲 2.87%；Yahoo Finance 另報導蘋果下修 iPhone 18 訂單，供應鏈受影響，但手機晶片股在 AI 硬體被賣時反而獲得回補。",
+   "s": [
+    "Stock Titan",
+    "Yahoo Finance",
+    "MarketWatch"
+   ]
+  },
+  "MU": {
+   "h": "記憶體跌勢延續後小幅反彈",
+   "b": "Barron's、Benzinga 指記憶體晶片疲弱、美光盤中續跌；Motley Fool 則指 ASML 財報對美光是好消息。美光最終收漲 1.87%，前一日記憶體股重挫。路透技術分析認為股價仍可能再跌。",
+   "s": [
+    "Barron's",
+    "Benzinga",
+    "The Motley Fool"
+   ]
+  },
+  "STX": {
+   "h": "東芝擴產疑慮延續，跌 3.2%",
+   "b": "希捷連三日下跌，收跌 3.19%。Seeking Alpha 討論東芝擴產引發的賣壓對威騰與希捷影響有限；硬碟綁資料中心儲存支出，隨 AI 硬體一起被賣。",
+   "s": [
+    "Seeking Alpha",
+    "TradingKey"
+   ]
+  },
+  "ON": {
+   "h": "StoneX 首評買進，小漲",
+   "b": "StoneX 以晶片循環走強為由首評安森美「買進」，股價小漲 0.46%。Bloomberg 指晶片股可能蒸發 1 兆美元市值，但車用與工業類比離 AI 融資疑慮較遠，相對抗跌。",
+   "s": [
+    "Investing.com",
+    "Bloomberg"
+   ]
+  },
+  "MRVL": {
+   "h": "AI 拋售後續弱，多方喊逢低承接",
+   "b": "邁威爾前一日重挫 8.73%，今天再跌 1.65%。Seeking Alpha、Trefis 討論是否逢低買進；當天沒有公司事件，屬 AI 互連鏈賣壓的延續。",
+   "s": [
+    "Seeking Alpha",
+    "Trefis"
+   ]
+  },
+  "COHR": {
+   "h": "資金轉向防禦，光通訊續跌",
+   "b": "24/7 Wall St. 指資金轉進防禦類股，光通訊股延續跌勢，Applied Optoelectronics 跌 6%、高意跌 4.83%；公司同日公布第一季財報日期。",
+   "s": [
+    "24/7 Wall St.",
+    "GuruFocus"
+   ]
+  },
+  "LITE": {
+   "h": "光通訊賣壓延續，跌 3%",
+   "b": "Lumentum 收跌 2.99%，MarketBeat 指盤中一度大跌約 9%；資金從光通訊轉向防禦類股，與高意同步走弱。沒有公司事件。",
+   "s": [
+    "MarketBeat",
+    "24/7 Wall St."
+   ]
+  },
+  "brent": {
+   "h": "伊朗在荷莫茲海峽升級攻擊，但美國考慮放寬影子船隊制裁",
+   "b": "CNBC 報導伊朗加強在荷莫茲海峽的攻擊，路透則指美國考慮放寬對全球「影子船隊」的制裁，兩股力量拉鋸，布蘭特收平（−0.13%）於 105.92 美元。",
+   "s": [
+    "CNBC",
+    "Reuters",
+    "WSJ"
+   ]
+  },
+  "wti": {
+   "h": "西德州原油漲 3% 至 97.97 美元，創 9 月中以來新高",
+   "b": "investingLive 報導原油期貨收在 97.97 美元，為 9 月中以來新高；路透指沙烏地遇襲與伊朗攻擊油輪的新戰術推升油價，兩大基準油價走勢分歧。",
+   "s": [
+    "investingLive",
+    "Reuters",
+    "Rigzone"
+   ]
+  },
+  "dxy": {
+   "h": "殖利率大降、升息押注降溫，美元自 18 個月高點回落",
+   "b": "路透外匯報導美債殖利率下滑、Fed 升息押注降溫，美元自 18 個月高點回落；TMGM 指美元吐回 CPI 公布後的漲幅，美元指數跌 0.54% 至 102.0。",
+   "s": [
+    "Devdiscourse（Reuters）",
+    "TMGM",
+    "FOREX.com"
+   ]
+  },
+  "us10y": {
+   "h": "科技股重挫引發避險，10 年期殖利率降 9bp",
+   "b": "CNBC 報導投資人在科技股重挫中湧入公債避險，10 年期殖利率下降約 9 個基點至 5.10%、創三週新低；PPI 雖偏熱，殖利率仍大跌。BNY 執行長稱目前殖利率水準並非史無前例。",
+   "s": [
+    "CNBC",
+    "TradingView",
+    "Reuters"
+   ]
+  },
+  "us2y": {
+   "h": "殖利率「為錯的理由」大跌，2 年期降 5bp",
+   "b": "IBD 指公債殖利率因 neocloud 債券崩跌而下降，是「錯誤的理由」；Nikkei 指投資人押注 Fed 暫停升息。2 年期殖利率下降約 5 個基點至 4.77%。",
+   "s": [
+    "Investor's Business Daily",
+    "Nikkei Asia"
+   ]
+  },
+  "spread": {
+   "h": "長債降幅大於短債，利差收窄 4bp",
+   "b": "避險買盤集中在長天期公債，10 年期降 9bp、2 年期降 5bp，10 年－2 年利差收窄約 4 個基點至 33bp，曲線趨平。",
+   "s": [
+    "CNBC",
+    "Investor's Business Daily"
+   ]
+  },
+  "_summary": {
+   "h": "殖利率大降 9bp，軟體與消費反彈，AI 硬體續弱",
+   "b": "PPI 年增 6.3% 仍偏熱，但資金逃出 AI 股、湧入公債，10 年期殖利率大降約 9bp 至 5.10%，美元自 18 個月高點回落。被賣最重的軟體、房屋鏈與跌深消費先反彈，道瓊 +1.08%、標普 +0.33%，Nasdaq 100 −0.05%、費半 −0.88%，AI 網通、伺服器與設備續跌（戴爾 −6.80%）。台積電公布連六季創紀錄獲利，但對 2027 年保守，ADR 跌 1.80%。權值股中高通 +3.35%、甲骨文 +3.00% 反彈。",
+   "s": [
+    "四封漲跌榜郵件",
+    "CNBC",
+    "Yahoo Finance"
+   ]
+  }
+ },
+ "2026-10-16": {
+  "NVDA": {
+   "h": "OpenAI 營收不如預期的餘波，輝達領跌晶片股但跌幅相對小",
+   "b": "Yahoo Finance 指輝達帶頭讓晶片股下跌，AI 交易退燒；Motley Fool 指 OpenAI 年化營收比預期少約 180 億美元後，輝達市值已蒸發約 2,000 億美元。輝達收跌 1.43%，跌幅遠小於費半的 3.83%，Barron's 認為它能抗住晶片股的跌勢。",
+   "s": [
+    "Yahoo Finance",
+    "The Motley Fool",
+    "Barron's"
+   ]
+  },
+  "TSM": {
+   "h": "連六季創獲利紀錄，但對 2027 展望謹慎，ADR 下跌",
+   "b": "路透報導台積電第三季獲利連續第六季創新高，但管理層對 2027 年態度「審慎」，資本支出也沒有再加碼；在 AI 融資疑慮的拋售日，ADR 跌 2.28%。Yahoo Finance 以「創紀錄卻下跌」為題分析。",
+   "s": [
+    "Reuters",
+    "Yahoo Finance",
+    "Investor's Business Daily"
+   ]
+  },
+  "MSFT": {
+   "h": "AI 基建融資疑慮拖累，點數拖累道瓊最多",
+   "b": "微軟跌 1.93%，因股價高約 529 美元，是道瓊點數拖累最大的一檔（約 −62 點）。StoneX 雖因 AI 進展把目標價上調至 600 美元，仍擋不住科技股賣壓；跌幅小於 Nasdaq 100 的 2.50%。",
+   "s": [
+    "Investing.com",
+    "漲跌榜郵件"
+   ]
+  },
+  "AAPL": {
+   "h": "iPhone Duo 預購數分鐘售罄，股價創新高",
+   "b": "Benzinga、Barron's 報導 iPhone Duo 預購開跑數分鐘即售罄，蘋果股價創歷史新高，在科技重挫日逆勢上漲 0.43%。Dan Ives 另指蘋果與 Meta 的 AI 合作可帶來每股約 75 美元價值。",
+   "s": [
+    "Benzinga",
+    "Barron's",
+    "TradingView"
+   ]
+  },
+  "GOOGL": {
+   "h": "AI 融資疑慮拖累，傳兩名 AI 專家轉投 Anthropic",
+   "b": "Alphabet 跌 2.47%，與 Nasdaq 100 的 −2.50% 幾乎一致，主因是科技整體賣壓。Stocktwits 報導 Google 再有兩名 AI 專家轉往 Anthropic；股價 340 美元，拖累道瓊約 51 點。",
+   "s": [
+    "Stocktwits",
+    "漲跌榜郵件"
+   ]
+  },
+  "AMZN": {
+   "h": "科技股賣壓下走跌，ARK 減持亞馬遜",
+   "b": "亞馬遜跌 1.87%。Investing.com 報導 Cathie Wood 的 ARK 賣出亞馬遜、加碼 CoreWeave；公司同日發表兩款 AI 硬體裝置，並有新一輪裁員消息。10/29 財報前，股價距高點約 11%。",
+   "s": [
+    "Investing.com",
+    "TIKR",
+    "Barchart"
+   ]
+  },
+  "META": {
+   "h": "財報前大跌 3.7%，市場質疑 Muse 與 AI 支出",
+   "b": "Meta 跌 3.72%，是權值股中跌幅較大的一檔。Yahoo Finance 討論 Muse Wonder 上市是否改變多頭論點，選擇權市場預期財報後大幅波動；在 AI 融資疑慮下，花錢最多的平台股被賣得較重。",
+   "s": [
+    "Yahoo Finance",
+    "Investopedia",
+    "TradingKey"
+   ]
+  },
+  "TSLA": {
+   "h": "馬斯克發表會飛的 Roadster，股價先漲後跌",
+   "b": "馬斯克發表「會飛」的 Roadster 跑車，股價盤中一度上漲；但 IBD 指漲勢「沒有持續太久」，最終收跌 2.13%，與科技股一起走弱。Business Insider 指 Roadster 對營收貢獻很小。",
+   "s": [
+    "Forbes",
+    "Investor's Business Daily",
+    "Business Insider"
+   ]
+  },
+  "AVGO": {
+   "h": "執行長陳福陽的資本警告壓在 AI 晶片上，跌 4.5%",
+   "b": "Yahoo Finance 報導博通執行長陳福陽先前警告資金供給已成 AI 的主要限制，這番話在 AI 融資疑慮日被放大，博通跌 4.52%，邁威爾跌約 4%。股價自高點已跌約 28%。",
+   "s": [
+    "Yahoo Finance",
+    "Seeking Alpha"
+   ]
+  },
+  "AMD": {
+   "h": "高通訴訟判決加重晶片拋售，跌近 6%",
+   "b": "24/7 Wall St. 報導 Arm 與 AMD 跌約 5%，高通對 Arm 的訴訟判決加重晶片股賣壓；AMD 收跌 5.95%，自 10/6 高點已回落約 18.6%。市場先賣 AI 第二梯隊，輝達只跌 1.43%。",
+   "s": [
+    "24/7 Wall St.",
+    "漲跌榜郵件"
+   ]
+  },
+  "ORCL": {
+   "h": "AI 基建與融資疑慮壓抑，跌 4.6%",
+   "b": "Quiver Quantitative 指甲骨文因 AI 基礎設施與融資疑慮下跌 4.64%；它靠舉債擴建 AI 資料中心，在 CoreWeave 債券殖利率衝高的一週，被視為最敏感的大型雲端業者之一。",
+   "s": [
+    "Quiver Quantitative",
+    "Forbes"
+   ]
+  },
+  "INTC": {
+   "h": "台積電封裝言論挑戰其擴張，跌近 6%",
+   "b": "Yahoo Finance 報導台積電對先進封裝的說法挑戰英特爾的擴張計畫，英特爾一度跌 3.9%，收盤跌 5.79%；以色列廠區前一日發生爆炸也增添不確定性，資金同時撤出 AI 晶片股。",
+   "s": [
+    "Yahoo Finance",
+    "漲跌榜郵件"
+   ]
+  },
+  "SMCI": {
+   "h": "財務長更替加上持續下跌，重挫近 10%",
+   "b": "Seeking Alpha、GuruFocus 報導美超微宣布更換財務長，股價重挫 9.86%、延續跌勢；Yahoo Finance 指公司過去自由現金流已燒掉近 70 億美元。AI 融資疑慮下，伺服器組裝商跌幅居前。",
+   "s": [
+    "Seeking Alpha",
+    "GuruFocus",
+    "Yahoo Finance"
+   ]
+  },
+  "DELL": {
+   "h": "Barclays 降評後一週跌約 20%",
+   "b": "Finbold 指戴爾本週已跌約 20%，起因是 Barclays 降評、認為企業 AI 需求看不到轉折；今天再跌 4.58%。TheStreet 指它在大漲 271% 後回檔。",
+   "s": [
+    "Finbold",
+    "TheStreet",
+    "MarketBeat"
+   ]
+  },
+  "HPQ": {
+   "h": "隨科技硬體走弱，跌 2.7%",
+   "b": "惠普跌 2.72%，同日 HPE 本週已大跌約 20%，硬體股整體被賣。惠普本身沒有公司事件，跌幅小於 AI 伺服器同業。",
+   "s": [
+    "The Motley Fool",
+    "MarketWatch"
+   ]
+  },
+  "QCOM": {
+   "h": "與 Arm 的訴訟判決後股價回落",
+   "b": "高通對 Arm 的授權訴訟出現判決，Arm、AMD 應聲大跌；高通收跌 3.53%，隨晶片股一起走弱。高層 Ann Chaplin 申報小額賣股，屬例行。",
+   "s": [
+    "24/7 Wall St.",
+    "Timothy Sykes",
+    "MarketBeat"
+   ]
+  },
+  "SWKS": {
+   "h": "完成與 Qorvo 合併，逆勢收紅",
+   "b": "思佳訊宣布完成與 Qorvo 的合併，Qorvo 股票自 Nasdaq 下市；股價逆勢漲 0.76%，是費半 29 檔中唯一收紅的成分股，營收以手機射頻為主，未被 AI 融資疑慮波及。",
+   "s": [
+    "Stock Titan",
+    "ad-hoc-news",
+    "Investing.com"
+   ]
+  },
+  "MU": {
+   "h": "中國長鑫 DRAM 突破動搖報價優勢，跌 5.6%",
+   "b": "Timothy Sykes 報導中國長鑫存儲（CXMT）DRAM 技術突破讓交易員不安，美光跌 5.63%；Barron's 指雖有「逢低買進」聲音，但沒人理會。股價自高點已回落約 23%。",
+   "s": [
+    "Timothy Sykes",
+    "Barron's",
+    "The Motley Fool"
+   ]
+  },
+  "STX": {
+   "h": "東芝擴產疑慮與目標價下調，重挫 7.5%",
+   "b": "Barron's 指希捷、威騰因東芝擴產的供給疑慮跌過頭；Yahoo Finance 報導希捷遭下調目標價，現金創造能力受檢視，股價收跌 7.50%。Benzinga 提到 AI 需求帶動擴產，帶來供給風險。",
+   "s": [
+    "Barron's",
+    "Yahoo Finance",
+    "Benzinga"
+   ]
+  },
+  "ON": {
+   "h": "晶片股拋售中跌 2.3%，陽光電源採用其碳化矽模組",
+   "b": "安森美隨晶片股下跌 2.28%，跌幅小於 AI 晶片。Simply Wall Street 報導陽光電源（Sungrow）選用其 EliteSiC 模組；類比與車用晶片離 AI 融資鏈較遠，屬相對抗跌。",
+   "s": [
+    "Simply Wall Street",
+    "MarketWatch"
+   ]
+  },
+  "MRVL": {
+   "h": "博通執行長資本警告波及，跌 5.6%",
+   "b": "24/7 Wall St. 指博通執行長的資本警告籠罩 AI 晶片，邁威爾同步大跌，收盤跌 5.56%；另有內部人申報出售約 86.6 萬美元持股。客製 ASIC 客戶集中於雲端業者，融資疑慮下首當其衝。",
+   "s": [
+    "24/7 Wall St.",
+    "Yahoo Finance"
+   ]
+  },
+  "COHR": {
+   "h": "AI 融資疑慮擴散到光通訊，跌 7%",
+   "b": "CoreWeave 單日重挫、債券殖利率逾 16%，市場懷疑雲端業者能否繼續舉債採購，光通訊收發模組首當其衝，高意跌 7.06%，連三日累計約 −19.7%。IBD 指晶片股連跌、正在「反映崩盤」。",
+   "s": [
+    "Investor's Business Daily",
+    "Quartz",
+    "漲跌榜郵件"
+   ]
+  },
+  "LITE": {
+   "h": "光通訊跟跌 5.2%，BNP Paribas 仍上調目標價",
+   "b": "Lumentum 跌 5.22%，隨光通訊鏈一起被賣；BNP Paribas 把目標價上調至 1,425 美元，未能扭轉賣壓。市場關注點在 AI 客戶的融資能力，而非公司需求本身。",
+   "s": [
+    "MarketBeat",
+    "ad-hoc-news"
+   ]
+  },
+  "brent": {
+   "h": "伊朗升高荷莫茲攻擊、烏克蘭揚言打擊煉油廠，布蘭特觸及 110 美元",
+   "b": "CNBC 報導伊朗升級對荷莫茲海峽商船的攻擊，烏克蘭也揚言打擊俄羅斯煉油廠，布蘭特觸及 110 美元、創 5 月以來新高，收漲 3.72% 至 109.86 美元。NBC 指油價飆升與科技股重挫，一天蒸發 1 兆美元市值。",
+   "s": [
+    "CNBC",
+    "NBC News",
+    "The Hill"
+   ]
+  },
+  "wti": {
+   "h": "中東與俄國供應疑慮，西德州原油漲 3.5%",
+   "b": "路透報導中東與俄羅斯供應疑慮推升油價，西德州原油收漲 3.51% 至 101.41 美元，重回 100 美元之上。Rigzone 指兩大基準油價走勢分歧，供應風險持續累積。",
+   "s": [
+    "Reuters",
+    "Rigzone"
+   ]
+  },
+  "dxy": {
+   "h": "Fed 理事 Warsh 不願重燃 10 月升息預期，美元走弱",
+   "b": "Action Forex 報導 Fed 的 Warsh 表態不支持 10 月再升息，美元延續跌勢，美元指數跌 0.16% 至 101.84，結束連續四週上漲。美債殖利率回落也同步壓低美元。",
+   "s": [
+    "Action Forex",
+    "TMGM",
+    "Investing.com"
+   ]
+  },
+  "us10y": {
+   "h": "避險買盤進場，10 年期殖利率創逾一年最大週跌幅",
+   "b": "Economic Times 指 10 年期殖利率本週跌幅為一年多來最大，Nikkei Asia 指投資人在股市重挫下尋求避險並押注 Fed 暫停升息。當天 10 年期小跌約 1 個基點至 5.09%。",
+   "s": [
+    "The Economic Times",
+    "Nikkei Asia",
+    "CNBC"
+   ]
+  },
+  "us2y": {
+   "h": "押注 Fed 暫停升息，2 年期殖利率降 3bp",
+   "b": "Nikkei Asia 報導投資人尋求避險、押注 Fed 暫停升息，對政策最敏感的 2 年期殖利率下降約 3 個基點至 4.74%，降幅大於 10 年期。",
+   "s": [
+    "Nikkei Asia",
+    "CNBC"
+   ]
+  },
+  "spread": {
+   "h": "短債降幅較大，利差擴大 2bp",
+   "b": "2 年期降 3bp、10 年期只降 1bp，10 年－2 年利差擴大約 2 個基點至 35bp。市場押注 Fed 暫停升息，短天期殖利率下降較多，曲線略為變陡。",
+   "s": [
+    "Nikkei Asia",
+    "CNBC"
+   ]
+  },
+  "_summary": {
+   "h": "油價觸及 110 美元、AI 融資疑慮擴大，科技一天蒸發 1 兆美元",
+   "b": "伊朗升級荷莫茲攻擊，布蘭特觸及 110 美元、收漲 3.72%；CoreWeave 單日 −11.91%、債券殖利率逾 16%，AI 融資疑慮從 neocloud 擴散到伺服器、軟體與資安。費半 −3.83%、連跌八日，Nasdaq 100 −2.50%、標普 −1.09%，道瓊只跌 0.34%，能源、國防與必需消費撐住。權值股中美超微 −9.86%、希捷 −7.50%、高意 −7.06%、超微 −5.95% 重挫，蘋果因 iPhone Duo 預購熱賣逆勢創新高。殖利率因避險小降。",
+   "s": [
+    "四封漲跌榜郵件",
+    "NBC News",
+    "CNBC"
+   ]
+  }
+ },
+ "2026-10-19": {
+  "NVDA": {
+   "h": "上週重挫後 AI 鏈回補，摩根士丹利力挺 AI 建置",
+   "b": "費半上週五重挫 3.83% 後，週一回補 1.61%，輝達跟著漲 1.38%，只補回上週五跌幅。Fortune 報導摩根士丹利看好 1.6 兆美元 AI 建置、最愛的 AI 股高度受惠；當天沒有輝達公司事件，屬跌深反彈。",
+   "s": [
+    "Fortune",
+    "漲跌榜郵件"
+   ]
+  },
+  "TSM": {
+   "h": "創紀錄財報後的回補，AI 恐慌賣壓緩解",
+   "b": "TIKR 指台積電上週在稱 AI 需求「極為強勁」後四天仍遭 AI 疑慮拋售；本週一 AI 鏈反彈，ADR 漲 1.84%。第三季獲利年增 69% 的財報持續被分析師引用，今天是賣壓後的修復，沒有新事件。",
+   "s": [
+    "TIKR",
+    "Yahoo Finance"
+   ]
+  },
+  "MSFT": {
+   "h": "UBS 調整目標價，分析師上修 AI 營收預期",
+   "b": "UBS 重設微軟目標價，Yahoo Finance 報導分析師因 AI 營收展望上修合理價，股價漲 0.84%。10/28 財報前，市場聚焦 Azure 成長與成本控制；屬科技股回補日的溫和上漲。",
+   "s": [
+    "Yahoo Finance"
+   ]
+  },
+  "AAPL": {
+   "h": "iPhone Duo 預購熱賣，但有分析師示警回檔風險",
+   "b": "CNBC、IBD 報導 iPhone Duo 預購強勁、上市數分鐘售罄，支撐股價在歷史高檔；Barron's 則引述分析師示警可能下跌 27%。多空拉鋸下蘋果小跌 0.15%，沒跟上科技股反彈。",
+   "s": [
+    "CNBC",
+    "Investor's Business Daily",
+    "Barron's"
+   ]
+  },
+  "GOOGL": {
+   "h": "德意志銀行看好第三季搜尋營收，跟隨 AI 反彈",
+   "b": "德意志銀行預期 Alphabet 第三季搜尋營收成長強勁，股價漲 1.05%，但上週五跌 2.47%，今天只補回不到一半。同為雲端三巨頭的亞馬遜因評等事件大漲，Alphabet 屬跟漲。",
+   "s": [
+    "Yahoo Finance",
+    "漲跌榜郵件"
+   ]
+  },
+  "AMZN": {
+   "h": "摩根士丹利列為首選股並上調目標價至 350 美元",
+   "b": "摩根士丹利把亞馬遜列為首選股，提出五大催化劑、目標價自 335 上調至 350 美元，依據是 AWS 營收年增 37%；股價大漲 4.98%，同時登上 SPX、NDX、INDU 三張漲幅榜。3M 擴大與亞馬遜的資料中心合作也同日見報。",
+   "s": [
+    "Yahoo Finance",
+    "Reuters",
+    "漲跌榜郵件"
+   ]
+  },
+  "META": {
+   "h": "財報前續跌，摩根士丹利上調目標價但點名 Muse 用戶成長",
+   "b": "IBD 指 Meta 在財報大考前延續跌勢，股價跌 0.55%。摩根士丹利雖上調目標價，但點出新產品 Muse 的日活躍用戶成長仍待觀察；在科技股普遍反彈日，Meta 是少數收黑的大型平台。",
+   "s": [
+    "Investor's Business Daily",
+    "TradingView"
+   ]
+  },
+  "TSLA": {
+   "h": "財報前卡位，SpaceX 合併議題升溫",
+   "b": "特斯拉本週公布第三季財報，買盤先進場，股價漲 3.76%。RBC 估算若 SpaceX 併購特斯拉，每股可達 480 美元，路透也指財報將檢驗馬斯克的 AI 支出；合併傳聞推升市場關注，但仍屬臆測。",
+   "s": [
+    "Yahoo Finance",
+    "Reuters",
+    "Investopedia"
+   ]
+  },
+  "AVGO": {
+   "h": "分析師喊出 50% 上漲空間，跟隨 AI 晶片反彈",
+   "b": "Yahoo Finance 報導分析師認為盤整一年的博通仍有約 50% 上漲空間，同日邁威爾因「Google 晶片延後不影響地位」大漲，客製晶片族群同步回升，博通漲 1.78%。沒有公司公告。",
+   "s": [
+    "Yahoo Finance"
+   ]
+  },
+  "AMD": {
+   "h": "晶片股反彈帶動，11/3 財報前回補",
+   "b": "Motley Fool、StockStory 都把超微週一上漲歸因於晶片股整體反彈，股價漲 1.76%。今年已漲逾 140%，11/3 財報前市場仍看好 AI 加速器；當天沒有公司事件。",
+   "s": [
+    "The Motley Fool",
+    "StockStory"
+   ]
+  },
+  "ORCL": {
+   "h": "股市回補但信用市場仍緊張，甲骨文成關鍵指標",
+   "b": "CNBC 指出股市投資人準備走出 AI 拋售，但信用市場仍未放心，所有目光集中在甲骨文能否守住；甲骨文股價自高點已跌約 54%，今天隨科技股小漲 1.06%。",
+   "s": [
+    "CNBC",
+    "Yahoo Finance"
+   ]
+  },
+  "INTC": {
+   "h": "摩根大通上調評等，股價大漲",
+   "b": "摩根大通以管理層執行力改善、「信心逐步建立」為由上調英特爾評等，Investopedia、Barron's 報導股價應聲大漲，收盤漲 2.43%。這是當天英特爾唯一的具名催化。",
+   "s": [
+    "Investopedia",
+    "Barron's",
+    "Yahoo Finance"
+   ]
+  },
+  "SMCI": {
+   "h": "新任財務長上任並發表 OCP AI 系統，AI 伺服器股回升",
+   "b": "美超微宣布 Mark Long 出任財務長，並發表 OCP AI 系統；24/7 Wall St. 指上週的 AI 伺服器拋售反轉，美超微盤中一度漲 4%，收盤漲 1.49%。",
+   "s": [
+    "Yahoo Finance",
+    "Barchart",
+    "24/7 Wall St."
+   ]
+  },
+  "DELL": {
+   "h": "Barclays 降評後小幅反彈",
+   "b": "上週 Barclays 把戴爾降至持有，股價單日大跌、Michael Dell 身價縮水約 200 億美元；本週一 AI 伺服器股反彈，戴爾小漲 0.83%，仍有分析師轉趨保守。",
+   "s": [
+    "Barchart",
+    "The Times of India",
+    "24/7 Wall St."
+   ]
+  },
+  "HPQ": {
+   "h": "目標價遭下調至 27.31 美元，隨大盤小漲",
+   "b": "德國媒體報導分析師把惠普平均目標價下修至 27.31 美元，低於股價約 9%；但當天科技硬體股普遍反彈，惠普仍小漲 0.77%，沒有公司事件。",
+   "s": [
+    "ad-hoc-news",
+    "The Globe and Mail"
+   ]
+  },
+  "QCOM": {
+   "h": "對 Arm 授權官司勝訴後續發酵，晶片股反彈",
+   "b": "Yahoo Finance 指法院認定高通未違反 Arm 授權後，Arm 的判決風險升高；高通則隨晶片股反彈漲 0.83%，上週已創 52 週新高。當天沒有新的公司公告。",
+   "s": [
+    "Yahoo Finance",
+    "Stocktwits"
+   ]
+  },
+  "SWKS": {
+   "h": "Starboard 看好合併 Qorvo 後的成長潛力",
+   "b": "激進投資人 Starboard 表示思佳訊完成收購 Qorvo 後具成長潛力、股價被低估，Seeking Alpha 與 GuruFocus 跟進報導；股價小漲 0.67%。",
+   "s": [
+    "Seeking Alpha",
+    "GuruFocus"
+   ]
+  },
+  "MU": {
+   "h": "中國記憶體對手預估營收大增，美光反彈",
+   "b": "Barron's 報導中國記憶體對手預告營收將大幅成長，被解讀為記憶體需求仍旺，美光在連跌後反彈 2.97%；同日威騰、晟碟漲幅更大，屬記憶體族群回補。",
+   "s": [
+    "Barron's",
+    "Yahoo Finance"
+   ]
+  },
+  "STX": {
+   "h": "上週重挫後的超跌反彈",
+   "b": "希捷上週五跌 7.50%，週一隨半導體設備與儲存股大漲 3.41%；StockStory 指 FormFactor、Teradyne、Entegris 與希捷同步飆升。沒有公司事件，屬族群回補。",
+   "s": [
+    "StockStory",
+    "Investing.com"
+   ]
+  },
+  "ON": {
+   "h": "半導體反彈，高層申報出售 125 萬美元持股",
+   "b": "安森美隨半導體反彈漲 1.53%，漲幅小於 AI 晶片；集團總裁 Sudhir Gopalswamy 申報出售約 125 萬美元持股。類比股對 AI 敘事曝險低，今天屬跟漲。",
+   "s": [
+    "Yahoo Finance",
+    "Investing.com"
+   ]
+  },
+  "MRVL": {
+   "h": "廣發證券稱 Google 晶片延後不影響其地位，大漲",
+   "b": "廣發證券指 Google 自研晶片延後不會動搖邁威爾的客製晶片地位，股價大漲約 6% 後收漲 4.06%，CNBC 列為午盤大幅變動股之一。它上週單日重挫 8.73%，今天也含跌深回補。",
+   "s": [
+    "Yahoo Finance",
+    "CNBC"
+   ]
+  },
+  "COHR": {
+   "h": "光通訊股財報前反彈不一，高意小跌",
+   "b": "24/7 Wall St. 指光通訊股財報前反彈，Applied Optoelectronics、Lumentum 走強，但高意收盤小跌 0.38%，連五次登上跌幅榜後仍未止跌；財報訂在 11/4，Argus 給出 406 美元目標價。",
+   "s": [
+    "24/7 Wall St.",
+    "ad-hoc-news"
+   ]
+  },
+  "LITE": {
+   "h": "隨光通訊財報前反彈，需求大於供給",
+   "b": "Barron's 指晟碟與 Lumentum 從 AI 拋售中反彈，Lumentum 漲 1.26%；公司先前表示需求超過產能，Yahoo Finance 討論其估值能否撐住。",
+   "s": [
+    "Barron's",
+    "Yahoo Finance"
+   ]
+  },
+  "brent": {
+   "h": "胡塞攻擊沙烏地設施推高油價，美國豁免部分俄國制裁後回落",
+   "b": "胡塞組織宣稱攻擊沙烏地機場與阿美石油設施，布蘭特一度站上 110 美元、創 5 月以來新高；之後美國豁免部分俄羅斯制裁，油價回落，收 109.55 美元、小跌 0.28%。",
+   "s": [
+    "CNBC",
+    "Reuters",
+    "WSJ"
+   ]
+  },
+  "wti": {
+   "h": "週末中東威脅推升油價，收漲 2.22%",
+   "b": "週末胡塞攻擊沙烏地設施的消息推升油價，西德州原油收漲 2.22% 至 103.66 美元；但美國豁免部分俄羅斯能源制裁，限制了漲幅。FXEmpire 指布蘭特從 110 美元回落。",
+   "s": [
+    "WSJ",
+    "FXEmpire"
+   ]
+  },
+  "dxy": {
+   "h": "AI 風險壓抑美元，油價反彈後回穩",
+   "b": "FXStreet 指美元指數開盤上漲後回吐，AI 相關風險持續拖累；法國抗議轉趨暴力讓歐元走弱，美元指數收小漲 0.14% 至 101.98。",
+   "s": [
+    "FXStreet",
+    "Devdiscourse（Reuters）"
+   ]
+  },
+  "us10y": {
+   "h": "市場評估通膨背景，10 年期殖利率升 6bp",
+   "b": "CNBC 報導投資人評估美國通膨背景，公債殖利率走高，10 年期升約 6 個基點至 5.15%；MarketWatch 指財政部的融資計畫也引發華爾街焦慮。",
+   "s": [
+    "CNBC",
+    "MarketWatch"
+   ]
+  },
+  "us2y": {
+   "h": "通膨疑慮推升殖利率，2 年期升 3bp",
+   "b": "與長債同步，2 年期殖利率上升約 3 個基點至 4.77%；市場持續討論 Fed 本月是否升息。高殖利率壓低金價跌破 4,150 美元。",
+   "s": [
+    "CNBC",
+    "Yahoo Finance",
+    "FXStreet"
+   ]
+  },
+  "spread": {
+   "h": "長債升幅大於短債，利差擴大 3bp",
+   "b": "10 年期升 6bp、2 年期升 3bp，10 年－2 年利差擴大約 3 個基點至 38bp。長天期殖利率受通膨與財政融資疑慮推升較多，曲線略為變陡。",
+   "s": [
+    "CNBC",
+    "MarketWatch"
+   ]
+  },
+  "_summary": {
+   "h": "上週超跌的 AI 鏈回補，防禦股回吐",
+   "b": "上週 Nasdaq 週跌約 4.5% 後，資金買回記憶體、軟體與客製晶片：Nasdaq 100 +1.17%、費半 +1.61%、標普 +0.41%，道瓊 −0.07%，因銀行、藥廠與景氣循環股走弱。摩根士丹利把亞馬遜列為首選股，亞馬遜 +4.98%；摩根大通升評英特爾（+2.43%），邁威爾 +4.06%。上週五上漲的公用事業與食品股回吐。10 年期殖利率升 6bp 至 5.15%，胡塞攻擊沙烏地讓布蘭特一度站上 110 美元後回落。",
+   "s": [
+    "四封漲跌榜郵件",
+    "Yahoo Finance",
+    "CNBC"
+   ]
+  }
+ }
+}

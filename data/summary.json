@@ -1,0 +1,14 @@
+{
+ "latest_date": "2026-10-20",
+ "latest_indices": [
+  "INDU",
+  "NDX",
+  "SOX",
+  "SPX"
+ ],
+ "missing_indices": [],
+ "days_in_page": 11,
+ "problems": [],
+ "out": "out\\us-movers.html",
+ "bytes": 799626
+}

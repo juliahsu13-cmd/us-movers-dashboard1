@@ -1,0 +1,5 @@
+# 工作中的暫存檔（候選新聞整理、檢查輸出、日誌）
+out/*
+!out/us-movers.html
+__pycache__/
+*.pyc
