@@ -1,5 +1,5 @@
 {
- "latest_date": "2026-10-20",
+ "latest_date": "2026-10-21",
  "latest_indices": [
   "INDU",
   "NDX",
@@ -7,8 +7,8 @@
   "SPX"
  ],
  "missing_indices": [],
- "days_in_page": 11,
+ "days_in_page": 12,
  "problems": [],
- "out": "out\\us-movers.html",
- "bytes": 799626
+ "out": "C:\\Claude 臨時讀取\\us_movers_dashboard\\out\\us-movers.html",
+ "bytes": 870296
 }

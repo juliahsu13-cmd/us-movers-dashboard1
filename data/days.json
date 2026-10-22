@@ -6493,5 +6493,597 @@
    ],
    "note": "資料來源：Sheet＋News（個股事件以 SEC 8-K 與公司財報為主，部分以單一媒體或搜尋摘要佐證，未能取得 A/B 級來源者已於歸因標註）｜Name_Map 新代號 5 筆（HAS、MSCI、GPC、GE、ETN），payload namemap_SPX_2026-10-20.json，read-back PASS｜異常：DaVita 幅度未解；MSCI 財報數字未取得。"
   }
+ },
+ "2026-10-21": {
+  "INDU": {
+   "subject": "INDU 漲跌榜｜2026-10-21 - Top1 IBM +3.94%",
+   "sent": "2026-10-21T23:39:58Z",
+   "close": 52856.09,
+   "pct": 0.69,
+   "breadth": [
+    17,
+    13
+   ],
+   "lead": [
+    "殖利率約 5.1%、WTI 約 99 美元的高壓下，道瓊靠兩檔高價股收漲 0.69%：Goldman Sachs 與 Caterpillar 合計約 207 點，占漲幅近六成。SpaceX 稱每月上線約 20 萬顆 Nvidia GB300，帶動 Nvidia +2.54%，但 Alphabet −1.62% 逆勢；景氣循環股領先，防禦消費在 Procter & Gamble 財報前回吐。",
+    "道瓊收 52,856.09，+0.69%（收盤對前一交易日收盤）；30 檔成分 17 檔上漲、13 檔下跌，平均漲幅 +0.47%。點數貢獻前三為 Goldman Sachs +118、Caterpillar +89、IBM +57，拖累前三為 Alphabet −33、Procter & Gamble −15、UnitedHealth −13，其中 UnitedHealth 只跌 0.54% 且不在榜上。漲榜均幅 +2.55%、跌榜均幅 −1.12%，與 SPX、NDX、SOX 榜無重疊檔。這是少數高價股撐盤的日子，不是 30 檔普遍上漲。"
+   ],
+   "sections": [
+    {
+     "side": "up",
+     "head": "景氣循環與 AI 算力股領漲，五檔漲幅榜均幅 +2.55%",
+     "rows": [
+      {
+       "t": "IBM",
+       "zh": "國際商業機器",
+       "en": "International Business Machines",
+       "biz": "混合雲軟體（Red Hat）、顧問與大型主機",
+       "pct": 3.94,
+       "why": "IBM 財報在收盤後才公布，這根 +3.94% 是財報前的卡位，不是財報反應。同日 Microsoft 僅 +0.20%、Salesforce −0.27%，IBM 明顯強於軟體同業；近 20 日已漲 8.03%，前一日也漲 2.34%，屬既有強勢延續（推測）。"
+      },
+      {
+       "t": "NVDA",
+       "zh": "輝達",
+       "en": "NVIDIA",
+       "biz": "AI GPU 加速器、網通與 CUDA 軟體生態",
+       "pct": 2.54,
+       "why": "SpaceX 在 10/20 財報電話會議稱，今年底前每月將上線約 20 萬顆 Nvidia GB300，Nvidia 因此在 10/21 盤前先漲、收 +2.54%。同日 AMD +3.36%、SOX 指數 +1.97% 同向，Nvidia 是這條 AI 算力鏈在道瓊的唯一代表。"
+      },
+      {
+       "t": "GS",
+       "zh": "高盛",
+       "en": "Goldman Sachs Group",
+       "biz": "投資銀行、交易與資產管理",
+       "pct": 2.25,
+       "why": "股價逾 900 美元，使 Goldman Sachs 漲 2.25% 就貢獻約 118 點，單檔占道瓊 360 點漲幅的三分之一。同日 JPMorgan −0.02%，銀行並未普漲；當日新催化未見具名事件，推測是 10 月中旬強勁 Q3（營收年增 23%）後的買盤延續。"
+      },
+      {
+       "t": "CAT",
+       "zh": "開拓重工",
+       "en": "Caterpillar",
+       "biz": "營建與礦業機械、發電機組與引擎",
+       "pct": 2.06,
+       "why": "Caterpillar 近 20 日仍跌 8.84%，10/29 才財報，今天 +2.06% 較像超跌回補，不是新訂單預期（推測）。股價約 740 美元使它貢獻約 89 點。同日 3M +1.97%、Honeywell +0.66%，工業股同向但較小。"
+      },
+      {
+       "t": "MMM",
+       "zh": "3M",
+       "en": "3M",
+       "biz": "工業材料、安全防護與消費品",
+       "pct": 1.97,
+       "why": "3M 10/20 公布 Q3 調整後 EPS 2.50 美元（預估 2.39）並上調全年獲利預期，當日大漲 5.78%，今天 +1.97% 是跳升後的延續。同日 Honeywell 僅 +0.66%，差異在 3M 自己的指引上修與 Amazon 資料中心合作。"
+      }
+     ]
+    },
+    {
+     "side": "down",
+     "head": "防禦消費與 Alphabet 領跌，五檔跌幅榜均幅 -1.12%",
+     "rows": [
+      {
+       "t": "GOOGL",
+       "zh": "字母控股（谷歌）",
+       "en": "Alphabet",
+       "biz": "Google 搜尋廣告、YouTube、Google Cloud 與 TPU",
+       "pct": -1.62,
+       "why": "KeyBanc 把 Alphabet 目標價自 435 降到 410 美元，理由是下修 Google Services 獲利、對 TPU 改用保守倍數（單一來源，待複核），10/28 財報在即。同日 Nvidia +2.54%，它逆勢，且因股價高拖累指數約 33 點，為全榜最大。"
+      },
+      {
+       "t": "PG",
+       "zh": "寶僑",
+       "en": "Procter & Gamble",
+       "biz": "日用消費品：洗衣、個人護理與紙品",
+       "pct": -1.56,
+       "why": "Procter & Gamble 10/22 盤前公布財報，市場預期核心 EPS 年減約 6%、毛利率受能源與原料成本壓縮，於是財報前先減碼。它近 20 日漲 6.41%，位階不低；同日 Coca-Cola −0.87%、Johnson & Johnson −0.61% 同向。"
+      },
+      {
+       "t": "NKE",
+       "zh": "耐吉",
+       "en": "NIKE",
+       "biz": "運動鞋與服飾",
+       "pct": -0.92,
+       "why": "Nike 近 20 日漲 4.11%、前一日又漲 1.80%，今天 −0.92% 較像小幅回吐（推測）。同日 Home Depot −0.31%、McDonald's −0.11%，可選消費整體小幅偏弱，Nike 只是其中跌得較多的一檔，當日無可辨識的個股驅動。"
+      },
+      {
+       "t": "KO",
+       "zh": "可口可樂",
+       "en": "Coca-Cola",
+       "biz": "碳酸飲料與飲品品牌",
+       "pct": -0.87,
+       "why": "Coca-Cola 10/27 財報前近 20 日已漲 5.21%，今天 −0.87% 是漲多後的回吐，與 Procter & Gamble 同向。Walmart −0.04% 幾乎持平，可見賣壓集中在財報在即、前波漲幅較大者，不是整個防禦消費被賣（推測）。"
+      },
+      {
+       "t": "JNJ",
+       "zh": "嬌生",
+       "en": "Johnson & Johnson",
+       "biz": "製藥與醫療器材",
+       "pct": -0.61,
+       "why": "Johnson & Johnson 近 20 日仍跌 4.23%，前一日剛反彈 2.19%，今天 −0.61% 是反彈後的小幅回吐，不是新利空（推測）。同日 Merck +1.07%、UnitedHealth −0.54%，醫療股方向分歧，並非整個醫療族群被賣。"
+      }
+     ]
+    }
+   ],
+   "note": "資料來源：Sheet＋News（背景新聞）｜Name_Map：無新代號，免提交｜點數貢獻以 30 檔股價變動反推除數 0.1682｜來源不一致而未採用：IBM 財報後盤後反應、10 年期殖利率日內方向。"
+  },
+  "NDX": {
+   "subject": "NDX 漲跌榜｜2026-10-21 - Top1 MSTR +7.54%",
+   "sent": "2026-10-21T23:20:56Z",
+   "close": 29822.52,
+   "pct": 1.13,
+   "breadth": [
+    58,
+    41
+   ],
+   "lead": [
+    "SpaceX 10 月 20 日盤後公布第三季營收年增 161% 至 146 億美元，21 日股價漲 7.79%，並稱與 Tesla 成立特別委員會討論合併，帶動 Nasdaq 100 上漲 1.13%；電信股（AT&T -6.45%）則被視為 Starlink Mobile 的受害者。內部分化清楚：AI 硬體、軟體與電力走強，消費與醫材走弱；Netflix 因指引下修獨跌 5.31%。",
+    "Nasdaq 100 收 29,822.52（+1.13%），99 檔有收盤資料，58 檔上漲、41 檔下跌；漲榜均幅 +4.80%、跌榜均幅 -3.43%。榜單被三群占滿：AI 相關軟體與基礎設施（Datadog、CrowdStrike、Palantir、Constellation、儲存股）、消費裁量與防禦消費、醫材；與其他三張榜重疊 9 檔，S&P 500 榜的 Super Micro、Dell、Ciena 同向，費半 +1.97%，所以今天是族群日而非單一 beta 日。權值股中 Nvidia +2.54%、Tesla +3.41%、Apple +1.32% 貢獻最多，Alphabet -1.62% 反向。"
+   ],
+   "sections": [
+    {
+     "side": "up",
+     "head": "漲幅榜由 AI 相關軟體、AI 基礎設施與太空概念占滿，最大漲幅來自比特幣連動的 Strategy（+7.54%）。",
+     "rows": [
+      {
+       "t": "MSTR",
+       "zh": "",
+       "en": "Strategy",
+       "biz": "企業軟體與大量持有比特幣的資產公司",
+       "pct": 7.54,
+       "why": "沒有公司自身事件，推測是比特幣連動買盤，所以幅度是 beta：連兩日累計 +12.8%，前一日已漲 +4.93%，近 20 日卻仍 -5.4%，同日 Nasdaq 100 僅 +1.13%。這是延續既有反彈，後續取決於比特幣。"
+      },
+      {
+       "t": "DDOG",
+       "zh": "",
+       "en": "Datadog",
+       "biz": "雲端監控與可觀測性 SaaS",
+       "pct": 6.5,
+       "why": "軟體股同日分化：Datadog +6.50%、CrowdStrike +5.26%、Palantir +4.74%，Adobe 卻 -0.65%、Workday -0.50%。差異因子是貼近 AI 工作負載的用量型軟體（推測）。近 20 日 +8.6%，不是超跌回補。"
+      },
+      {
+       "t": "RKLB",
+       "zh": "火箭實驗室",
+       "en": "Rocket Lab",
+       "biz": "小型運載火箭與衛星組件",
+       "pct": 5.44,
+       "why": "SpaceX 10 月 20 日盤後公布第三季營收年增 161% 至 146 億美元，21 日股價漲 7.79%，帶動太空概念股同向（推測）。Rocket Lab 近 20 日 -23.7%，漲幅含超跌回補，是情緒修復，不是新增訂單。"
+      },
+      {
+       "t": "CRWD",
+       "zh": "",
+       "en": "Crowdstrike Holdings",
+       "biz": "雲端端點資安平台（Falcon）",
+       "pct": 5.26,
+       "why": "資安跟著 AI 相關軟體反彈：同日 Palo Alto +2.05%、Fortinet +1.83%，CrowdStrike 漲最多，因為近 20 日 -8.8%、回補空間最大（推測）。未見公司自身公告，買盤來自族群情緒，不是新增訂單。"
+      },
+      {
+       "t": "PLTR",
+       "zh": "帕蘭提爾",
+       "en": "Palantir Technologies",
+       "biz": "政府與企業大數據分析與 AI 平台",
+       "pct": 4.74,
+       "why": "前一日 -0.80%，今天跟 AI 相關軟體一起反彈。Palantir 近 20 日 +5.2%，不是超跌回補，所以推測漲幅來自風險偏好回升而非位置。同日 Adobe -0.65%，買的是 AI 概念軟體，不是整個軟體族群。未見公司自身事件。"
+      },
+      {
+       "t": "CEG",
+       "zh": "",
+       "en": "Constellation Energy",
+       "biz": "美國最大核電營運商，供應資料中心無碳電力",
+       "pct": 4.6,
+       "why": "AI 用電敘事回溫：同日 Generac +4.39%（S&P 500 榜），兩檔都連到資料中心電力需求。Constellation 前一日 -1.65%，今天是補回。未見公司自身公告，是 AI 基礎設施情緒的外溢（推測）。"
+      },
+      {
+       "t": "WDC",
+       "zh": "威騰電子",
+       "en": "Western Digital",
+       "biz": "硬碟（HDD），以資料中心高容量硬碟為主",
+       "pct": 3.89,
+       "why": "儲存股連兩日反彈：Western Digital 前一日已 +3.44%，今天 Seagate +3.22%，兩者近 20 日 -20.1%、-24.6%。同日 Super Micro +9.55%、Dell +5.27%，AI 伺服器鏈同步回補，買的是位置，不是新訂單（推測）。"
+      },
+      {
+       "t": "TSLA",
+       "zh": "特斯拉",
+       "en": "Tesla",
+       "biz": "電動車、儲能與自駕、機器人",
+       "pct": 3.41,
+       "why": "Musk 稱 Tesla 與 SpaceX 已成立特別委員會討論合併（單一來源，待複核），推測是今天買盤的主因。財報要到收盤後才公布（每股盈餘 0.48 美元、營收 280.5 億美元，皆高於預期），所以今天漲幅不含財報；同日 SpaceX +7.79%。"
+      },
+      {
+       "t": "AMD",
+       "zh": "超微",
+       "en": "Advanced Micro Devices",
+       "biz": "CPU、GPU 與 AI 加速器（Instinct MI 系列）、FPGA",
+       "pct": 3.36,
+       "why": "AI 晶片同向走強：同日 Nvidia +2.54%、Broadcom +1.03%，AMD 漲幅居費半前段。近 20 日 -10.1%，漲幅含超跌回補（推測）。未見公司自身公告，延續性取決於 AI 硬體情緒。"
+      },
+      {
+       "t": "STX",
+       "zh": "希捷",
+       "en": "Seagate Technology Holdings",
+       "biz": "硬碟（HDD），含 HAMR 高容量資料中心硬碟",
+       "pct": 3.22,
+       "why": "與 Western Digital（+3.89%）同鏈同向，近 20 日 -24.6%，前一日已 +2.17%，是延續上一日的反彈。未見公司自身公告，買盤是既有部位回補與 AI 資料中心情緒，不是新增採購預期（推測）。"
+      }
+     ]
+    },
+    {
+     "side": "down",
+     "head": "跌幅榜以消費裁量、防禦消費與醫材為主，Netflix 因財報指引下修單獨下跌 5.31%。",
+     "rows": [
+      {
+       "t": "DXCM",
+       "zh": "",
+       "en": "Dexcom",
+       "biz": "連續血糖監測（CGM）裝置",
+       "pct": -6.39,
+       "why": "醫材同步走弱，Dexcom 最重：同日 Intuitive Surgical -2.26%、Alnylam -2.43%，但 Vertex +1.92%，所以不是整個醫療族群。未見 Dexcom 自身事件；差異因子可能是單一產品線集中，且近 20 日已跌 8.5%（推測）。"
+      },
+      {
+       "t": "NFLX",
+       "zh": "網飛",
+       "en": "Netflix",
+       "biz": "全球影音串流訂閱",
+       "pct": -5.31,
+       "why": "10 月 20 日盤後財報，每股盈餘 0.87 美元高於預期 0.82，但第四季營收指引 134.4 億美元低於預期 135 億，2026 年廣告營收預估由 30 億下修至 27 億，所以今天才反應。前一週的裁員與目標價下調是存量。"
+      },
+      {
+       "t": "DASH",
+       "zh": "",
+       "en": "DoorDash",
+       "biz": "美國最大外送平台",
+       "pct": -3.77,
+       "why": "消費裁量類同日一起跌：Expedia -5.03%、Chipotle -5.16%、Lululemon -3.41%（皆在 S&P 500 榜），Nasdaq 100 卻漲 1.13%。DoorDash 沒有自身新事件，推測是尾盤油價與殖利率上揚壓低消費股（單一來源，待複核）。"
+      },
+      {
+       "t": "PDD",
+       "zh": "拼多多",
+       "en": "PDD Holdings",
+       "biz": "中國電商平台拼多多與跨境平台 Temu，主打低價商品與商家補貼",
+       "pct": -3.56,
+       "why": "當日無可辨識驅動，幅度未解。同為消費網路的 Mercado Libre -1.31%、Airbnb -1.84%，Shopify 卻 +0.47%，跌的是需求端平台；差異因子可能是中國曝險（推測）。前一日 +0.29%，不是延續下跌。"
+      },
+      {
+       "t": "BKNG",
+       "zh": "",
+       "en": "Booking Holdings",
+       "biz": "Booking.com、Priceline 等線上旅遊訂房平台",
+       "pct": -3.38,
+       "why": "線上旅遊同跌：Expedia -5.03%（S&P 500 榜）、Airbnb -1.84%，Booking 跌幅居中。未見 Booking 自身事件，推測是消費裁量走弱加上油價上揚的產業壓力（單一來源，待複核）。近 20 日 +1.6%，沒有前期漲多的賣壓。"
+      },
+      {
+       "t": "CCEP",
+       "zh": "",
+       "en": "Coca-Cola Europacific Partners",
+       "biz": "可口可樂歐洲與亞太裝瓶商",
+       "pct": -2.75,
+       "why": "防禦消費股在 AI 上漲日被賣：同日 Mondelez -1.95%、Procter & Gamble -1.56%、Coca-Cola -0.87%，Nasdaq 100 +1.13%。它近 20 日 +10.6%，前期漲多使賣壓更明顯（推測）。未見公司自身事件。"
+      },
+      {
+       "t": "TMUS",
+       "zh": "",
+       "en": "T-Mobile US",
+       "biz": "美國第二大行動通訊業者",
+       "pct": -2.54,
+       "why": "市場把 SpaceX 的 Starlink Mobile 當成電信業新對手（單一來源，待複核）：AT&T -6.45%、SBA -4.18%。T-Mobile 已與 Starlink 合作，跌幅不到 AT&T 的一半，差異因子是合作關係（推測）。"
+      },
+      {
+       "t": "ALNY",
+       "zh": "",
+       "en": "Alnylam Pharmaceuticals",
+       "biz": "RNAi 療法生技藥廠，主攻罕病與心血管",
+       "pct": -2.43,
+       "why": "同日醫療族群分化：Vertex +1.92%、Gilead -1.88%、Alnylam -2.43%，Dexcom -6.39%。Alnylam 前一日 -1.11%，連兩日走弱，推測是 Nasdaq 100 上漲日生技相對被賣；未見公司自身事件，近 20 日 -8.7%。"
+      },
+      {
+       "t": "ISRG",
+       "zh": "直覺外科",
+       "en": "Intuitive Surgical",
+       "biz": "達文西手術機器人",
+       "pct": -2.26,
+       "why": "近 20 日 +7.5%，今天 -2.26% 與 Dexcom -6.39% 同為醫材走弱，Vertex 卻 +1.92%。第三季營收 +22% 至 30.5 億美元，但 GAAP 營業利益由 7.6 億降至 5.93 億美元，獲利下滑可能是賣壓線索（推測）。"
+      },
+      {
+       "t": "MDLZ",
+       "zh": "億滋國際",
+       "en": "Mondelez International",
+       "biz": "零食餅乾（Oreo）與巧克力",
+       "pct": -1.95,
+       "why": "與 Coca-Cola Europacific -2.75%、Procter & Gamble -1.56% 同為防禦消費股，在 AI 上漲日被賣。Mondelez 近 20 日 +2.1%、前一日 +1.03%，跌幅是榜上最小，所以更像輕度賣壓，不是個股事件（推測）。"
+      }
+     ]
+    }
+   ],
+   "note": "資料來源：Sheet+News（榜單與指數取自 Sheet，新聞取自網路搜尋）｜Name_Map：20 檔全數命中，無新代號，免提交｜說明：Yahoo、CNBC 等頁面無法直接開啟，僅能使用搜尋摘要；Datadog、CrowdStrike、Palantir、Dexcom、Booking、DoorDash、PDD、Alnylam 等檔未取得具名催化，歸因以族群機制與同日對照呈現並標（推測）；Tesla 與 SpaceX 合併、AT&T 與 Starlink 的連結皆為單一來源；10 年期殖利率與比特幣當日數值未取得。"
+  },
+  "SOX": {
+   "subject": "SOX 漲跌榜｜2026-10-21 - Top1 CRDO +6.28%",
+   "sent": "2026-10-21T22:50:34Z",
+   "close": 11505.56,
+   "pct": 1.97,
+   "breadth": null,
+   "lead": [
+    "Super Micro 10 月 20 日的 8-K 把本季營收預估自 145–155 億上調到 185–195 億美元，加上 SpaceX 第三季營收年增 161%，AI 伺服器支出被重新確認，SOX 收 +1.97%。最強是機櫃內的互連與 GPU（Credo +6.28%、AMD +3.36%），最弱是晶圓設備（Lam −1.00%、KLA +1.04%），因 Lam 財報排在收盤後，盤中觀望多於買進。",
+    "SOX 收 11,505.56，+1.97%，同日 S&P 500 +0.58%、Nasdaq 100 +1.13%。跌幅榜 5 檔有 4 檔實際收漲，成分股上漲家數廣；漲榜均幅 +4.07%，跌榜均幅 +0.49%。漲榜由互連、射頻、IC 設計與製程材料量測組成，跌榜三席被設備股占滿，跨榜重疊 1 檔（AMD，同在 Nasdaq 100 漲幅榜）。這是族群日：AI 硬體一起漲，內部分化在設備落後。"
+   ],
+   "sections": [
+    {
+     "side": "up",
+     "head": "漲幅榜由互連與 AI 運算領漲，Credo 以 +6.28% 居首。",
+     "rows": [
+      {
+       "t": "CRDO",
+       "zh": "",
+       "en": "Credo Technology Group Holding",
+       "biz": "高速 SerDes 與主動電纜（AEC），AI 資料中心互連",
+       "pct": 6.28,
+       "why": "Rosenblatt 重申 235 美元目標價並強調記憶體擴張題材（單一來源，待複核），疊上 Super Micro 上調營收預估點亮 AI 伺服器需求，互連股被一起買。同鏈 MACOM 漲 3.85%，Credo 近 20 日 −6%（MACOM −1%），位階較低，彈性最大。"
+      },
+      {
+       "t": "MTSI",
+       "zh": "邁康科技",
+       "en": "MACOM Technology Solutions Holdings",
+       "biz": "類比射頻、微波與光通訊晶片，用於資料中心光模組、國防與電信",
+       "pct": 3.85,
+       "why": "Super Micro 上調本季營收預估約 27%，機櫃內的光通訊與高速互連是直接受惠的一層（推測，MACOM 無自家公告）。前一日 −1.08%，今天一部分是補回跌幅；同鏈 Credo 漲 6.28%，MACOM 只有它的六成。"
+      },
+      {
+       "t": "NVMI",
+       "zh": "",
+       "en": "Nova",
+       "biz": "半導體製程量測設備（以色列）",
+       "pct": 3.5,
+       "why": "當日無可辨識驅動，幅度未解。它是設備鏈中唯一在 Lam 財報前仍明顯上漲的一檔，同日 KLA 僅 +1.04%、Applied Materials +0.98%；近 20 日 −9.4%。這是單檔相對強弱，不是新訂單。"
+      },
+      {
+       "t": "AMD",
+       "zh": "超微",
+       "en": "Advanced Micro Devices",
+       "biz": "CPU、GPU 與 AI 加速器（Instinct MI 系列）、FPGA",
+       "pct": 3.36,
+       "why": "Susquehanna 把目標價自 550 調高到 620 美元（單一來源，待複核），疊上 Super Micro 與 SpaceX 的伺服器需求訊號，GPU 與伺服器 CPU 直接受惠。收 552.72 美元，仍低於高點 16.1%；同鏈 NVIDIA 漲 2.54%。"
+      },
+      {
+       "t": "ENTG",
+       "zh": "英特格",
+       "en": "Entegris",
+       "biz": "半導體製程材料與耗材：過濾純化、特用化學、晶圓載具",
+       "pct": 3.35,
+       "why": "推測是跟著 AI 硬體需求被買的材料股：晶圓開工量上升時，耗材與過濾材料先受惠，且不必等 Lam 的收盤後財報。同日 Applied Materials 只漲 0.98%，Entegris 領先約 2.4 個百分點；前一日 −1.12%，今天屬反彈。"
+      }
+     ]
+    },
+    {
+     "side": "down",
+     "head": "跌幅榜只有 Lam 真的下跌，其餘四檔都是小漲。",
+     "rows": [
+      {
+       "t": "LRCX",
+       "zh": "科林研發",
+       "en": "Lam Research",
+       "biz": "半導體蝕刻與沉積設備",
+       "pct": -1.0,
+       "why": "Lam 財報排在 10 月 21 日美東下午 5 點、收盤後，盤中等待財報的調節賣壓使它成為全榜唯一真下跌的一檔（推測），連兩日合計 −4.2%。同日 SOX +1.97%、KLA +1.04%，設備股全體漲得最少。這是財報前的部位調整，財報結果尚未反映在這根收盤價。"
+      },
+      {
+       "t": "RMBS",
+       "zh": "藍箔",
+       "en": "Rambus",
+       "biz": "記憶體介面晶片（DDR5 RCD、PMIC）與記憶體、安全 IP 授權",
+       "pct": 0.41,
+       "why": "實際小漲 +0.41%，僅為漲幅最落後。週一 10 月 19 日單日 +6.2%，兩個交易日後今天沒有再追；同日 Credo +6.28%、MACOM +3.85% 的互連股仍在漲，Rambus 的記憶體介面題材週一已先被定價（推測）。"
+      },
+      {
+       "t": "AMAT",
+       "zh": "應用材料",
+       "en": "Applied Materials",
+       "biz": "全球最大半導體設備商：沉積、蝕刻、離子佈植",
+       "pct": 0.98,
+       "why": "實際小漲 +0.98%，僅為漲幅最落後。Lam 財報在收盤後，設備股盤中普遍觀望；Applied Materials 前一日 −1.97%，今天只回補約一半。同日 Entegris +3.35%、AMD +3.36%，買盤集中在設備以外的層。"
+      },
+      {
+       "t": "AVGO",
+       "zh": "博通",
+       "en": "Broadcom",
+       "biz": "客製化 AI ASIC、網通交換晶片與 VMware 基礎架構軟體",
+       "pct": 1.03,
+       "why": "實際小漲 +1.03%，僅為漲幅最落後。今天被點亮的是 GPU 與伺服器整機這條鏈（AMD +3.36%、NVIDIA +2.54%、Super Micro +9.55%），Broadcom 賣的主要是雲端客戶自研 ASIC，不直接隨整機廠預告而動（推測）。"
+      },
+      {
+       "t": "KLAC",
+       "zh": "科磊",
+       "en": "KLA",
+       "biz": "半導體製程檢測與量測設備",
+       "pct": 1.04,
+       "why": "實際小漲 +1.04%，僅為漲幅最落後。前一日 −2.8%，今天只回補不到一半；設備股在 Lam 收盤後財報前普遍觀望，同日製程材料的 Entegris +3.35%、量測小型股 Nova +3.50% 反而領漲。"
+      }
+     ]
+    }
+   ],
+   "note": "資料來源：Sheet（SOX_Movers、Index_Quotes，xlsx 匯出）＋網路新聞查證｜Name_Map：無新代號，免提交｜異常說明：Nova 當日驅動未解（已查個股新聞、分析師動態、同鏈與設備族群走勢，均無具名催化）；Lam 財報日期取自公司 9 月 30 日公告（10 月 21 日美東 17:00），另有單一網站列 10 月 22 日。"
+  },
+  "SPX": {
+   "subject": "SPX 漲跌榜｜2026-10-21 - Top1 SMCI +9.55%",
+   "sent": "2026-10-21T23:09:39Z",
+   "close": 7757.17,
+   "pct": 0.58,
+   "breadth": null,
+   "lead": [
+    "AI 硬體重新被買、消費服務被賣：Super Micro 預告財年第一季營收 185–195 億美元（原 145–155 億），帶動 Dell、Ciena 同漲，Nasdaq-100 +1.13%，S&P 500 僅 +0.58%。另一邊 Netflix 因指引略低、AT&T 因光纖每用戶營收承壓而在財報後下跌，旅遊與外送股同步走弱。10 年期殖利率約 5.1%、Brent 約 108 美元（單一快照），可能是共同背景（推測）。",
+    "S&P 500 收 7,757.17（+0.58%），Nasdaq-100 +1.13%、道瓊 +0.69%、費城半導體 +1.97%；漲跌家數 Sheet 未提供、未查到。漲榜均幅 +5.96%，跌榜均幅 -4.63%，跌榜 10 檔全數收跌；SPX 與 NDX 重疊 8 檔。漲榜 10 檔中 8 檔是 AI 硬體、軟體或電力，跌榜 6 檔是消費與旅遊服務，同日道瓊的 Caterpillar +2.06%、Goldman Sachs +2.25% 也上漲，所以消費服務的弱勢是自己的問題，不是景氣循環整體轉弱。裁決：類股輪動日。"
+   ],
+   "sections": [
+    {
+     "side": "up",
+     "head": "AI 硬體與軟體領漲，Super Micro 以 +9.55% 居首。",
+     "rows": [
+      {
+       "t": "SMCI",
+       "zh": "美超微",
+       "en": "Super Micro Computer",
+       "biz": "AI 伺服器與液冷機櫃",
+       "pct": 9.55,
+       "why": "Super Micro (SMCI) 10/21 預告財年第一季營收 185–195 億美元（原 145–155 億），毛利率指引由 10.4–10.8% 拉到 12–12.5%。同鏈 Dell (DELL) 漲幅約其一半，差別在被上修的是 SMCI 自己。財報 11/3 公布。"
+      },
+      {
+       "t": "CRL",
+       "zh": "查爾斯河實驗室",
+       "en": "Charles River Laboratories International",
+       "biz": "藥物研發前期委託研究（CRO）與實驗動物模型，服務藥廠與生技公司的臨床前試驗",
+       "pct": 9.33,
+       "why": "同日生命科學同業 Danaher (DHR) 公布財報並漲 4.29%，Charles River (CRL) 可能被一併重估（推測），但 CRL 漲幅是 DHR 的兩倍多，量級不匹配。自身公告未找到 A/B 級來源，幅度未解。"
+      },
+      {
+       "t": "DDOG",
+       "zh": "",
+       "en": "Datadog",
+       "biz": "雲端監控與可觀測性 SaaS",
+       "pct": 6.5,
+       "why": "軟體股同日齊漲：Datadog (DDOG)、CrowdStrike (CRWD)、Palantir (PLTR) 占 Nasdaq-100 漲幅榜前五的三席，跌幅端沒有任何軟體股，所以這是整組軟體被買，不是 Datadog 個別事件。買盤可能來自 AI 情緒回溫（推測）。"
+      },
+      {
+       "t": "CIEN",
+       "zh": "",
+       "en": "Ciena",
+       "biz": "光傳輸網路設備與相干光模組",
+       "pct": 5.67,
+       "why": "Ciena (CIEN) 是 AI 資料中心互連層，同日 SOX 榜的 Credo (CRDO) +6.28%、MACOM (MTSI) +3.85% 同向，說明買的是連結層。同鏈運算層 Broadcom (AVGO) 僅 +1.03%，增量集中在連結而非晶片。"
+      },
+      {
+       "t": "DELL",
+       "zh": "戴爾",
+       "en": "Dell Technologies",
+       "biz": "PC、伺服器（含 AI 伺服器）與儲存設備",
+       "pct": 5.27,
+       "why": "Super Micro (SMCI) 預告財年第一季營收中值上修約 27%，伺服器同業 Dell (DELL) 被連帶重估，HPE 約 +4%（單一來源，待複核）。這是同業預告帶來的重估，Dell 自身訂單並未改變（推測）。"
+      },
+      {
+       "t": "CRWD",
+       "zh": "",
+       "en": "Crowdstrike Holdings",
+       "biz": "雲端端點資安平台（Falcon）",
+       "pct": 5.26,
+       "why": "CrowdStrike 與 Datadog (DDOG) +6.50%、Palantir (PLTR) +4.74% 同組上漲，漲幅居中，表示它沒有獨立於軟體族群的額外事件（推測）。這波買的是軟體在 AI 情緒回溫日的位置，不是這家公司本身。"
+      },
+      {
+       "t": "PLTR",
+       "zh": "帕蘭提爾",
+       "en": "Palantir Technologies",
+       "biz": "政府與企業大數據分析與 AI 平台",
+       "pct": 4.74,
+       "why": "Palantir 是這組軟體三檔中漲最少的一檔，仍是 Nasdaq-100 漲幅 1.13% 的四倍多，說明軟體買盤強度明顯高於大盤（推測）。它與 CRWD、DDOG 同在 SPX 與 NDX 兩張榜，跨指數成立。"
+      },
+      {
+       "t": "CEG",
+       "zh": "",
+       "en": "Constellation Energy",
+       "biz": "美國最大核電營運商，供應資料中心無碳電力",
+       "pct": 4.6,
+       "why": "Constellation (CEG) 靠資料中心用電需求定價；Super Micro (SMCI) 預告營收上修近三成，可能被讀成 AI 機櫃出貨與用電量的證據（推測）。電力鏈漲 4.4–4.6%，小於伺服器層的 5–10%，因為離訂單更遠。"
+      },
+      {
+       "t": "GNRC",
+       "zh": "",
+       "en": "Generac Holdings",
+       "biz": "家用與商用備用發電機",
+       "pct": 4.39,
+       "why": "Generac (GNRC) 賣家用與商用備用發電機，與資料中心的連結比 Constellation (CEG) +4.60% 更間接，漲幅幾乎相同，表示買的是 AI 基建族群的位置而非這家公司的訂單（推測）。"
+      },
+      {
+       "t": "DHR",
+       "zh": "丹納赫",
+       "en": "Danaher",
+       "biz": "生命科學、診斷與生物製程儀器及耗材，終端為藥廠與醫療機構",
+       "pct": 4.29,
+       "why": "Danaher (DHR) 10/21 公布第三季調整後 EPS 2.11 美元（+11.5%）、核心營收 +3.0%，落在 7 月自訂 2–3% 指引的上緣。同日生命科學同業 Charles River (CRL) 漲 9.33%，是 DHR 的兩倍多。"
+      }
+     ]
+    },
+    {
+     "side": "down",
+     "head": "消費與旅遊服務加上電信與鐵塔占滿跌幅榜，AT&T 以 -6.45% 居首。",
+     "rows": [
+      {
+       "t": "T",
+       "zh": "美國電話電報",
+       "en": "AT&T",
+       "biz": "美國最大電信業者之一，提供行動、光纖寬頻與企業網路服務",
+       "pct": -6.45,
+       "why": "AT&T (T) 10/21 盤前公布第三季，調整後 EPS 0.65 美元勝預期 0.60 並上修全年，股價仍跌。報導指光纖每用戶營收（ARPU）承壓、總債務升至近 1,600 億美元（部分來源，待複核）。T-Mobile (TMUS) 同日 -2.54%，跌幅不到一半。"
+      },
+      {
+       "t": "DXCM",
+       "zh": "",
+       "en": "Dexcom",
+       "biz": "連續血糖監測（CGM）裝置",
+       "pct": -6.39,
+       "why": "Dexcom (DXCM) 10 月以來已有 10/2、10/6 的下跌報導（單一媒體），今天是這段弱勢的延續（推測）。同日醫材 Intuitive Surgical (ISRG) 只跌 2.26%，所以不是醫材整體事件。當日無可辨識驅動，幅度未解。"
+      },
+      {
+       "t": "NFLX",
+       "zh": "網飛",
+       "en": "Netflix",
+       "biz": "全球影音串流訂閱",
+       "pct": -5.31,
+       "why": "10/20 盤後 Netflix 公布第三季 EPS 0.87 美元勝預期 0.82，但第四季營收指引 134 億美元低於市場 135 億，並下調廣告指引，Needham 降評至 Hold。指引僅差約 0.7% 卻大跌，是因擔心廣告成長放緩。這是盤後事件延到 10/21 才反應。"
+      },
+      {
+       "t": "CMG",
+       "zh": "墨式燒烤",
+       "en": "Chipotle Mexican Grill",
+       "biz": "Chipotle 墨西哥速食連鎖",
+       "pct": -5.16,
+       "why": "Chipotle (CMG) 與 DoorDash (DASH) -3.77%、Expedia (EXPE) -5.03% 同日下跌，而 Nasdaq-100 +1.13%。三者都靠消費者外出消費頻率；Brent 約 108 美元（單一快照）可能壓縮可支配所得（推測）。"
+      },
+      {
+       "t": "EXPE",
+       "zh": "億客行",
+       "en": "Expedia Group",
+       "biz": "線上旅遊平台（Expedia、Hotels.com）",
+       "pct": -5.03,
+       "why": "9/23 Meta 的 Muse AI 代理可直接向航空與飯店訂位，曾讓 Expedia 單日跌 7%、Booking 5%（Yahoo、24/7 Wall St）。今天 Expedia 再度走弱，可能是同一疑慮在消費轉弱日被重新兌現（推測）。"
+      },
+      {
+       "t": "SBAC",
+       "zh": "SBA通訊",
+       "en": "SBA Communications",
+       "biz": "全球行動通訊鐵塔營運商，向電信業者出租塔位，主要在美洲",
+       "pct": -4.18,
+       "why": "AT&T 10/21 下調 2027–28 年長期資本支出，鐵塔業者收入來自電信商租塔與升級，因此 SBA Communications (SBAC) 先被賣（推測）。它比 American Tower (AMT) 跌得多，因為業務集中在美洲，對美國電信商支出更敏感（推測）。"
+      },
+      {
+       "t": "DASH",
+       "zh": "",
+       "en": "DoorDash",
+       "biz": "美國最大外送平台",
+       "pct": -3.77,
+       "why": "DoorDash (DASH) 同時在 SPX 與 NDX 跌榜，跨指數成立。同為消費頻率標的的 Chipotle (CMG) 跌 5.16%，DASH 少跌約 1.4 個百分點，可能因外送抽成不直接受單店客流影響（推測）。"
+      },
+      {
+       "t": "LULU",
+       "zh": "露露檸檬",
+       "en": "Lululemon Athletica",
+       "biz": "高端運動服飾",
+       "pct": -3.41,
+       "why": "Lululemon (LULU) 跌幅約是同為運動服飾的 Nike (NKE) -0.92% 的 3.7 倍，所以不是整個品類同等受壓，而是 LULU 對消費轉弱日更敏感（推測）。同日 CMG、EXPE 也走弱。"
+      },
+      {
+       "t": "BKNG",
+       "zh": "",
+       "en": "Booking Holdings",
+       "biz": "Booking.com、Priceline 等線上旅遊訂房平台",
+       "pct": -3.38,
+       "why": "Booking (BKNG) 與 Expedia (EXPE) 同向但跌得少，兩者都是 9/23 Meta Muse AI 代理繞過訂房平台疑慮的受害者（Booking 當日約 -5%）。今天的新增因素是消費服務股整體走弱（推測）。BKNG 同時在 SPX 與 NDX 跌榜。"
+      },
+      {
+       "t": "AMT",
+       "zh": "美國電塔",
+       "en": "American Tower",
+       "biz": "全球最大行動通訊鐵塔營運商，向電信業者出租塔位與數據中心空間",
+       "pct": -3.23,
+       "why": "American Tower (AMT) 跌幅小於 SBA Communications (SBAC) -4.18%。AT&T 下調 2027–28 年長期資本支出（約每年 220–230 億美元，單一來源），租塔需求將下修；AMT 業務分散全球，較不受單一電信商影響（推測）。"
+      }
+     ]
+    }
+   ],
+   "note": "資料來源：Sheet＋News（榜單與指數取自 Sheet，歸因事實取自新聞）；Name_Map：無新代號，免提交；漲跌家數 Sheet 未提供、未查到；部分來源為單一媒體，已於歸因內標註。"
+  }
  }
 }

@@ -51,8 +51,13 @@ def from_yahoo(t):
     with urllib.request.urlopen(req, timeout=30) as r:
         res = json.load(r)["chart"]["result"][0]
     off = timedelta(seconds=res["meta"]["gmtoffset"])
+    closes = list(res["indicators"]["quote"][0]["close"])
+    # Yahoo 日線最後一根常在收盤後數小時內 close 為 None，改用 meta 的 regularMarketPrice 補上
+    meta = res["meta"]
+    if closes and closes[-1] is None and meta.get("regularMarketPrice") and meta.get("regularMarketTime", 0) >= res["timestamp"][-1]:
+        closes[-1] = meta["regularMarketPrice"]
     pts = [((datetime.fromtimestamp(ts, timezone.utc) + off).strftime("%Y-%m-%d"), c)
-           for ts, c in zip(res["timestamp"], res["indicators"]["quote"][0]["close"]) if c is not None]
+           for ts, c in zip(res["timestamp"], closes) if c is not None]
     return {d: {"c": round(c, 2), "p": round((c / pts[i - 1][1] - 1) * 100, 2)}
             for i, (d, c) in enumerate(pts) if i > 0}
 

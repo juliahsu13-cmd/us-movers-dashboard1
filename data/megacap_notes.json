@@ -2819,5 +2819,265 @@
     "CNBC"
    ]
   }
+ },
+ "2026-10-21": {
+  "_summary": {
+   "h": "Super Micro 上修與 SpaceX 財報重燃 AI 硬體買盤，資金由消費服務、電信與防禦股流向伺服器、互連與軟體",
+   "b": "10/21 的主線是 AI 硬體需求被重新確認：Super Micro 預告本季營收 185–195 億美元（原 145–155 億），SpaceX 第三季營收年增 161% 並稱每月上線約 20 萬顆 Nvidia GB300，費半 +1.97%、Nasdaq 100 +1.13%，S&P 500 +0.58%、道瓊 +0.69%。資金明確從消費服務（Netflix −5.31%、Chipotle、Expedia）、電信與鐵塔（AT&T −6.45%）及防禦消費（P&G、可口可樂）移往伺服器（SMCI +9.55%、Dell +5.27%）、互連（Credo、Ciena）、AI 軟體與電力。宏觀面平靜：Brent 持平約 108.8 美元，美元指數小跌 0.13%，10 年期殖利率 5.13%（+1bp），沒有改變方向。權值股中 Super Micro 最強，Alphabet −1.62% 因 Pichai 稱雲端為 AI 產能犧牲營收而逆勢最弱；Tesla、Meta 財報皆在收盤後公布，未反映在當日收盤。",
+   "s": [
+    "SPX/NDX/SOX/INDU 漲跌榜郵件",
+    "Reuters",
+    "WSJ"
+   ]
+  },
+  "NVDA": {
+   "h": "SpaceX 稱每月上線 20 萬顆 GB300，Nvidia 盤前即走高",
+   "b": "Musk 在 SpaceX 財報會議表示，年底前每月將上線約 20 萬顆 Nvidia GB300，Nvidia 10/21 盤前即上漲、收 +2.54%，是道瓊漲幅第二名。同日 AMD +3.36%、費半 +1.97%，AI 算力鏈整體回溫；WSJ 也把 SpaceX、Anthropic 與 Nvidia 列為帶領科技股走出低迷的主因。",
+   "s": [
+    "Yahoo Finance",
+    "Benzinga",
+    "WSJ"
+   ]
+  },
+  "TSM": {
+   "h": "Moody's 將台積電評等升至 Aa2，跟隨 AI 硬體反彈",
+   "b": "Moody's 以 AI 需求強勁與市場主導地位為由，把台積電信用評等上調至 Aa2。ADR 收 +1.60%，漲幅介於 Nvidia（+2.54%）與 Broadcom（+1.03%）之間，主要仍是跟隨當天 Super Micro、SpaceX 帶起的 AI 硬體買盤，評等調升屬錦上添花（推測）。",
+   "s": [
+    "Yahoo Finance"
+   ]
+  },
+  "MSFT": {
+   "h": "當日無具名事件，10/28 財報前持平",
+   "b": "Microsoft 收 +0.20%，遠落後 Nasdaq 100 的 +1.13%。當日相關消息僅有與 Alphabet 一同退出 OKX／ICE 代幣化股票計畫，對股價影響有限；市場焦點在 10/28 財報，選擇權隱含約 4.6% 的財報波動，資金暫時觀望。",
+   "s": [
+    "Fortune",
+    "Investing.com"
+   ]
+  },
+  "AAPL": {
+   "h": "當日無具名事件，隨大型科技股小漲",
+   "b": "Apple 收 +1.32%，對 Nasdaq 100 的點數貢獻居前，但候選新聞多為評論與財報前瞻（財報約在 10/28 後一週），沒有公司自身事件。這是 AI 硬體與科技股整體回溫帶動的上漲（推測）。",
+   "s": [
+    "MarketBeat"
+   ]
+  },
+  "GOOGL": {
+   "h": "Pichai 稱雲端為 AI 產能犧牲營收，Alphabet 逆勢下跌",
+   "b": "Google 執行長 Pichai 坦言 Google Cloud 為了確保 AI 運算產能而放棄部分營收，市場解讀為短期雲端成長受限，Alphabet 收 −1.62%，在 Nasdaq 大漲日逆勢，也是道瓊最大拖累（約 −33 點）。郵件另指 KeyBanc 把目標價由 435 降至 410 美元（單一來源），10/28 財報在即。",
+   "s": [
+    "24/7 Wall St.",
+    "Benzinga",
+    "Investing.com"
+   ]
+  },
+  "AMZN": {
+   "h": "當日無具名事件，財報前小幅回落",
+   "b": "Amazon 收 −0.10%，與 Alphabet 同日走弱但幅度小得多；24/7 Wall St. 把它與 Alphabet 並列為「雲端股在 Nasdaq 大漲日落後」。當日新聞多為 AWS 前景與財報前瞻評論，沒有新事件，屬財報前觀望（推測）。",
+   "s": [
+    "24/7 Wall St.",
+    "Investor's Business Daily"
+   ]
+  },
+  "META": {
+   "h": "Q3 營收 646 億美元優於預期，並宣布發行無表決權新股籌資（盤後）",
+   "b": "Meta 收盤後公布第三季營收 646 億美元，高於 FactSet 預估的 633.4 億，同時上調支出展望並宣布發行無表決權新股類別以籌措資本，盤後股價走高。正規交易時段僅 +0.47%，以上消息未反映在當日收盤。",
+   "s": [
+    "marketscreener.com",
+    "Bloomberg.com",
+    "SiliconANGLE"
+   ]
+  },
+  "TSLA": {
+   "h": "Musk 稱與 SpaceX 合併「很有道理」，收盤後財報優於預期",
+   "b": "盤中買盤來自 Musk 表示 Tesla 與 SpaceX 合併「有很多道理」、華爾街視合併為必然，Tesla 收 +3.41%。收盤後公布第三季 EPS 0.48 美元、營收 280.5 億美元皆優於預期，自由現金流轉正、資本支出低於預期，但盤後走勢平淡；財報未反映在當日收盤。",
+   "s": [
+    "Reuters",
+    "Investopedia",
+    "Yahoo Finance"
+   ]
+  },
+  "AVGO": {
+   "h": "當日無具名事件，AI 硬體日中漲幅落後",
+   "b": "Broadcom 收 +1.03%，費半郵件將它列在跌幅榜（實際小漲、僅為最落後）。當天被點亮的是 GPU 與伺服器整機鏈（SMCI +9.55%、AMD +3.36%），Broadcom 以客製 ASIC 為主，不直接受整機廠預告帶動（推測）。",
+   "s": [
+    "SOX 漲跌榜郵件",
+    "MarketBeat"
+   ]
+  },
+  "AMD": {
+   "h": "Susquehanna 將 AMD 目標價由 550 上調至 620 美元",
+   "b": "Susquehanna 在晶片股財報季前調整目標價，AMD 由 550 美元調高到 620 美元，加上 Super Micro 與 SpaceX 的伺服器需求訊號，AMD 收 +3.36%，在 SOX 與 Nasdaq 100 漲幅榜皆列前段。上週曾跌約 13%，今天也含超跌回補。",
+   "s": [
+    "TradingView",
+    "GuruFocus",
+    "Seeking Alpha"
+   ]
+  },
+  "ORCL": {
+   "h": "AI 支出疑慮與 Ellison 質押借款報導壓抑 Oracle",
+   "b": "Oracle 收 −1.53%，是當日 AI 硬體反彈中少數下跌的大型科技股。Barchart 指 AI 支出疑慮持續升溫，WSJ 則報導 Larry Ellison 以 Oracle 等持股質押大舉借款、資助其子收購 Warner Bros.，增添持股面雜音（推測為主要壓力）。",
+   "s": [
+    "Barchart.com",
+    "WSJ",
+    "Quartz"
+   ]
+  },
+  "INTC": {
+   "h": "Musk 釋出 Terafab 突破訊號，抵銷 Susquehanna 下調目標價",
+   "b": "Barron's 報導 Musk 談及 Terafab 晶圓廠計畫的突破，Intel 盤中走高、收 +1.39%。同日 Susquehanna 把 Intel 目標價下調至 105 美元，但股價仍隨半導體族群上漲，顯示今天由題材與族群情緒主導。",
+   "s": [
+    "Barron's",
+    "Yahoo Finance",
+    "MarketBeat"
+   ]
+  },
+  "SMCI": {
+   "h": "預告本季營收 185–195 億美元，大幅高於原指引",
+   "b": "Super Micro 預告財年第一季營收 185–195 億美元（原指引 145–155 億），毛利率指引亦由 10.4–10.8% 上調至 12–12.5%，股價收 +9.55%，居 S&P 500 漲幅榜首。這是當日 AI 硬體反彈的核心事件，帶動 Dell、Ciena 與互連股同漲；正式財報 11/3 公布。",
+   "s": [
+    "Bloomberg.com",
+    "Reuters",
+    "Investor's Business Daily"
+   ]
+  },
+  "DELL": {
+   "h": "Super Micro 上修與 SpaceX 需求帶動 Dell 跟漲",
+   "b": "Barron's 直指 SpaceX 與 Super Micro 是 Dell 當日大漲的兩個原因：同業預告營收中值上修約 27%，伺服器整機廠被連帶重估，Dell 收 +5.27%，約為 SMCI 漲幅的一半。Dell 自身訂單並無新公告（推測）。",
+   "s": [
+    "Barron's",
+    "CNBC",
+    "Benzinga"
+   ]
+  },
+  "HPQ": {
+   "h": "當日無具名事件，前一日大漲後持穩",
+   "b": "HP 收 +0.35%，前一日已上漲 3.21%。當日候選新聞多為 AI PC 需求評論與報價頁，沒有公司自身事件；PC 廠未受到伺服器鏈的買盤延伸，走勢平淡（推測）。",
+   "s": [
+    "TradingView",
+    "GuruFocus"
+   ]
+  },
+  "QCOM": {
+   "h": "Susquehanna 上調目標價並宣布季度股利，止住三連跌",
+   "b": "Susquehanna 在財報季前調高 Qualcomm 目標價，公司同日宣布季度現金股利，股價收 +1.28%，結束因放空機構指控「隱藏 Anthropic 合作」（事後證實不存在）引發的三日下跌。",
+   "s": [
+    "Seeking Alpha",
+    "Yahoo Finance",
+    "Stocktwits"
+   ]
+  },
+  "SWKS": {
+   "h": "完成與 Qorvo 合併，Susquehanna 看好，股價七連漲",
+   "b": "Skyworks 已完成與 Qorvo 的合併、Qorvo 自 Nasdaq 下市，Susquehanna 亦預期股價上漲，Skyworks 收 +1.13%，連續第七個交易日上漲。漲幅不大，屬合併完成後的延續性買盤。",
+   "s": [
+    "TradingView",
+    "MarketBeat",
+    "AD HOC NEWS"
+   ]
+  },
+  "MU": {
+   "h": "AI 情緒回溫帶動 Micron 反彈，台灣廠區罷工為雜音",
+   "b": "Barron's 指 Micron 在數週修正後迎來 AI 情緒的提振，收 +1.96%。另有報導指其台灣員工罷工，但當日股價未明顯反映；整體屬 AI 硬體族群的同步反彈，沒有公司自身新訂單（推測）。",
+   "s": [
+    "Barron's",
+    "Yahoo Finance"
+   ]
+  },
+  "STX": {
+   "h": "Morgan Stanley 等大幅上調 Seagate 目標價",
+   "b": "多家券商上調 Seagate 目標價，其中 Morgan Stanley 將目標價調至接近現價兩倍，Seagate 收 +3.22%，連兩日反彈。同鏈 Western Digital +3.89%，儲存股與 AI 伺服器鏈同步回補。",
+   "s": [
+    "StreetInsider",
+    "Stocktwits",
+    "Investing.com"
+   ]
+  },
+  "ON": {
+   "h": "當日無具名事件，隨半導體族群續漲",
+   "b": "onsemi 收 +1.75%，延續前一日（+3.42%）類比與車用股在 Texas Instruments 財報前的買盤。當日候選新聞僅有行情回顧與評論，沒有公司自身事件，屬族群帶動（推測）。",
+   "s": [
+    "Yahoo Finance",
+    "SOX 漲跌榜郵件"
+   ]
+  },
+  "MRVL": {
+   "h": "當日無具名事件，AI 互連股反彈帶動",
+   "b": "Marvell 收 +1.81%，Barchart 列出多頭不退的理由，BNN 評論指其「大單、高指引卻股價不動」。當天互連層（Credo +6.28%、Ciena +5.67%）被重新買進，Marvell 跟漲但幅度落後（推測）。",
+   "s": [
+    "Barchart.com",
+    "BNN Bloomberg"
+   ]
+  },
+  "COHR": {
+   "h": "TD Cowen 將目標價由 395 大砍至 275 美元，股價仍隨光通訊反彈",
+   "b": "TD Cowen 把 Coherent 目標價由 395 美元下調至 275 美元，Susquehanna 亦下修；但當日光通訊與互連層受 Super Micro 上修帶動，Coherent 仍收 +2.47%，族群情緒壓過個股評等下調。",
+   "s": [
+    "Moomoo",
+    "AD HOC NEWS",
+    "TradingView"
+   ]
+  },
+  "LITE": {
+   "h": "BNP Paribas 上調 Lumentum 目標價至 1,425 美元",
+   "b": "BNP Paribas 把 Lumentum 目標價由 1,380 美元調高至 1,425 美元，Morningstar 亦看好其 AI 光元件需求，股價收 +3.43%，在光通訊股中漲幅領先 Coherent（+2.47%）。",
+   "s": [
+    "AD HOC NEWS",
+    "Morningstar",
+    "MarketBeat"
+   ]
+  },
+  "brent": {
+   "h": "美伊談判訊號反覆，Brent 持平於約 108.8 美元",
+   "b": "Brent 收 108.82 美元，日變動 +0.03%，幾乎持平。市場一方面看到波斯灣原油出口已恢復到伊朗戰前水準，另一方面 Hormuz 周邊風險仍高、美國庫存下降，美伊談判消息反覆使盤中大幅震盪，收盤無明確方向。",
+   "s": [
+    "Reuters",
+    "MarketWatch",
+    "CNBC"
+   ]
+  },
+  "wti": {
+   "h": "WTI 連續合約換月，表面跌 4.56% 主要是新舊合約價差",
+   "b": "WTI 收 97.15 美元、表面日變動 −4.56%，但 11 月合約已到期，連續報價改為 12 月合約（12 月合約 10/20 結算約 97.82 美元），實際 12 月合約當日僅小跌約 0.7%。WSJ 形容油價期貨收盤漲跌互見，交易員在供給恢復與航運風險間拉鋸。",
+   "s": [
+    "WSJ",
+    "tokenpost",
+    "BigGo Finance"
+   ]
+  },
+  "dxy": {
+   "h": "交易員等待 Fed 會議，美元指數小跌",
+   "b": "美元指數收 101.60，下跌 0.13%，維持在三週低點附近。路透指交易員等待 10/27–28 Fed 會議、澳幣走強，美元缺乏方向；油價持平、殖利率小動，匯市沒有新的驅動。",
+   "s": [
+    "Devdiscourse",
+    "Forex Factory",
+    "Investing.com"
+   ]
+  },
+  "us10y": {
+   "h": "10 年期殖利率持穩在 5.13%，20 年期標售與 Fed 會議前觀望",
+   "b": "10 年期公債殖利率收 5.13%，僅上升 1 個基點。當日有 20 年期公債標售，盤中曾因安全避險買盤小降、尾盤又因中東消息推升油價而走升（Bloomberg），整體在 Fed 10/28 決議前持穩，對股市未構成新壓力。",
+   "s": [
+    "Bloomberg.com",
+    "CNBC",
+    "Forbes"
+   ]
+  },
+  "us2y": {
+   "h": "2 年期殖利率升至 4.81%，市場持續評估 Fed 升息路徑",
+   "b": "2 年期殖利率上升 2 個基點至 4.81%，連續第三天走高。市場討論債市是否已在定價 Fed 的政策錯誤，並等待 10/28 會議；對政策最敏感的短端升幅大於長端。",
+   "s": [
+    "Real Investment Advice",
+    "Briefs Finance",
+    "CNBC"
+   ]
+  },
+  "spread": {
+   "h": "2–10 年利差收窄至 32 個基點，短端升幅大於長端",
+   "b": "10 年期減 2 年期利差收在 32 個基點，較前一日收窄 1 個基點；2 年期 +2bp、10 年期 +1bp，曲線小幅趨平，反映市場對 Fed 偏鷹的預期仍在，長端則持穩。當日無具名事件驅動利差。",
+   "s": [
+    "美國財政部殖利率曲線",
+    "CNBC"
+   ]
+  }
  }
 }
