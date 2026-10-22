@@ -195,8 +195,15 @@ def main(root):
     npath2 = root / "data" / "megacap_notes.json"
     notes_all = json.loads(npath2.read_text(encoding="utf-8")) if npath2.exists() else {}
     notes = {d: notes_all[d] for d in keep if d in notes_all}
+    tpath = root / "data" / "intraday_turns.json"
+    turns_all = json.loads(tpath.read_text(encoding="utf-8")) if tpath.exists() else {}
+    turns = {d: turns_all[d] for d in keep if d in turns_all}
+    if keep and keep[-1] not in turns:
+        problems.append(f"{keep[-1]}: 無盤中轉折標註")
+
     def render(t):
         return (t.replace("/*__NOTES__*/null", json.dumps(notes, ensure_ascii=False, separators=(",", ":")))
+                 .replace("/*__TURNS__*/null", json.dumps(turns, ensure_ascii=False, separators=(",", ":")))
                  .replace("/*__MACRO__*/null", json.dumps(macro, separators=(",", ":")))
                  .replace("/*__MEGA__*/null", json.dumps(mega, ensure_ascii=False, separators=(",", ":")))
                  .replace("/*__DATA__*/null", data_js)

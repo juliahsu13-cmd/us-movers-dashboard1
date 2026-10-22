@@ -76,6 +76,22 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:6px;
 .intra .cross{stroke:var(--muted);stroke-width:1}
 .intra .stats{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--muted)}
 .intra .stats span b{font-family:var(--f-num);font-weight:600;color:var(--ink)}
+.intra .tm{cursor:pointer}
+.intra .tm line{stroke:var(--muted);stroke-width:1;stroke-dasharray:2 2}
+.intra .tm circle{r:9px;fill:var(--surface);stroke:var(--accent);stroke-width:2}
+.intra .tm:hover circle{fill:var(--accent-soft)}
+.intra .tm text{font-size:11px;font-weight:700;fill:var(--ink);pointer-events:none}
+.turns-h{margin:8px 0 0;font-size:14px;font-weight:700}
+.turns{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.turns li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;padding:10px 4px;border-bottom:1px solid var(--line);transition:background .3s}
+.turns li.on{background:var(--accent-soft)}
+.turns .tn{width:22px;height:22px;border-radius:50%;border:2px solid var(--accent);display:grid;place-items:center;font-size:11px;font-weight:700;font-family:var(--f-num);margin-top:2px}
+.turns p{margin:0;max-width:90ch}
+.turns .th{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;font-size:15px}
+.turns .th small{font-size:12px;color:var(--muted)}
+.turns .th .num{font-weight:600}
+.turns .tb{font-size:14px;line-height:1.75;margin-top:2px}
+.turns .ts{font-size:12px;color:var(--muted)}
 
 .macro{display:grid;gap:6px}
 .macro-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
@@ -252,6 +268,7 @@ const INTRA = /*__INTRA__*/null;
 const MEGA = /*__MEGA__*/null;
 const MACRO = /*__MACRO__*/null;
 const NOTES = /*__NOTES__*/null;
+const TURNS = /*__TURNS__*/null;
 // 某檔股票當天若也在漲跌榜郵件裡，取郵件的歸因當備用說明
 function mailAttr(date, t){
   for (const i of IDX) for (const s of (DATA[date]?.[i.k]?.sections || [])) {
@@ -375,7 +392,28 @@ function chartGeom(x){
   return {pts, lo, hi, sx, sy};
 }
 
-function chartHTML(x, title, uid){
+// 盤中轉折標註：圖上畫編號圓點（高點標在線上方、低點在下方），圖下列出每個轉折的原因
+function turnMarks(turns, pts, sx, sy){
+  const off = CH.H * 0.08, top = CH.T + off, bot = CH.H - CH.B - off;
+  return turns.map((t, n) => {
+    const p = pts.reduce((a, b) => Math.abs(b[0] - t.m) < Math.abs(a[0] - t.m) ? b : a);
+    const x0 = sx(p[0]), y0 = sy(p[1]);
+    const y1 = Math.min(bot, Math.max(top, t.k === "low" ? y0 + off : y0 - off));
+    return `<g class="tm ${t.k}" data-n="${n}"><line x1="${x0}" y1="${y0}" x2="${x0}" y2="${y1}"/>
+      <circle cx="${x0}" cy="${y1}"/><text x="${x0}" y="${y1}" text-anchor="middle" dominant-baseline="central">${n+1}</text></g>`;
+  }).join("");
+}
+function turnList(turns, pts, uid){
+  if (!turns.length) return "";
+  return `<h3 class="turns-h">盤中轉折解讀</h3><ol class="turns">${turns.map((t, n) => {
+    const p = pts.reduce((a, b) => Math.abs(b[0] - t.m) < Math.abs(a[0] - t.m) ? b : a);
+    return `<li id="tn-${uid}-${n}" class="${t.k}"><span class="tn">${n+1}</span><div>
+      <p class="th"><span class="num">${hm(p[0])}</span><small>台北 ${hm((p[0] + 720) % 1440)}</small><span class="num ${dir(p[1])}">${sign(p[1])}</span> <b>${esc(t.h)}</b></p>
+      <p class="tb">${esc(t.b)}</p>${t.s?.length ? `<p class="ts">來源：${t.s.map(esc).join("、")}</p>` : ""}</div></li>`;
+  }).join("")}</ol>`;
+}
+
+function chartHTML(x, title, uid, turns = []){
   if (!x) return `<div class="intra-head"><h2>${esc(title)}</h2></div>
     <p class="note">這一天沒有盤中資料（來源只保留約 60 天的 5 分鐘線）。</p>`;
   const {W, H, L, R, T, B, t0} = CH;
@@ -400,13 +438,15 @@ function chartHTML(x, title, uid){
       <circle cx="${sx(last[0])}" cy="${sy(last[1])}" r="3.5" fill="${col}"/>
       <g class="hov" hidden><line class="cross" y1="${T}" y2="${H-B}"/><circle r="3.5" fill="var(--ink)"/></g>
       <rect class="hit" x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}" fill="transparent"/>
+      ${turnMarks(turns, pts, sx, sy)}
     </svg>
     <div class="stats">
       <span>前收 <b>${fmt(x.pc)}</b></span>
       <span>高 <b>${fmt(hiP[2])}</b> ${hm(hiP[0])}</span>
       <span>低 <b>${fmt(loP[2])}</b> ${hm(loP[0])}</span>
       <span>美東時間，5 分鐘線（台北 = 美東 +12 小時）</span>
-    </div>`;
+    </div>
+    ${turnList(turns, pts, uid)}`;
 }
 
 // 滑過或點圖上任一點：顯示該時刻價位與漲跌幅
@@ -435,8 +475,14 @@ function renderIndexChart(){
   const x = INTRA?.[state.date]?.[state.idx];
   const name = IDX.find(i => i.k === state.idx).name;
   const box = $("#intra");
-  box.innerHTML = chartHTML(x, `${name} 盤中走勢`, "idx");
+  box.innerHTML = chartHTML(x, `${name} 盤中走勢`, "idx", TURNS?.[state.date]?.[state.idx] || []);
   wireChart(box, x);
+  // 點圖上的編號：捲到對應說明並短暫標亮
+  box.querySelectorAll(".tm").forEach(g => g.onclick = () => {
+    const li = document.getElementById(`tn-idx-${g.dataset.n}`);
+    li.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "nearest"});
+    li.classList.add("on"); setTimeout(() => li.classList.remove("on"), 1600);
+  });
 }
 
 function renderOverlap(){

@@ -55,3 +55,8 @@ footer{flex-direction:column}
 .mail td.why2,.mail td.biz{grid-column:1/-1;min-width:0}
 .mail td.biz{order:1} .mail td.why2{order:2;font-size:15px}
 .mail td:nth-child(3){display:none}
+.intra .tm circle{r:17px;stroke-width:3}
+.intra .tm text{font-size:20px}
+.intra .tm line{stroke-width:2}
+.turns li{grid-template-columns:22px minmax(0,1fr);gap:8px;padding:10px 0}
+.turns .tb{font-size:15px}
