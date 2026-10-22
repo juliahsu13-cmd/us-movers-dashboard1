@@ -11,6 +11,8 @@ import sys
 from pathlib import Path
 
 INDICES = ["SPX", "NDX", "SOX", "INDU"]
+# 油價、美元、殖利率另列在每段走勢後面，不混進個股排名
+MACRO = {"brent": "布蘭特", "wti": "西德州", "dxy": "美元指數", "us10y": "10 年期殖利率", "us2y_fut": "2 年期公債期貨"}
 MIN_TH = 0.15     # 最小反轉門檻（%）
 RANGE_FRAC = 0.25  # 門檻占當日振幅的比例
 
@@ -48,23 +50,34 @@ def zigzag(pts):
     return piv, th
 
 
+def at(x, m):
+    s = dict((k, p) for k, p in x["s"])
+    return s.get(m) or s[min(s, key=lambda k: abs(k - m))]
+
+
 def leg_movers(day, a, b):
     out = []
     for t, x in day.items():
-        if t in INDICES:
+        if t in INDICES or t in MACRO:
             continue
-        s = dict((m, p) for m, p in x["s"])
-        pa = s.get(a) or s.get(min(s, key=lambda m: abs(m - a)))
-        pb = s.get(b) or s.get(min(s, key=lambda m: abs(m - b)))
-        if pa and pb:
-            out.append((t, (pb / pa - 1) * 100))
+        out.append((t, (at(x, b) / at(x, a) - 1) * 100))
     out.sort(key=lambda r: r[1], reverse=True)
     return out[:3], out[-3:][::-1]
 
 
+def leg_macro(day, a, b):
+    out = []
+    for k, name in MACRO.items():
+        if k in day:
+            pa, pb = at(day[k], a), at(day[k], b)
+            out.append(f"{name} {(pb - pa) * 100:+.1f}bp" if k == "us10y" else f"{name} {(pb / pa - 1) * 100:+.2f}%")
+    return "、".join(out)
+
+
 def main(root, date=None):
     intra = json.loads((Path(root) / "data" / "intraday.json").read_text(encoding="utf-8"))
-    date = date or sorted(intra)[-1]
+    # 期貨有夜盤，最新日期可能只有油價、公債；預設取最近一個有指數資料的交易日
+    date = date or max(d for d in intra if any(i in intra[d] for i in INDICES))
     day = intra[date]
     print(f"交易日 {date}（時間為美東；括號內為台北）")
     for idx in INDICES:
@@ -84,7 +97,8 @@ def main(root, date=None):
                 up, dn = leg_movers(day, m, m2)
                 line += (f"  → 至 {hm(m2)} {v2 - v:+.2f} 個百分點"
                          f"｜領漲 {', '.join(f'{t} {c:+.2f}%' for t, c in up)}"
-                         f"｜領跌 {', '.join(f'{t} {c:+.2f}%' for t, c in dn)}")
+                         f"｜領跌 {', '.join(f'{t} {c:+.2f}%' for t, c in dn)}"
+                         f"｜同段 {leg_macro(day, m, m2)}")
             print(line)
 
 

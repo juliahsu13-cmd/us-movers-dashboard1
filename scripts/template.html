@@ -244,7 +244,7 @@ footer{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 16p
   <section class="macro" id="macro" hidden>
     <div class="macro-grid" id="macro-grid"></div>
     <div class="macro-note" id="macro-note" hidden></div>
-    <p class="src-note">油價、美元指數：Yahoo Finance 網路報價（油價為期貨近月，換月日漲跌幅含新舊合約價差）；美債殖利率：美國財政部每日殖利率曲線。</p>
+    <p class="src-note">油價、美元指數：Yahoo Finance 網路報價（油價為期貨近月，換月日漲跌幅含新舊合約價差）；美債殖利率：美國財政部每日殖利率曲線。點格子看盤中走勢（Yahoo 5 分鐘線，美東 09:30–16:00；10 年期為 ^TNX，2 年期以公債期貨價格代替）。</p>
   </section>
   <nav class="tabs" id="tabs" role="tablist" aria-label="分頁"></nav>
   <section class="intra" id="intra"></section>
@@ -283,11 +283,12 @@ function noteHTML(n, cls){
     ${n.s?.length ? `<p class="ns">來源：${n.s.map(esc).join("、")}</p>` : ""}</div>`;
 }
 const MACRO_ITEMS = [
-  {k:"brent", name:"布蘭特原油", unit:"美元/桶", kind:"pct"},
-  {k:"wti", name:"西德州原油", unit:"美元/桶", kind:"pct"},
-  {k:"dxy", name:"美元指數", unit:"DXY", kind:"pct"},
-  {k:"us10y", name:"美國 10 年期公債", unit:"殖利率 %", kind:"bp"},
-  {k:"us2y", name:"美國 2 年期公債", unit:"殖利率 %", kind:"bp"},
+  {k:"brent", name:"布蘭特原油", unit:"美元/桶", kind:"pct", ik:"brent", chart:"布蘭特原油期貨"},
+  {k:"wti", name:"西德州原油", unit:"美元/桶", kind:"pct", ik:"wti", chart:"西德州原油期貨"},
+  {k:"dxy", name:"美元指數", unit:"DXY", kind:"pct", ik:"dxy", chart:"美元指數"},
+  {k:"us10y", name:"美國 10 年期公債", unit:"殖利率 %", kind:"bp", ik:"us10y", chart:"10 年期殖利率（^TNX）"},
+  // Yahoo 沒有 2 年期殖利率的盤中報價，以 2 年期公債期貨價格代替（價格漲＝殖利率跌）
+  {k:"us2y", name:"美國 2 年期公債", unit:"殖利率 %", kind:"bp", ik:"us2y_fut", ikind:"pct", chart:"2 年期公債期貨價格（與殖利率反向）"},
   {k:"spread", name:"10 年－2 年利差", unit:"bp", kind:"bp"},
 ];
 const IDX = [
@@ -382,8 +383,10 @@ function setTab(k, scroll){
 const hm = m => `${String(Math.floor(m/60)).padStart(2,"0")}:${String(m%60).padStart(2,"0")}`;
 const CH = {W:720, H:240, L:46, R:12, T:12, B:26, t0:570, t1:960};
 
-function chartGeom(x){
-  const pts = x.s.filter(p => p[0] >= CH.t0 && p[0] <= CH.t1).map(p => [p[0], (p[1] / x.pc - 1) * 100, p[1]]);
+// kind＝"bp"（殖利率）時縱軸是相對前收的基點變動，其他一律是漲跌幅 %
+const sv = (v, kind) => kind === "bp" ? `${v > 0 ? "+" : v < 0 ? "−" : ""}${Math.abs(v).toFixed(1)} bp` : sign(v);
+function chartGeom(x, kind){
+  const pts = x.s.filter(p => p[0] >= CH.t0 && p[0] <= CH.t1).map(p => [p[0], kind === "bp" ? (p[1] - x.pc) * 100 : (p[1] / x.pc - 1) * 100, p[1]]);
   const vs = pts.map(p => p[1]);
   let lo = Math.min(0, ...vs), hi = Math.max(0, ...vs);
   const pad = Math.max((hi - lo) * 0.12, 0.05); lo -= pad; hi += pad;
@@ -413,11 +416,12 @@ function turnList(turns, pts, uid){
   }).join("")}</ol>`;
 }
 
-function chartHTML(x, title, uid, turns = []){
+function chartHTML(x, title, uid, turns = [], kind = "pct"){
   if (!x) return `<div class="intra-head"><h2>${esc(title)}</h2></div>
     <p class="note">這一天沒有盤中資料（來源只保留約 60 天的 5 分鐘線）。</p>`;
   const {W, H, L, R, T, B, t0} = CH;
-  const {pts, lo, hi, sx, sy} = chartGeom(x);
+  const {pts, lo, hi, sx, sy} = chartGeom(x, kind);
+  const unit = kind === "bp" ? "bp" : "%";
   const step = [0.1, 0.2, 0.25, 0.5, 1, 2, 2.5, 5].find(s => (hi - lo) / s <= 6) || 10;
   const ticks = []; for (let v = Math.ceil(lo / step) * step; v <= hi; v += step) ticks.push(+v.toFixed(4));
   const line = pts.map((p, n) => `${n ? "L" : "M"}${sx(p[0]).toFixed(1)},${sy(p[1]).toFixed(1)}`).join("");
@@ -426,10 +430,10 @@ function chartHTML(x, title, uid, turns = []){
   const last = pts[pts.length-1], hiP = pts.reduce((a, b) => b[1] > a[1] ? b : a), loP = pts.reduce((a, b) => b[1] < a[1] ? b : a);
   const col = last[1] >= 0 ? "var(--up)" : "var(--down)";
   return `<div class="intra-head"><h2>${esc(title)} · ${state.date}</h2>
-      <span class="readout">收 <b>${fmt(last[2])}</b> <b class="${dir(last[1])}">${sign(last[1])}</b></span></div>
+      <span class="readout">收 <b>${fmt(last[2])}</b> <b class="${dir(last[1])}">${sv(last[1], kind)}</b></span></div>
     <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(title)} ${state.date} 盤中走勢，相對前一交易日收盤 ${fmt(x.pc)}">
       <defs><clipPath id="cu-${uid}"><rect x="0" y="0" width="${W}" height="${base}"/></clipPath><clipPath id="cd-${uid}"><rect x="0" y="${base}" width="${W}" height="${H}"/></clipPath></defs>
-      ${ticks.map(v => `<line class="grid" x1="${L}" x2="${W-R}" y1="${sy(v)}" y2="${sy(v)}"/><text x="${L-6}" y="${sy(v)+4}" text-anchor="end">${v > 0 ? "+" : ""}${v}%</text>`).join("")}
+      ${ticks.map(v => `<line class="grid" x1="${L}" x2="${W-R}" y1="${sy(v)}" y2="${sy(v)}"/><text x="${L-6}" y="${sy(v)+4}" text-anchor="end">${v > 0 ? "+" : ""}${v}${unit}</text>`).join("")}
       ${[660, 780, 900].map(m => `<text x="${sx(m)}" y="${H-8}" text-anchor="middle">${hm(m)}</text>`).join("")}
       <text x="${sx(t0)}" y="${H-8}" text-anchor="start">09:30</text><text x="${sx(CH.t1)}" y="${H-8}" text-anchor="end">16:00</text>
       <line class="zero" x1="${L}" x2="${W-R}" y1="${base}" y2="${base}"/>
@@ -450,10 +454,10 @@ function chartHTML(x, title, uid, turns = []){
 }
 
 // 滑過或點圖上任一點：顯示該時刻價位與漲跌幅
-function wireChart(box, x){
+function wireChart(box, x, kind){
   const svg = box?.querySelector("svg");
   if (!x || !svg) return;
-  const {pts, sx, sy} = chartGeom(x);
+  const {pts, sx, sy} = chartGeom(x, kind);
   const ro = box.querySelector(".readout"), rest = ro.innerHTML, g = svg.querySelector(".hov");
   const cross = g.querySelector("line"), dot = g.querySelector("circle");
   const move = e => {
@@ -463,7 +467,7 @@ function wireChart(box, x){
     g.hidden = false;
     cross.setAttribute("x1", sx(p[0])); cross.setAttribute("x2", sx(p[0]));
     dot.setAttribute("cx", sx(p[0])); dot.setAttribute("cy", sy(p[1]));
-    ro.innerHTML = `${hm(p[0])} <b>${fmt(p[2])}</b> <b class="${dir(p[1])}">${sign(p[1])}</b>`;
+    ro.innerHTML = `${hm(p[0])} <b>${fmt(p[2])}</b> <b class="${dir(p[1])}">${sv(p[1], kind)}</b>`;
   };
   const hit = svg.querySelector(".hit");
   hit.addEventListener("pointermove", move); hit.addEventListener("pointerdown", move);
@@ -592,7 +596,13 @@ function renderMacro(){
   }).join("");
   const sel = MACRO_ITEMS.find(m => m.k === state.macro);
   $("#macro-note").hidden = !sel;
-  if (sel) $("#macro-note").innerHTML = `<p class="mn-title">${sel.name} · ${state.date} 重點新聞</p>${noteHTML(NOTES?.[state.date]?.[sel.k], dir(day[sel.k]?.chg))}`;
+  if (sel) {
+    // 盤中走勢接在格子下方、重點新聞上方；利差沒有盤中資料，只顯示新聞
+    const ix = sel.ik && INTRA?.[state.date]?.[sel.ik], kind = sel.ikind || sel.kind;
+    $("#macro-note").innerHTML = `${sel.ik ? `<div class="mchart intra">${chartHTML(ix, `${sel.chart} 盤中走勢`, "mc", [], kind)}</div>` : ""}
+      <p class="mn-title">${sel.name} · ${state.date} 重點新聞</p>${noteHTML(NOTES?.[state.date]?.[sel.k], dir(day[sel.k]?.chg))}`;
+    wireChart($("#macro-note .mchart"), ix, kind);
+  }
   document.querySelectorAll(".mcell").forEach(b => b.onclick = () => {
     state.macro = state.macro === b.dataset.k ? null : b.dataset.k;
     renderMacro();
