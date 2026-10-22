@@ -47,3 +47,11 @@ details summary{grid-template-columns:18px minmax(0,1fr) 80px;padding:12px}
 .why{padding:0 12px 14px;font-size:15px}
 .chip{font-size:12px}
 footer{flex-direction:column}
+.mail{padding:14px}
+.mail thead{display:none}
+.mail table,.mail tbody,.mail td{display:block}
+.mail tr{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:2px 8px;padding:10px 0;border-bottom:1px solid var(--line)}
+.mail td{padding:0;border:0;min-width:0}
+.mail td.why2,.mail td.biz{grid-column:1/-1;min-width:0}
+.mail td.biz{order:1} .mail td.why2{order:2;font-size:15px}
+.mail td:nth-child(3){display:none}

@@ -177,6 +177,30 @@ details summary:hover{background:var(--accent-soft)}
 .why{padding:0 14px 14px 46px;font-size:15px;line-height:1.7;max-width:80ch}
 .why .biz-full{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
 .note{font-size:13px;color:var(--muted);max-width:90ch;margin:0}
+/* 郵件內容：接在漲跌榜清單下方，照郵件原樣列出導讀與含歸因的表格 */
+.mail{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 20px;display:grid;gap:10px;min-width:0}
+.mail h2{margin:0;font-size:16px;font-weight:700}
+.mail h2 small{display:block;font-size:12px;font-weight:400;color:var(--muted);margin-top:2px}
+.mail > p{margin:0;max-width:none;line-height:1.75}
+.mail .mhead{font-weight:700;margin-top:6px}
+.mail .mhead.up{color:var(--up)} .mail .mhead.down{color:var(--down)}
+.mail table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.6}
+.mail th{text-align:left;font-weight:600;color:var(--muted);font-size:13px;padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+.mail td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+.mail td.t{font-family:var(--f-num);font-weight:600}
+.mail td.biz{color:var(--muted);font-size:13px;min-width:10em}
+.mail td.pp{font-family:var(--f-num);font-weight:600;white-space:nowrap;text-align:right}
+.mail td.why2{min-width:22em}
+@media (max-width:760px){
+  .mail{padding:14px}
+  .mail thead{display:none}
+  .mail table,.mail tbody,.mail tr,.mail td{display:block}
+  .mail tr{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:2px 8px;padding:10px 0;border-bottom:1px solid var(--line)}
+  .mail td{padding:0;border:0;min-width:0}
+  .mail td.why2,.mail td.biz{grid-column:1/-1;min-width:0}
+  .mail td.biz{order:1} .mail td.why2{order:2}
+  .mail td:nth-child(3){display:none}
+}
 .empty{background:var(--surface);border:1px dashed var(--line);border-radius:8px;padding:24px;color:var(--muted)}
 footer{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 16px}
 @media (max-width:480px){
@@ -457,7 +481,16 @@ function renderPanel(){
         }).join("")}</ol>
       </section>`).join("")}
     </div>
-    ${r.note ? `<p class="note">${esc(r.note)}</p>` : ""}`;
+    <section class="mail">
+      <h2>郵件內容 <small>${esc(r.subject)}</small></h2>
+      ${r.lead.map(p => `<p>${esc(p)}</p>`).join("")}
+      ${secs.map(s => `
+        <p class="mhead ${s.side}">${esc(s.head || (s.side === "up" ? "漲幅榜" : "跌幅榜"))}</p>
+        <table><thead><tr><th>代號</th><th>中文名</th><th>英文名</th><th>主要業務</th><th>漲跌幅</th><th>歸因</th></tr></thead>
+        <tbody>${s.rows.map(x => `<tr><td class="t">${esc(x.t)}</td><td>${esc(x.zh || "—")}</td><td>${esc(x.en)}</td>
+          <td class="biz">${esc(x.biz)}</td><td class="pp ${dir(x.pct)}">${sign(x.pct)}</td><td class="why2">${esc(x.why)}</td></tr>`).join("")}</tbody></table>`).join("")}
+      ${r.note ? `<p class="note">${esc(r.note)}</p>` : ""}
+    </section>`;
   document.querySelectorAll(".expand").forEach(b => b.onclick = () => { state.open = !state.open; renderPanel(); });
   $("#stamp").textContent = r.sent ? `郵件寄出：${new Date(r.sent).toLocaleString("zh-TW", {timeZone:"Asia/Taipei", hour12:false})}（台北）` : "";
 }
