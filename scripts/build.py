@@ -1,7 +1,8 @@
 """美股漲跌榜儀表板產生器。
 
 讀 data/mail/YYYY-MM-DD_{SPX,NDX,SOX,INDU}.md（每日漲跌榜郵件的純文字版），
-解析成 data/days.json，再把最近 MAX_DAYS 天塞進 template.html，輸出 out/us-movers.html。
+解析成 data/days.json，再把最近 MAX_DAYS 天塞進 template.html，輸出 out/us-movers.html，
+並以同一份資料產出手機版 out/us-movers-mobile.html。
 用法：py -I scripts/build.py <專案根目錄>
 """
 import json
@@ -11,6 +12,30 @@ from pathlib import Path
 
 INDICES = ["SPX", "NDX", "SOX", "INDU"]
 MAX_DAYS = 30
+
+DESKTOP_URL = "https://claude.ai/artifact/AbipxHhDsuLPwTmcFKkUGa"
+# 手機版＝template.html 套上這幾處替換，再在主樣式後接 scripts/mobile.css
+MOBILE_PATCHES = [
+    ("<title>美股漲跌榜</title>", "<title>美股漲跌榜 手機版</title>"),
+    ('    <div class="controls">\n',
+     '    <div class="controls">\n'
+     f'      <a class="m-link" href="{DESKTOP_URL}" target="_top">完整版 ›</a>\n'),
+    # 分頁在底部固定列，點了要捲到內容；圖表放大字級與邊距
+    ("setTab(b.dataset.k, false))", "setTab(b.dataset.k, true))"),
+    ('document.getElementById("tabs").scrollIntoView(',
+     'document.getElementById(k === "MEGA" ? "mega" : "intra").scrollIntoView('),
+    ("const CH = {W:720, H:240, L:46, R:12, T:12, B:26,",
+     "const CH = {W:720, H:380, L:84, R:14, T:16, B:40,"),
+    ("${[660, 780, 900].map(", "${[660, 780].map("),
+]
+
+
+def mobile_template(tpl, css):
+    for old, new in MOBILE_PATCHES:
+        if tpl.count(old) != 1:
+            raise SystemExit(f"手機版替換點在 template.html 出現 {tpl.count(old)} 次：{old!r}")
+        tpl = tpl.replace(old, new)
+    return tpl.replace("</style>\n", "</style>\n<style>\n" + css + "</style>\n", 1)
 
 NUM = r"([\d,]+\.\d+)"
 PCT = r"([+\-−–]?\d+(?:\.\d+)?)%"
@@ -170,14 +195,18 @@ def main(root):
     npath2 = root / "data" / "megacap_notes.json"
     notes_all = json.loads(npath2.read_text(encoding="utf-8")) if npath2.exists() else {}
     notes = {d: notes_all[d] for d in keep if d in notes_all}
-    html = (tpl.replace("/*__NOTES__*/null", json.dumps(notes, ensure_ascii=False, separators=(",", ":")))
-               .replace("/*__MACRO__*/null", json.dumps(macro, separators=(",", ":")))
-               .replace("/*__MEGA__*/null", json.dumps(mega, ensure_ascii=False, separators=(",", ":")))
-               .replace("/*__DATA__*/null", data_js)
-               .replace("/*__INTRA__*/null", json.dumps(intra, separators=(",", ":"))))
+    def render(t):
+        return (t.replace("/*__NOTES__*/null", json.dumps(notes, ensure_ascii=False, separators=(",", ":")))
+                 .replace("/*__MACRO__*/null", json.dumps(macro, separators=(",", ":")))
+                 .replace("/*__MEGA__*/null", json.dumps(mega, ensure_ascii=False, separators=(",", ":")))
+                 .replace("/*__DATA__*/null", data_js)
+                 .replace("/*__INTRA__*/null", json.dumps(intra, separators=(",", ":"))))
     out = root / "out" / "us-movers.html"
     out.parent.mkdir(exist_ok=True)
-    out.write_text(html, encoding="utf-8")
+    out.write_text(render(tpl), encoding="utf-8")
+    css = (root / "scripts" / "mobile.css").read_text(encoding="utf-8")
+    out_m = root / "out" / "us-movers-mobile.html"
+    out_m.write_text(render(mobile_template(tpl, css)), encoding="utf-8")
 
     latest = keep[-1] if keep else None
     summary = {
@@ -188,6 +217,8 @@ def main(root):
         "problems": problems,
         "out": str(out),
         "bytes": out.stat().st_size,
+        "out_mobile": str(out_m),
+        "bytes_mobile": out_m.stat().st_size,
     }
     (root / "data" / "summary.json").write_text(
         json.dumps(summary, ensure_ascii=False, indent=1), encoding="utf-8")
