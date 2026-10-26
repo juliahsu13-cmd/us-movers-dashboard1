@@ -117,6 +117,11 @@ def parse_mail(text):
             close = to_float(m.group(1))
             pct = to_float(m.group(3)) * (1 if m.group(2) == "漲" else -1)
             break
+        # 「S&P 500 +0.70% 收 7,676.77」：漲跌幅寫在收盤數字之前
+        m = re.search(r"([+\-−–]\d+(?:\.\d+)?)%\s*收\s*" + NUM, p)
+        if m:
+            pct, close = to_float(m.group(1)), to_float(m.group(2))
+            break
     if pct is None:  # 例：「SOX 收約 11,315 點（…推算），收 +1.6%」
         joined = "\n".join(lead)
         m1 = re.search(r"收約?\s*([\d,]{5,}(?:\.\d+)?)", joined)

@@ -1,5 +1,5 @@
 {
- "latest_date": "2026-10-23",
+ "latest_date": "2026-10-26",
  "latest_indices": [
   "INDU",
   "NDX",
@@ -7,16 +7,18 @@
   "SPX"
  ],
  "missing_indices": [],
- "days_in_page": 14,
+ "days_in_page": 15,
  "problems": [
   "2026-10-22: 無盤中走勢資料",
   "2026-10-23: 無盤中走勢資料",
+  "2026-10-26: 無盤中走勢資料",
   "2026-10-22: 無權值個股資料",
   "2026-10-23: 無權值個股資料",
-  "2026-10-23: 無盤中轉折標註"
+  "2026-10-26: 無權值個股資料",
+  "2026-10-26: 無盤中轉折標註"
  ],
  "out": "out/us-movers.html",
- "bytes": 1117987,
+ "bytes": 1149346,
  "out_mobile": "out/us-movers-mobile.html",
- "bytes_mobile": 1121325
+ "bytes_mobile": 1152684
 }
