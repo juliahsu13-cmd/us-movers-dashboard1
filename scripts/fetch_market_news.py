@@ -24,8 +24,7 @@ QUERIES = [
     "oil prices", "Treasury yields", "Treasury auction", "Fed officials rate",
     "economic data jobs inflation report", "Iran Middle East oil",
 ]
-PER_QUERY = 30
-MAX_PER_DAY = 150
+PER_QUERY = 30  # 每個查詢詞最多 30 則，全天合計最多 12 × 30 則
 
 
 def main(root, back=2):
@@ -64,7 +63,7 @@ def main(root, back=2):
                 log.append(f"{day} 「{q}」下載失敗：{e}")
             time.sleep(0.4)  # 放慢節奏，避免被 Google 限流
         if items or day not in store:
-            store[day] = sorted(items, key=lambda x: x["m"])[:MAX_PER_DAY]
+            store[day] = sorted(items, key=lambda x: x["m"])
     path.write_text(json.dumps(store, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     latest = max(store) if store else "無"
     log.append(f"抓取 {fetched} 次；最新 {latest}：{len(store.get(latest, []))} 則")
