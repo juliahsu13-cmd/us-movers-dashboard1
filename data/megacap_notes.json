@@ -3344,5 +3344,271 @@
     "Yahoo Finance"
    ]
   }
+ },
+ "2026-10-27": {
+  "NVDA": {
+   "h": "Nvidia 認購 Meta 30 億美元增資，股價僅 +0.90% 落後晶片族群",
+   "b": "Barchart 與 Motley Fool 報導 Nvidia 參與 Meta 最高 950 億美元增資、認購約 30 億美元，進一步綁定最大客戶的算力採購。但當日資金偏向互連、整機與類比等供應鏈位置，Nvidia 僅 +0.90%，遠落後費半 +3.60% 與 AMD +5.45%，SOX 郵件將其列為漲幅最落後之一。",
+   "s": [
+    "Barchart",
+    "The Motley Fool",
+    "SOX 漲跌榜郵件"
+   ]
+  },
+  "TSM": {
+   "h": "Anthropic IPO 帶動 AI 晶片買盤，台積電 ADR 收 +2.95%",
+   "b": "TradingKey 報導台積電 ADR 10/27 上漲約 3%，屬於 Anthropic 遞交上市申請、Meta 增資後半導體連兩日上漲的族群買盤；當日無公司具名事件。漲幅低於費半 +3.60%，但高於 Nvidia +0.90%，屬晶圓代工層的跟漲。",
+   "s": [
+    "TradingKey",
+    "MarketBeat"
+   ]
+  },
+  "MSFT": {
+   "h": "Microsoft 對 6 萬名員工提自願離職方案，財報前股價 -0.24%",
+   "b": "Barron's 與 Barchart 報導 Microsoft 對約 6 萬名員工提供自願離職方案，以撙節成本支應 AI 建置；同時市場等待本週第一財季財報與 Azure 成長數字。股價收 -0.24%，在 Nasdaq 100 +1.29% 的日子落後，INDU 郵件認為其 AI 押注不在 Anthropic，未享受持股重估（推測）。",
+   "s": [
+    "Barron's",
+    "Barchart",
+    "INDU 漲跌榜郵件"
+   ]
+  },
+  "AAPL": {
+   "h": "Loop Capital 以 iPhone 出貨疑慮下修目標價，Apple 小漲 0.93%",
+   "b": "Barchart 報導 Loop Capital 因 iPhone 出貨疑慮下修 Apple 目標價，Apple 另宣布更換螢幕有問題的 iPhone Duo。利空未擴大，股價收 +0.93%，前一日 -1.10% 後小幅反彈；INDU 郵件記其對道瓊貢獻約 +19 點。",
+   "s": [
+    "Barchart",
+    "Euronext",
+    "INDU 漲跌榜郵件"
+   ]
+  },
+  "GOOGL": {
+   "h": "Anthropic 遞件 IPO，持股價值重估帶動 Alphabet +1.19%",
+   "b": "INDU 郵件指 Alphabet 是 Anthropic 早期大股東，遞件 IPO 後持股價值被重估（推測），前一日 -1.06% 後今天回補，收 +1.19%。市場另聚焦 10/28 Q3 財報，多篇預覽文對 AI 搜尋衝擊仍有分歧；漲幅小於同為大股東的 Amazon +1.61%。",
+   "s": [
+    "INDU 漲跌榜郵件",
+    "Barchart",
+    "Yahoo Finance"
+   ]
+  },
+  "AMZN": {
+   "h": "Anthropic 大股東身分受惠，Amazon 財報前收 +1.61%",
+   "b": "Anthropic 遞交上市申請，持有大額股權的 Amazon 被視為持股重估受益者（推測），Mizuho 同日重申優於大盤、目標價 330 美元。股價收 +1.61%，為 NDX 撐盤權值之一；10/29 Q3 財報前市場焦點在 AWS 成長。",
+   "s": [
+    "INDU 漲跌榜郵件",
+    "Investing.com",
+    "Barchart"
+   ]
+  },
+  "META": {
+   "h": "Meta 950 億美元增資超額認購，稀釋疑慮令股價 -1.64%",
+   "b": "Bloomberg 報導 Meta 尋求最高 950 億美元股權募資支應 AI 支出，其中 250 億美元股票出售獲五倍超額認購，Motley Fool 稱規模最終擴至近 980 億美元、為史上最大股權發行。資金面利多傳導給 AMD、Dell 等供應商，Meta 本身則因股本稀釋收 -1.64%，為權值股最弱。",
+   "s": [
+    "Bloomberg",
+    "The Motley Fool",
+    "Yahoo Finance"
+   ]
+  },
+  "TSLA": {
+   "h": "Barclays 以 SpaceX 合併想像升評，Tesla 連兩日上漲 +4.04%",
+   "b": "Investopedia 與 IBD 報導 Barclays 10/26 以 SpaceX 潛在合併前景調升 Tesla 評等，帶動股價連兩日走強，10/27 收 +4.04%、IBD 稱突破買點。NDX 郵件將其與 Broadcom 列為撐起指數的權值股；同期 Q3 獲利年減 43% 的利空未再發酵。",
+   "s": [
+    "Investopedia",
+    "Investor's Business Daily",
+    "NDX 漲跌榜郵件"
+   ]
+  },
+  "AVGO": {
+   "h": "Anthropic 630 億美元晶片融資＋升評，Broadcom 收 +4.00%",
+   "b": "Barron's 稱 Broadcom 是 Anthropic IPO 的最大贏家，並獲分析師升評至買進；Morningstar 提到 Anthropic 新融資協議（郵件記為約 630 億美元銀行融資開發晶片，單一來源）。股價收 +4.00%，Kiplinger 稱 Nasdaq 當日大漲 308 點主要靠 Broadcom；盤中開高後一度回落再走高。",
+   "s": [
+    "Barron's",
+    "Morningstar",
+    "Kiplinger"
+   ]
+  },
+  "AMD": {
+   "h": "擴大與 Meta 的 AI 基建合作，AMD 收 +5.45%",
+   "b": "Yahoo Finance 報導 AMD 因擴大與 Meta 的 AI 基礎設施合作（含約 10 億美元投資）及晶片族群走強而上漲，收 +5.45%，約為 Nvidia +0.90% 的 6 倍。NDX 郵件認為其近 20 日 -7.8%、位階較低，補漲空間較大（推測）。",
+   "s": [
+    "Yahoo Finance",
+    "Stocks Down Under",
+    "NDX 漲跌榜郵件"
+   ]
+  },
+  "ORCL": {
+   "h": "擴大 OpenAI 合作、Google TPU 進駐 OCI，Oracle 收 +3.55%",
+   "b": "CNBC 與 IBD 報導 Oracle 擴大與 OpenAI 的合作，Google TPU 也將上架 Oracle Cloud、與 Nvidia 合作擴大，股價盤中一度漲約 5%，收 +3.55%。週三投資人日前的反彈，股價仍較上次投資人日跌約 60%。",
+   "s": [
+    "CNBC",
+    "Investor's Business Daily",
+    "Yahoo Finance"
+   ]
+  },
+  "INTC": {
+   "h": "Classiq 量子合作與財報後回補，Intel 收 +3.61%",
+   "b": "Opening Bell Daily 報導 Intel 因與 Classiq 的量子運算合作上漲，Rosenblatt 維持 80 美元目標價、Wedbush 看好 Q3 後的復甦。股價收 +3.61%，與費半 +3.60% 幾乎同幅，屬族群日中的跟漲。",
+   "s": [
+    "Opening Bell Daily",
+    "Moomoo",
+    "Yahoo Finance"
+   ]
+  },
+  "SMCI": {
+   "h": "Meta 增資拉高 AI 伺服器需求預期，Super Micro 收 +7.34%",
+   "b": "MarketWatch 稱 Super Micro 在強勢交易日跑贏同業；SPX 郵件歸因 Meta 950 億美元募資讓整機與液冷機櫃需求預期上調（推測），與 Dell +7.47% 幾乎同幅。期權隱含財報後約 11% 波動，財報前資金卡位亦有推波（推測）。",
+   "s": [
+    "MarketWatch",
+    "SPX 漲跌榜郵件",
+    "Investing.com"
+   ]
+  },
+  "DELL": {
+   "h": "Meta 擴建 AI 預算有資金來源，Dell 大漲 7.47%",
+   "b": "Barron's 列出 Dell 大漲的兩個理由，Benzinga 與 Globe and Mail 同步報導其盤中飆升；SPX 郵件指 Meta 950 億美元增資、Nvidia 認購 30 億，讓買得起算力的客戶變多，AI 伺服器占營收約 37% 的 Dell 直接受惠（推測）。收 +7.47%，漲幅集中在整機層而非晶片層。",
+   "s": [
+    "Barron's",
+    "Benzinga",
+    "SPX 漲跌榜郵件"
+   ]
+  },
+  "HPQ": {
+   "h": "當日無具名事件，HP 在 AI 硬體日逆勢 -1.50%",
+   "b": "當日新聞僅有主管行使股票獎酬的 Form 4 申報，無影響股價的公司事件。HP 以 PC 與印表機為主，未搭上 AI 伺服器買盤，在 Dell +7.47% 的日子收 -1.50%，開盤後即走弱，屬資金由消費硬體轉向資料中心硬體的族群輪動（推測）。",
+   "s": [
+    "Stock Titan",
+    "MarketWatch"
+   ]
+  },
+  "QCOM": {
+   "h": "手機營收下滑啟動裁員後，Qualcomm 隨晶片族群反彈 +2.54%",
+   "b": "TIKR 報導 Qualcomm 宣布全球裁員、手機營收下滑約 20%，近一月股價跌約 13%。10/27 隨費半走強收 +2.54%，MarketBeat 稱收復關鍵價位；漲幅低於費半 +3.60%，屬族群帶動，非公司新利多。",
+   "s": [
+    "TIKR.com",
+    "MarketBeat"
+   ]
+  },
+  "SWKS": {
+   "h": "當日無具名事件，Skyworks 隨半導體族群 +2.57%",
+   "b": "當日新聞為 BlackRock 被動持股申報、股東律所招攬與 11/3 財報期權隱含 7.8% 波動，均非價格驅動。股價收 +2.57%，與 Qualcomm +2.54% 同步，屬費半 +3.60% 帶動的手機射頻族群跟漲。",
+   "s": [
+    "Investing.com",
+    "Stock Titan"
+   ]
+  },
+  "MU": {
+   "h": "記憶體族群延續買盤，Micron 收 +2.77%",
+   "b": "Barron's 報導 Musk 對機器人記憶體需求的預測拉抬 Micron，Yahoo Finance 同時提到 615 億美元資本支出的門檻疑慮。股價收 +2.77%，NDX 郵件指同鏈 Western Digital +6.95% 位階較低、補漲更多，Micron 漲幅落後費半 +3.60%。",
+   "s": [
+    "Barron's",
+    "Yahoo Finance",
+    "NDX 漲跌榜郵件"
+   ]
+  },
+  "STX": {
+   "h": "盤中隨儲存族群收 +3.67%，盤後財報優於預期但股價下跌",
+   "b": "Seagate 收盤 +3.67%，跟隨 Western Digital +6.95% 的儲存買盤。收盤後公布第一財季財報，營收約 42 億美元、指引皆優於預期，但 IBD、Barron's 報導股價盤後下跌，市場認為創紀錄獲利仍不足以支撐估值；此盤後反應未反映在當日收盤。",
+   "s": [
+    "Investor's Business Daily",
+    "Barron's",
+    "Seeking Alpha"
+   ]
+  },
+  "ON": {
+   "h": "類比與功率晶片整層上漲，安森美 +6.22% 領先同業",
+   "b": "SOX 郵件指類比族群整層上漲：Microchip +5.63%、ADI +4.27%、TXN +3.62%，安森美 +6.22% 領先；SPX 郵件推測是 AI 資料中心電源需求預期上調。24/7 Wall St. 談其現金收購案能否推升 Q3 財報，但超出同業的差額查無公司事件，原因未解。",
+   "s": [
+    "SOX 漲跌榜郵件",
+    "SPX 漲跌榜郵件",
+    "24/7 Wall St."
+   ]
+  },
+  "MRVL": {
+   "h": "分析師調高預測與目標價，Marvell 收 +4.19%",
+   "b": "Barchart 報導分析師調高 Marvell 財測與目標價，TradingView 將其列入 Intel、Microchip、onsemi、Seagate 同步上漲的晶片股。收 +4.19%，SOX 郵件指設計層 AMD、MRVL、AVGO 漲幅均大於 ARM，資金偏好 AI 客製晶片與互連。",
+   "s": [
+    "Barchart",
+    "TradingView",
+    "SOX 漲跌榜郵件"
+   ]
+  },
+  "COHR": {
+   "h": "StoneX 首評買進、目標價 425 美元，Coherent 收 +6.45%",
+   "b": "TIKR 報導 StoneX 首次涵蓋 Coherent 與 Lumentum 均給買進、看 103% 上檔空間（Coherent 目標價 425 美元），疊加 Anthropic 遞件 IPO 拉高光通訊需求預期。股價收 +6.45%，前一日已漲 5.83%；同層 Credo +10.77%、Astera Labs +10.47% 漲更多。",
+   "s": [
+    "TIKR.com",
+    "ad-hoc-news.de",
+    "SOX 漲跌榜郵件"
+   ]
+  },
+  "LITE": {
+   "h": "零組件「售罄至 2029」與 StoneX 首評買進，Lumentum 再漲 5.88%",
+   "b": "TheStreet 報導 Lumentum 表示 AI 光學元件已全數售罄，Barchart 稱產能排到 2029 年；StoneX 同期首評買進。股價繼 10/26 +8.19% 後再收 +5.88%，與 Coherent +6.45% 同為光通訊層領漲。",
+   "s": [
+    "TheStreet",
+    "Barchart",
+    "TradingKey"
+   ]
+  },
+  "brent": {
+   "h": "美伊外交斡旋壓低油價，Brent 近月盤中跌約 2 美元",
+   "b": "Reuters 報導油價盤中跌約 2 美元，伊朗最高領袖與安全官員討論結束戰事條件、中東外交斡旋升溫，蓋過 Houthi 攻擊沙國煉油廠的利多；郵件記 Brent 收約 1.6–1.7%。資料檔顯示 109.44 美元、-5.5%，較 115.81 美元的跌幅含合約換月價差（推測），實際近月跌幅約 2%。",
+   "s": [
+    "Reuters",
+    "CNBC",
+    "Bloomberg"
+   ]
+  },
+  "wti": {
+   "h": "中東外交進展令 WTI 回落 1.75%，守住 100 美元關卡",
+   "b": "WSJ 報導油價期貨因中東外交努力加速而回落，CME 稱 WTI 守住 100 美元支撐；盤中一度跌 2 美元，荷莫茲海峽攻擊雖創紀錄、油價仍在多月高位附近。WTI 收 99.98 美元、-1.75%，INDU 郵件記煉油股因裂解價差重估重挫，Valero -9.24%。",
+   "s": [
+    "WSJ",
+    "CME Group",
+    "BigGo Finance"
+   ]
+  },
+  "dxy": {
+   "h": "Fed 會議前美元走穩，耐久財訂單優於預期，美元指數 +0.39%",
+   "b": "FXEmpire 報導耐久財訂單優於預期推升美元，Action Forex 稱美元指數在 FOMC 會議前維持強勢、守住 102 之上。美元指數收 102.36、+0.39%，市場等待 10/28 Fed 決議。",
+   "s": [
+    "FXEmpire",
+    "Action Forex",
+    "FXStreet"
+   ]
+  },
+  "us10y": {
+   "h": "房市數據疲弱、油價回落，10 年期殖利率降 1bp 至 4.99%",
+   "b": "WSJ 報導公債殖利率因一連串疲弱的房市數據回落，加上油價下跌緩和通膨疑慮；13:00 五年期公債標售得標利率 4.845%、投標倍數 2.33 屬中等。10 年期殖利率收 4.99%、-1bp，重新跌回 5% 以下，Fed 兩日會議已展開。",
+   "s": [
+    "WSJ",
+    "TradingView",
+    "CNBC"
+   ]
+  },
+  "us2y": {
+   "h": "Fed 決議前短債承壓，2 年期殖利率升 2bp 至 4.70%",
+   "b": "CNBC 報導 Fed 兩日會議展開之際公債殖利率小幅走高，Finimize 稱市場聚焦 Fed；美元同步走強。2 年期殖利率收 4.70%、+2bp，與長端下行方向相反，反映政策利率預期偏鷹（推測）。",
+   "s": [
+    "CNBC",
+    "Finimize"
+   ]
+  },
+  "spread": {
+   "h": "短升長降，10 年減 2 年利差收窄 3bp 至 29bp",
+   "b": "2 年期殖利率 +2bp 至 4.70%、10 年期 -1bp 至 4.99%，利差由 32bp 收窄至 29bp，呈熊平後的平坦化。短端反映 Fed 決議前的政策預期，長端則受油價回落與房市數據疲弱壓抑。",
+   "s": [
+    "美國財政部殖利率曲線",
+    "WSJ"
+   ]
+  },
+  "_summary": {
+   "h": "Meta 950 億增資＋Anthropic IPO 續燃算力鏈，資金由應用軟體、煉油與 Boeing 流向互連與整機",
+   "b": "10/27 的主線是 AI 算力的資金來源更明確：Anthropic 前一日遞件 IPO，Meta 再啟動最高 950 億美元增資（Nvidia 認購 30 億、超額認購），Broadcom 傳 630 億美元 Anthropic 晶片融資並獲升評 +4.00%。費半 +3.60% 連兩日上漲，Nasdaq 100 +1.29%、S&P 500 +0.60%，道瓊僅 +0.03%，因 Boeing 財報延後 737 增產重挫 10.69%、拖累約 120 點，Caterpillar 與 Goldman Sachs 撐盤。資金集中在互連（Credo +10.77%）、整機（Dell +7.47%、Super Micro +7.34%）、光通訊與類比，Nvidia 只 +0.90%；賣方是軟體與資訊服務（Paychex、Adobe）及煉油股（Valero -9.24%）。宏觀面，美伊外交斡旋令油價回落約 2%（WTI -1.75% 至 99.98 美元），美元指數 +0.39%，10 年期殖利率 -1bp 至 4.99%、2 年期 +2bp，市場在 Fed 決議前並未押注降息。",
+   "s": [
+    "SPX／NDX／SOX／INDU 漲跌榜郵件",
+    "Bloomberg",
+    "Reuters"
+   ]
+  }
  }
 }
