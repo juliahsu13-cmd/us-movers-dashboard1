@@ -8,11 +8,9 @@
  ],
  "missing_indices": [],
  "days_in_page": 15,
- "problems": [
-  "2026-10-26: 無盤中轉折標註"
- ],
+ "problems": [],
  "out": "out/us-movers.html",
- "bytes": 1276604,
+ "bytes": 1296361,
  "out_mobile": "out/us-movers-mobile.html",
- "bytes_mobile": 1279942
+ "bytes_mobile": 1299699
 }
