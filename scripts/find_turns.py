@@ -105,7 +105,8 @@ def main(root, date=None):
                          f"｜同段 {leg_macro(day, m, m2)}")
             print(line)
             if kind in ("高點", "低點"):
-                near = [x for x in news if m - NEWS_BEFORE <= x["m"] <= m + NEWS_AFTER][:NEWS_MAX]
+                near = [x for x in news if m - NEWS_BEFORE <= x["m"] <= m + NEWS_AFTER]
+                near = sorted(sorted(near, key=lambda x: abs(x["m"] - m))[:NEWS_MAX], key=lambda x: x["m"])  # 取最接近轉折的幾則
                 for x in near:
                     print(f"      新聞 {x['et']} {x['s']}｜{x['t']}")
 
