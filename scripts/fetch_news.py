@@ -55,11 +55,16 @@ def main(root, back=2):
     path = root / "data" / "news.json"
     store = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
     names = json.loads((root / "data" / "megacap_names.json").read_text(encoding="utf-8"))
-    days = sorted({f.name[:10] for f in (root / "data" / "mail").glob("*.md")})[-back:]
+    # 交易日取郵件日期，加上盤中走勢已有 SPX 的日期（GitHub Actions 在郵件寄出前就先抓）
+    ipath = root / "data" / "intraday.json"
+    intra = json.loads(ipath.read_text(encoding="utf-8")) if ipath.exists() else {}
+    days = sorted({f.name[:10] for f in (root / "data" / "mail").glob("*.md")}
+                  | {d for d, v in intra.items() if "SPX" in v})[-back:]
     refresh = set(days[-2:])
     log, fetched = [], 0
     for i, day in enumerate(days):
-        if day in store and day not in refresh:
+        # 先前整天下載失敗（每項都空）的日期也重抓
+        if day in store and day not in refresh and any(store[day].values()):
             continue
         prev = days[i - 1] if i else (datetime.strptime(day, "%Y-%m-%d") - timedelta(days=1)).strftime("%Y-%m-%d")
         lo, hi = window(day, prev)

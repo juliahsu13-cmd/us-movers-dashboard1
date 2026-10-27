@@ -1,0 +1,56 @@
+# 抓盤中走勢、油價美元美債、權值個股報價與英文候選新聞，提交回 main。
+# 雲端 Claude 排程的網路政策擋下 Yahoo／財政部／Google 新聞，改由 GitHub 的執行環境代抓；
+# 每日排程開頭先 git pull origin main，就能拿到這裡抓好的資料。
+name: 抓取市場資料
+
+on:
+  schedule:
+    # 美股收盤後、每日排程（約 23:20 UTC）之前；週一到週五
+    - cron: "20 22 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      news_days:
+        description: "候選新聞回補的交易日數"
+        default: "5"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-data
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      # 任一腳本失敗不擋其他腳本，與每日排程相同
+      - name: 盤中走勢
+        run: python3 scripts/fetch_intraday.py . || echo "::warning::fetch_intraday 失敗"
+      - name: 油價、美元、美債
+        run: python3 scripts/fetch_macro.py . || echo "::warning::fetch_macro 失敗"
+      - name: 權值個股報價
+        run: python3 scripts/fetch_megacaps.py . || echo "::warning::fetch_megacaps 失敗"
+      - name: 英文候選新聞
+        run: python3 scripts/fetch_news.py . "${{ github.event.inputs.news_days || '3' }}" || echo "::warning::fetch_news 失敗"
+
+      - name: 提交回 main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/intraday.json data/macro.json data/megacaps.json data/megacap_names.json data/news.json
+          if git diff --cached --quiet; then
+            echo "資料無變更"
+            exit 0
+          fi
+          git commit -m "$(date -u +%Y-%m-%d) 市場資料（GitHub Actions）"
+          for i in 1 2 3 4; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((2 ** i))
+          done
+          exit 1
