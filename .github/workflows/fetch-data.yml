@@ -1,4 +1,4 @@
-# 抓盤中走勢、油價美元美債、權值個股報價與英文候選新聞，提交回 main。
+# 抓盤中走勢、油價美元美債、權值個股報價、英文候選新聞與盤中市場新聞，提交回 main。
 # 雲端 Claude 排程的網路政策擋下 Yahoo／財政部／Google 新聞，改由 GitHub 的執行環境代抓；
 # 每日排程開頭先 git pull origin main，就能拿到這裡抓好的資料。
 name: 抓取市場資料
@@ -38,12 +38,14 @@ jobs:
         run: python3 scripts/fetch_megacaps.py . || echo "::warning::fetch_megacaps 失敗"
       - name: 英文候選新聞
         run: python3 scripts/fetch_news.py . "${{ github.event.inputs.news_days || '3' }}" || echo "::warning::fetch_news 失敗"
+      - name: 盤中市場新聞（轉折標註對照用）
+        run: python3 scripts/fetch_market_news.py . "${{ github.event.inputs.news_days || '3' }}" || echo "::warning::fetch_market_news 失敗"
 
       - name: 提交回 main
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/intraday.json data/macro.json data/megacaps.json data/megacap_names.json data/news.json
+          git add data/intraday.json data/macro.json data/megacaps.json data/megacap_names.json data/news.json data/market_news.json
           if git diff --cached --quiet; then
             echo "資料無變更"
             exit 0

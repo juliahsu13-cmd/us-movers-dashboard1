@@ -3,6 +3,7 @@
 讀 data/intraday.json（5 分鐘線），對指定交易日（預設最新一天）的 SPX／NDX／SOX／INDU
 用 zigzag 找轉折：價格自上一個極值反向超過門檻才算轉折，門檻＝max(0.15%, 當日振幅 × 25%)。
 每段走勢（轉折到下一個轉折）另算 intraday.json 裡各權值個股同時段的漲跌幅，列出領漲、領跌各 3 檔。
+有 data/market_news.json（GitHub Actions 代抓的盤中新聞）時，另列每個高點／低點前 40 分鐘到後 10 分鐘發布的新聞標題。
 只印出結果，不寫檔。
 用法：python3 scripts/find_turns.py <專案根目錄> [YYYY-MM-DD]
 """
@@ -15,6 +16,7 @@ INDICES = ["SPX", "NDX", "SOX", "INDU"]
 MACRO = {"brent": "布蘭特", "wti": "西德州", "dxy": "美元指數", "us10y": "10 年期殖利率", "us2y_fut": "2 年期公債期貨"}
 MIN_TH = 0.15     # 最小反轉門檻（%）
 RANGE_FRAC = 0.25  # 門檻占當日振幅的比例
+NEWS_BEFORE, NEWS_AFTER, NEWS_MAX = 40, 10, 6  # 轉折附近新聞的時間窗（分鐘）與筆數上限
 
 
 def hm(m):
@@ -79,6 +81,8 @@ def main(root, date=None):
     # 期貨有夜盤，最新日期可能只有油價、公債；預設取最近一個有指數資料的交易日
     date = date or max(d for d in intra if any(i in intra[d] for i in INDICES))
     day = intra[date]
+    npath = Path(root) / "data" / "market_news.json"
+    news = json.loads(npath.read_text(encoding="utf-8")).get(date, []) if npath.exists() else []
     print(f"交易日 {date}（時間為美東；括號內為台北）")
     for idx in INDICES:
         if idx not in day:
@@ -100,6 +104,10 @@ def main(root, date=None):
                          f"｜領跌 {', '.join(f'{t} {c:+.2f}%' for t, c in dn)}"
                          f"｜同段 {leg_macro(day, m, m2)}")
             print(line)
+            if kind in ("高點", "低點"):
+                near = [x for x in news if m - NEWS_BEFORE <= x["m"] <= m + NEWS_AFTER][:NEWS_MAX]
+                for x in near:
+                    print(f"      新聞 {x['et']} {x['s']}｜{x['t']}")
 
 
 if __name__ == "__main__":
