@@ -9,16 +9,10 @@
  "missing_indices": [],
  "days_in_page": 15,
  "problems": [
-  "2026-10-22: 無盤中走勢資料",
-  "2026-10-23: 無盤中走勢資料",
-  "2026-10-26: 無盤中走勢資料",
-  "2026-10-22: 無權值個股資料",
-  "2026-10-23: 無權值個股資料",
-  "2026-10-26: 無權值個股資料",
   "2026-10-26: 無盤中轉折標註"
  ],
  "out": "out/us-movers.html",
- "bytes": 1149346,
+ "bytes": 1276604,
  "out_mobile": "out/us-movers-mobile.html",
- "bytes_mobile": 1152684
+ "bytes_mobile": 1279942
 }
