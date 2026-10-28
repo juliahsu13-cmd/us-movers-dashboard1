@@ -3610,5 +3610,276 @@
     "Reuters"
    ]
   }
+ },
+ "2026-10-28": {
+  "NVDA": {
+   "h": "SK Hynix 利多流向記憶體與設備，Nvidia 逆勢收跌 1.17%",
+   "b": "SK Hynix 公布創紀錄獲利並稱記憶體缺貨延續到 2030 年，當日費半 +1.75%，但資金買的是記憶體、設備與光通訊等供給瓶頸，Nvidia 反收 -1.17%。SOX 與道瓊郵件皆列其為跌幅榜，未查到公司自身新聞；作為記憶體買方，成本端受壓（推測）。",
+   "s": [
+    "SOX 漲跌榜郵件",
+    "INDU 漲跌榜郵件",
+    "Yahoo Finance"
+   ]
+  },
+  "TSM": {
+   "h": "傳 CoWoS 先進封裝漲價 10–20%，台積電 ADR 收漲 0.60%",
+   "b": "GuruFocus 與 Yahoo Finance 報導台積電考慮將 AI 晶片 CoWoS 封裝報價調漲 10–20%，凸顯定價能力，盤中一度漲約 3%。收盤僅 +0.60%，漲幅收斂、落後費半 +1.75%，資金當日更集中在記憶體與設備股。",
+   "s": [
+    "GuruFocus",
+    "Yahoo Finance",
+    "MarketBeat"
+   ]
+  },
+  "MSFT": {
+   "h": "盤後財報 Azure 加速、營收優於預期，未反映在當日收盤",
+   "b": "Microsoft 正常盤 -0.06% 平收，財報於收盤後公布：雲端營收優於預期、Azure 成長加速，Reuters 稱 AI 投資開始回收；盤後股價上漲約 4–5%（Yahoo Finance 稱 AI 支出低於預期也受歡迎）。以上未反映在當日收盤。",
+   "s": [
+    "Reuters",
+    "Investor's Business Daily",
+    "CNBC"
+   ]
+  },
+  "AAPL": {
+   "h": "秋季新品收官、財報前小跌 0.94%，拖累道瓊約 19 點",
+   "b": "Apple 發表觸控螢幕筆電為秋季新品收尾，Monness 將目標價調高至 355 美元，但股價在財報前收 -0.94%；24/7 Wall St. 指其股價已高於華爾街平均目標價。INDU 郵件估 Apple 拖累道瓊約 19 點，是財報前的部位調節（推測）。",
+   "s": [
+    "Investor's Business Daily",
+    "Investing.com",
+    "INDU 漲跌榜郵件"
+   ]
+  },
+  "GOOGL": {
+   "h": "盤後財報營收不如預期、搜尋成長放緩，盤後重挫約 10%",
+   "b": "Alphabet 正常盤 +1.34% 屬財報前卡位，收盤後公布營收 1,276 億美元低於預期、搜尋成長放緩，雖 Google Cloud 營收倍增至 310 億美元，WSJ 稱盤後股價跌約 10%。盤後跌勢未反映在當日收盤，將成為 10/29 開盤最大變數。",
+   "s": [
+    "WSJ",
+    "Bloomberg",
+    "Fortune"
+   ]
+  },
+  "AMZN": {
+   "h": "財報前夕 AWS 期待升溫，Amazon 小漲 0.59%",
+   "b": "當日無具名公司事件，市場聚焦即將公布的財報：GeekWire 與 IBD 預覽稱 AWS 訂單滿載、UBS 認為市場低估 AWS，另有 2,200 億美元資本支出受關注。股價 +0.59%，與 S&P 500 +0.28% 大致同步，屬財報前部位布局。",
+   "s": [
+    "GeekWire",
+    "Investor's Business Daily",
+    "24/7 Wall St."
+   ]
+  },
+  "META": {
+   "h": "250 億美元增資後再推 4,000 萬股遠期出售，股價跌 1.24%",
+   "b": "Meta 前一日 250 億美元、每股 625 美元的增資獲五倍超額認購，但股本稀釋與遠期賣方 4,000 萬股出售（TradingView 收盤後公告）壓住股價，收 -1.24% 至 612.49 美元，低於增資價。NDX 郵件指 Meta 與 Nvidia 下跌抵銷了 Broadcom、Alphabet 的漲幅。",
+   "s": [
+    "24/7 Wall St.",
+    "TradingView",
+    "NDX 漲跌榜郵件"
+   ]
+  },
+  "TSLA": {
+   "h": "SpaceX 合併題材降溫，Tesla 回吐 0.80%",
+   "b": "Tesla 前一日因 SpaceX 合併想像大漲約 4%，當日回吐 0.80%；Investing.com 盤中解析下跌原因，IBD 報導 SpaceX 受普丁言論影響回落。當日無公司財務事件，屬題材股漲多後的獲利了結（推測）。",
+   "s": [
+    "Investing.com",
+    "Barron's",
+    "Investor's Business Daily"
+   ]
+  },
+  "AVGO": {
+   "h": "Anthropic 630 億美元晶片融資成形，Broadcom 續漲 2.77%",
+   "b": "ad-hoc-news 報導 Broadcom 為 Anthropic 提供的 630 億美元 AI 晶片融資架構成形，盤後 Globe and Mail 另稱其建立 AI 機櫃租賃擔保機制；在 SK Hynix 帶動晶片股連三日上漲下，Broadcom 收 +2.77%，是 Nasdaq 100 權值股最大貢獻之一。",
+   "s": [
+    "ad-hoc-news.de",
+    "Yahoo Finance",
+    "The Globe and Mail"
+   ]
+  },
+  "AMD": {
+   "h": "與 Meta 合作並規劃 10 億美元投資，AMD 漲 3.24%",
+   "b": "TradingView 報導 AMD 宣布與 Meta 合作及計畫投資 10 億美元，Aletheia Capital 同日將目標價上調至 800 美元；在 SK Hynix 帶動的記憶體與晶片買盤中，AMD 收 +3.24%，明顯強於 Nvidia 的 -1.17%。財報將在 11/3 公布。",
+   "s": [
+    "TradingView",
+    "Investing.com",
+    "Yahoo Finance"
+   ]
+  },
+  "ORCL": {
+   "h": "投資人日喊出 2030 財年營收 2,250 億美元，Oracle 暴漲 10.73%",
+   "b": "Oracle 投資人日（約美東 14:30）提出 2030 財年營收至少 2,250 億美元，並承諾 2027–2030 財年追加募資不超過 200 億美元、現金流將轉正，CNBC 稱緩解舉債疑慮。股價收 +10.73%，帶動 CoreWeave +7.32%、Nebius +6.96% 等算力出租股。",
+   "s": [
+    "CNBC",
+    "Bloomberg",
+    "SPX 漲跌榜郵件"
+   ]
+  },
+  "INTC": {
+   "h": "財報前夕隨晶片股反彈，Intel 漲 1.91%",
+   "b": "當日無具名公司事件，Intel 將於 10/29 公布第三季財報，選擇權隱含約 9% 波動；Yahoo Finance 指其近一個月跌 24%。在 SK Hynix 帶動晶片股連三日反彈下收 +1.91%，屬財報前回補（推測）。",
+   "s": [
+    "Seeking Alpha",
+    "TradingView",
+    "Yahoo Finance"
+   ]
+  },
+  "SMCI": {
+   "h": "AI 伺服器跟漲，Super Micro 收漲 2.05%",
+   "b": "當日無具名公司事件，財報下週公布；Oracle 長期營收目標與 Vertiv 財報強化 AI 資料中心建置需求，伺服器股跟漲，Super Micro 收 +2.05%，前一日已大漲 7.34%，屬族群帶動。",
+   "s": [
+    "Yahoo Finance",
+    "Benzinga",
+    "SPX 漲跌榜郵件"
+   ]
+  },
+  "DELL": {
+   "h": "前日大漲後回吐，Dell 跌 1.63%",
+   "b": "當日無具名事件；Dell 前一日因 AI 伺服器題材大漲 7.47%，今年累計漲近三倍，當日在大盤上漲下收 -1.63%，Yahoo Finance 稱其逆勢走弱。另有報導 Dell 與 JPMorgan 等反對 OKX-ICE 代幣化股票計畫，與股價關聯有限，屬漲多回吐（推測）。",
+   "s": [
+    "Yahoo Finance",
+    "TIKR.com",
+    "CoinDesk"
+   ]
+  },
+  "HPQ": {
+   "h": "記憶體漲價壓 PC 成本，HP 跌 3.37%",
+   "b": "當日無具名公司事件；SK Hynix 稱記憶體缺貨延續到 2030 年、DRAM 均價季增近三成，對 PC 製造商是成本壓力，GuruFocus 先前報導 HP 與華碩因成本上升把部分生產移回中國。HP 收 -3.37%，與 Garmin、F5 同屬記憶體成本受害側（推測）。",
+   "s": [
+    "MarketWatch",
+    "GuruFocus",
+    "SOX 漲跌榜郵件"
+   ]
+  },
+  "QCOM": {
+   "h": "車用晶片疑慮再起，Qualcomm 小跌 0.65%",
+   "b": "24/7 Wall St. 報導 ON 與 NXP 因指引偏弱重燃車用晶片疑慮，Qualcomm 與德儀同步走低；Qualcomm 收 -0.65%，財報 11/4 公布，選擇權隱含約 8% 波動。另有與 Amazon 的 AI 合作題材，但當日未成主導，屬族群拖累。",
+   "s": [
+    "24/7 Wall St.",
+    "Investing.com",
+    "ad-hoc-news.de"
+   ]
+  },
+  "SWKS": {
+   "h": "類比族群走弱中逆勢上漲 2.05%，當日無具名事件",
+   "b": "當日無具名事件；24/7 Wall St. 指 ON 與 NXP 因車用疑慮下跌時 Skyworks 小幅走高，收 +2.05%。可能受晶片股整體反彈與前期跌深回補帶動（推測），BlackRock 持股申報等消息與股價無直接關聯。",
+   "s": [
+    "24/7 Wall St.",
+    "MarketWatch"
+   ]
+  },
+  "MU": {
+   "h": "SK Hynix 稱記憶體缺貨到 2030 年，Micron 大漲 5.86%",
+   "b": "SK Hynix 公布第三季獲利年增 632%、DRAM 均價季增近三成，並稱記憶體缺貨將延續到 2030 年，Barron's 稱對 Micron 是雙重利多。Micron 收 +5.86% 至 983 美元，同鏈 Sandisk +7.66%、Western Digital +4.08%，屬同業財報傳導。",
+   "s": [
+    "Barron's",
+    "Yahoo Finance",
+    "NDX 漲跌榜郵件"
+   ]
+  },
+  "STX": {
+   "h": "財報創新高但盤前下跌，記憶體缺貨敘事扭轉收漲 4.51%",
+   "b": "Seagate 盤前公布創紀錄季報並調高股息，但 Barron's 稱利多不足、股價盤前一度跌約 3.7%，UBS 同日下調目標價至 750 美元。開盤後 SK Hynix 缺貨敘事蓋過財報，盤中反轉收 +4.51%；BofA 則喊有 80% 上漲空間。",
+   "s": [
+    "Barron's",
+    "Investor's Business Daily",
+    "NDX 漲跌榜郵件"
+   ]
+  },
+  "ON": {
+   "h": "車用晶片疑慮重燃，ON Semiconductor 跌 3.86%",
+   "b": "24/7 Wall St. 報導 NXP 指引偏弱重燃車用晶片疑慮，ON 盤中一度跌約 5%，收 -3.86%，回吐前一日 +6.2% 的漲幅。ON 自身財報 11/2 才公布，SOX 郵件指 NXP 有回購墊著僅跌 0.71%，ON 回吐較多屬部位調整。",
+   "s": [
+    "24/7 Wall St.",
+    "SOX 漲跌榜郵件",
+    "Pluang"
+   ]
+  },
+  "MRVL": {
+   "h": "收漲 3.32%，盤後傳洽購 Lumentum 轉跌（未反映收盤）",
+   "b": "Marvell 正常盤隨光通訊與 AI 晶片股收 +3.32%。收盤後 Investing.com 報導其接近收購光元件商 Lumentum，marketscreener 稱 Marvell 盤後下跌、市場擔心收購代價；此消息未反映在當日收盤。",
+   "s": [
+    "Investing.com",
+    "marketscreener.com",
+    "TradingKey"
+   ]
+  },
+  "COHR": {
+   "h": "光通訊族群走強，Coherent 漲 1.61% 落後同業",
+   "b": "Yahoo Finance 與 24/7 Wall St. 報導分析師點出光通訊為 AI 瓶頸，Lumentum、AOI、Corning 上漲，但 Coherent 一度未跟漲，收盤 +1.61% 落後 Lumentum 的 +5.52%。財報 11/4 公布，選擇權隱含約 8.5% 波動。",
+   "s": [
+    "Yahoo Finance",
+    "24/7 Wall St.",
+    "Investing.com"
+   ]
+  },
+  "LITE": {
+   "h": "光通訊瓶頸題材收漲 5.52%，盤後傳 Marvell 洽購再飆 17%",
+   "b": "正常盤受分析師點名光通訊為 AI 瓶頸帶動，Lumentum 收 +5.52%，SPX 郵件列其漲幅榜。收盤後傳 Marvell 洽談收購，Benzinga 稱盤後股價大漲約 17%，此消息未反映在當日收盤。",
+   "s": [
+    "Benzinga",
+    "MarketWatch",
+    "SPX 漲跌榜郵件"
+   ]
+  },
+  "brent": {
+   "h": "沙國煉油廠遇襲推升後回落，布蘭特收 110.59 美元",
+   "b": "Houthi 攻擊沙國煉油廠、美方傳警告波灣國家選後可能對伊朗動武，布蘭特盤中一度逼近 115 美元，之後 WSJ 稱美伊外交斡旋使油價回落，收 110.59 美元。日跌 2.89% 與 WTI +2.07% 方向背離，前收 113.88 美元在換日即跳到 110.9 美元，可能含近月合約換月價差（推測）。",
+   "s": [
+    "WSJ",
+    "CNBC",
+    "Reuters"
+   ]
+  },
+  "wti": {
+   "h": "中東攻擊與庫存下降撐盤，WTI 收 101.97 美元漲 2.07%",
+   "b": "OilPrice.com 報導美國原油庫存再降，加上沙國煉油廠遇襲與美伊緊張，WTI 盤中一度 103.48 美元，尾盤隨外交消息回落，收 101.97 美元、+2.07%。前收 99.90 美元為 10/27 結算價，結算後已反彈，日漲幅部分來自前一日盤後（推測）。",
+   "s": [
+    "OilPrice.com",
+    "Rigzone",
+    "WSJ"
+   ]
+  },
+  "dxy": {
+   "h": "Fed 按兵不動、短天期殖利率回落，美元指數小跌 0.17%",
+   "b": "盤前美元指數逼近年內高點，FOREX.com 稱 12 月升息機率逾七成；Fed 以 10 比 2 維持利率後，Bloomberg 報導 Warsh 暗示減少會議次數、短天期殖利率回落，美元指數收 102.15、-0.17%，盤中低點出現在記者會期間。",
+   "s": [
+    "FOREX.com",
+    "Bloomberg",
+    "WSJ"
+   ]
+  },
+  "us10y": {
+   "h": "Fed 鷹派按兵不動，10 年期殖利率升 6bp 站上 5.05%",
+   "b": "Fed 以 10 比 2 維持 3.75%–4.00%，兩位官員主張升息，Warsh 稱通膨仍太高、必要時會行動；CNBC 與 TradingView 報導 10 年期殖利率升破 5%，收 5.05%、+6bp。長端受通膨與油價擔憂推升，與短端回落形成曲線變陡。",
+   "s": [
+    "CNBC",
+    "TradingView",
+    "WSJ"
+   ]
+  },
+  "us2y": {
+   "h": "Warsh 暗示減少會議次數，2 年期殖利率回落 3bp",
+   "b": "Bloomberg 報導 Warsh 記者會暗示 Fed 將減少開會次數，短天期殖利率隨之回落；2 年期殖利率收 4.67%、-3bp，與 10 年期 +6bp 方向相反。WSJ 稱 Fed 決議讓債券殖利率「各走各的」，市場仍定價 12 月升息但時程不確定。",
+   "s": [
+    "Bloomberg",
+    "WSJ",
+    "富途牛牛"
+   ]
+  },
+  "spread": {
+   "h": "長短端背離，10 年減 2 年利差擴大 9bp 至 38bp",
+   "b": "10 年期殖利率 +6bp 至 5.05%、2 年期 -3bp 至 4.67%，利差由 29bp 擴大到 38bp，屬熊市變陡。主因 Fed 鷹派按兵不動推升長端通膨溢酬，同時 Warsh 暗示減少會議次數壓低短端；INDU 郵件指曲線變陡帶動 Goldman Sachs、JPMorgan、American Express 等金融股上漲。",
+   "s": [
+    "WSJ",
+    "Bloomberg",
+    "INDU 漲跌榜郵件"
+   ]
+  },
+  "_summary": {
+   "h": "Fed 鷹派按兵不動、曲線熊陡；SK Hynix 與 Oracle 把資金推向記憶體、設備與 AI 基建",
+   "b": "10/28 的主線有兩條：一是 SK Hynix 獲利年增 632% 並稱記憶體缺貨到 2030 年，二是 Oracle 投資人日喊出 2030 財年營收 2,250 億美元並限制舉債，股價 +10.73%。費半因此 +1.75%、Nasdaq 100 +0.55%，但 S&P 500 僅 +0.28%、道瓊 +0.19%，因 Nvidia -1.17%、Meta -1.24%、Apple -0.94% 抵銷漲幅。Fed 以 10 比 2 維持利率，兩位官員主張升息，10 年期殖利率 +6bp 至 5.05%、2 年期 -3bp，利差擴大至 38bp，金融股（Goldman 貢獻道瓊約 80 點）受惠。資金由財報不佳的硬體網通（F5 -20.43%、Fortinet）、貨運與利潤率受壓股流向記憶體（Micron +5.86%）、設備（Lam +5.39%）、電力（Vertiv +16.48%）與光通訊。油價盤中因沙國煉油廠遇襲急升，尾盤隨美伊外交回落。收盤後 Alphabet 營收不如預期、盤後重挫約 10%，Microsoft 優於預期，未反映在當日收盤。",
+   "s": [
+    "SPX／NDX／SOX／INDU 漲跌榜郵件",
+    "WSJ",
+    "Bloomberg"
+   ]
+  }
  }
 }
