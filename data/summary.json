@@ -1,5 +1,5 @@
 {
- "latest_date": "2026-10-28",
+ "latest_date": "2026-10-29",
  "latest_indices": [
   "INDU",
   "NDX",
@@ -7,10 +7,10 @@
   "SPX"
  ],
  "missing_indices": [],
- "days_in_page": 17,
+ "days_in_page": 18,
  "problems": [],
  "out": "out/us-movers.html",
- "bytes": 4597882,
+ "bytes": 4755149,
  "out_mobile": "out/us-movers-mobile.html",
- "bytes_mobile": 4601220
+ "bytes_mobile": 4758487
 }

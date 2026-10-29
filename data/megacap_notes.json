@@ -3881,5 +3881,268 @@
     "Bloomberg"
    ]
   }
+ },
+ "2026-10-29": {
+  "NVDA": {
+   "h": "競爭調查與中國間諜報導壓頂，Nvidia 收跌 0.80%",
+   "b": "Barron's 報導 Nvidia 同時面臨競爭調查與一份涉及中國間諜案的報導，黃仁勳回應與相關公司往來屬「正常」。股價當日收 -0.80%，跌幅遠小於 Alphabet 的 -12.64% 與 Marvell 的 -13.24%，道瓊郵件也以其對照 Cisco。AI 資本支出疑慮下 Nvidia 相對抗跌，事件衝擊有限（推測）。",
+   "s": [
+    "Barron's",
+    "Reuters",
+    "INDU 漲跌榜郵件"
+   ]
+  },
+  "TSM": {
+   "h": "Alphabet 資本支出疑慮外溢，台積電 ADR 跌 1.75%",
+   "b": "台積電當日無公司自身事件，ADR 收 -1.75%，與費半 -1.42% 同向。Alphabet 財報自由現金流轉負、Microsoft 資本支出低於預期，市場重估 AI 硬體需求時點，晶圓代工跟隨族群回落；同日 KLA +5.45%、NXP +5.69% 則逆勢。當日無具名事件，屬族群帶動。",
+   "s": [
+    "SOX 漲跌榜郵件",
+    "MarketBeat"
+   ]
+  },
+  "MSFT": {
+   "h": "財報獲利增 32%、雲端加速，Microsoft 僅跌 0.16%",
+   "b": "Microsoft 10/28 盤後財報獲利年增 32%、雲端成長加速，資本支出 452 億美元低於預期的 507 億美元。Reuters 指雲端與現金流緩解 AI 支出疑慮，股價當日僅 -0.16%，遠優於 Alphabet 的 -12.64%；但其資本支出偏低反壓 CoreWeave、Nebius 等算力供應商。",
+   "s": [
+    "Reuters",
+    "Yahoo Finance",
+    "NDX 漲跌榜郵件"
+   ]
+  },
+  "AAPL": {
+   "h": "財報前資金避險，Apple 收漲 1.48% 創收盤新高",
+   "b": "Apple 將於 10/30 盤後公布財報，當日收 +1.48%，MacDailyNews 指其創收盤歷史新高；Bernstein 重申優於大盤、平價 MacBook 定價受關注。在 AI 資本支出疑慮下，資金轉向不需大舉投入 AI 基建的大型股，Apple 成為受惠者（推測）。",
+   "s": [
+    "MacDailyNews",
+    "Investing.com",
+    "Yahoo Finance"
+   ]
+  },
+  "GOOGL": {
+   "h": "財報 EPS 不如預期、自由現金流轉負，Alphabet 史上最大跌幅",
+   "b": "Alphabet 10/28 盤後財報 EPS 2.12 美元遠低於預期約 3.02，自由現金流 -91 億美元，2027 年資本支出只說「顯著增加」。股價當日重挫 12.64%，市值蒸發近 5,000 億美元，為上市以來最差單日；Google Cloud 年增 103% 仍擋不住，四封郵件皆列跌幅榜。",
+   "s": [
+    "NBC News",
+    "AP News",
+    "SPX 漲跌榜郵件"
+   ]
+  },
+  "AMZN": {
+   "h": "財報前被 AI 支出疑慮拖累跌 4.25%，盤後財報再跌",
+   "b": "Amazon 當日收 -4.25%，郵件指為財報前受 Alphabet 現金流轉負帶動的 AI 資本支出疑慮。收盤後公布財報，獲利與營收不如預期、自由現金流 -424 億美元，盤後再跌近 5%，雖 AWS 成長為多年最快；盤後反應未反映在當日收盤。",
+   "s": [
+    "CNBC",
+    "WSJ",
+    "INDU 漲跌榜郵件"
+   ]
+  },
+  "META": {
+   "h": "Ackman 稱股價被低估，Meta 逆勢收漲 1.96%",
+   "b": "Meta 此前連跌 5 日、累計約 -12%，當日 Pershing Square 的 Ackman 公開表示股價被低估，股價收 +1.96%，與 Alphabet -12.64% 形成對比。道瓊郵件也提到 Meta 同日約漲 3%（盤中）。屬超跌後的回補買盤加名人背書。",
+   "s": [
+    "StreetInsider",
+    "Investing.com",
+    "Trefis"
+   ]
+  },
+  "TSLA": {
+   "h": "受 Alphabet 拖累盤中走弱，Tesla 收跌 0.23%",
+   "b": "Barron's 指 Tesla 當日被 Alphabet 的跌勢拖累，但收盤僅 -0.23%，跌幅遠小於大型科技平均。公司當日無具名事件，Morningstar 財報後上調合理價屬存量消息。屬大盤科技情緒帶動，個股影響有限。",
+   "s": [
+    "Barron's",
+    "Morningstar"
+   ]
+  },
+  "AVGO": {
+   "h": "客製晶片族群遭重估，Broadcom 跌 1.94%",
+   "b": "Broadcom 當日無公司事件，收 -1.94%。Alphabet 現金流轉負讓市場重估綁 Google TPU 的客製晶片鏈，Marvell -13.24% 首當其衝，Broadcom 作為 TPU 主要合作方跟跌但幅度小得多（推測）。Benzinga 指 Marvell 洽購 Lumentum 意在向 Broadcom 模式靠攏。",
+   "s": [
+    "Yahoo Finance",
+    "Benzinga",
+    "SOX 漲跌榜郵件"
+   ]
+  },
+  "AMD": {
+   "h": "Microsoft、Google 財報打擊 AI 交易，AMD 跌 2.08%",
+   "b": "Barron's 指 Microsoft 與 Alphabet 財報（資本支出偏低、現金流轉負）衝擊 AI 交易，AMD 與 CoreWeave 同步下跌，AMD 收 -2.08%；Oracle 合作細節尚未出爐也讓買盤觀望。Jefferies 重申買進未能扭轉族群賣壓。屬族群帶動。",
+   "s": [
+    "Barron's",
+    "Yahoo Finance",
+    "Investing.com"
+   ]
+  },
+  "ORCL": {
+   "h": "大型科技資本支出偏低打擊 AI 雲，Oracle 跌 3.45%",
+   "b": "Yahoo Finance 指大型科技資本支出低於預期，AI 雲端股走弱，Fastly 跌 6%、Oracle 與 Nebius 跌約 3%；Scotiabank 同時下調目標價。Oracle 收 -3.45%，與 NDX 郵件中 Nebius -5.68%、CoreWeave -4.99% 同向，算力租賃鏈遭重估。",
+   "s": [
+    "Yahoo Finance",
+    "TradingView",
+    "NDX 漲跌榜郵件"
+   ]
+  },
+  "INTC": {
+   "h": "財報前回吐跌 3.62%，盤後財測疲弱暴跌近兩成",
+   "b": "Intel 當日收 -3.62% 至 92.07，SOX 郵件指為 AI 硬體賣壓外溢加前段反彈回吐。收盤後公布第三季財報，因 PC 放緩給出疲弱財測，CNBC、FT 報導盤後重挫 16–20% 以上，未反映在當日收盤；10/30 開盤恐承壓。",
+   "s": [
+    "CNBC",
+    "Financial Times",
+    "SOX 漲跌榜郵件"
+   ]
+  },
+  "SMCI": {
+   "h": "財報前看空訊號浮現，Super Micro 跌 3.85%",
+   "b": "Super Micro 當日收 -3.85%，Yahoo Finance 指財報將至、技術面出現看空訊號；同日 Dell -3.70%，AI 伺服器組裝鏈在大型雲端資本支出偏低的消息下同步承壓。公司另有內部人股票授與申報，非核心。屬族群帶動。",
+   "s": [
+    "Yahoo Finance",
+    "TradingView"
+   ]
+  },
+  "DELL": {
+   "h": "AI 伺服器鏈走弱，Dell 跌 3.70%",
+   "b": "Dell 當日無具名公司事件，收 -3.70%，TradingKey 歸因於大型雲端資本支出低於預期帶動的 AI 伺服器需求疑慮。同日 Super Micro -3.85%、HP -1.91%，硬體鏈普遍走弱。屬族群帶動。",
+   "s": [
+    "TradingKey",
+    "Quiver Quantitative"
+   ]
+  },
+  "HPQ": {
+   "h": "高層依計畫減持，HP 跌 1.91%",
+   "b": "HP 當日收 -1.91%，候選新聞多為總裁 Anneliese Olson 等主管依預定計畫賣股的申報，屬持股異動、非核心事件。股價主要跟隨硬體族群走弱（Dell -3.70%、Super Micro -3.85%），財報預計 11 月下旬公布。當日無具名事件。",
+   "s": [
+    "Stock Titan",
+    "MarketWatch"
+   ]
+  },
+  "QCOM": {
+   "h": "財報前資金轉進手機晶片，Qualcomm 漲 1.33%",
+   "b": "Qualcomm 將於 11/4 公布財報，當日收 +1.33%。SOX 郵件指遠離 AI 資本支出的手機與類比晶片相對抗跌，Skyworks +2.52%、NXP +5.69% 同向；Qualcomm 的 PC 筆電布局亦受關注。當日無具名事件，屬族群輪動。",
+   "s": [
+    "Investing.com",
+    "Barchart",
+    "SOX 漲跌榜郵件"
+   ]
+  },
+  "SWKS": {
+   "h": "UBS 上調目標價至 90 美元，Skyworks 漲 2.52%",
+   "b": "UBS 維持中立評等，但把 Skyworks 目標價由 70 美元上調至 90 美元。股價當日收 +2.52%，SOX 郵件列漲幅榜第三，指其手機射頻營收不綁 AI 伺服器資本支出，在 AI 硬體遭賣時相對抗跌；NXP、Microchip 同向。",
+   "s": [
+    "TradingView",
+    "MarketBeat",
+    "SOX 漲跌榜郵件"
+   ]
+  },
+  "MU": {
+   "h": "Samsung 財報不如預期冷卻記憶體行情，Micron 跌 4.98%",
+   "b": "Samsung 第三季財報後股價下跌，賣壓擴散到記憶體同業，Micron 收 -4.98%，Sandisk -5.32%、SK Hynix 跌約 3%。前一日 Micron 因 SK Hynix 利多漲 5.86%，今日幾乎回吐；郵件也指大型雲端資本支出偏低加重壓力。",
+   "s": [
+    "Barron's",
+    "Yahoo Finance",
+    "NDX 漲跌榜郵件"
+   ]
+  },
+  "STX": {
+   "h": "大摩下調目標價但仍看大幅上檔，Seagate 收漲 0.36%",
+   "b": "Morgan Stanley 下調 Seagate 目標價但仍見約 72% 上檔空間，BofA 亦看多。股價盤中震盪大，find_turns 顯示多次領漲／領跌，收盤 +0.36%；記憶體同日普跌，儲存需求鎖定至 2030 年的敘事撐住 Seagate。",
+   "s": [
+    "TheStreet",
+    "TradingView"
+   ]
+  },
+  "ON": {
+   "h": "記憶體與 AI 硬體賣壓下，安森美小跌 0.52%",
+   "b": "安森美當日無具名事件，收 -0.52%。TradingView 討論的是記憶體股下跌，Yahoo Finance 指其在大盤走升時下跌；但同為車用類比的 NXP +5.69%、Microchip +1.87% 逆勢收漲，安森美相對落後（推測與自身車用 SiC 需求疑慮有關）。屬族群帶動。",
+   "s": [
+    "Yahoo Finance",
+    "MarketWatch"
+   ]
+  },
+  "MRVL": {
+   "h": "傳全股票洽購 Lumentum 引發稀釋疑慮，Marvell 重挫 13.24%",
+   "b": "Bloomberg 報導 Marvell 接近以全股票收購 Lumentum（市值約 850 億美元），Barron's 指市場不喜這筆交易的稀釋與溢價；加上 Alphabet 現金流轉負重估 Google 客製晶片鏈。股價收 -13.24%，三封郵件列跌幅榜，交易尚未證實。",
+   "s": [
+    "Bloomberg",
+    "Barron's",
+    "SOX 漲跌榜郵件"
+   ]
+  },
+  "COHR": {
+   "h": "Marvell 洽購 Lumentum 消息下 Coherent 持平收跌 0.99%",
+   "b": "Marvell 傳洽購 Lumentum，24/7 Wall St. 指 Coherent 當日大致持平，並有評論認為整併後 Coherent 可能受惠於客戶分散。股價收 -0.99%，盤中開盤先跌近 5% 再拉回（find_turns）。屬同業併購消息帶動的震盪。",
+   "s": [
+    "24/7 Wall St.",
+    "Investing.com"
+   ]
+  },
+  "LITE": {
+   "h": "傳獲 Marvell 收購，Lumentum 衝高後回落收漲 0.61%",
+   "b": "Bloomberg 報導 Marvell 接近以全股票收購 Lumentum，Lumentum 盤中一度漲約 6%，IBD 指其衝高後回落，收盤僅 +0.61%；全股票交易下收購方 Marvell 暴跌 13.24%，削弱了換股價值。交易雙方未證實。",
+   "s": [
+    "Bloomberg",
+    "Investor's Business Daily",
+    "Yahoo Finance"
+   ]
+  },
+  "brent": {
+   "h": "美伊外交重啟緩解供給憂慮，布蘭特跌 3.3%",
+   "b": "Reuters、CNBC 報導美國尋求與伊朗重啟外交，抵銷荷莫茲海峽油輪觸雷等中東供給風險，布蘭特收 111.51 美元、-3.3%；大摩亦因和談下調油價預測。同日 WTI 僅 +0.09%，兩者背離可能含布蘭特 12 月合約 10/30 到期前的換月價差（推測）。",
+   "s": [
+    "Reuters",
+    "CNBC",
+    "EnergyNow.com"
+   ]
+  },
+  "wti": {
+   "h": "中東衝突與外交消息拉鋸，WTI 小漲 0.09%",
+   "b": "WTI 收 102.87 美元、+0.09%：盤中先因伊朗稱三艘油輪在荷莫茲海峽觸雷而走高（WSJ），後因美伊外交重啟回落（Reuters）。Goldman 指全球需求受衝擊。WTI 與布蘭特（-3.3%）走勢背離，價差收斂，可能與布蘭特近月合約即將到期有關（推測）。",
+   "s": [
+    "WSJ",
+    "Reuters",
+    "EnergyNow.com"
+   ]
+  },
+  "dxy": {
+   "h": "油價回落與殖利率下滑，美元指數跌 0.33%",
+   "b": "美元指數收 101.85、-0.33%。Finimize 指油價因美伊和談希望回落、壓抑美元；美債殖利率在 PCE 符合預期後下滑，亦削弱美元利差。歐央行、日銀決議前市場觀望。當日無單一具名事件，屬利率與油價帶動。",
+   "s": [
+    "Finimize",
+    "FOREX.com",
+    "FXStreet"
+   ]
+  },
+  "us10y": {
+   "h": "PCE 符合預期、科技股避險，10 年期殖利率降 7bp 至 4.98%",
+   "b": "第三季 GDP 年增 3.4% 但 PCE 物價符合預期，Reuters 指 AI 疑慮帶動股債同跌時資金轉入公債，10 年期殖利率收 4.98%、-7bp，重回 5% 以下；盤中曾一度回升至 5% 以上。郵件指殖利率下滑推升住宅與公用事業股。",
+   "s": [
+    "Reuters",
+    "Finimize",
+    "Yahoo Finance"
+   ]
+  },
+  "us2y": {
+   "h": "Fed 按兵不動後短債續強，2 年期殖利率降 6bp",
+   "b": "2 年期殖利率收 4.61%、-6bp。Fed 10/28 按兵不動（兩位委員主張升息），Bloomberg 報導 Warsh 暗示減少 FOMC 會議次數後短端殖利率下滑；10/29 PCE 符合預期，12 月升息押注降溫（推測）。",
+   "s": [
+    "Bloomberg",
+    "WSJ",
+    "National Mortgage Professional"
+   ]
+  },
+  "spread": {
+   "h": "長短端同步下滑，10Y–2Y 利差小縮 1bp 至 37bp",
+   "b": "10 年期 -7bp、2 年期 -6bp，利差收 37bp、-1bp，前一日因 10 年期回升才擴大 9bp。曲線大致平行下移，反映避險買盤與 PCE 符合預期同時壓低全曲線，未出現明顯陡峭或平坦化訊號。",
+   "s": [
+    "Reuters",
+    "美國財政部殖利率曲線"
+   ]
+  },
+  "_summary": {
+   "h": "Alphabet 史上最大跌幅點燃 AI 資本支出疑慮，資金由 AI 硬體轉向國防、消費與長約現金流股",
+   "b": "Alphabet 財報 EPS 不如預期、自由現金流 -91 億美元，股價 -12.64% 創上市最大跌幅，四封郵件一致以此為主線。Microsoft、Alphabet 資本支出低於預期，又壓向 AI 算力與記憶體鏈：Marvell -13.24%（另有全股票洽購 Lumentum 稀釋疑慮）、Micron -4.98%、CoreWeave -4.99%；ServiceNow -26.95%、Fortinet -20.09% 讓軟體同步下殺。Nasdaq 100 -1.38%、費半 -1.42%，S&P 500 僅 -0.30%、道瓊 -0.25%（CAT -9.25% 拖累約 392 點）。GDP 年增 3.4%、PCE 符合預期，10 年期殖利率降 7bp 至 4.98%，布蘭特因美伊重啟外交跌 3.3%、美元 -0.33%。資金從 AI 硬體與軟體流向國防（HII +13.23%）、遊輪、住宅建材、製藥（LLY +6.63%）與公用事業、類比晶片，Apple +1.48% 創收盤新高。盤後 Amazon、Intel 財報不佳，未反映在當日收盤。",
+   "s": [
+    "SPX／NDX／SOX／INDU 漲跌榜郵件",
+    "Reuters",
+    "AP News"
+   ]
+  }
  }
 }
