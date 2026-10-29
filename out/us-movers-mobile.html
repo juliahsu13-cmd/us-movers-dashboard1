@@ -89,7 +89,7 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:6px;
 .turns li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;padding:10px 4px;border-bottom:1px solid var(--line);transition:background .3s}
 .turns li.on{background:var(--accent-soft)}
 .turns .tn{width:22px;height:22px;border-radius:50%;border:2px solid var(--accent);display:grid;place-items:center;font-size:11px;font-weight:700;font-family:var(--f-num);margin-top:2px}
-.turns p{margin:0;max-width:90ch}
+.turns p{margin:0;max-width:none}
 .turns .th{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;font-size:15px}
 .turns .th small{font-size:12px;color:var(--muted)}
 .turns .th .num{font-weight:600}
@@ -117,9 +117,10 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:6px;
 .mitem summary::-webkit-details-marker{display:none}
 .mitem summary:hover{background:var(--accent-soft)}
 .mitem[open] summary{background:var(--surface-2)}
+.mitem[open]{grid-column:1/-1}  /* 展開的個股橫跨兩欄，圖與新聞用滿寬 */
 .mnote{padding:8px 4px 12px;display:grid;gap:4px;border-bottom:1px solid var(--line)}
 .macro-note .mnote{border-bottom:0;padding:0}
-.mnote p{margin:0;max-width:80ch}
+.mnote p{margin:0;max-width:none}
 .mnote .nh{font-weight:700;font-size:15px;line-height:1.5}
 .mnote .nh.up{color:var(--up)} .mnote .nh.down{color:var(--down)}
 .mnote .nb{font-size:15px;line-height:1.75}
@@ -159,7 +160,7 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:6px;
 
 .panel{display:grid;gap:18px}
 .lead{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px;display:grid;gap:10px}
-.lead p{margin:0;max-width:72ch}
+.lead p{margin:0;max-width:none}
 .lead .eyebrow{font-size:13px;letter-spacing:.06em;color:var(--muted);text-transform:none;font-weight:600}
 .lead .focus{font-family:var(--f-display);font-size:clamp(17px,2.2vw,19px);line-height:1.7}
 .lead details.bg summary{display:block;padding:0;cursor:pointer;color:var(--accent);font-size:14px}
@@ -169,7 +170,7 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:6px;
 .mlead{display:grid;gap:8px;padding:4px 2px 14px;border-bottom:1px solid var(--line);margin-bottom:6px}
 .mlead .eyebrow{margin:0;font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:none;font-weight:600}
 .mlead h2{margin:0;font-family:var(--f-display);font-size:clamp(18px,2.4vw,21px);line-height:1.5;text-wrap:balance}
-.mlead p{margin:0;max-width:80ch;line-height:1.75}
+.mlead p{margin:0;max-width:none;line-height:1.75}
 .mlead .ns{font-size:12px;color:var(--muted)}
 .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
 @media (max-width:860px){.cols{grid-template-columns:1fr}}
@@ -197,9 +198,9 @@ details summary:hover{background:var(--accent-soft)}
 .bar{width:100%;height:5px;border-radius:3px;background:var(--line);overflow:hidden;display:flex}
 .sec.up .bar i{background:var(--up)} .sec.down .bar i{background:var(--down);margin-left:auto}
 .bar i{display:block;height:100%}
-.why{padding:0 14px 14px 46px;font-size:15px;line-height:1.7;max-width:80ch}
+.why{padding:0 14px 14px 46px;font-size:15px;line-height:1.7;max-width:none}
 .why .biz-full{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
-.note{font-size:13px;color:var(--muted);max-width:90ch;margin:0}
+.note{font-size:13px;color:var(--muted);max-width:none;margin:0}
 /* 郵件內容：接在漲跌榜清單下方，照郵件原樣列出導讀與含歸因的表格 */
 .mail{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 20px;display:grid;gap:10px;min-width:0}
 .mail h2{margin:0;font-size:16px;font-weight:700}
@@ -677,7 +678,7 @@ function renderMega(){
     const box = d.querySelector(".mchart");
     if (!d.open || box.dataset.done) return;
     const t = box.dataset.t, x = INTRA?.[state.date]?.[t];
-    box.innerHTML = chartHTML(x, `${(names[t] || [t])[0]}（${t}）盤中走勢`, "m-" + t, [], "pct", contentW(box));
+    box.innerHTML = chartHTML(x, `${(names[t] || [t])[0]}（${t}）盤中走勢`, "m-" + t, [], "pct", contentW(box) || contentW(d) - 34);
     wireChart(box, x);
     box.dataset.done = "1";
   }));
