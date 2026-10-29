@@ -55,6 +55,8 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:6px;
 .tile .name{font-weight:700;font-size:15px}
 .tile .close{font-size:20px;font-weight:600;line-height:1.25}
 .tile .chg{font-size:15px;font-weight:600}
+.tile .chg .plab{font-family:var(--f-body);font-size:11px;font-weight:500;color:var(--muted);margin-right:6px}
+.dchg{display:block;font-size:11px;font-weight:500;opacity:.85}
 .breadth{display:flex;height:6px;border-radius:3px;overflow:hidden;background:var(--line);margin-top:6px}
 .breadth i{display:block;height:100%}
 .breadth-lbl{font-size:12px;color:var(--muted);display:flex;justify-content:space-between}
@@ -369,6 +371,16 @@ function renderDates(){
   $("#date").value = state.date;
 }
 
+// 選了年初至今／240 日／480 日時，卡片、分頁、權值股與油價美債改顯示該區間的漲跌（終點＝頁面選的交易日）
+const RLAB = {ytd: "年初至今", "240": "240 日", "480": "480 日"};
+function per(key){
+  if (!RLAB[state.range.mode] || !DAILY?.[key]) return null;
+  const rr = rangeRows(key);
+  if (!rr) return null;
+  const last = rr.rows[rr.rows.length - 1];
+  return {p: (last.c / rr.base - 1) * 100, bp: (last.c - rr.base) * 100, lab: RLAB[state.range.mode]};
+}
+
 function renderBoard(){
   const day = DATA[state.date] || {};
   $("#board").innerHTML = IDX.map(i => {
@@ -380,7 +392,8 @@ function renderBoard(){
     return `<button class="tile" role="tab" aria-selected="${sel}" data-k="${i.k}">
       <span class="code">${i.k}</span><span class="name">${i.name}${INTRA?.[state.date]?.[i.k] ? `<span class="go">盤中走勢 ›</span>` : ""}</span>
       <span class="close num">${fmt(r.close)}</span>
-      <span class="chg num ${dir(r.pct)}">${r.pct == null ? "—" : sign(r.pct)}${r.close_src === "intraday" ? ` <small class="src" title="郵件未載收盤，依盤中 5 分鐘線最後一筆">盤中資料</small>` : ""}</span>
+      ${(q => q ? `<span class="chg num ${dir(q.p)}"><small class="plab">${q.lab}</small>${sign(q.p)}<small class="dchg ${dir(r.pct)}">當日 ${r.pct == null ? "—" : sign(r.pct)}</small></span>`
+        : `<span class="chg num ${dir(r.pct)}">${r.pct == null ? "—" : sign(r.pct)}${r.close_src === "intraday" ? ` <small class="src" title="郵件未載收盤，依盤中 5 分鐘線最後一筆">盤中資料</small>` : ""}</span>`)(per(i.k))}
       ${b ? `<span class="breadth" aria-hidden="true"><i style="width:${b[0]/tot*100}%;background:var(--up)"></i><i style="width:${b[1]/tot*100}%;background:var(--down)"></i></span>
       <span class="breadth-lbl num"><span>${b[0]} 漲</span><span>${b[1]} 跌</span></span>` : ""}
     </button>`;
@@ -394,7 +407,8 @@ function renderTabs(){
   const day = DATA[state.date] || {}, mega = MEGA?.days?.[state.date];
   $("#tabs").innerHTML = TABS.map(t => {
     let sub = "";
-    if (t.k === "MEGA" && mega) { const v = Object.values(mega); sub = `<small class="num"><span class="up">${v.filter(x => x.p > 0).length}</span>／<span class="down">${v.filter(x => x.p < 0).length}</span></small>`; }
+    if (t.k === "MEGA" && mega) { const v = Object.entries(mega).map(([k, x]) => per(k)?.p ?? x.p); sub = `<small class="num"><span class="up">${v.filter(p => p > 0).length}</span>／<span class="down">${v.filter(p => p < 0).length}</span></small>`; }
+    else if (per(t.k)) sub = `<small class="num ${dir(per(t.k).p)}">${sign(per(t.k).p)}</small>`;
     else if (day[t.k]?.pct != null) sub = `<small class="num ${dir(day[t.k].pct)}">${sign(day[t.k].pct)}</small>`;
     return `<button class="tab" role="tab" type="button" aria-selected="${state.tab === t.k}" data-k="${t.k}">${t.name}${sub}</button>`;
   }).join("");
@@ -705,6 +719,13 @@ function addPicker(box, svg, P){
   };
 }
 
+// 切換區間後，卡片、分頁、權值股清單與油價美債格子一起改顯示該區間漲跌；已展開的個股維持展開
+function rangeChanged(){
+  const open = [...document.querySelectorAll("#mega-grid .mitem[open] .mchart")].map(b => b.dataset.t);
+  renderBoard(); renderTabs(); renderMacro(); renderIndexChart(); renderMega();
+  document.querySelectorAll("#mega-grid .mitem").forEach(d => { if (open.includes(d.querySelector(".mchart").dataset.t)) d.open = true; });
+}
+
 // 每張走勢圖共用：上方區間按鈕，下方依區間畫當日盤中或日 K
 // o＝{key: data/daily.json 的代號, x: 當日盤中, title, uid, turns, kind, w: 寬度, after: 當日圖畫完後的額外綁定}
 function mountChart(box, o){
@@ -733,6 +754,7 @@ function mountChart(box, o){
       state.range.mode = b.dataset.r;
       try { localStorage.setItem("movers.range", b.dataset.r); } catch(e) {}
       draw();
+      rangeChanged();
     });
   };
   draw();
@@ -819,17 +841,19 @@ function renderMega(){
   $("#mega-lead").hidden = !sm;
   if (sm) $("#mega-lead").innerHTML = `<p class="eyebrow">今日市場整合說明 · ${state.date}</p>
     <h2>${esc(sm.h)}</h2><p>${esc(sm.b)}</p>${sm.s?.length ? `<p class="ns">來源：${sm.s.map(esc).join("、")}</p>` : ""}`;
-  const rows = Object.entries(day).map(([t, v]) => ({t, ...v})).sort((a, b) => b.p - a.p);
+  // 區間模式下以區間漲跌排序與畫條；當日漲跌幅放在名稱旁
+  const rows = Object.entries(day).map(([t, v]) => ({t, ...v, d: v.p, p: per(t)?.p ?? v.p})).sort((a, b) => b.p - a.p);
   const max = Math.max(...rows.map(r => Math.abs(r.p)), 0.5);
   const up = rows.filter(r => r.p > 0).length, dn = rows.filter(r => r.p < 0).length;
-  $("#mega-sum").innerHTML = `${rows.length} 檔：<span class="up">${up} 漲</span>、<span class="down">${dn} 跌</span>`;
+  const lab = RLAB[state.range.mode] && rows.some(r => per(r.t)) ? RLAB[state.range.mode] : "";
+  $("#mega-sum").innerHTML = `${lab ? `${lab}（截至 ${state.date}）・` : ""}${rows.length} 檔：<span class="up">${up} 漲</span>、<span class="down">${dn} 跌</span>`;
   $("#mega-grid").innerHTML = rows.map(r => {
     const [zh, grp] = names[r.t] || [r.t, ""];
     const w = Math.abs(r.p) / max * 50;
     const bar = r.p >= 0 ? `left:50%;width:${w}%;background:var(--up)` : `right:50%;width:${w}%;background:var(--down)`;
     const note = NOTES?.[state.date]?.[r.t] || mailAttr(state.date, r.t);
     return `<details class="mitem"><summary class="mrow"><a class="tk" href="https://tw.stock.yahoo.com/quote/${encodeURIComponent(r.t)}" target="_blank" rel="noopener" title="開啟 ${esc(r.t)} 即時報價">${esc(r.t)}</a><span class="nm">${esc(zh)}<small>${esc(grp)}</small></span>
-      <span class="px">${fmt(r.c)}</span><span class="pp ${dir(r.p)}">${sign(r.p)}</span><span class="dbar"><i style="${bar}"></i></span></summary><div class="mchart intra" data-t="${esc(r.t)}"></div>${noteHTML(note, dir(r.p))}</details>`;
+      <span class="px">${fmt(r.c)}</span><span class="pp ${dir(r.p)}">${sign(r.p)}${lab ? `<small class="dchg ${dir(r.d)}">當日 ${sign(r.d)}</small>` : ""}</span><span class="dbar"><i style="${bar}"></i></span></summary><div class="mchart intra" data-t="${esc(r.t)}"></div>${noteHTML(note, dir(r.p))}</details>`;
   }).join("");
   $("#mega-src").textContent = "報價：Yahoo Finance 網路報價（收盤對前一交易日收盤，美元）；個股清單依 bloomberg data.xlsb。點一列看當天核心新聞（英文新聞翻譯整理），點代號開啟即時報價頁。";
   document.querySelectorAll("#mega-grid .tk").forEach(a => a.onclick = e => e.stopPropagation());
@@ -851,10 +875,13 @@ function renderMacro(){
   $("#macro-grid").innerHTML = MACRO_ITEMS.map(m => {
     const x = day[m.k];
     if (!x) return `<button class="mcell" type="button" data-k="${m.k}"><span class="ml">${m.name}</span><span class="mv num">—</span><span class="mu">${m.unit}</span></button>`;
-    const chg = m.kind === "pct" ? sign(x.chg) : `${x.chg > 0 ? "+" : x.chg < 0 ? "−" : ""}${Math.abs(x.chg).toFixed(1)} bp`;
+    // 區間漲跌：油價、美元用 %，10 年期殖利率用 bp；2 年期（只有期貨價）與利差沒有區間資料，維持當日
+    const q = m.k === "us2y" || !m.ik ? null : per(m.ik), qv = q && (m.kind === "bp" ? q.bp : q.p);
+    const chg = q ? (m.kind === "bp" ? `${qv > 0 ? "+" : qv < 0 ? "−" : ""}${Math.abs(qv).toFixed(1)} bp` : sign(qv))
+      : m.kind === "pct" ? sign(x.chg) : `${x.chg > 0 ? "+" : x.chg < 0 ? "−" : ""}${Math.abs(x.chg).toFixed(1)} bp`;
     const v = m.k === "spread" ? x.v.toFixed(1) : fmt(x.v);
     return `<button class="mcell" type="button" data-k="${m.k}" aria-pressed="${state.macro === m.k}"><span class="ml">${m.name}</span><span class="mv num">${v}</span>
-      <span class="mu">${m.unit}<b class="num ${dir(x.chg)}">${chg}</b></span></button>`;
+      <span class="mu">${q ? `${q.lab}` : m.unit}<b class="num ${dir(q ? qv : x.chg)}">${chg}</b></span></button>`;
   }).join("");
   const sel = MACRO_ITEMS.find(m => m.k === state.macro);
   $("#macro-note").hidden = !sel;
