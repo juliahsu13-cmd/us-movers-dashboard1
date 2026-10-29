@@ -102,7 +102,22 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:6px;
 .rg button[aria-pressed="true"]{color:var(--ink);border-color:var(--accent);background:var(--accent-soft)}
 .rg input[type=date]{background:var(--surface);border:1px solid var(--line);border-radius:6px;color:var(--ink);padding:2px 6px;font-family:var(--f-num);font-size:13px;color-scheme:dark}
 .rg .hint{font-size:12px;color:var(--muted)}
-.intra .sel{fill:var(--accent);opacity:.18}
+.rg .pk{margin-left:6px}
+.intra{position:relative}
+.pick-pop{position:absolute;top:58px;right:16px;z-index:6;width:min(320px,calc(100% - 32px));background:var(--surface-2);border:1px solid var(--accent);border-radius:8px;padding:12px 14px;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.pick-pop .x{position:absolute;top:4px;right:6px;background:none;border:0;color:var(--muted);font-size:20px;line-height:1;cursor:pointer;padding:4px}
+.pick-pop .x:hover{color:var(--ink)}
+.pick-pop .pt{margin:0 22px 8px 0;font-size:14px}
+.pick-pop .pt b{font-family:var(--f-num)}
+.pick-pop .pt small{display:block;font-size:12px;color:var(--muted)}
+.pick-pop dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0;font-size:14px}
+.pick-pop dt{color:var(--muted)}
+.pick-pop dd{margin:0;font-family:var(--f-num);font-weight:600;text-align:right}
+.pick-pop dd small{font-weight:400;color:var(--muted)}
+.pick-pop dd.up{color:var(--up)} .pick-pop dd.down{color:var(--down)}
+.pick-pop.left{right:auto;left:70px}
+@container (max-width:640px){.pick-pop,.pick-pop.left{position:relative;top:auto;left:auto;right:auto;width:auto;margin-top:4px}}
+.intra .sel{fill:var(--accent);fill-opacity:.22;stroke:var(--accent);stroke-opacity:.8;stroke-width:1;vector-effect:non-scaling-stroke}
 .intra .base{stroke:var(--accent);stroke-width:1;stroke-dasharray:4 3;vector-effect:non-scaling-stroke}
 .intra svg text.ext{fill:var(--ink)}
 .rstats{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:14px;color:var(--muted)}
@@ -491,6 +506,7 @@ function chartHTML(x, title, uid, turns = [], kind = "pct", w = 0){
       ${[660, 780, 900].map(m => `<text x="${sx(m)}" y="${H-8}" text-anchor="middle">${hm(m)}</text>`).join("")}
       <text x="${sx(t0)}" y="${H-8}" text-anchor="start">09:30</text><text x="${sx(D.t1)}" y="${H-8}" text-anchor="end">16:00</text>
       <line class="zero" x1="${L}" x2="${W-R}" y1="${base}" y2="${base}"/>
+      <rect class="sel" x="0" y="${T}" width="0" height="${H-T-B}" hidden/>
       ${bars}
       <g class="hov" hidden><line class="cross" y1="${T}" y2="${H-B}"/><circle r="3.5" fill="var(--ink)"/></g>
       <rect class="hit" x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}" fill="transparent"/>
@@ -510,26 +526,33 @@ function wireChart(box, x, kind){
   const svg = box?.querySelector("svg");
   if (!x || !svg) return;
   const vb = svg.viewBox.baseVal;
-  const {cds, sx, sy, D} = chartGeom(x, kind, {...CH, W: vb.width, H: vb.height});
+  const {cds, sx, sy, D, bw} = chartGeom(x, kind, {...CH, W: vb.width, H: vb.height});
   const ro = box.querySelector(".readout"), rest = ro.innerHTML, g = svg.querySelector(".hov");
   const cross = g.querySelector("line"), dot = g.querySelector("circle");
   const move = e => {
     const r = svg.getBoundingClientRect(), vx = (e.clientX - r.left) / r.width * D.W;
     const m = D.t0 + (vx - D.L) / (D.W - D.L - D.R) * (D.t1 - D.t0);
     const c = cds.reduce((a, b) => Math.abs(b.m - m) < Math.abs(a.m - m) ? b : a);
-    g.hidden = false;
+    g.removeAttribute("hidden");
     cross.setAttribute("x1", sx(c.m)); cross.setAttribute("x2", sx(c.m));
     dot.setAttribute("cx", sx(c.m)); dot.setAttribute("cy", sy(c.c));
     ro.innerHTML = `${hm(c.m)} 開 ${fmt(c.po)} 高 ${fmt(c.ph)} 低 ${fmt(c.pl)} 收 <b>${fmt(c.pc)}</b> <b class="${dir(c.c)}">${sv(c.c, kind)}</b>`;
   };
   const hit = svg.querySelector(".hit");
   hit.addEventListener("pointermove", move); hit.addEventListener("pointerdown", move);
-  hit.addEventListener("pointerleave", () => { g.hidden = true; ro.innerHTML = rest; });
+  hit.addEventListener("pointerleave", () => { g.setAttribute("hidden", ""); ro.innerHTML = rest; });
+  const atI = e => {
+    const r = svg.getBoundingClientRect(), vx = (e.clientX - r.left) / r.width * D.W;
+    const m = D.t0 + (vx - D.L) / (D.W - D.L - D.R) * (D.t1 - D.t0);
+    return cds.reduce((a, c, i) => Math.abs(c.m - m) < Math.abs(cds[a].m - m) ? i : a, 0);
+  };
+  addPicker(box, svg, {bars: cds.map(c => ({t: hm(c.m), o: c.po, h: c.ph, l: c.pl, c: c.pc})), at: atI, x: i => sx(cds[i].m), bw,
+    prev: i => i > 0 ? cds[i - 1].pc : x.pc, unit: "根 5 分鐘 K", kind});
 }
 
 // ── 走勢區間：當日盤中 K 線，或日 K（年初至今／240 日／480 日／自訂區間），區間終點＝頁面選的交易日
-const RANGES = [["day", "當日"], ["ytd", "年初至今"], ["240", "240 日"], ["480", "480 日"], ["custom", "自訂區間"]];
-try { const r = localStorage.getItem("movers.range"); if (RANGES.some(x => x[0] === r) && r !== "custom") state.range.mode = r; } catch(e) {}
+const RANGES = [["day", "當日"], ["ytd", "年初至今"], ["240", "240 日"], ["480", "480 日"]];
+try { const r = localStorage.getItem("movers.range"); if (RANGES.some(x => x[0] === r)) state.range.mode = r; } catch(e) {}
 const ROW = r => ({d: r[0], o: r[1], h: r[2], l: r[3], c: r[4]});
 
 // 回傳 {rows: 區間內日 K, base: 區間起點前一日收盤（沒有就用第一根開盤）}
@@ -540,11 +563,6 @@ function rangeRows(key){
   let i0 = 0, i1 = all.length - 1;
   if (mode === "ytd") i0 = Math.max(0, all.findIndex(r => r.d.slice(0, 4) === state.date.slice(0, 4)));
   else if (mode === "240" || mode === "480") i0 = Math.max(0, all.length - +mode);
-  else if (mode === "custom") {
-    const f = state.range.from || all[Math.max(0, all.length - 60)].d, t = state.range.to || all[i1].d;
-    i0 = all.findIndex(r => r.d >= f); if (i0 < 0) i0 = i1;
-    const j = all.map(r => r.d <= t).lastIndexOf(true); i1 = j < i0 ? i0 : j;
-  }
   return {all, rows: all.slice(i0, i1 + 1), base: i0 > 0 ? all[i0 - 1].c : all[i0].o};
 }
 
@@ -584,7 +602,7 @@ function dailyHTML(rr, title, kind, w){
   const hiI = rows.reduce((a, r, i) => r.h > rows[a].h ? i : a, 0), loI = rows.reduce((a, r, i) => r.l < rows[a].l ? i : a, 0);
   const anc = i => i < rows.length * 0.15 ? "start" : i > rows.length * 0.85 ? "end" : "middle";
   const last = rows[rows.length-1], pct = (last.c / base - 1) * 100;
-  const mlab = {ytd: "年初至今", "240": "240 日", "480": "480 日", custom: "自訂區間"}[state.range.mode];
+  const mlab = {ytd: "年初至今", "240": "240 日", "480": "480 日"}[state.range.mode];
   return `<div class="intra-head"><h2>${esc(title)} 日 K · ${mlab}</h2>
       <span class="readout">收 <b>${fmt(last.c)}</b> <b class="${dir(pct)}">${kind === "bp" ? sv((last.c - base) * 100, "bp") : sign(pct)}</b></span></div>
     <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(title)} 日 K，${rows[0].d} 至 ${last.d}">
@@ -599,11 +617,11 @@ function dailyHTML(rr, title, kind, w){
       <rect class="hit" x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}" fill="transparent"/>
     </svg>
     ${rangeStats(rows, base, kind)}
-    <div class="stats"><span>日 K，紅漲綠跌；虛線＝區間起點（前一交易日收盤）。在圖上左右拖曳可選取任一區間，顯示該區間的高低點與漲跌。</span></div>`;
+    <div class="stats"><span>日 K，紅漲綠跌；虛線＝區間起點（前一交易日收盤）。按「自訂區間」後在圖上拖曳，或點起點再點終點，可看其中任一段的高低點與漲跌。</span></div>`;
 }
 
 // 滑過顯示當日開高低收與相對區間起點的漲跌；拖曳選取 → 改成自訂區間
-function wireDaily(box, rr, kind, redraw){
+function wireDaily(box, rr, kind){
   const svg = box.querySelector("svg");
   if (!svg) return;
   const vb = svg.viewBox.baseVal, D = {...CH, W: vb.width, H: vb.height}, {rows, base} = rr;
@@ -612,24 +630,64 @@ function wireDaily(box, rr, kind, redraw){
   const cross = g.querySelector("line"), dot = g.querySelector("circle"), hit = svg.querySelector(".hit");
   const at = e => { const r = svg.getBoundingClientRect(); return ix((e.clientX - r.left) / r.width * D.W); };
   const chg = (a, b) => kind === "bp" ? sv((b - a) * 100, "bp") : sign((b / a - 1) * 100);
-  let i0 = null;
-  hit.addEventListener("pointerdown", e => { i0 = at(e); try { hit.setPointerCapture(e.pointerId); } catch(_) {} });
   hit.addEventListener("pointermove", e => {
     const i = at(e), r = rows[i];
-    g.hidden = false;
+    g.removeAttribute("hidden");
     cross.setAttribute("x1", sx(i)); cross.setAttribute("x2", sx(i)); dot.setAttribute("cx", sx(i)); dot.setAttribute("cy", sy(r.c));
-    if (i0 !== null && i !== i0) {
-      const a = Math.min(i0, i), b = Math.max(i0, i), pb = a > 0 ? rows[a - 1].c : rows[a].o;
-      sel.hidden = false; sel.setAttribute("x", sx(a) - bw / 2); sel.setAttribute("width", sx(b) - sx(a) + bw);
-      ro.innerHTML = `選取 ${rows[a].d}～${rows[b].d} <b class="${dir(rows[b].c - pb)}">${chg(pb, rows[b].c)}</b>`;
-    } else ro.innerHTML = `${r.d}（${wk(r.d)}）開 ${fmt(r.o)} 高 ${fmt(r.h)} 低 ${fmt(r.l)} 收 <b>${fmt(r.c)}</b> 較起點 <b class="${dir(r.c - base)}">${chg(base, r.c)}</b>`;
+    ro.innerHTML = `${r.d}（${wk(r.d)}）開 ${fmt(r.o)} 高 ${fmt(r.h)} 低 ${fmt(r.l)} 收 <b>${fmt(r.c)}</b> 較起點 <b class="${dir(r.c - base)}">${chg(base, r.c)}</b>`;
+  });
+  hit.addEventListener("pointerleave", () => { g.setAttribute("hidden", ""); ro.innerHTML = rest; });
+  addPicker(box, svg, {bars: rows.map(r => ({t: r.d, o: r.o, h: r.h, l: r.l, c: r.c})), at, x: sx, bw,
+    prev: i => i > 0 ? rows[i - 1].c : base, unit: "個交易日", kind});
+}
+
+// 自訂區間：在目前這張圖上拖曳，或（按下「自訂區間」後）點起點再點終點，
+// 反白該段並跳出小視窗：起訖、起點（前一根收盤）、終點、漲跌、漲跌幅、最高與最低（含時點）、高低差
+function addPicker(box, svg, P){
+  const sel = svg.querySelector(".sel"), hit = svg.querySelector(".hit"), btn = box.querySelector(".rg [data-pick]");
+  const picking = () => btn?.getAttribute("aria-pressed") === "true";
+  let s0 = null, moved = false, first = null;
+  const shade = (a, b) => { sel.removeAttribute("hidden"); sel.setAttribute("x", P.x(a) - P.bw / 2); sel.setAttribute("width", P.x(b) - P.x(a) + P.bw); };
+  const close = () => { box.querySelector(".pick-pop")?.remove(); sel.setAttribute("hidden", ""); first = null; };
+  const pop = (a, b) => {
+    shade(a, b);
+    const seg = P.bars.slice(a, b + 1), base = P.prev(a), end = seg[seg.length - 1];
+    const hi = seg.reduce((m, r) => r.h > m.h ? r : m), lo = seg.reduce((m, r) => r.l < m.l ? r : m);
+    const ch = end.c - base, pct = ch / base * 100;
+    const chg = P.kind === "bp" ? sv(ch * 100, "bp") : `${ch > 0 ? "+" : ch < 0 ? "−" : ""}${fmt(Math.abs(ch))}`;
+    box.querySelector(".pick-pop")?.remove();
+    box.insertAdjacentHTML("beforeend", `<div class="pick-pop" role="dialog" aria-label="自訂區間統計">
+      <button type="button" class="x" aria-label="關閉">×</button>
+      <p class="pt">自訂區間 <b>${seg[0].t}～${end.t}</b><small>${seg.length} ${P.unit}</small></p>
+      <dl><dt>起點（前收）</dt><dd>${fmt(base)}</dd><dt>終點</dt><dd>${fmt(end.c)}</dd>
+      <dt>漲跌</dt><dd class="${dir(ch)}">${chg}</dd>${P.kind === "bp" ? "" : `<dt>漲跌幅</dt><dd class="${dir(pct)}">${sign(pct)}</dd>`}
+      <dt>最高</dt><dd>${fmt(hi.h)} <small>${hi.t}</small></dd><dt>最低</dt><dd>${fmt(lo.l)} <small>${lo.t}</small></dd>
+      <dt>高低差</dt><dd>${sign((hi.h / lo.l - 1) * 100).replace("+", "")}</dd></dl></div>`);
+    box.querySelector(".pick-pop .x").onclick = close;
+    // 選取段落在右半邊時，視窗放左邊，避免蓋住選取的走勢
+    if ((P.x(a) + P.x(b)) / 2 > svg.viewBox.baseVal.width / 2) box.querySelector(".pick-pop").classList.add("left");
+  };
+  hit.addEventListener("pointerdown", e => { s0 = P.at(e); moved = false; try { hit.setPointerCapture(e.pointerId); } catch(_) {} });
+  hit.addEventListener("pointermove", e => {
+    if (s0 === null) return;
+    const i = P.at(e);
+    if (i !== s0) { moved = true; shade(Math.min(s0, i), Math.max(s0, i)); }
   });
   hit.addEventListener("pointerup", e => {
-    const i = at(e), a = Math.min(i0 ?? i, i), b = Math.max(i0 ?? i, i);
-    i0 = null;
-    if (b - a >= 1) { state.range = {mode: "custom", from: rows[a].d, to: rows[b].d}; redraw(); }
+    const i = P.at(e), a = Math.min(s0 ?? i, i), b = Math.max(s0 ?? i, i);
+    s0 = null;
+    if (moved && b > a) { first = null; pop(a, b); return; }
+    if (!picking()) return;
+    if (first === null) { close(); first = i; shade(i, i); }
+    else { const f = first; first = null; pop(Math.min(f, i), Math.max(f, i)); }
   });
-  hit.addEventListener("pointerleave", () => { if (i0 === null) { g.hidden = true; ro.innerHTML = rest; } });
+  hit.addEventListener("pointercancel", () => { s0 = null; moved = false; });
+  if (btn) btn.onclick = () => {
+    const on = !picking();
+    btn.setAttribute("aria-pressed", on);
+    box.querySelector(".rg .hint").hidden = !on;
+    if (!on) close();
+  };
 }
 
 // 每張走勢圖共用：上方區間按鈕，下方依區間畫當日盤中或日 K
@@ -638,27 +696,21 @@ function mountChart(box, o){
   const draw = () => {
     const has = !!DAILY?.[o.key]?.length, mode = has ? state.range.mode : "day";
     const rr = mode === "day" ? null : rangeRows(o.key);
-    const bar = has ? `<div class="rg">${RANGES.map(([k, t]) => `<button type="button" data-r="${k}" aria-pressed="${mode === k}">${t}</button>`).join("")}
-      ${mode === "custom" && rr ? `<input type="date" class="rf" value="${rr.rows[0].d}" min="${rr.all[0].d}" max="${state.date}" aria-label="區間起日">～<input type="date" class="rt" value="${rr.rows[rr.rows.length-1].d}" min="${rr.all[0].d}" max="${state.date}" aria-label="區間迄日"><button type="button" class="ra">套用</button><span class="hint">或在圖上拖曳選取</span>` : ""}</div>` : "";
+    const bar = `<div class="rg">${has ? RANGES.map(([k, t]) => `<button type="button" data-r="${k}" aria-pressed="${mode === k}">${t}</button>`).join("") : ""}
+      <button type="button" class="pk" data-pick aria-pressed="false">自訂區間</button><span class="hint" hidden>在圖上拖曳，或點起點再點終點</span></div>`;
     if (mode === "day" || !rr) {
       box.innerHTML = bar + chartHTML(o.x, `${o.title} 盤中走勢`, o.uid, o.turns || [], o.kind, o.w);
       wireChart(box, o.x, o.kind);
       o.after?.(box);
     } else {
       box.innerHTML = bar + dailyHTML(rr, o.title, o.kind, o.w);
-      wireDaily(box, rr, o.kind, draw);
+      wireDaily(box, rr, o.kind);
     }
     box.querySelectorAll(".rg [data-r]").forEach(b => b.onclick = () => {
       state.range.mode = b.dataset.r;
       try { localStorage.setItem("movers.range", b.dataset.r); } catch(e) {}
       draw();
     });
-    const ra = box.querySelector(".rg .ra");
-    if (ra) ra.onclick = () => {
-      const f = box.querySelector(".rf").value, t = box.querySelector(".rt").value;
-      if (f && t) state.range = {mode: "custom", from: f <= t ? f : t, to: f <= t ? t : f};
-      draw();
-    };
   };
   draw();
 }
