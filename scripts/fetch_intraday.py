@@ -39,7 +39,7 @@ def by_day(res, nd=2):
         if c is None:
             continue
         t = datetime.fromtimestamp(ts, timezone.utc) + off
-        bar = [round(v if v is not None else c, nd) for v in (c, o, h, lo)]
+        bar = [round(x if x is not None else c, nd) for x in (c, o, h, lo)]
         out.setdefault(t.strftime("%Y-%m-%d"), []).append((t.hour * 60 + t.minute, *bar, int(v or 0)))
     return out
 
