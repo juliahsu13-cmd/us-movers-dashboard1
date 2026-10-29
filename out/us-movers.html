@@ -21,7 +21,8 @@
 [hidden]{display:none!important}
 body{background:var(--bg) radial-gradient(1200px 500px at 50% -200px, #14233A 0%, transparent 70%) no-repeat;color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
-.wrap{max-width:1180px;margin:0 auto;display:grid;gap:20px}
+.wrap{max-width:none;margin:0 auto;display:grid;gap:20px}
+@media (min-width:1280px){body{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
 .num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
 .up{color:var(--up)} .down{color:var(--down)}
 button,select{font:inherit;color:inherit}
@@ -71,8 +72,10 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:6px;
 .intra svg text{font-family:var(--f-num);font-size:11px;fill:var(--muted)}
 .intra .grid{stroke:var(--line);stroke-width:1}
 .intra .zero{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3}
-.intra .ln{fill:none;stroke-width:1.8;stroke-linejoin:round}
-.intra .ar-up{fill:var(--up);opacity:.12} .intra .ar-dn{fill:var(--down);opacity:.12}
+.intra .cd line{stroke-width:1;vector-effect:non-scaling-stroke}
+.intra .cd.u line,.intra .cd.u rect{stroke:var(--up);fill:var(--up)}
+.intra .cd.d line,.intra .cd.d rect{stroke:var(--down);fill:var(--down)}
+.intra .cd rect{stroke-width:0}
 .intra .cross{stroke:var(--muted);stroke-width:1}
 .intra .stats{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--muted)}
 .intra .stats span b{font-family:var(--f-num);font-weight:600;color:var(--ink)}
@@ -385,22 +388,46 @@ const CH = {W:720, H:240, L:46, R:12, T:12, B:26, t0:570, t1:960};
 
 // kind＝"bp"（殖利率）時縱軸是相對前收的基點變動，其他一律是漲跌幅 %
 const sv = (v, kind) => kind === "bp" ? `${v > 0 ? "+" : v < 0 ? "−" : ""}${Math.abs(v).toFixed(1)} bp` : sign(v);
-function chartGeom(x, kind){
-  const pts = x.s.filter(p => p[0] >= CH.t0 && p[0] <= CH.t1).map(p => [p[0], kind === "bp" ? (p[1] - x.pc) * 100 : (p[1] / x.pc - 1) * 100, p[1]]);
-  const vs = pts.map(p => p[1]);
-  let lo = Math.min(0, ...vs), hi = Math.max(0, ...vs);
-  const pad = Math.max((hi - lo) * 0.12, 0.05); lo -= pad; hi += pad;
-  const sx = m => CH.L + (m - CH.t0) / (CH.t1 - CH.t0) * (CH.W - CH.L - CH.R);
-  const sy = v => CH.T + (hi - v) / (hi - lo) * (CH.H - CH.T - CH.B);
-  return {pts, lo, hi, sx, sy};
+// 圖的座標寬度跟著容器寬度走：桌面全寬時 1 單位≈1px，字不會被放大；窄容器沿用 CH 再縮放
+const contentW = el => {
+  if (!el?.clientWidth) return 0;
+  const cs = getComputedStyle(el);
+  return el.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+};
+function chartDims(w){
+  return w > CH.W ? {...CH, W: Math.round(w), H: Math.round(Math.min(440, Math.max(CH.H, w * 0.24)))} : CH;
 }
 
-// 盤中轉折標註：圖上畫編號圓點（高點標在線上方、低點在下方），圖下列出每個轉折的原因
-function turnMarks(turns, pts, sx, sy){
-  const off = CH.H * 0.08, top = CH.T + off, bot = CH.H - CH.B - off;
+// K 線：有開高低收（k）就直接用；舊資料只有收盤（s），以前一根收盤當開盤、高低取兩者
+function candles(x, tf, D){
+  const raw = x.k || x.s.map((p, n, a) => {
+    const o = n ? a[n-1][1] : x.pc;
+    return [p[0], o, Math.max(o, p[1]), Math.min(o, p[1]), p[1]];
+  });
+  return raw.filter(p => p[0] >= D.t0 && p[0] <= D.t1)
+    .map(([m, o, h, l, c]) => ({m, o: tf(o), h: tf(h), l: tf(l), c: tf(c), po: o, ph: h, pl: l, pc: c}));
+}
+
+function chartGeom(x, kind, D = CH){
+  const tf = p => kind === "bp" ? (p - x.pc) * 100 : (p / x.pc - 1) * 100;
+  const pts = x.s.filter(p => p[0] >= D.t0 && p[0] <= D.t1).map(p => [p[0], tf(p[1]), p[1]]);
+  const cds = candles(x, tf, D);
+  const vs = [...pts.map(p => p[1]), ...cds.flatMap(c => [c.h, c.l])];
+  let lo = Math.min(0, ...vs), hi = Math.max(0, ...vs);
+  const pad = Math.max((hi - lo) * 0.12, 0.05); lo -= pad; hi += pad;
+  const sx = m => D.L + (m - D.t0) / (D.t1 - D.t0) * (D.W - D.L - D.R);
+  const sy = v => D.T + (hi - v) / (hi - lo) * (D.H - D.T - D.B);
+  const gaps = cds.slice(1).map((c, n) => c.m - cds[n].m).filter(g => g > 0).sort((a, b) => a - b);
+  const step = gaps[gaps.length >> 1] || 5;
+  return {pts, cds, lo, hi, sx, sy, bw: Math.max(1, (sx(D.t0 + step) - sx(D.t0)) * 0.7), D};
+}
+
+// 盤中轉折標註：圖上畫編號圓點（高點標在 K 棒上方、低點在下方），圖下列出每個轉折的原因
+function turnMarks(turns, cds, sx, sy, D){
+  const off = D.H * 0.08, top = D.T + off, bot = D.H - D.B - off;
   return turns.map((t, n) => {
-    const p = pts.reduce((a, b) => Math.abs(b[0] - t.m) < Math.abs(a[0] - t.m) ? b : a);
-    const x0 = sx(p[0]), y0 = sy(p[1]);
+    const c = cds.reduce((a, b) => Math.abs(b.m - t.m) < Math.abs(a.m - t.m) ? b : a);
+    const x0 = sx(c.m), y0 = sy(t.k === "low" ? c.l : c.h);
     const y1 = Math.min(bot, Math.max(top, t.k === "low" ? y0 + off : y0 - off));
     return `<g class="tm ${t.k}" data-n="${n}"><line x1="${x0}" y1="${y0}" x2="${x0}" y2="${y1}"/>
       <circle cx="${x0}" cy="${y1}"/><text x="${x0}" y="${y1}" text-anchor="middle" dominant-baseline="central">${n+1}</text></g>`;
@@ -416,58 +443,64 @@ function turnList(turns, pts, uid){
   }).join("")}</ol>`;
 }
 
-function chartHTML(x, title, uid, turns = [], kind = "pct"){
+// w＝容器寬度（px），決定圖的座標寬度；不給就用預設 CH
+function chartHTML(x, title, uid, turns = [], kind = "pct", w = 0){
   if (!x) return `<div class="intra-head"><h2>${esc(title)}</h2></div>
     <p class="note">這一天沒有盤中資料（來源只保留約 60 天的 5 分鐘線）。</p>`;
-  const {W, H, L, R, T, B, t0} = CH;
-  const {pts, lo, hi, sx, sy} = chartGeom(x, kind);
+  const D = chartDims(w);
+  const {W, H, L, R, T, B, t0} = D;
+  const {pts, cds, lo, hi, sx, sy, bw} = chartGeom(x, kind, D);
+  if (!cds.length) return `<div class="intra-head"><h2>${esc(title)}</h2></div><p class="note">這一天美東 09:30–16:00 沒有盤中資料。</p>`;
   const unit = kind === "bp" ? "bp" : "%";
   const step = [0.1, 0.2, 0.25, 0.5, 1, 2, 2.5, 5].find(s => (hi - lo) / s <= 6) || 10;
   const ticks = []; for (let v = Math.ceil(lo / step) * step; v <= hi; v += step) ticks.push(+v.toFixed(4));
-  const line = pts.map((p, n) => `${n ? "L" : "M"}${sx(p[0]).toFixed(1)},${sy(p[1]).toFixed(1)}`).join("");
   const base = sy(0).toFixed(1);
-  const area = `${line}L${sx(pts[pts.length-1][0]).toFixed(1)},${base}L${sx(pts[0][0]).toFixed(1)},${base}Z`;
-  const last = pts[pts.length-1], hiP = pts.reduce((a, b) => b[1] > a[1] ? b : a), loP = pts.reduce((a, b) => b[1] < a[1] ? b : a);
-  const col = last[1] >= 0 ? "var(--up)" : "var(--down)";
+  // 紅＝收高於開（漲）、綠＝收低於開（跌）；實體至少 1 單位高，十字線才看得到
+  const bars = cds.map(c => {
+    const xc = sx(c.m).toFixed(1), y1 = sy(Math.max(c.o, c.c)), y2 = sy(Math.min(c.o, c.c));
+    return `<g class="cd ${c.c >= c.o ? "u" : "d"}"><line x1="${xc}" x2="${xc}" y1="${sy(c.h).toFixed(1)}" y2="${sy(c.l).toFixed(1)}"/>`
+      + `<rect x="${(sx(c.m) - bw / 2).toFixed(1)}" y="${y1.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(1, y2 - y1).toFixed(1)}"/></g>`;
+  }).join("");
+  // 沒有開高低時，K 棒的開盤是推估值，高低改用收盤極值
+  const last = cds[cds.length-1], hk = x.k ? "h" : "c", lk = x.k ? "l" : "c";
+  const hiC = cds.reduce((a, b) => b[hk] > a[hk] ? b : a), loC = cds.reduce((a, b) => b[lk] < a[lk] ? b : a);
   return `<div class="intra-head"><h2>${esc(title)} · ${state.date}</h2>
-      <span class="readout">收 <b>${fmt(last[2])}</b> <b class="${dir(last[1])}">${sv(last[1], kind)}</b></span></div>
-    <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(title)} ${state.date} 盤中走勢，相對前一交易日收盤 ${fmt(x.pc)}">
-      <defs><clipPath id="cu-${uid}"><rect x="0" y="0" width="${W}" height="${base}"/></clipPath><clipPath id="cd-${uid}"><rect x="0" y="${base}" width="${W}" height="${H}"/></clipPath></defs>
+      <span class="readout">收 <b>${fmt(last.pc)}</b> <b class="${dir(last.c)}">${sv(last.c, kind)}</b></span></div>
+    <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(title)} ${state.date} 盤中 K 線，相對前一交易日收盤 ${fmt(x.pc)}">
       ${ticks.map(v => `<line class="grid" x1="${L}" x2="${W-R}" y1="${sy(v)}" y2="${sy(v)}"/><text x="${L-6}" y="${sy(v)+4}" text-anchor="end">${v > 0 ? "+" : ""}${v}${unit}</text>`).join("")}
       ${[660, 780, 900].map(m => `<text x="${sx(m)}" y="${H-8}" text-anchor="middle">${hm(m)}</text>`).join("")}
-      <text x="${sx(t0)}" y="${H-8}" text-anchor="start">09:30</text><text x="${sx(CH.t1)}" y="${H-8}" text-anchor="end">16:00</text>
+      <text x="${sx(t0)}" y="${H-8}" text-anchor="start">09:30</text><text x="${sx(D.t1)}" y="${H-8}" text-anchor="end">16:00</text>
       <line class="zero" x1="${L}" x2="${W-R}" y1="${base}" y2="${base}"/>
-      <path class="ar-up" d="${area}" clip-path="url(#cu-${uid})"/><path class="ar-dn" d="${area}" clip-path="url(#cd-${uid})"/>
-      <path class="ln" d="${line}" stroke="var(--up)" clip-path="url(#cu-${uid})"/><path class="ln" d="${line}" stroke="var(--down)" clip-path="url(#cd-${uid})"/>
-      <circle cx="${sx(last[0])}" cy="${sy(last[1])}" r="3.5" fill="${col}"/>
+      ${bars}
       <g class="hov" hidden><line class="cross" y1="${T}" y2="${H-B}"/><circle r="3.5" fill="var(--ink)"/></g>
       <rect class="hit" x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}" fill="transparent"/>
-      ${turnMarks(turns, pts, sx, sy)}
+      ${turnMarks(turns, cds, sx, sy, D)}
     </svg>
     <div class="stats">
       <span>前收 <b>${fmt(x.pc)}</b></span>
-      <span>高 <b>${fmt(hiP[2])}</b> ${hm(hiP[0])}</span>
-      <span>低 <b>${fmt(loP[2])}</b> ${hm(loP[0])}</span>
-      <span>美東時間，5 分鐘線（台北 = 美東 +12 小時）</span>
+      <span>高 <b>${fmt(x.k ? hiC.ph : hiC.pc)}</b> ${hm(hiC.m)}</span>
+      <span>低 <b>${fmt(x.k ? loC.pl : loC.pc)}</b> ${hm(loC.m)}</span>
+      <span>美東時間，5 分鐘 K 線（紅漲綠跌；台北 = 美東 +12 小時）${x.k ? "" : "；本日無開高低資料，開盤以前一根收盤代替"}</span>
     </div>
     ${turnList(turns, pts, uid)}`;
 }
 
-// 滑過或點圖上任一點：顯示該時刻價位與漲跌幅
+// 滑過或點圖上任一根 K 棒：顯示該 5 分鐘的開高低收與漲跌幅
 function wireChart(box, x, kind){
   const svg = box?.querySelector("svg");
   if (!x || !svg) return;
-  const {pts, sx, sy} = chartGeom(x, kind);
+  const vb = svg.viewBox.baseVal;
+  const {cds, sx, sy, D} = chartGeom(x, kind, {...CH, W: vb.width, H: vb.height});
   const ro = box.querySelector(".readout"), rest = ro.innerHTML, g = svg.querySelector(".hov");
   const cross = g.querySelector("line"), dot = g.querySelector("circle");
   const move = e => {
-    const r = svg.getBoundingClientRect(), vx = (e.clientX - r.left) / r.width * CH.W;
-    const m = CH.t0 + (vx - CH.L) / (CH.W - CH.L - CH.R) * (CH.t1 - CH.t0);
-    const p = pts.reduce((a, b) => Math.abs(b[0] - m) < Math.abs(a[0] - m) ? b : a);
+    const r = svg.getBoundingClientRect(), vx = (e.clientX - r.left) / r.width * D.W;
+    const m = D.t0 + (vx - D.L) / (D.W - D.L - D.R) * (D.t1 - D.t0);
+    const c = cds.reduce((a, b) => Math.abs(b.m - m) < Math.abs(a.m - m) ? b : a);
     g.hidden = false;
-    cross.setAttribute("x1", sx(p[0])); cross.setAttribute("x2", sx(p[0]));
-    dot.setAttribute("cx", sx(p[0])); dot.setAttribute("cy", sy(p[1]));
-    ro.innerHTML = `${hm(p[0])} <b>${fmt(p[2])}</b> <b class="${dir(p[1])}">${sv(p[1], kind)}</b>`;
+    cross.setAttribute("x1", sx(c.m)); cross.setAttribute("x2", sx(c.m));
+    dot.setAttribute("cx", sx(c.m)); dot.setAttribute("cy", sy(c.c));
+    ro.innerHTML = `${hm(c.m)} 開 ${fmt(c.po)} 高 ${fmt(c.ph)} 低 ${fmt(c.pl)} 收 <b>${fmt(c.pc)}</b> <b class="${dir(c.c)}">${sv(c.c, kind)}</b>`;
   };
   const hit = svg.querySelector(".hit");
   hit.addEventListener("pointermove", move); hit.addEventListener("pointerdown", move);
@@ -479,7 +512,7 @@ function renderIndexChart(){
   const x = INTRA?.[state.date]?.[state.idx];
   const name = IDX.find(i => i.k === state.idx).name;
   const box = $("#intra");
-  box.innerHTML = chartHTML(x, `${name} 盤中走勢`, "idx", TURNS?.[state.date]?.[state.idx] || []);
+  box.innerHTML = chartHTML(x, `${name} 盤中走勢`, "idx", TURNS?.[state.date]?.[state.idx] || [], "pct", contentW(box) || contentW($(".wrap")) - 34);
   wireChart(box, x);
   // 點圖上的編號：捲到對應說明並短暫標亮
   box.querySelectorAll(".tm").forEach(g => g.onclick = () => {
@@ -575,7 +608,7 @@ function renderMega(){
     const box = d.querySelector(".mchart");
     if (!d.open || box.dataset.done) return;
     const t = box.dataset.t, x = INTRA?.[state.date]?.[t];
-    box.innerHTML = chartHTML(x, `${(names[t] || [t])[0]}（${t}）盤中走勢`, "m-" + t);
+    box.innerHTML = chartHTML(x, `${(names[t] || [t])[0]}（${t}）盤中走勢`, "m-" + t, [], "pct", contentW(box));
     wireChart(box, x);
     box.dataset.done = "1";
   }));
@@ -599,7 +632,7 @@ function renderMacro(){
   if (sel) {
     // 盤中走勢接在格子下方、重點新聞上方；利差沒有盤中資料，只顯示新聞
     const ix = sel.ik && INTRA?.[state.date]?.[sel.ik], kind = sel.ikind || sel.kind;
-    $("#macro-note").innerHTML = `${sel.ik ? `<div class="mchart intra">${chartHTML(ix, `${sel.chart} 盤中走勢`, "mc", [], kind)}</div>` : ""}
+    $("#macro-note").innerHTML = `${sel.ik ? `<div class="mchart intra">${chartHTML(ix, `${sel.chart} 盤中走勢`, "mc", [], kind, contentW($("#macro-note")) - 34)}</div>` : ""}
       <p class="mn-title">${sel.name} · ${state.date} 重點新聞</p>${noteHTML(NOTES?.[state.date]?.[sel.k], dir(day[sel.k]?.chg))}`;
     wireChart($("#macro-note .mchart"), ix, kind);
   }
@@ -618,5 +651,10 @@ if (DATA === null) {
   renderDates();
   $("#date").onchange = e => { state.date = e.target.value; renderAll(); };
   renderAll();
+  let rw = innerWidth, rt;
+  addEventListener("resize", () => {
+    clearTimeout(rt);
+    rt = setTimeout(() => { if (Math.abs(innerWidth - rw) > 40) { rw = innerWidth; renderIndexChart(); renderMacro(); } }, 200);
+  });
 }
 </script>
