@@ -9,7 +9,7 @@
 /* 深色交易台：固定單一深色主題，不隨系統切換 */
 :root{
   --bg:#0A101B; --surface:#111A28; --surface-2:#16212F; --ink:#E7ECF3; --muted:#8B98AC; --line:#223047;
-  --accent:#6AAEF0; --accent-soft:#18283D;
+  --accent:#6AAEF0; --accent-soft:#18283D; --rsi:#3FB68B;
   --up:#FF5A6A; --up-soft:#3A1A22; --down:#2BD48C; --down-soft:#0F3026;
   color-scheme:dark;
   --f-display:"Noto Serif TC","Songti TC","PMingLiU",serif;
@@ -124,6 +124,15 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:6px;
 .intra .sel{fill:var(--accent);fill-opacity:.22;stroke:var(--accent);stroke-opacity:.8;stroke-width:1;vector-effect:non-scaling-stroke}
 .intra .base{stroke:var(--accent);stroke-width:1;stroke-dasharray:4 3;vector-effect:non-scaling-stroke}
 .intra svg text.ext{fill:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;font-size:12px;color:var(--muted)}
+.legend .sw{display:inline-block;width:8px;height:10px;margin-right:5px;vertical-align:-1px}
+.legend .ln{display:inline-block;width:14px;height:2px;margin-right:5px;vertical-align:3px}
+.legend .lv{font-family:var(--f-num);color:var(--ink)}
+.intra .ma{fill:none;stroke-width:1.4;vector-effect:non-scaling-stroke}
+.intra .rsi{fill:none;stroke:var(--rsi);stroke-width:1.4;vector-effect:non-scaling-stroke}
+.intra .rl{stroke:var(--muted);stroke-dasharray:3 3;stroke-width:1;vector-effect:non-scaling-stroke}
+.intra .sep{stroke:var(--line);stroke-width:1}
+.intra .vb.u{fill:var(--up);opacity:.6} .intra .vb.d{fill:var(--down);opacity:.6}
 .rstats{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:14px;color:var(--muted)}
 .rstats b{font-family:var(--f-num);font-weight:600;color:var(--ink)}
 .rstats b.up{color:var(--up)} .rstats b.down{color:var(--down)}
@@ -569,11 +578,27 @@ function wireChart(box, x, kind){
 // ── 走勢區間：當日盤中 K 線，或日 K（年初至今／240 日／480 日／自訂區間），區間終點＝頁面選的交易日
 const RANGES = [["day", "當日"], ["ytd", "年初至今"], ["240", "240 日"], ["480", "480 日"]];
 try { const r = localStorage.getItem("movers.range"); if (RANGES.some(x => x[0] === r)) state.range.mode = r; } catch(e) {}
-const ROW = r => ({d: r[0], o: r[1], h: r[2], l: r[3], c: r[4]});
+const ROW = r => ({d: r[0], o: r[1], h: r[2], l: r[3], c: r[4], v: r[5] || 0});
+
+// 均線（20／60／200 日）與 RSI(14)（Wilder 平滑）：用完整日 K 計算，區間第一天就有值
+const MAS = [[20, "#E8C547"], [60, "#A78BFA"], [200, "#4FC3D9"]];
+function indicators(all){
+  for (const [n] of MAS) { let s = 0; all.forEach((r, i) => { s += r.c; if (i >= n) s -= all[i - n].c; r["ma" + n] = i >= n - 1 ? s / n : null; }); }
+  let ag = 0, al = 0;
+  all.forEach((r, i) => {
+    r.rsi = null;
+    if (!i) return;
+    const d = r.c - all[i - 1].c, gn = Math.max(d, 0), ls = Math.max(-d, 0);
+    if (i <= 14) { ag += gn / 14; al += ls / 14; if (i < 14) return; }
+    else { ag = (ag * 13 + gn) / 14; al = (al * 13 + ls) / 14; }
+    r.rsi = al ? 100 - 100 / (1 + ag / al) : 100;
+  });
+  return all;
+}
 
 // 回傳 {rows: 區間內日 K, base: 區間起點前一日收盤（沒有就用第一根開盤）}
 function rangeRows(key){
-  const all = (DAILY?.[key] || []).map(ROW).filter(r => r.d <= state.date);
+  const all = indicators((DAILY?.[key] || []).map(ROW).filter(r => r.d <= state.date));
   if (!all.length) return null;
   const {mode} = state.range;
   let i0 = 0, i1 = all.length - 1;
@@ -594,17 +619,32 @@ function rangeStats(rows, base, kind){
     <span>高低差 <b>${sign((hi.h / lo.l - 1) * 100).replace("+", "")}</b></span></div>`;
 }
 
+const vfmt = v => v >= 1e8 ? `${(v / 1e8).toFixed(1)} 億` : v >= 1e4 ? `${(v / 1e4).toFixed(0)} 萬` : `${v}`;
+
+// 日 K 版面：上＝K 線＋均線，中＝成交量，下＝RSI(14)；D.H 是 K 線面板的高度，另加兩個副圖
 function dailyGeom(rows, D){
-  let lo = Math.min(...rows.map(r => r.l)), hi = Math.max(...rows.map(r => r.h));
+  const vals = rows.flatMap(r => [r.l, r.h, ...MAS.map(([n]) => r["ma" + n]).filter(v => v != null)]);
+  let lo = Math.min(...vals), hi = Math.max(...vals);
   const pad = Math.max((hi - lo) * 0.08, hi * 0.0005); lo -= pad; hi += pad;
-  const n = rows.length, pw = D.W - D.L - D.R;
-  const sx = i => D.L + (i + 0.5) / n * pw, sy = v => D.T + (hi - v) / (hi - lo) * (D.H - D.T - D.B);
-  return {lo, hi, sx, sy, bw: Math.max(1, pw / n * 0.7), ix: vx => Math.min(n - 1, Math.max(0, Math.floor((vx - D.L) / pw * n)))};
+  const n = rows.length, pw = D.W - D.L - D.R, sub = Math.round(D.H * 0.27);
+  const pB = D.H - D.B, vT = pB + 18, vB = vT + sub, rT = vB + 18, rB = rT + sub;
+  const sx = i => D.L + (i + 0.5) / n * pw, sy = v => D.T + (hi - v) / (hi - lo) * (pB - D.T);
+  const vmax = Math.max(...rows.map(r => r.v), 0);
+  return {lo, hi, sx, sy, pB, vT, vB, rT, rB, Ht: rB + D.B, vmax,
+    vy: v => vB - (vmax ? v / vmax : 0) * (vB - vT), ry: v => rB - v / 100 * (rB - rT),
+    bw: Math.max(1, pw / n * 0.7), ix: vx => Math.min(n - 1, Math.max(0, Math.floor((vx - D.L) / pw * n)))};
 }
 
+// 把有值的點連成折線，遇到 null 斷開
+const polyline = (rows, f, sx, y) => {
+  let d = "", pen = false;
+  rows.forEach((r, i) => { const v = f(r); if (v == null) { pen = false; return; } d += `${pen ? "L" : "M"}${sx(i).toFixed(1)},${y(v).toFixed(1)}`; pen = true; });
+  return d;
+};
+
 function dailyHTML(rr, title, kind, w){
-  const {rows, base} = rr, D = chartDims(w), {W, H, L, R, T, B} = D;
-  const {lo, hi, sx, sy, bw} = dailyGeom(rows, D);
+  const {rows, base} = rr, D = chartDims(w), {W, L, R, T, B} = D;
+  const {lo, hi, sx, sy, bw, pB, vT, vB, rT, rB, Ht, vmax, vy, ry} = dailyGeom(rows, D);
   const span = (hi - lo) / 5, mag = 10 ** Math.floor(Math.log10(span));
   const step = [1, 2, 2.5, 5, 10].map(k => k * mag).find(s => s >= span) || mag * 10;
   const ticks = []; for (let v = Math.ceil(lo / step) * step; v <= hi; v += step) ticks.push(v);
@@ -615,44 +655,58 @@ function dailyHTML(rr, title, kind, w){
     return `<g class="cd ${r.c >= r.o ? "u" : "d"}"><line x1="${xc}" x2="${xc}" y1="${sy(r.h).toFixed(1)}" y2="${sy(r.l).toFixed(1)}"/>`
       + `<rect x="${(sx(i) - bw / 2).toFixed(1)}" y="${y1.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(1, y2 - y1).toFixed(1)}"/></g>`;
   }).join("");
+  const vols = vmax ? rows.map((r, i) => `<rect class="vb ${r.c >= r.o ? "u" : "d"}" x="${(sx(i) - bw / 2).toFixed(1)}" y="${vy(r.v).toFixed(1)}" width="${bw.toFixed(1)}" height="${(vB - vy(r.v)).toFixed(1)}"/>`).join("")
+    : `<text x="${(L + W - R) / 2}" y="${(vT + vB) / 2}" text-anchor="middle">這個項目沒有成交量資料</text>`;
   const hiI = rows.reduce((a, r, i) => r.h > rows[a].h ? i : a, 0), loI = rows.reduce((a, r, i) => r.l < rows[a].l ? i : a, 0);
   const anc = i => i < rows.length * 0.15 ? "start" : i > rows.length * 0.85 ? "end" : "middle";
   const last = rows[rows.length-1], pct = (last.c / base - 1) * 100;
   const mlab = {ytd: "年初至今", "240": "240 日", "480": "480 日"}[state.range.mode];
-  return `<div class="intra-head"><h2>${esc(title)} 日 K · ${mlab}</h2>
-      <span class="readout">收 <b>${fmt(last.c)}</b> <b class="${dir(pct)}">${kind === "bp" ? sv((last.c - base) * 100, "bp") : sign(pct)}</b></span></div>
-    <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(title)} 日 K，${rows[0].d} 至 ${last.d}">
+  const maTxt = r => MAS.map(([n, c]) => `<span style="color:${c}">MA${n}</span> ${r["ma" + n] == null ? "—" : fmt(r["ma" + n])}`).join(" ");
+  const rest = `收 <b>${fmt(last.c)}</b> <b class="${dir(pct)}">${kind === "bp" ? sv((last.c - base) * 100, "bp") : sign(pct)}</b>`;
+  return `<div class="intra-head"><h2>${esc(title)} 日 K · ${mlab}</h2><span class="readout">${rest}</span></div>
+    <div class="legend"><span><i class="sw" style="background:var(--up)"></i>上漲 K 棒</span><span><i class="sw" style="background:var(--down)"></i>下跌 K 棒</span>
+      ${MAS.map(([n, c]) => `<span><i class="ln" style="background:${c}"></i>MA${n}</span>`).join("")}<span><i class="ln" style="background:var(--rsi)"></i>RSI(14)</span>
+      <span class="lv">${maTxt(last)} ・ 量 ${vmax ? vfmt(last.v) : "—"} ・ RSI ${last.rsi == null ? "—" : last.rsi.toFixed(1)}</span></div>
+    <svg viewBox="0 0 ${W} ${Ht}" data-mh="${D.H}" role="img" aria-label="${esc(title)} 日 K、均線、成交量與 RSI，${rows[0].d} 至 ${last.d}">
       ${ticks.map(v => `<line class="grid" x1="${L}" x2="${W-R}" y1="${sy(v)}" y2="${sy(v)}"/><text x="${L-6}" y="${sy(v)+4}" text-anchor="end">${+v.toFixed(4)}</text>`).join("")}
-      ${labs.map(i => `<text x="${sx(i)}" y="${H-8}" text-anchor="${i === 0 ? "start" : i === rows.length - 1 ? "end" : "middle"}">${long ? rows[i].d.slice(0, 7) : rows[i].d.slice(5).replace("-", "/")}</text>`).join("")}
+      ${labs.map(i => `<text x="${sx(i)}" y="${Ht-8}" text-anchor="${i === 0 ? "start" : i === rows.length - 1 ? "end" : "middle"}">${long ? rows[i].d.slice(0, 7) : rows[i].d.slice(5).replace("-", "/")}</text>`).join("")}
       ${base >= lo && base <= hi ? `<line class="base" x1="${L}" x2="${W-R}" y1="${sy(base)}" y2="${sy(base)}"/>` : ""}
       ${bars}
+      ${MAS.map(([n, c]) => `<path class="ma" stroke="${c}" d="${polyline(rows, r => r["ma" + n], sx, sy)}"/>`).join("")}
       <text class="ext" x="${sx(hiI)}" y="${sy(rows[hiI].h) - 6}" text-anchor="${anc(hiI)}">高 ${fmt(rows[hiI].h)}</text>
       <text class="ext" x="${sx(loI)}" y="${sy(rows[loI].l) + 14}" text-anchor="${anc(loI)}">低 ${fmt(rows[loI].l)}</text>
-      <rect class="sel" x="0" y="${T}" width="0" height="${H-T-B}" hidden/>
-      <g class="hov" hidden><line class="cross" y1="${T}" y2="${H-B}"/><circle r="3.5" fill="var(--ink)"/></g>
-      <rect class="hit" x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}" fill="transparent"/>
+      <line class="sep" x1="${L}" x2="${W-R}" y1="${vB}" y2="${vB}"/><text x="${L+4}" y="${vT+10}">成交量${vmax ? `（區間最大 ${vfmt(vmax)}）` : ""}</text>
+      ${vols}
+      ${[30, 50, 70].map(v => `<line class="${v === 50 ? "grid" : "rl"}" x1="${L}" x2="${W-R}" y1="${ry(v)}" y2="${ry(v)}"/><text x="${L-6}" y="${ry(v)+4}" text-anchor="end">${v}</text>`).join("")}
+      <text x="${L+4}" y="${rT+10}">RSI(14)</text>
+      <path class="rsi" d="${polyline(rows, r => r.rsi, sx, ry)}"/>
+      <rect class="sel" x="0" y="${T}" width="0" height="${pB-T}" hidden/>
+      <g class="hov" hidden><line class="cross" y1="${T}" y2="${rB}"/><circle r="3.5" fill="var(--ink)"/></g>
+      <rect class="hit" x="${L}" y="${T}" width="${W-L-R}" height="${rB-T}" fill="transparent"/>
     </svg>
     ${rangeStats(rows, base, kind)}
-    <div class="stats"><span>日 K，紅漲綠跌；虛線＝區間起點（前一交易日收盤）。按「自訂區間」後在圖上拖曳、點起點再點終點，或輸入起迄日期（可選到 2022 年），看任一段的高低點與漲跌。</span></div>`;
+    <div class="stats"><span>日 K，紅漲綠跌；黃／紫／青線＝20／60／200 日均線（以完整歷史計算）；中間為成交量，下方為 14 日 RSI（Wilder 平滑，70 以上超買、30 以下超賣）；虛線＝區間起點（前一交易日收盤）。按「自訂區間」後在圖上拖曳、點起點再點終點，或輸入起迄日期（可選到 2022 年），看任一段的高低點與漲跌。</span></div>`;
 }
 
-// 滑過顯示當日開高低收與相對區間起點的漲跌；拖曳選取 → 改成自訂區間
+// 滑過顯示當日開高低收、均線、成交量、RSI 與相對區間起點的漲跌
 function wireDaily(box, rr, kind){
   const svg = box.querySelector("svg");
   if (!svg) return;
-  const vb = svg.viewBox.baseVal, D = {...CH, W: vb.width, H: vb.height}, {rows, base} = rr;
-  const {sx, sy, bw, ix} = dailyGeom(rows, D);
-  const ro = box.querySelector(".readout"), rest = ro.innerHTML, g = svg.querySelector(".hov"), sel = svg.querySelector(".sel");
-  const cross = g.querySelector("line"), dot = g.querySelector("circle"), hit = svg.querySelector(".hit");
+  const vb = svg.viewBox.baseVal, D = {...CH, W: vb.width, H: +svg.dataset.mh}, {rows, base} = rr;
+  const {sx, sy, bw, ix, vmax} = dailyGeom(rows, D);
+  const ro = box.querySelector(".readout"), rest = ro.innerHTML, lv = box.querySelector(".legend .lv"), lrest = lv.innerHTML;
+  const g = svg.querySelector(".hov"), cross = g.querySelector("line"), dot = g.querySelector("circle"), hit = svg.querySelector(".hit");
   const at = e => { const r = svg.getBoundingClientRect(); return ix((e.clientX - r.left) / r.width * D.W); };
   const chg = (a, b) => kind === "bp" ? sv((b - a) * 100, "bp") : sign((b / a - 1) * 100);
+  const maTxt = r => MAS.map(([n, c]) => `<span style="color:${c}">MA${n}</span> ${r["ma" + n] == null ? "—" : fmt(r["ma" + n])}`).join(" ");
   hit.addEventListener("pointermove", e => {
-    const i = at(e), r = rows[i];
+    const i = at(e), r = rows[i], pc = i > 0 ? rows[i - 1].c : base;
     g.removeAttribute("hidden");
     cross.setAttribute("x1", sx(i)); cross.setAttribute("x2", sx(i)); dot.setAttribute("cx", sx(i)); dot.setAttribute("cy", sy(r.c));
-    ro.innerHTML = `${r.d}（${wk(r.d)}）開 ${fmt(r.o)} 高 ${fmt(r.h)} 低 ${fmt(r.l)} 收 <b>${fmt(r.c)}</b> 較起點 <b class="${dir(r.c - base)}">${chg(base, r.c)}</b>`;
+    ro.innerHTML = `${r.d}（${wk(r.d)}）開 ${fmt(r.o)} 高 ${fmt(r.h)} 低 ${fmt(r.l)} 收 <b>${fmt(r.c)}</b> 當日 <b class="${dir(r.c - pc)}">${chg(pc, r.c)}</b> 較起點 <b class="${dir(r.c - base)}">${chg(base, r.c)}</b>`;
+    lv.innerHTML = `${maTxt(r)} ・ 量 ${vmax ? vfmt(r.v) : "—"} ・ RSI ${r.rsi == null ? "—" : r.rsi.toFixed(1)}`;
   });
-  hit.addEventListener("pointerleave", () => { g.setAttribute("hidden", ""); ro.innerHTML = rest; });
+  hit.addEventListener("pointerleave", () => { g.setAttribute("hidden", ""); ro.innerHTML = rest; lv.innerHTML = lrest; });
   addPicker(box, svg, {bars: rows.map(r => ({t: r.d, o: r.o, h: r.h, l: r.l, c: r.c})), at, x: sx, bw,
     prev: i => i > 0 ? rows[i - 1].c : base, unit: "個交易日", kind});
 }
