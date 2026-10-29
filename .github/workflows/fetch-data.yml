@@ -36,6 +36,8 @@ jobs:
         run: python3 scripts/fetch_macro.py . || echo "::warning::fetch_macro 失敗"
       - name: 權值個股報價
         run: python3 scripts/fetch_megacaps.py . || echo "::warning::fetch_megacaps 失敗"
+      - name: 日 K（年初至今／240／480 日走勢圖）
+        run: python3 scripts/fetch_daily.py . || echo "::warning::fetch_daily 失敗"
       - name: 英文候選新聞
         run: python3 scripts/fetch_news.py . "${{ github.event.inputs.news_days || '3' }}" || echo "::warning::fetch_news 失敗"
       - name: 盤中市場新聞（轉折標註對照用）
@@ -45,7 +47,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/intraday.json data/macro.json data/megacaps.json data/megacap_names.json data/news.json data/market_news.json
+          git add data/intraday.json data/macro.json data/megacaps.json data/megacap_names.json data/news.json data/market_news.json data/daily.json
           if git diff --cached --quiet; then
             echo "資料無變更"
             exit 0

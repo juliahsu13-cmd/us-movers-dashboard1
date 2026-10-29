@@ -206,13 +206,18 @@ def main(root):
     if keep and keep[-1] not in turns:
         problems.append(f"{keep[-1]}: 無盤中轉折標註")
 
+    # 日 K（年初至今／240／480 日走勢圖），由 fetch_daily.py 產生；沒有就只顯示當日盤中
+    dpath = root / "data" / "daily.json"
+    daily = json.loads(dpath.read_text(encoding="utf-8")) if dpath.exists() else {}
+
     def render(t):
         return (t.replace("/*__NOTES__*/null", json.dumps(notes, ensure_ascii=False, separators=(",", ":")))
                  .replace("/*__TURNS__*/null", json.dumps(turns, ensure_ascii=False, separators=(",", ":")))
                  .replace("/*__MACRO__*/null", json.dumps(macro, separators=(",", ":")))
                  .replace("/*__MEGA__*/null", json.dumps(mega, ensure_ascii=False, separators=(",", ":")))
                  .replace("/*__DATA__*/null", data_js)
-                 .replace("/*__INTRA__*/null", json.dumps(intra, separators=(",", ":"))))
+                 .replace("/*__INTRA__*/null", json.dumps(intra, separators=(",", ":")))
+                 .replace("/*__DAILY__*/null", json.dumps(daily, separators=(",", ":"))))
     out = root / "out" / "us-movers.html"
     out.parent.mkdir(exist_ok=True)
     out.write_text(render(tpl), encoding="utf-8")
