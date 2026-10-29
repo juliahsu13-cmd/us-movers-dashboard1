@@ -26,20 +26,21 @@ def get(sym, rng, iv):
 
 
 def by_day(res, nd=2):
-    """回傳 {YYYY-MM-DD: [(美東分鐘數, 收盤, 開盤, 最高, 最低), ...]}，交易所不在美東時換算成美東。
-    開高低缺值時以收盤代替。"""
+    """回傳 {YYYY-MM-DD: [(美東分鐘數, 收盤, 開盤, 最高, 最低, 成交量), ...]}，交易所不在美東時換算成美東。
+    開高低缺值時以收盤代替；成交量缺值為 0。"""
     off = timedelta(seconds=res["meta"]["gmtoffset"],
                     minutes=TZ_SHIFT.get(res["meta"].get("exchangeTimezoneName"), 0))
     q = res["indicators"]["quote"][0]
     n = len(q["close"])
     ohl = [q.get(k) or [None] * n for k in ("open", "high", "low")]
+    vol = q.get("volume") or [None] * n
     out = {}
-    for ts, c, o, h, lo in zip(res.get("timestamp") or [], q["close"], *ohl):
+    for ts, c, o, h, lo, v in zip(res.get("timestamp") or [], q["close"], *ohl, vol):
         if c is None:
             continue
         t = datetime.fromtimestamp(ts, timezone.utc) + off
         bar = [round(v if v is not None else c, nd) for v in (c, o, h, lo)]
-        out.setdefault(t.strftime("%Y-%m-%d"), []).append((t.hour * 60 + t.minute, *bar))
+        out.setdefault(t.strftime("%Y-%m-%d"), []).append((t.hour * 60 + t.minute, *bar, int(v or 0)))
     return out
 
 
@@ -69,7 +70,7 @@ def main(root):
             pc = daily[prev[-1]][0][1]  # 期貨同日第二根是晚盤新時段，取第一根才是當日收盤
             # s＝[分鐘, 收盤]（轉折偵測與舊版頁面用）；k＝[分鐘, 開, 高, 低, 收]（K 線用）
             store.setdefault(d, {})[idx] = {"pc": pc, "s": [[m, c] for m, c, *_ in pts],
-                                             "k": [[m, o, h, lo, c] for m, c, o, h, lo in pts]}
+                                             "k": [[m, o, h, lo, c] for m, c, o, h, lo, _ in pts]}
             n += 1
         log.append(f"{idx}: {n} 天，最新 {max(intra) if intra else '無'}")
     path.write_text(json.dumps(store, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

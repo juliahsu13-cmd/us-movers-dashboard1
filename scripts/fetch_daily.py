@@ -1,7 +1,7 @@
 """抓四大指數、權值個股與油價美元美債的日 K（Yahoo Finance），寫入 data/daily.json。
 
 頁面的「年初至今／240 日／480 日／自訂區間」走勢圖用這份資料。
-格式：{代號: [[YYYY-MM-DD, 開, 高, 低, 收], ...]}，代號與 data/intraday.json 相同；
+格式：{代號: [[YYYY-MM-DD, 開, 高, 低, 收, 成交量], ...]}（殖利率、美元指數等沒有成交量，記 0），代號與 data/intraday.json 相同；
 每檔保留 START 之後的日 K（自訂區間可選到 2022 年初；多留一個月，2022 年第一天才有前一日收盤當起點）。某檔下載失敗就保留檔案裡的舊資料。
 用法：python3 scripts/fetch_daily.py <專案根目錄>
 """
@@ -29,7 +29,7 @@ def main(root):
             log.append(f"{key}: 下載失敗 {e}")
             continue
         # 期貨同日可能有兩根（晚盤新時段），取第一根才是當日收盤
-        rows = [[d, bars[0][2], bars[0][3], bars[0][4], bars[0][1]] for d, bars in sorted(days.items())]
+        rows = [[d, bars[0][2], bars[0][3], bars[0][4], bars[0][1], bars[0][5]] for d, bars in sorted(days.items())]
         if rows:
             store[key] = [r for r in rows if r[0] >= START]
         log.append(f"{key}: {len(rows)} 根，最新 {rows[-1][0] if rows else '無'}")
