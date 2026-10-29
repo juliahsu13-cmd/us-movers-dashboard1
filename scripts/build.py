@@ -184,6 +184,8 @@ def main(root):
     tpl = (root / "scripts" / "template.html").read_text(encoding="utf-8")
     data_js = json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
     intra = {d: intra_all[d] for d in keep if d in intra_all}
+    # 有開高低收（k）的就不重複嵌入收盤序列（s），頁面載入時由 k 還原，縮小檔案
+    intra = {d: {i: ({"pc": x["pc"], "k": x["k"]} if "k" in x else x) for i, x in v.items()} for d, v in intra.items()}
     for d in keep:
         if d not in intra:
             problems.append(f"{d}: 無盤中走勢資料")

@@ -95,6 +95,19 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:6px;
 .turns .th .num{font-weight:600}
 .turns .tb{font-size:14px;line-height:1.75;margin-top:2px}
 .turns .ts{font-size:12px;color:var(--muted)}
+/* 走勢區間：當日／年初至今／240 日／480 日／自訂；日 K 統計列 */
+.rg{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.rg button{background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:3px 10px;font-size:13px;color:var(--muted);cursor:pointer}
+.rg button:hover{color:var(--ink)}
+.rg button[aria-pressed="true"]{color:var(--ink);border-color:var(--accent);background:var(--accent-soft)}
+.rg input[type=date]{background:var(--surface);border:1px solid var(--line);border-radius:6px;color:var(--ink);padding:2px 6px;font-family:var(--f-num);font-size:13px;color-scheme:dark}
+.rg .hint{font-size:12px;color:var(--muted)}
+.intra .sel{fill:var(--accent);opacity:.18}
+.intra .base{stroke:var(--accent);stroke-width:1;stroke-dasharray:4 3;vector-effect:non-scaling-stroke}
+.intra svg text.ext{fill:var(--ink)}
+.rstats{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:14px;color:var(--muted)}
+.rstats b{font-family:var(--f-num);font-weight:600;color:var(--ink)}
+.rstats b.up{color:var(--up)} .rstats b.down{color:var(--down)}
 /* 寬螢幕：轉折解讀依圖框寬度並排成 2–3 欄，填滿右側空白、每行維持好讀的長度 */
 .intra{container-type:inline-size}
 @container (min-width:1000px){.turns{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}.turns p{max-width:none}}
@@ -273,10 +286,12 @@ footer{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 16p
 <script>
 const DATA = /*__DATA__*/null;
 const INTRA = /*__INTRA__*/null;
+for (const v of Object.values(INTRA || {})) for (const x of Object.values(v)) x.s ||= x.k.map(r => [r[0], r[4]]);
 const MEGA = /*__MEGA__*/null;
 const MACRO = /*__MACRO__*/null;
 const NOTES = /*__NOTES__*/null;
 const TURNS = /*__TURNS__*/null;
+const DAILY = /*__DAILY__*/null;
 // 某檔股票當天若也在漲跌榜郵件裡，取郵件的歸因當備用說明
 function mailAttr(date, t){
   for (const i of IDX) for (const s of (DATA[date]?.[i.k]?.sections || [])) {
@@ -306,7 +321,7 @@ const IDX = [
   {k:"INDU", name:"道瓊工業", hash:"indu"},
 ];
 const dates = Object.keys(DATA || {}).sort();
-const state = {date: dates[dates.length-1], idx: "SPX", tab: "MEGA", open: false};
+const state = {date: dates[dates.length-1], idx: "SPX", tab: "MEGA", open: false, range: {mode: "day", from: null, to: null}};
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const sign = v => (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toFixed(2) + "%";
@@ -512,19 +527,154 @@ function wireChart(box, x, kind){
   hit.addEventListener("pointerleave", () => { g.hidden = true; ro.innerHTML = rest; });
 }
 
+// ── 走勢區間：當日盤中 K 線，或日 K（年初至今／240 日／480 日／自訂區間），區間終點＝頁面選的交易日
+const RANGES = [["day", "當日"], ["ytd", "年初至今"], ["240", "240 日"], ["480", "480 日"], ["custom", "自訂區間"]];
+try { const r = localStorage.getItem("movers.range"); if (RANGES.some(x => x[0] === r) && r !== "custom") state.range.mode = r; } catch(e) {}
+const ROW = r => ({d: r[0], o: r[1], h: r[2], l: r[3], c: r[4]});
+
+// 回傳 {rows: 區間內日 K, base: 區間起點前一日收盤（沒有就用第一根開盤）}
+function rangeRows(key){
+  const all = (DAILY?.[key] || []).map(ROW).filter(r => r.d <= state.date);
+  if (!all.length) return null;
+  const {mode} = state.range;
+  let i0 = 0, i1 = all.length - 1;
+  if (mode === "ytd") i0 = Math.max(0, all.findIndex(r => r.d.slice(0, 4) === state.date.slice(0, 4)));
+  else if (mode === "240" || mode === "480") i0 = Math.max(0, all.length - +mode);
+  else if (mode === "custom") {
+    const f = state.range.from || all[Math.max(0, all.length - 60)].d, t = state.range.to || all[i1].d;
+    i0 = all.findIndex(r => r.d >= f); if (i0 < 0) i0 = i1;
+    const j = all.map(r => r.d <= t).lastIndexOf(true); i1 = j < i0 ? i0 : j;
+  }
+  return {all, rows: all.slice(i0, i1 + 1), base: i0 > 0 ? all[i0 - 1].c : all[i0].o};
+}
+
+// 區間統計：漲跌、漲跌幅、最高／最低（含日期）、高低差；殖利率（kind＝bp）的漲跌以基點表示
+function rangeStats(rows, base, kind){
+  const last = rows[rows.length - 1], hi = rows.reduce((a, b) => b.h > a.h ? b : a), lo = rows.reduce((a, b) => b.l < a.l ? b : a);
+  const ch = last.c - base, pct = ch / base * 100;
+  const chg = kind === "bp" ? sv(ch * 100, "bp") : `${ch > 0 ? "+" : ch < 0 ? "−" : ""}${fmt(Math.abs(ch))}`;
+  return `<div class="rstats"><span>${rows[0].d}～${last.d}（${rows.length} 個交易日）</span>
+    <span>起點 <b>${fmt(base)}</b></span><span>終點 <b>${fmt(last.c)}</b></span>
+    <span>漲跌 <b class="${dir(ch)}">${chg}</b></span>${kind === "bp" ? "" : `<span>漲跌幅 <b class="${dir(pct)}">${sign(pct)}</b></span>`}
+    <span>最高 <b>${fmt(hi.h)}</b> ${hi.d}</span><span>最低 <b>${fmt(lo.l)}</b> ${lo.d}</span>
+    <span>高低差 <b>${sign((hi.h / lo.l - 1) * 100).replace("+", "")}</b></span></div>`;
+}
+
+function dailyGeom(rows, D){
+  let lo = Math.min(...rows.map(r => r.l)), hi = Math.max(...rows.map(r => r.h));
+  const pad = Math.max((hi - lo) * 0.08, hi * 0.0005); lo -= pad; hi += pad;
+  const n = rows.length, pw = D.W - D.L - D.R;
+  const sx = i => D.L + (i + 0.5) / n * pw, sy = v => D.T + (hi - v) / (hi - lo) * (D.H - D.T - D.B);
+  return {lo, hi, sx, sy, bw: Math.max(1, pw / n * 0.7), ix: vx => Math.min(n - 1, Math.max(0, Math.floor((vx - D.L) / pw * n)))};
+}
+
+function dailyHTML(rr, title, kind, w){
+  const {rows, base} = rr, D = chartDims(w), {W, H, L, R, T, B} = D;
+  const {lo, hi, sx, sy, bw} = dailyGeom(rows, D);
+  const span = (hi - lo) / 5, mag = 10 ** Math.floor(Math.log10(span));
+  const step = [1, 2, 2.5, 5, 10].map(k => k * mag).find(s => s >= span) || mag * 10;
+  const ticks = []; for (let v = Math.ceil(lo / step) * step; v <= hi; v += step) ticks.push(v);
+  const long = (new Date(rows[rows.length-1].d) - new Date(rows[0].d)) / 864e5 > 300;
+  const nl = Math.min(6, rows.length), labs = [...new Set(Array.from({length: nl}, (_, k) => Math.round(k * (rows.length - 1) / Math.max(1, nl - 1))))];
+  const bars = rows.map((r, i) => {
+    const xc = sx(i).toFixed(1), y1 = sy(Math.max(r.o, r.c)), y2 = sy(Math.min(r.o, r.c));
+    return `<g class="cd ${r.c >= r.o ? "u" : "d"}"><line x1="${xc}" x2="${xc}" y1="${sy(r.h).toFixed(1)}" y2="${sy(r.l).toFixed(1)}"/>`
+      + `<rect x="${(sx(i) - bw / 2).toFixed(1)}" y="${y1.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(1, y2 - y1).toFixed(1)}"/></g>`;
+  }).join("");
+  const hiI = rows.reduce((a, r, i) => r.h > rows[a].h ? i : a, 0), loI = rows.reduce((a, r, i) => r.l < rows[a].l ? i : a, 0);
+  const anc = i => i < rows.length * 0.15 ? "start" : i > rows.length * 0.85 ? "end" : "middle";
+  const last = rows[rows.length-1], pct = (last.c / base - 1) * 100;
+  const mlab = {ytd: "年初至今", "240": "240 日", "480": "480 日", custom: "自訂區間"}[state.range.mode];
+  return `<div class="intra-head"><h2>${esc(title)} 日 K · ${mlab}</h2>
+      <span class="readout">收 <b>${fmt(last.c)}</b> <b class="${dir(pct)}">${kind === "bp" ? sv((last.c - base) * 100, "bp") : sign(pct)}</b></span></div>
+    <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(title)} 日 K，${rows[0].d} 至 ${last.d}">
+      ${ticks.map(v => `<line class="grid" x1="${L}" x2="${W-R}" y1="${sy(v)}" y2="${sy(v)}"/><text x="${L-6}" y="${sy(v)+4}" text-anchor="end">${+v.toFixed(4)}</text>`).join("")}
+      ${labs.map(i => `<text x="${sx(i)}" y="${H-8}" text-anchor="${i === 0 ? "start" : i === rows.length - 1 ? "end" : "middle"}">${long ? rows[i].d.slice(0, 7) : rows[i].d.slice(5).replace("-", "/")}</text>`).join("")}
+      ${base >= lo && base <= hi ? `<line class="base" x1="${L}" x2="${W-R}" y1="${sy(base)}" y2="${sy(base)}"/>` : ""}
+      ${bars}
+      <text class="ext" x="${sx(hiI)}" y="${sy(rows[hiI].h) - 6}" text-anchor="${anc(hiI)}">高 ${fmt(rows[hiI].h)}</text>
+      <text class="ext" x="${sx(loI)}" y="${sy(rows[loI].l) + 14}" text-anchor="${anc(loI)}">低 ${fmt(rows[loI].l)}</text>
+      <rect class="sel" x="0" y="${T}" width="0" height="${H-T-B}" hidden/>
+      <g class="hov" hidden><line class="cross" y1="${T}" y2="${H-B}"/><circle r="3.5" fill="var(--ink)"/></g>
+      <rect class="hit" x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}" fill="transparent"/>
+    </svg>
+    ${rangeStats(rows, base, kind)}
+    <div class="stats"><span>日 K，紅漲綠跌；虛線＝區間起點（前一交易日收盤）。在圖上左右拖曳可選取任一區間，顯示該區間的高低點與漲跌。</span></div>`;
+}
+
+// 滑過顯示當日開高低收與相對區間起點的漲跌；拖曳選取 → 改成自訂區間
+function wireDaily(box, rr, kind, redraw){
+  const svg = box.querySelector("svg");
+  if (!svg) return;
+  const vb = svg.viewBox.baseVal, D = {...CH, W: vb.width, H: vb.height}, {rows, base} = rr;
+  const {sx, sy, bw, ix} = dailyGeom(rows, D);
+  const ro = box.querySelector(".readout"), rest = ro.innerHTML, g = svg.querySelector(".hov"), sel = svg.querySelector(".sel");
+  const cross = g.querySelector("line"), dot = g.querySelector("circle"), hit = svg.querySelector(".hit");
+  const at = e => { const r = svg.getBoundingClientRect(); return ix((e.clientX - r.left) / r.width * D.W); };
+  const chg = (a, b) => kind === "bp" ? sv((b - a) * 100, "bp") : sign((b / a - 1) * 100);
+  let i0 = null;
+  hit.addEventListener("pointerdown", e => { i0 = at(e); try { hit.setPointerCapture(e.pointerId); } catch(_) {} });
+  hit.addEventListener("pointermove", e => {
+    const i = at(e), r = rows[i];
+    g.hidden = false;
+    cross.setAttribute("x1", sx(i)); cross.setAttribute("x2", sx(i)); dot.setAttribute("cx", sx(i)); dot.setAttribute("cy", sy(r.c));
+    if (i0 !== null && i !== i0) {
+      const a = Math.min(i0, i), b = Math.max(i0, i), pb = a > 0 ? rows[a - 1].c : rows[a].o;
+      sel.hidden = false; sel.setAttribute("x", sx(a) - bw / 2); sel.setAttribute("width", sx(b) - sx(a) + bw);
+      ro.innerHTML = `選取 ${rows[a].d}～${rows[b].d} <b class="${dir(rows[b].c - pb)}">${chg(pb, rows[b].c)}</b>`;
+    } else ro.innerHTML = `${r.d}（${wk(r.d)}）開 ${fmt(r.o)} 高 ${fmt(r.h)} 低 ${fmt(r.l)} 收 <b>${fmt(r.c)}</b> 較起點 <b class="${dir(r.c - base)}">${chg(base, r.c)}</b>`;
+  });
+  hit.addEventListener("pointerup", e => {
+    const i = at(e), a = Math.min(i0 ?? i, i), b = Math.max(i0 ?? i, i);
+    i0 = null;
+    if (b - a >= 1) { state.range = {mode: "custom", from: rows[a].d, to: rows[b].d}; redraw(); }
+  });
+  hit.addEventListener("pointerleave", () => { if (i0 === null) { g.hidden = true; ro.innerHTML = rest; } });
+}
+
+// 每張走勢圖共用：上方區間按鈕，下方依區間畫當日盤中或日 K
+// o＝{key: data/daily.json 的代號, x: 當日盤中, title, uid, turns, kind, w: 寬度, after: 當日圖畫完後的額外綁定}
+function mountChart(box, o){
+  const draw = () => {
+    const has = !!DAILY?.[o.key]?.length, mode = has ? state.range.mode : "day";
+    const rr = mode === "day" ? null : rangeRows(o.key);
+    const bar = has ? `<div class="rg">${RANGES.map(([k, t]) => `<button type="button" data-r="${k}" aria-pressed="${mode === k}">${t}</button>`).join("")}
+      ${mode === "custom" && rr ? `<input type="date" class="rf" value="${rr.rows[0].d}" min="${rr.all[0].d}" max="${state.date}" aria-label="區間起日">～<input type="date" class="rt" value="${rr.rows[rr.rows.length-1].d}" min="${rr.all[0].d}" max="${state.date}" aria-label="區間迄日"><button type="button" class="ra">套用</button><span class="hint">或在圖上拖曳選取</span>` : ""}</div>` : "";
+    if (mode === "day" || !rr) {
+      box.innerHTML = bar + chartHTML(o.x, `${o.title} 盤中走勢`, o.uid, o.turns || [], o.kind, o.w);
+      wireChart(box, o.x, o.kind);
+      o.after?.(box);
+    } else {
+      box.innerHTML = bar + dailyHTML(rr, o.title, o.kind, o.w);
+      wireDaily(box, rr, o.kind, draw);
+    }
+    box.querySelectorAll(".rg [data-r]").forEach(b => b.onclick = () => {
+      state.range.mode = b.dataset.r;
+      try { localStorage.setItem("movers.range", b.dataset.r); } catch(e) {}
+      draw();
+    });
+    const ra = box.querySelector(".rg .ra");
+    if (ra) ra.onclick = () => {
+      const f = box.querySelector(".rf").value, t = box.querySelector(".rt").value;
+      if (f && t) state.range = {mode: "custom", from: f <= t ? f : t, to: f <= t ? t : f};
+      draw();
+    };
+  };
+  draw();
+}
+
 // 指數走勢圖：放在油價、美元、美債那一列正下方，點指數卡片就在同一畫面看到
 function renderIndexChart(){
   const x = INTRA?.[state.date]?.[state.idx];
   const name = IDX.find(i => i.k === state.idx).name;
   const box = $("#intra");
-  box.innerHTML = chartHTML(x, `${name} 盤中走勢`, "idx", TURNS?.[state.date]?.[state.idx] || [], "pct", contentW(box) || contentW($(".wrap")) - 34);
-  wireChart(box, x);
   // 點圖上的編號：捲到對應說明並短暫標亮
-  box.querySelectorAll(".tm").forEach(g => g.onclick = () => {
-    const li = document.getElementById(`tn-idx-${g.dataset.n}`);
-    li.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "nearest"});
-    li.classList.add("on"); setTimeout(() => li.classList.remove("on"), 1600);
-  });
+  mountChart(box, {key: state.idx, x, title: name, uid: "idx", turns: TURNS?.[state.date]?.[state.idx] || [], kind: "pct",
+    w: contentW(box) || contentW($(".wrap")) - 34, after: b => b.querySelectorAll(".tm").forEach(g => g.onclick = () => {
+      const li = document.getElementById(`tn-idx-${g.dataset.n}`);
+      li.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "nearest"});
+      li.classList.add("on"); setTimeout(() => li.classList.remove("on"), 1600);
+    })});
 }
 
 function renderOverlap(){
@@ -613,8 +763,7 @@ function renderMega(){
     const box = d.querySelector(".mchart");
     if (!d.open || box.dataset.done) return;
     const t = box.dataset.t, x = INTRA?.[state.date]?.[t];
-    box.innerHTML = chartHTML(x, `${(names[t] || [t])[0]}（${t}）盤中走勢`, "m-" + t, [], "pct", contentW(box) || contentW(d) - 34);
-    wireChart(box, x);
+    mountChart(box, {key: t, x, title: `${(names[t] || [t])[0]}（${t}）`, uid: "m-" + t, kind: "pct", w: contentW(box) || contentW(d) - 34});
     box.dataset.done = "1";
   }));
 }
@@ -637,9 +786,10 @@ function renderMacro(){
   if (sel) {
     // 盤中走勢接在格子下方、重點新聞上方；利差沒有盤中資料，只顯示新聞
     const ix = sel.ik && INTRA?.[state.date]?.[sel.ik], kind = sel.ikind || sel.kind;
-    $("#macro-note").innerHTML = `${sel.ik ? `<div class="mchart intra">${chartHTML(ix, `${sel.chart} 盤中走勢`, "mc", [], kind, contentW($("#macro-note")) - 34)}</div>` : ""}
+    const mw = contentW($("#macro-note")) - 34;
+    $("#macro-note").innerHTML = `${sel.ik ? `<div class="mchart intra"></div>` : ""}
       <p class="mn-title">${sel.name} · ${state.date} 重點新聞</p>${noteHTML(NOTES?.[state.date]?.[sel.k], dir(day[sel.k]?.chg))}`;
-    wireChart($("#macro-note .mchart"), ix, kind);
+    if (sel.ik) mountChart($("#macro-note .mchart"), {key: sel.ik, x: ix, title: sel.chart, uid: "mc", kind, w: mw});
   }
   document.querySelectorAll(".mcell").forEach(b => b.onclick = () => {
     state.macro = state.macro === b.dataset.k ? null : b.dataset.k;
