@@ -103,6 +103,8 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:6px;
 .rg input[type=date]{background:var(--surface);border:1px solid var(--line);border-radius:6px;color:var(--ink);padding:2px 6px;font-family:var(--f-num);font-size:13px;color-scheme:dark}
 .rg .hint{font-size:12px;color:var(--muted)}
 .rg .pk{margin-left:6px}
+.rg .dates{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px}
+.rg .dates[hidden]{display:none}
 .intra{position:relative}
 .pick-pop{position:absolute;top:58px;right:16px;z-index:6;width:min(320px,calc(100% - 32px));background:var(--surface-2);border:1px solid var(--accent);border-radius:8px;padding:12px 14px;box-shadow:0 8px 24px rgba(0,0,0,.45)}
 .pick-pop .x{position:absolute;top:4px;right:6px;background:none;border:0;color:var(--muted);font-size:20px;line-height:1;cursor:pointer;padding:4px}
@@ -617,7 +619,7 @@ function dailyHTML(rr, title, kind, w){
       <rect class="hit" x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}" fill="transparent"/>
     </svg>
     ${rangeStats(rows, base, kind)}
-    <div class="stats"><span>日 K，紅漲綠跌；虛線＝區間起點（前一交易日收盤）。按「自訂區間」後在圖上拖曳，或點起點再點終點，可看其中任一段的高低點與漲跌。</span></div>`;
+    <div class="stats"><span>日 K，紅漲綠跌；虛線＝區間起點（前一交易日收盤）。按「自訂區間」後在圖上拖曳、點起點再點終點，或輸入起迄日期（可選到 2022 年），看任一段的高低點與漲跌。</span></div>`;
 }
 
 // 滑過顯示當日開高低收與相對區間起點的漲跌；拖曳選取 → 改成自訂區間
@@ -649,23 +651,35 @@ function addPicker(box, svg, P){
   let s0 = null, moved = false, first = null;
   const shade = (a, b) => { sel.removeAttribute("hidden"); sel.setAttribute("x", P.x(a) - P.bw / 2); sel.setAttribute("width", P.x(b) - P.x(a) + P.bw); };
   const close = () => { box.querySelector(".pick-pop")?.remove(); sel.setAttribute("hidden", ""); first = null; };
-  const pop = (a, b) => {
-    shade(a, b);
-    const seg = P.bars.slice(a, b + 1), base = P.prev(a), end = seg[seg.length - 1];
+  const pop = (a, b) => { shade(a, b); popSeg(P.bars.slice(a, b + 1), P.prev(a), P.unit, (P.x(a) + P.x(b)) / 2); };
+  // seg＝[{t, o, h, l, c}]；mid＝選取段在圖上的中點（決定視窗放哪一側，沒有就放右邊）
+  const popSeg = (seg, base, unit, mid) => {
+    const end = seg[seg.length - 1];
     const hi = seg.reduce((m, r) => r.h > m.h ? r : m), lo = seg.reduce((m, r) => r.l < m.l ? r : m);
     const ch = end.c - base, pct = ch / base * 100;
     const chg = P.kind === "bp" ? sv(ch * 100, "bp") : `${ch > 0 ? "+" : ch < 0 ? "−" : ""}${fmt(Math.abs(ch))}`;
     box.querySelector(".pick-pop")?.remove();
     box.insertAdjacentHTML("beforeend", `<div class="pick-pop" role="dialog" aria-label="自訂區間統計">
       <button type="button" class="x" aria-label="關閉">×</button>
-      <p class="pt">自訂區間 <b>${seg[0].t}～${end.t}</b><small>${seg.length} ${P.unit}</small></p>
+      <p class="pt">自訂區間 <b>${seg[0].t}～${end.t}</b><small>${seg.length} ${unit}</small></p>
       <dl><dt>起點（前收）</dt><dd>${fmt(base)}</dd><dt>終點</dt><dd>${fmt(end.c)}</dd>
       <dt>漲跌</dt><dd class="${dir(ch)}">${chg}</dd>${P.kind === "bp" ? "" : `<dt>漲跌幅</dt><dd class="${dir(pct)}">${sign(pct)}</dd>`}
       <dt>最高</dt><dd>${fmt(hi.h)} <small>${hi.t}</small></dd><dt>最低</dt><dd>${fmt(lo.l)} <small>${lo.t}</small></dd>
       <dt>高低差</dt><dd>${sign((hi.h / lo.l - 1) * 100).replace("+", "")}</dd></dl></div>`);
     box.querySelector(".pick-pop .x").onclick = close;
     // 選取段落在右半邊時，視窗放左邊，避免蓋住選取的走勢
-    if ((P.x(a) + P.x(b)) / 2 > svg.viewBox.baseVal.width / 2) box.querySelector(".pick-pop").classList.add("left");
+    if (mid > svg.viewBox.baseVal.width / 2) box.querySelector(".pick-pop").classList.add("left");
+  };
+  // 輸入起迄日期：統計取完整日 K（可超出目前圖的範圍）；與圖重疊的部分反白
+  box._pickDates = (key, f, t) => {
+    const all = (DAILY?.[key] || []).map(ROW).filter(r => r.d <= state.date);
+    const i0 = all.findIndex(r => r.d >= f), i1 = all.map(r => r.d <= t).lastIndexOf(true);
+    if (i0 < 0 || i1 < i0) { close(); return; }
+    const seg = all.slice(i0, i1 + 1).map(r => ({t: r.d, o: r.o, h: r.h, l: r.l, c: r.c}));
+    const ix = P.bars.map((b, i) => b.t >= f && b.t <= t ? i : -1).filter(i => i >= 0);
+    first = null;
+    if (ix.length) shade(ix[0], ix[ix.length - 1]); else sel.setAttribute("hidden", "");
+    popSeg(seg, i0 > 0 ? all[i0 - 1].c : all[i0].o, "個交易日", ix.length ? (P.x(ix[0]) + P.x(ix[ix.length - 1])) / 2 : 0);
   };
   hit.addEventListener("pointerdown", e => { s0 = P.at(e); moved = false; try { hit.setPointerCapture(e.pointerId); } catch(_) {} });
   hit.addEventListener("pointermove", e => {
@@ -686,6 +700,7 @@ function addPicker(box, svg, P){
     const on = !picking();
     btn.setAttribute("aria-pressed", on);
     box.querySelector(".rg .hint").hidden = !on;
+    const ds = box.querySelector(".rg .dates"); if (ds) ds.hidden = !on;
     if (!on) close();
   };
 }
@@ -697,7 +712,8 @@ function mountChart(box, o){
     const has = !!DAILY?.[o.key]?.length, mode = has ? state.range.mode : "day";
     const rr = mode === "day" ? null : rangeRows(o.key);
     const bar = `<div class="rg">${has ? RANGES.map(([k, t]) => `<button type="button" data-r="${k}" aria-pressed="${mode === k}">${t}</button>`).join("") : ""}
-      <button type="button" class="pk" data-pick aria-pressed="false">自訂區間</button><span class="hint" hidden>在圖上拖曳，或點起點再點終點</span></div>`;
+      <button type="button" class="pk" data-pick aria-pressed="false">自訂區間</button><span class="hint" hidden>在圖上拖曳，或點起點再點終點${has ? "，或輸入日期" : ""}</span>
+      ${has ? `<span class="dates" hidden><input type="date" class="rf" value="${rr ? rr.rows[0].d : DAILY[o.key].map(ROW).filter(r => r.d <= state.date).slice(-60)[0].d}" min="${DAILY[o.key][0][0]}" max="${state.date}" aria-label="區間起日">～<input type="date" class="rt" value="${state.date}" min="${DAILY[o.key][0][0]}" max="${state.date}" aria-label="區間迄日"><button type="button" class="ra">套用</button></span>` : ""}</div>`;
     if (mode === "day" || !rr) {
       box.innerHTML = bar + chartHTML(o.x, `${o.title} 盤中走勢`, o.uid, o.turns || [], o.kind, o.w);
       wireChart(box, o.x, o.kind);
@@ -706,6 +722,13 @@ function mountChart(box, o){
       box.innerHTML = bar + dailyHTML(rr, o.title, o.kind, o.w);
       wireDaily(box, rr, o.kind);
     }
+    const ra = box.querySelector(".rg .ra");
+    if (ra) ra.onclick = () => {
+      let f = box.querySelector(".rf").value, t = box.querySelector(".rt").value;
+      if (!f || !t) return;
+      if (f > t) [f, t] = [t, f];
+      box._pickDates?.(o.key, f, t);
+    };
     box.querySelectorAll(".rg [data-r]").forEach(b => b.onclick = () => {
       state.range.mode = b.dataset.r;
       try { localStorage.setItem("movers.range", b.dataset.r); } catch(e) {}
