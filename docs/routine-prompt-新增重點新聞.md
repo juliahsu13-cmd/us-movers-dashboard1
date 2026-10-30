@@ -1,6 +1,6 @@
 # 「us-movers-dashboard」排程要加的內容
 
-到 https://claude.ai/code/routines/trig_01MEmjQPQuYzfdfM1Bf7qpRr 編輯提示詞，做以下四處修改（其餘不動）：
+到 https://claude.ai/code/routines/trig_01MEmjQPQuYzfdfM1Bf7qpRr 編輯提示詞，做以下五處修改（其餘不動）：
 
 ## ① 檔案清單：在「- data/intraday_turns.json（盤中轉折標註，由你每天撰寫）」下面加一行
 
@@ -44,3 +44,11 @@
 ```
 
 （建議另外在「撰寫核心新聞重點」的 b 規則後補一句：「財報日期等可查證事實要查證後再寫，不可憑印象。」——這次 Apple 財報日期我原本寫錯成 10/30，實際是 11/2，已更正。）
+
+## ⑤ 在「- lead：1–2 句，點出當日主線與隔日開盤要看的事。」下面加一行（2026-10-30 新增，已套用）
+
+```
+   - 當日物件若已有 `wrap` 鍵（08:50「Markets Wrap」排程寫入的 Bloomberg 收盤綜述，頁面顯示為重點新聞首條），覆寫 lead／items 時保留 wrap 原樣、不可刪除；08:50 排程之後會再用 wrap 整合重寫 lead。
+```
+
+說明：另有排程「us-movers-markets-wrap」（trig_01PDV6ZvjuKyYSk6MkUJ1nxB，週一至週五台北 08:50），從 Gmail 取 Bloomberg Markets Wrap（寄件人 shuye168@bloomberg.net，需由 juliahsu13 轉寄到 hsujulia7），寫入 data/key_news.json 當日的 `wrap` 鍵並以它整合重寫 lead。07:20 排程先跑，所以通常當日還沒有 wrap；這條規則是為了重跑時不把 wrap 蓋掉。
