@@ -60,3 +60,7 @@ footer{flex-direction:column}
 .intra .tm line{stroke-width:2}
 .turns li{grid-template-columns:22px minmax(0,1fr);gap:8px;padding:10px 0}
 .turns .tb{font-size:15px}
+.uswrap{padding:12px}
+.uw p{font-size:15.5px}
+.uw .uw-lead{font-size:17px}
+#uswrap{scroll-margin-top:8px}

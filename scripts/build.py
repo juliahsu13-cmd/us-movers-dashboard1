@@ -215,12 +215,20 @@ def main(root):
     if keep and keep[-1] not in news:
         problems.append(f"{keep[-1]}: 無重點新聞")
 
+    # US Market Wrap（權值個股分頁、個股列表之後），每日排程撰寫 data/us_wrap/YYYY-MM-DD.md
+    wdir = root / "data" / "us_wrap"
+    uswrap = {f.stem: f.read_text(encoding="utf-8") for f in sorted(wdir.glob("*.md"))
+              if f.stem in keep} if wdir.exists() else {}
+    if keep and keep[-1] not in uswrap:
+        problems.append(f"{keep[-1]}: 無 US Market Wrap")
+
     # 日 K（年初至今／240／480 日走勢圖），由 fetch_daily.py 產生；沒有就只顯示當日盤中
     dpath = root / "data" / "daily.json"
     daily = json.loads(dpath.read_text(encoding="utf-8")) if dpath.exists() else {}
 
     def render(t):
-        return (t.replace("/*__NOTES__*/null", json.dumps(notes, ensure_ascii=False, separators=(",", ":")))
+        return (t.replace("/*__USWRAP__*/null", json.dumps(uswrap, ensure_ascii=False).replace("</", "<\\/"))
+                 .replace("/*__NOTES__*/null", json.dumps(notes, ensure_ascii=False, separators=(",", ":")))
                  .replace("/*__NEWS__*/null", json.dumps(news, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
                  .replace("/*__TURNS__*/null", json.dumps(turns, ensure_ascii=False, separators=(",", ":")))
                  .replace("/*__MACRO__*/null", json.dumps(macro, separators=(",", ":")))

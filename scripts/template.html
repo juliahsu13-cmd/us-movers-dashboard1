@@ -197,6 +197,25 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:6px;
 .mega .src-note{font-size:12px;color:var(--muted);margin:0}
 @media (max-width:480px){.mrow{grid-template-columns:52px minmax(0,1fr) 60px 56px}.mrow .dbar{display:none}.mrow .nm small{display:none}}
 
+.uswrap{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px 18px;display:grid;gap:10px;min-width:0}
+.uswrap .mega-head h2{font-size:16px}
+.uw{max-width:880px;display:grid;gap:12px}
+.uw p{margin:0;max-width:none;font-size:16px;line-height:1.85}
+.uw .uw-eyebrow{font-family:var(--f-num);font-size:12px;letter-spacing:.1em;color:var(--accent);text-transform:uppercase}
+.uw h3.uw-title{margin:0;font-family:var(--f-display);font-size:clamp(21px,3vw,27px);line-height:1.4;text-wrap:balance}
+.uw .uw-time{font-size:13px;color:var(--muted);line-height:1.6}
+.uw h4{margin:10px 0 0;font-size:15px;font-weight:700;color:var(--accent);letter-spacing:.04em;border-top:1px solid var(--line);padding-top:12px}
+.uw h5{margin:4px 0 -4px;font-size:14px;font-weight:700;color:var(--muted)}
+.uw ul{margin:0;padding:0;list-style:none;display:grid;gap:6px}
+.uw li{position:relative;padding-left:16px;font-size:15.5px;line-height:1.75}
+.uw li::before{content:"";position:absolute;left:2px;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.uw .uw-key{background:var(--accent-soft);border-radius:8px;padding:12px 14px;gap:8px}
+.uw .uw-key li{font-size:16px;font-weight:500}
+.uw .uw-lead{font-family:var(--f-display);font-size:18px;line-height:1.75;border-left:3px solid var(--accent);padding-left:12px}
+.uw .uw-src p{font-size:12px;color:var(--muted);line-height:1.7}
+.uw .uw-mk ul{grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:4px 18px}
+.uw .uw-mk li{font-size:14px;font-family:var(--f-num)}
+.uw b.up{color:var(--up)} .uw b.down{color:var(--down)}
 .news{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:grid;gap:10px;min-width:0}
 .news-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 16px}
 .news-head h2{margin:0;font-size:16px;font-weight:700}
@@ -250,6 +269,8 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:6px;
 .mlead h2{margin:0;font-family:var(--f-display);font-size:clamp(18px,2.4vw,21px);line-height:1.5;text-wrap:balance}
 .mlead p{margin:0;max-width:none;line-height:1.75}
 .mlead .ns{font-size:12px;color:var(--muted)}
+.mlead .mk-h{margin:4px 0 0;font-size:13px;font-weight:700;color:var(--accent)}
+.mlead .mk{margin:0;padding:10px 14px 10px 30px;background:var(--surface-2);border-left:3px solid var(--accent);border-radius:6px;display:grid;gap:6px;line-height:1.7}
 .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
 @media (max-width:860px){.cols{grid-template-columns:1fr}}
 .sec{display:grid;gap:8px;min-width:0}
@@ -340,6 +361,10 @@ footer{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 16p
     <div class="mega-grid" id="mega-grid"></div>
     <p class="src-note" id="mega-src"></p>
   </section>
+  <section class="uswrap" id="uswrap" hidden>
+    <div class="mega-head"><h2>US Market Wrap｜昨夜美股完整報導</h2><span class="sum" id="uswrap-sum"></span></div>
+    <article class="uw" id="uswrap-body"></article>
+  </section>
   <section class="news" id="news" hidden>
     <div class="news-head"><h2>美股重點新聞</h2><span class="sum" id="news-sum"></span></div>
     <p class="news-lead" id="news-lead" hidden></p>
@@ -364,6 +389,7 @@ const NOTES = /*__NOTES__*/null;
 const TURNS = /*__TURNS__*/null;
 const DAILY = /*__DAILY__*/null;
 const NEWS = /*__NEWS__*/null;
+const USWRAP = /*__USWRAP__*/null;
 // 某檔股票當天若也在漲跌榜郵件裡，取郵件的歸因當備用說明
 function mailAttr(date, t){
   for (const i of IDX) for (const s of (DATA[date]?.[i.k]?.sections || [])) {
@@ -472,6 +498,7 @@ function applyTab(){
   const mega = state.tab === "MEGA", news = state.tab === "NEWS", idx = !mega && !news;
   $("#mega").hidden = !mega || !MEGA?.days?.[state.date];
   $("#news").hidden = !news;
+  $("#uswrap").hidden = !mega || !USWRAP?.[state.date];
   $("#intra").hidden = !idx;
   $("#panel").hidden = !idx;
   if (!idx) $("#overlap").hidden = true;
@@ -484,6 +511,7 @@ function setTab(k, scroll){
   renderBoard(); renderTabs();
   if (IDX.some(i => i.k === k)) { renderIndexChart(); renderOverlap(); renderPanel(); }
   if (k === "NEWS") renderNews();
+  if (k === "MEGA") renderUSWrap();
   applyTab();
   if (scroll) document.getElementById("tabs").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
 }
@@ -976,7 +1004,7 @@ function renderMega(){
   const sm = NOTES?.[state.date]?._summary;
   $("#mega-lead").hidden = !sm;
   if (sm) $("#mega-lead").innerHTML = `<p class="eyebrow">今日市場整合說明 · ${state.date}</p>
-    <h2>${esc(sm.h)}</h2><p>${esc(sm.b)}</p>${sm.s?.length ? `<p class="ns">來源：${sm.s.map(esc).join("、")}</p>` : ""}`;
+    <h2>${esc(sm.h)}</h2>${String(sm.b || "").split(/\n+/).filter(Boolean).map(p => `<p>${esc(p)}</p>`).join("")}${sm.k?.length ? `<p class="mk-h">核心重點與盯盤</p><ul class="mk">${sm.k.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}${sm.s?.length ? `<p class="ns">來源：${sm.s.map(esc).join("、")}</p>` : ""}`;
   // 區間模式下以區間漲跌排序與畫條；當日漲跌幅放在名稱旁
   const rows = Object.entries(day).map(([t, v]) => ({t, ...v, d: v.p, p: per(t)?.p ?? v.p})).sort((a, b) => b.p - a.p);
   const max = Math.max(...rows.map(r => Math.abs(r.p)), 0.5);
@@ -1002,6 +1030,44 @@ function renderMega(){
     mountChart(box, {key: t, x, title: `${(names[t] || [t])[0]}（${t}）`, uid: "m-" + t, kind: "pct", w: contentW(box) || contentW(d) - 34});
     box.dataset.done = "1";
   }));
+}
+
+// US Market Wrap：每日以外資交易員視角撰寫的美股收盤報導（data/us_wrap/YYYY-MM-DD.md），顯示在權值個股之後
+function renderUSWrap(){
+  const md = USWRAP?.[state.date];
+  $("#uswrap").hidden = state.tab !== "MEGA" || !md;
+  if (!md) { $("#uswrap-body").innerHTML = ""; $("#uswrap-sum").textContent = ""; return; }
+  const inl = s => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
+  let list = null, sec = "", titleSeen = false, timeNext = false;
+  const blocks = [];
+  let cur = null;
+  const open = cls => { if (list && cur) { cur.html.push(`<ul>${list.join("")}</ul>`); list = null; } if (cur) blocks.push(cur); cur = {cls, html: []}; };
+  open("");
+  for (const raw of md.split(/\r?\n/)) {
+    const ln = raw.trim();
+    if (!ln) { if (list) { cur.html.push(`<ul>${list.join("")}</ul>`); list = null; } continue; }
+    if (ln.startsWith("# ")) continue;  // 框題已在區塊標題
+    if (ln.startsWith("## ")) { cur.html.push(`<h3 class="uw-title">${inl(ln.slice(3))}</h3>`); titleSeen = true; timeNext = true; continue; }
+    if (timeNext) { timeNext = false; cur.html.push(`<p class="uw-time">${inl(ln)}</p>`); continue; }
+    const sub = ln.match(/^\*\*([^*]+)\*\*$/);
+    if (sub) {
+      if (list) { cur.html.push(`<ul>${list.join("")}</ul>`); list = null; }
+      sec = sub[1];
+      if (/^(股市|匯市|債市|商品與加密|商品)$/.test(sec)) { cur.html.push(`<h5>${esc(sec)}</h5>`); continue; }
+      open(sec === "重點" ? "uw-key" : sec === "主要市場變動" ? "uw-mk" : sec === "資料來源" ? "uw-src" : "");
+      if (sec !== "重點") cur.html.push(`<h4>${esc(sec)}</h4>`);
+      continue;
+    }
+    if (ln.startsWith("- ")) { (list ||= []).push(`<li>${inl(ln.slice(2)).replace(/([+＋]\d[\d.,]*%)/g, '<b class="up">$1</b>').replace(/([−\-]\d[\d.,]*%)/g, '<b class="down">$1</b>')}</li>`); continue; }
+    if (list) { cur.html.push(`<ul>${list.join("")}</ul>`); list = null; }
+    // 「重點」條列之後的第一段＝導言：收掉重點框，另起一段
+    if (cur.cls === "uw-key") { open(""); cur.html.push(`<p class="uw-lead">${inl(ln)}</p>`); continue; }
+    cur.html.push(`<p>${inl(ln)}</p>`);
+  }
+  if (list) cur.html.push(`<ul>${list.join("")}</ul>`);
+  blocks.push(cur);
+  $("#uswrap-body").innerHTML = blocks.filter(b => b.html.length).map(b => b.cls ? `<div class="uw ${b.cls}">${b.html.join("")}</div>` : b.html.join("")).join("");
+  $("#uswrap-sum").textContent = `${state.date}（美東）・外資交易員視角・事實底：Bloomberg Markets Wrap＋四大漲跌榜＋重點新聞`;
 }
 
 // 重點新聞：每日排程以外資交易員角度挑選、依對盤面影響排序（含盤後財報），每則附原文連結
@@ -1065,7 +1131,7 @@ function renderMacro(){
   });
 }
 
-function renderAll(){ renderBoard(); renderMacro(); renderTabs(); renderIndexChart(); renderMega(); renderNews(); renderOverlap(); renderPanel(); applyTab(); }
+function renderAll(){ renderBoard(); renderMacro(); renderTabs(); renderIndexChart(); renderMega(); renderUSWrap(); renderNews(); renderOverlap(); renderPanel(); applyTab(); }
 if (DATA === null) {
   $("#panel").innerHTML = `<div class="empty">這是版面範本，本身不含資料。請開啟儀表板：<a href="https://claude.ai/artifact/AbipxHhDsuLPwTmcFKkUGa">美股漲跌榜</a>（或本機的 out\\us-movers.html）。</div>`;
 } else if (!dates.length) {
