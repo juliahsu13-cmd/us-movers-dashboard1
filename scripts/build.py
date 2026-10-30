@@ -23,7 +23,7 @@ MOBILE_PATCHES = [
     # 分頁在底部固定列，點了要捲到內容；圖表放大字級與邊距
     ("setTab(b.dataset.k, false))", "setTab(b.dataset.k, true))"),
     ('document.getElementById("tabs").scrollIntoView(',
-     'document.getElementById(k === "MEGA" ? "mega" : "intra").scrollIntoView('),
+     'document.getElementById(k === "MEGA" ? "mega" : k === "NEWS" ? "news" : "intra").scrollIntoView('),
     ("const CH = {W:720, H:240, L:46, R:12, T:12, B:26,",
      "const CH = {W:720, H:380, L:84, R:14, T:16, B:40,"),
     ("${[660, 780, 900].map(", "${[660, 780].map("),
@@ -208,12 +208,20 @@ def main(root):
     if keep and keep[-1] not in turns:
         problems.append(f"{keep[-1]}: 無盤中轉折標註")
 
+    # 美股重點新聞（重點新聞分頁），由每日排程撰寫
+    kpath = root / "data" / "key_news.json"
+    news_all = json.loads(kpath.read_text(encoding="utf-8")) if kpath.exists() else {}
+    news = {d: news_all[d] for d in keep if d in news_all}
+    if keep and keep[-1] not in news:
+        problems.append(f"{keep[-1]}: 無重點新聞")
+
     # 日 K（年初至今／240／480 日走勢圖），由 fetch_daily.py 產生；沒有就只顯示當日盤中
     dpath = root / "data" / "daily.json"
     daily = json.loads(dpath.read_text(encoding="utf-8")) if dpath.exists() else {}
 
     def render(t):
         return (t.replace("/*__NOTES__*/null", json.dumps(notes, ensure_ascii=False, separators=(",", ":")))
+                 .replace("/*__NEWS__*/null", json.dumps(news, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
                  .replace("/*__TURNS__*/null", json.dumps(turns, ensure_ascii=False, separators=(",", ":")))
                  .replace("/*__MACRO__*/null", json.dumps(macro, separators=(",", ":")))
                  .replace("/*__MEGA__*/null", json.dumps(mega, ensure_ascii=False, separators=(",", ":")))

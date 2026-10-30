@@ -196,6 +196,28 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:6px;
 .mega .src-note{font-size:12px;color:var(--muted);margin:0}
 @media (max-width:480px){.mrow{grid-template-columns:52px minmax(0,1fr) 60px 56px}.mrow .dbar{display:none}.mrow .nm small{display:none}}
 
+.news{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:grid;gap:10px;min-width:0}
+.news-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 16px}
+.news-head h2{margin:0;font-size:16px;font-weight:700}
+.news-head .sum{font-size:13px;color:var(--muted)}
+.news-lead{margin:0;font-size:15px;line-height:1.75;color:var(--ink);border-left:3px solid var(--accent);padding:2px 0 2px 12px}
+.nlist{list-style:none;margin:0;padding:0;display:grid;border-top:1px solid var(--line)}
+.nlist li{display:grid;grid-template-columns:30px minmax(0,1fr);gap:4px 12px;padding:12px 2px;border-bottom:1px solid var(--line)}
+.nlist .nr{font-family:var(--f-num);font-weight:600;font-size:15px;color:var(--muted);padding-top:1px}
+.nlist li.top .nr{color:var(--accent)}
+.nlist .nm{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:12px;color:var(--muted)}
+.nlist .cat{border:1px solid var(--line);border-radius:4px;padding:0 6px;color:var(--ink)}
+.nlist .cat.ah{border-color:var(--accent);color:var(--accent)}
+.nlist .tkc{font-family:var(--f-num);font-weight:600}
+.nlist h3{margin:2px 0 0;font-size:16px;line-height:1.5;font-weight:700}
+.nlist h3 a{color:inherit;text-decoration:none}
+.nlist h3 a:hover{color:var(--accent);text-decoration:underline}
+.nlist h3.up a{color:var(--up)} .nlist h3.down a{color:var(--down)}
+.nlist .nb{margin:4px 0 0;font-size:15px;line-height:1.75;max-width:none}
+.nlist .ni{margin:4px 0 0;font-size:14px;line-height:1.7;color:var(--muted);max-width:none}
+.nlist .ni b{color:var(--ink);font-weight:600}
+.nlist .ns{margin:4px 0 0;font-size:12px;color:var(--muted)}
+.nlist .ns a{color:var(--accent)}
 .overlap{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:grid;gap:8px}
 .overlap h2,.sec h2{font-size:13px;letter-spacing:.08em;color:var(--muted);margin:0;font-weight:500}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
@@ -308,6 +330,12 @@ footer{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 16p
     <div class="mega-grid" id="mega-grid"></div>
     <p class="src-note" id="mega-src"></p>
   </section>
+  <section class="news" id="news" hidden>
+    <div class="news-head"><h2>美股重點新聞</h2><span class="sum" id="news-sum"></span></div>
+    <p class="news-lead" id="news-lead" hidden></p>
+    <ol class="nlist" id="news-list"></ol>
+    <p class="src-note" id="news-src"></p>
+  </section>
   <section class="overlap" id="overlap" hidden>
     <h2>跨指數同時上榜</h2>
     <div class="chips" id="chips"></div>
@@ -325,6 +353,7 @@ const MACRO = /*__MACRO__*/null;
 const NOTES = /*__NOTES__*/null;
 const TURNS = /*__TURNS__*/null;
 const DAILY = /*__DAILY__*/null;
+const NEWS = /*__NEWS__*/null;
 // 某檔股票當天若也在漲跌榜郵件裡，取郵件的歸因當備用說明
 function mailAttr(date, t){
   for (const i of IDX) for (const s of (DATA[date]?.[i.k]?.sections || [])) {
@@ -365,9 +394,9 @@ const wk = d => "日一二三四五六"[new Date(d + "T00:00:00").getDay()];
 // 開頁時依網址 #mega／#spx… 或上次看的分頁決定，預設權值個股
 try {
   const h = location.hash.slice(1).toLowerCase();
-  const pick = h === "mega" ? "MEGA" : (IDX.find(i => i.hash === h)?.k || localStorage.getItem("movers.tab"));
-  if (pick === "MEGA" || IDX.some(i => i.k === pick)) state.tab = pick;
-  if (state.tab !== "MEGA") state.idx = state.tab;
+  const pick = h === "mega" ? "MEGA" : h === "news" ? "NEWS" : (IDX.find(i => i.hash === h)?.k || localStorage.getItem("movers.tab"));
+  if (pick === "MEGA" || pick === "NEWS" || IDX.some(i => i.k === pick)) state.tab = pick;
+  if (IDX.some(i => i.k === state.tab)) state.idx = state.tab;
 } catch(e) {}
 
 function streak(date, idx, side, t){
@@ -416,12 +445,13 @@ function renderBoard(){
 }
 
 // 分頁：權值個股＋四大指數各一頁；指數卡片與分頁列都能切換
-const TABS = [{k:"MEGA", name:"權值個股", hash:"mega"}, ...IDX];
+const TABS = [{k:"MEGA", name:"權值個股", hash:"mega"}, {k:"NEWS", name:"重點新聞", hash:"news"}, ...IDX];
 function renderTabs(){
   const day = DATA[state.date] || {}, mega = MEGA?.days?.[state.date];
   $("#tabs").innerHTML = TABS.map(t => {
     let sub = "";
     if (t.k === "MEGA" && mega) { const v = Object.entries(mega).map(([k, x]) => per(k)?.p ?? x.p); sub = `<small class="num"><span class="up">${v.filter(p => p > 0).length}</span>／<span class="down">${v.filter(p => p < 0).length}</span></small>`; }
+    else if (t.k === "NEWS") { const n = NEWS?.[state.date]?.items?.length; if (n) sub = `<small class="num">${n} 則</small>`; }
     else if (per(t.k)) sub = `<small class="num ${dir(per(t.k).p)}">${sign(per(t.k).p)}</small>`;
     else if (day[t.k]?.pct != null) sub = `<small class="num ${dir(day[t.k].pct)}">${sign(day[t.k].pct)}</small>`;
     return `<button class="tab" role="tab" type="button" aria-selected="${state.tab === t.k}" data-k="${t.k}">${t.name}${sub}</button>`;
@@ -429,19 +459,21 @@ function renderTabs(){
   document.querySelectorAll(".tab").forEach(b => b.onclick = () => setTab(b.dataset.k, false));
 }
 function applyTab(){
-  const mega = state.tab === "MEGA";
+  const mega = state.tab === "MEGA", news = state.tab === "NEWS", idx = !mega && !news;
   $("#mega").hidden = !mega || !MEGA?.days?.[state.date];
-  $("#intra").hidden = mega;
-  $("#panel").hidden = mega;
-  if (mega) $("#overlap").hidden = true;
+  $("#news").hidden = !news;
+  $("#intra").hidden = !idx;
+  $("#panel").hidden = !idx;
+  if (!idx) $("#overlap").hidden = true;
 }
 function setTab(k, scroll){
   state.tab = k;
-  if (k !== "MEGA") state.idx = k;
+  if (IDX.some(i => i.k === k)) state.idx = k;
   try { localStorage.setItem("movers.tab", k); } catch(e) {}
   try { history.replaceState(null, "", "#" + TABS.find(t => t.k === k).hash); } catch(e) {}
   renderBoard(); renderTabs();
-  if (k !== "MEGA") { renderIndexChart(); renderOverlap(); renderPanel(); }
+  if (IDX.some(i => i.k === k)) { renderIndexChart(); renderOverlap(); renderPanel(); }
+  if (k === "NEWS") renderNews();
   applyTab();
   if (scroll) document.getElementById("tabs").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
 }
@@ -961,6 +993,26 @@ function renderMega(){
   }));
 }
 
+// 重點新聞：每日排程以外資交易員角度挑選、依對盤面影響排序（含盤後財報），每則附原文連結
+function renderNews(){
+  const day = NEWS?.[state.date], items = day?.items || [];
+  $("#news-sum").textContent = items.length ? `${state.date}（美東）・${items.length} 則・依對盤面影響排序` : "";
+  $("#news-lead").hidden = !day?.lead;
+  if (day?.lead) $("#news-lead").textContent = day.lead;
+  const tkHTML = tk => (tk || []).map(t => {
+    const p = MEGA?.days?.[state.date]?.[t]?.p;
+    return `<span class="tkc ${p == null ? "" : dir(p)}">${esc(t)}${p == null ? "" : " " + sign(p)}</span>`;
+  }).join("");
+  $("#news-list").innerHTML = items.length ? items.map((x, i) => `<li class="${i < 3 ? "top" : ""}"><span class="nr">${i + 1}</span><div>
+      <p class="nm"><span class="cat ${x.ah ? "ah" : ""}">${esc(x.cat)}</span>${x.t ? `<span>${esc(x.t)}</span>` : ""}${tkHTML(x.tk)}</p>
+      <h3 class="${x.dir || ""}">${x.u ? `<a href="${esc(x.u)}" target="_blank" rel="noopener">${esc(x.h)}</a>` : esc(x.h)}</h3>
+      <p class="nb">${esc(x.b)}</p>
+      ${x.why ? `<p class="ni"><b>盤面影響：</b>${esc(x.why)}</p>` : ""}
+      <p class="ns">來源：${(x.s || []).map(esc).join("、")}${x.u ? `・<a href="${esc(x.u)}" target="_blank" rel="noopener">原文 ›</a>` : ""}</p>
+    </div></li>`).join("") : `<li><span></span><p class="empty-note">這一天沒有整理重點新聞。</p></li>`;
+  $("#news-src").textContent = "選稿：以高盛／大摩級外資分析師兼交易員的角度，只收能解釋當日盤面方向與類股強弱、或改變未來 1–5 天定價的新聞（含收盤後財報）；同一事件只留一則。標題紅綠＝對相關標的的方向，代號旁為當日收盤漲跌（盤後變動未計）。";
+}
+
 // 油價、美元、美債：殖利率與利差的變動以基點（bp）表示，紅綠沿用「數字上升＝紅」
 function renderMacro(){
   const day = MACRO?.[state.date];
@@ -993,7 +1045,7 @@ function renderMacro(){
   });
 }
 
-function renderAll(){ renderBoard(); renderMacro(); renderTabs(); renderIndexChart(); renderMega(); renderOverlap(); renderPanel(); applyTab(); }
+function renderAll(){ renderBoard(); renderMacro(); renderTabs(); renderIndexChart(); renderMega(); renderNews(); renderOverlap(); renderPanel(); applyTab(); }
 if (DATA === null) {
   $("#panel").innerHTML = `<div class="empty">這是版面範本，本身不含資料。請開啟儀表板：<a href="https://claude.ai/artifact/AbipxHhDsuLPwTmcFKkUGa">美股漲跌榜</a>（或本機的 out\\us-movers.html）。</div>`;
 } else if (!dates.length) {
