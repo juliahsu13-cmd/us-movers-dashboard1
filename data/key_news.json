@@ -324,5 +324,250 @@
    ],
    "u": "https://blinks.bloomberg.com/news/stories/TNOS32R24UAW"
   }
+ },
+ "2026-10-30": {
+  "lead": "主線是英特爾財測引爆的 AI 硬體全面拋售：費半 -7.20%、Nasdaq 100 -3.46%、S&P 500 -1.82% 為 6 月以來最大跌幅，Amazon 負自由現金流讓「AI 現金消耗」疑慮擴散到光通訊與 PC 硬體鏈，資金轉進生技、電信、必需消費與美債（10 年期 4.94%）。10/30 週五盤後無重要財報；下週一開盤先看 Meta 評等展望遭下調後的反應、週末中東情勢與油價，以及蘋果 11/2 盤後財報。",
+  "items": [
+   {
+    "cat": "財報",
+    "t": "10/29 盤後→10/30",
+    "ah": false,
+    "tk": [
+     "INTC",
+     "AMD",
+     "QCOM"
+    ],
+    "dir": "down",
+    "h": "英特爾第四季營收指引 150–160 億美元遠低於預期，股價暴跌 28.58% 創數十年最大跌幅、引爆全球晶片拋售",
+    "b": "英特爾第四季營收指引 150–160 億美元（預期約 170 億）、調整後 EPS 0.25 美元（預期 0.43），執行長陳立武稱記憶體漲價壓抑 PC 需求、2027 年將更嚴峻，以色列廠事故約衝擊 3 億美元營收。10/30 收跌 28.58%，BofA、Roth 降評至中立；費半 -7.20%、29 檔成分股 28 檔收跌，AMD -10.88%、高通 -11.12%。",
+    "why": "這是本週 AI 交易退潮的引爆點：記憶體漲價開始反噬 PC 與手機終端需求，壓到 x86、手機晶片與 PC 品牌。下週 AMD（11/3）、高通（11/4）財報將檢驗需求下修是否擴散。",
+    "s": [
+     "Reuters",
+     "Bloomberg",
+     "CNBC"
+    ],
+    "u": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQV2NqOERFZ1pGS25NV2RwTVlCSUVMbXdBQ0QxRzlmWTdWd3EzT2N6YUo4QVNHanQwUC1aRHdqcmtOeWdDUGpQcTg1X1pFWDdydHhyQWUzNnVUQk9Tc3h1Z29WbWxHa1VFZmdod3Z6bG1LNzkwQ3h2a3ZHdlA5cEF4X3d6LVdCUEVEc0RkVTNYcG5IQmlZcy10cmhDSmxDcndVeGFtUURSOXc?oc=5"
+   },
+   {
+    "cat": "財報",
+    "t": "10/29 盤後→10/30",
+    "ah": false,
+    "tk": [
+     "AMZN",
+     "MRVL",
+     "COHR"
+    ],
+    "dir": "down",
+    "h": "亞馬遜單季資本支出 773 億美元遠超預期、自由現金流 -424 億，股價收斂至 -1.41%，疑慮轉嫁 AI 供應鏈",
+    "b": "亞馬遜 Q3 EPS 1.89 美元、營收 2,019 億美元略低於預期，AWS 成長為多年最快，但資本支出約 773 億美元（預期約 587 億）、過去 12 個月自由現金流 -424 億美元。盤後一度跌逾 7%，正式盤開盤後逢低買盤進場，收 -1.41%；Reuters 指「AI 現金消耗」疑慮引發科技股拋售。",
+    "why": "繼 Alphabet、Meta 後，第三家平台交出負自由現金流，市場改問 AI 投資何時回本，先賣收它資本支出的一層：光通訊、互連、AI 雲端。觀察下週平台股是否放緩支出口徑。",
+    "s": [
+     "Reuters",
+     "WSJ",
+     "Bloomberg"
+    ],
+    "u": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPblVtZktXRjdPbHJBWDM4WWJsV2RyMlhnOVFYRTZPc01udjZNZTVjeHdIN1dVY0w1M1NHbHpxNjV6Vm9jQ3FOUjBIaElyZEdSWWxycmNZdnJwNnBfdTJDc1FBMWVJZ19vR0s3Y1h2Uml2LThWc2NzQ2sxN3NnVzFEeGhvNnpPSElHSFRIQnJreHpCR2c3dnRQbEVYTDlJVjhzVVk3b1gxaFczMFhkb2NDSw?oc=5"
+   },
+   {
+    "cat": "類股輪動",
+    "t": "10/30 收盤",
+    "ah": false,
+    "tk": [
+     "NVDA",
+     "AVGO",
+     "TSM",
+     "MU"
+    ],
+    "dir": "down",
+    "h": "Nasdaq 寫 6 月以來最差單日、費半 10 月跌逾 15%，S&P 500 跌 1.82%",
+    "b": "S&P 500 收 7,580.07、-1.82%，Nasdaq 綜合 -2.86%、Nasdaq 100 -3.46%，均為 6 月以來最大跌幅；道瓊 -1.09%（-572 點）。Nvidia -4.22%、博通 -5.48%、台積電 ADR -5.95%、美光 -5.30%。Nasdaq 10 月下跌 5.3%，為 2025 年 3 月以來最大月跌幅，費半單月跌逾 15%。",
+    "why": "AI 硬體從「期望」進入「要看回報」階段，月底與期中選舉前有獲利了結。下週一開盤看 AI 硬體能否止穩，以及蘋果財報能否撐住大型科技。",
+    "s": [
+     "AP",
+     "Reuters",
+     "Yahoo Finance"
+    ],
+    "u": "https://www.wxow.com/news/national/wall-street-tumbles-to-its-worst-day-since-june-after-the-sell-off-for-tech/article_a52fdaec-76b0-5718-b2bc-6b2b0360fd8e.html"
+   },
+   {
+    "cat": "總經／Fed",
+    "t": "10/30 盤中",
+    "ah": false,
+    "tk": [],
+    "dir": "",
+    "h": "Dallas Fed 總裁 Logan：FOMC 至少還要再升息兩次，Musalem 也主張盡快再緊縮",
+    "b": "Logan 在 Davidson College 演講稿中表示，依目前前景，FOMC 至少需再升息兩碼（各 25bp），步調可以漸進；理由是 9 月 PCE 通膨 3.6%、遠高於 2% 目標，她稱「無法接受」。St. Louis Fed 總裁 Musalem 也稱進一步緊縮是必要的、而且要快。Fed 本週以 10 比 2 維持利率不變。",
+    "why": "鷹派言論與股市避險同時出現，短債仍因避險下跌 5bp，代表市場暫不上修升息路徑；下週非農與 ISM 若偏熱，升息定價可能回升、壓抑高本益比股。",
+    "s": [
+     "Bloomberg",
+     "Quartz",
+     "GV Wire"
+    ],
+    "u": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPbGcwWUQzWE1xTW1SekU1Ty1CcldjeGtwbnRPM2hDQWlhVjlYNjFiWkoxbUNNcm5meE9LQTlNdUNPTUU1MEhLeHpKX0tPMEstdzZNbXZFYjJvZnhOSWowRG9CV2hEdGtVVmcwZHRiS1VNa2RGdUU0X2VPREFlZWhNWGtZTmtfcDExdDRQUW1tWE85eFB0RW5VbktKMjdQU2N2blB1NndPS2JFRVdJOWpueg?oc=5"
+   },
+   {
+    "cat": "總經／Fed",
+    "t": "10/30 收盤",
+    "ah": false,
+    "tk": [],
+    "dir": "down",
+    "h": "避險買盤湧入美債，10 年期殖利率降 4bp 至 4.94%、2 年期降 5bp",
+    "b": "科技股重挫帶動資金轉進公債，Reuters 指 10 年期殖利率降至 4.931%；財政部收盤 10 年期 4.94%（-4bp）、2 年期 4.56%（-5bp），利差 38bp。WSJ 指 10 月全球公債殖利率因避險大幅下滑，德債寫 2 月以來最佳月份；美國財政部本週標售規模創紀錄 8,390 億美元。",
+    "why": "殖利率下滑本來對成長股有利，但當日股債同時避險，顯示是風險偏好下降而非寬鬆預期。殖利率若續降、股市卻不漲，代表避險模式延續。",
+    "s": [
+     "Reuters",
+     "WSJ",
+     "Bloomberg"
+    ],
+    "u": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOS1p6ZkxEeDY0SlhyTDJKSXkyR1NkOUZVa1Z4NWJHU2cxdjFfVlI0TVBGZUZRR1dkLWpEY2RtNC1wSjZKb3ZKaTloVHlvVlF3cFZvdFI2Y3R4c3RIeFd3NU1NMWRpVDBlc3M3STVwa2ZxNVpTLTBIN0t5VTF5alltRGxFQWM3QUpibUF1LWN1Ykhmb3FvVkVmR1pDczZEa2YxTXZz?oc=5"
+   },
+   {
+    "cat": "地緣／油價",
+    "t": "10/30 10:42",
+    "ah": false,
+    "tk": [
+     "CVX"
+    ],
+    "dir": "up",
+    "h": "荷莫茲海峽油輪遭吸附水雷攻擊、美國可能恢復打擊伊朗，布蘭特 12 月合約到期日收漲約 2.4%",
+    "b": "Reuters 美東 10:42 引述安全消息指荷莫茲海峽一艘油輪遭吸附水雷攻擊；彭博稱有跡象顯示美國可能恢復對伊朗軍事打擊。據報導布蘭特 12 月合約到期日結算漲 2.76 美元至 117.64 美元、1 月合約漲至 113.43 美元（單一來源），10 月月漲約 13.6%；油價連四個月上漲。雪佛龍逆勢 +1.75%。",
+    "why": "油價高檔推升通膨預期，與 Fed 官員主張續升息互相強化；週末若中東衝突升溫，下週一能源股與油價恐再走高、壓抑消費與運輸股。",
+    "s": [
+     "Reuters",
+     "Bloomberg",
+     "Yahoo Finance"
+    ],
+    "u": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQUjdDdUxXVENSNGdpbWJZOEp2QXMtSy1WSUdCVFdHc21FVnMwTE9uMC1xMkFEaS1wTHRjd2JMQzFTZEtPX0drQ3hPMlZVeDlITnc2RndQRElNUy13Ny1UdXpROVVpejNQRHJ4a3l6Q0t3TTZwOUptZDNKdlRVQWJXLXBxTldad19oZUFGS3BKSUlLWlk3d055R290THF3ckRWb3hRYjlR?oc=5"
+   },
+   {
+    "cat": "個股",
+    "t": "10/30",
+    "ah": false,
+    "tk": [
+     "DELL",
+     "HPQ",
+     "SMCI"
+    ],
+    "dir": "down",
+    "h": "英特爾警告 PC 疲弱與記憶體短缺，戴爾跌 10.77%、惠普跌 9.58%",
+    "b": "英特爾稱 PC 需求要等記憶體供給改善才回升，硬體組裝端首當其衝：戴爾收跌 10.77%（盤中逾 11%）、惠普 -9.58%，HPE 與美超微盤中一度跌約 7%（美超微收 -4.30%）。賣壓集中在同時有 PC 與伺服器業務、毛利受記憶體成本擠壓的品牌廠。",
+    "why": "記憶體漲價對下游是成本壓力，觀察下週戴爾、惠普是否調整售價或財測口徑；PC 與伺服器品牌廠短線評價承壓。",
+    "s": [
+     "Yahoo Finance",
+     "24/7 Wall St.",
+     "Benzinga"
+    ],
+    "u": "https://news.google.com/rss/articles/CBMimwJBVV95cUxOcS1XS0Nfa0Nub0NDaEwzQkEtQmRpQUR5Mi1PQkVwZUJGWXlfTkFvUFFob0NGX0dXOExoUHVKTWNGbDBqaXVUc05lTk9KTFFpb3ZZOVhzc0tIMjhFNzBjWDNWRXVqdjNqdDRCa0o3eWhVaWlZRThvWjFvczRqOWhVZ25SdlF0bGhFTmZyNEhhczM5R1lBUnUwTDg2UUVvUnZtMlpNVUFFOFZ5OU9kVTNycGF4MlVHWGtsRWRGUjYxVlZNT1ZJZXBfdUFnYVBiN0s1cFhhYXU4YzJnZkRwYktYWVF0ZUFsdmZ1Snk0bUViX2dWNV81cWRxaXJUY09qaGZtOUtjLVJHdXFrUGZBSUZpWm5UWTI3cnVaT2Rv?oc=5"
+   },
+   {
+    "cat": "個股",
+    "t": "10/30",
+    "ah": false,
+    "tk": [
+     "COHR",
+     "LITE",
+     "MRVL"
+    ],
+    "dir": "down",
+    "h": "超大型雲端支出疑慮重擊 AI 光通訊，高意跌 11.34%、邁威爾跌 10.05%；報導稱邁威爾收購 Lumentum 溢價有限",
+    "b": "Yahoo Finance 指 Applied Optoelectronics 跌 15%、高意盤中跌 13%、Lumentum 與邁威爾約 -10%；收盤高意 -11.34%、邁威爾 -10.05%（跌破 200 美元）、Lumentum -8.57%、Astera Labs -10.93%。TradingView 美東約 15:40 報導邁威爾洽購 Lumentum 的交易溢價有限。",
+    "why": "光通訊是離雲端資本支出帳單最近的一層，也是 2026 年漲幅最大的族群，評價最先被壓縮。高意 11/4 財報是下週檢驗訂單能見度的關鍵。",
+    "s": [
+     "Yahoo Finance",
+     "TradingView",
+     "24/7 Wall St."
+    ],
+    "u": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPRG5xeWxjRWxqSzBNdTI0VktJYnBtY3hnTnFUWFJCX2FUSllOMFk0WFM5QUlJcFBaLUM1aDRYVUhhTzBRa0VER1lSTW1yWUI0bXMwVUJqWW02ZjExOWZxeUhRbGIxSEFMa1JzQS1pVm5HT0xqdElpb1plYTRUZng5ZUhBQm5waUxjbDhwWXJKcWItQ2ZvUWcza3lWOXNCMWlFQkV1OUcxUDc5blhY?oc=5"
+   },
+   {
+    "cat": "類股輪動",
+    "t": "10/30",
+    "ah": false,
+    "tk": [
+     "MRK",
+     "WMT",
+     "KO"
+    ],
+    "dir": "up",
+    "h": "資金轉進生技、電信與必需消費：Regeneron 財報大漲 13.33%，Walmart、可口可樂逆勢收漲",
+    "b": "Regeneron 盤前公布 Q3 營收年增 36% 至 51 億美元、Eylea HD 美國銷售年增 62%，股價 +13.33%；Cboe 財報 +6.77%。沒有 AI 曝險的 T-Mobile +6.21%、Comcast +4.27%、Walmart +1.86%、可口可樂 +1.36%、默克 +2.18% 收漲，軟體股 Tyler、Autodesk、Intuit 也反彈（漲跌榜郵件）。",
+    "why": "這是 AI 硬體對防禦股的類股輪動、非全面 beta 撤退；若下週 AI 硬體反彈，防禦股的相對強勢可能回吐。",
+    "s": [
+     "SPX／NDX／INDU 漲跌榜郵件",
+     "CNBC"
+    ],
+    "u": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNUjBqWW5zbG5jWG9mS2YyTV9mcS0tbGRjV1E1WHNzLXdBR09ieEZVX29lcXBBUmZ0TlJ2cl9Qc3ZYTF9Qd2xHbWpCcXh3ZWhWbWhmaW9OeU9wSGNHR25jMDQ5dnlKaDdVSnpVbTFySVdGQ1Q0Zzc1ZnU3SG04WUYtVHRGQ2tWRkN6bktJQnFJUTlQcDV5bUszeDJnVHB1dl9DajY5Nng5QXBnZzVEX3dPUw?oc=5"
+   },
+   {
+    "cat": "盤後",
+    "t": "10/30 17:10",
+    "ah": true,
+    "tk": [
+     "META"
+    ],
+    "dir": "down",
+    "h": "S&P 以資本支出疑慮將 Meta 評等展望下調至負向（收盤後公布）",
+    "b": "Investing.com 美東約 17:10 報導，S&P 因資本支出疑慮將 Meta 的評等展望調為負向。Meta 10/22 財報出現上市以來首度負自由現金流，全年資本支出指引 1,350–1,450 億美元。Meta 當日收跌 1.53%，此消息屬收盤後、未反映在當日收盤。",
+    "why": "AI 資本支出疑慮從股價延伸到債信，若其他評等機構跟進，平台股發債成本與回購能力將被重估；下週一留意 Meta 與其他大量發債的 AI 平台債券利差。",
+    "s": [
+     "Investing.com"
+    ],
+    "u": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOQmZGYUxTaGtySHU1dFlpTTZGQ3pKdlJ6dEYyOThIZGJRNVZqVkFfYmpLeHpvQUhPMmR1Y3lVLWcwclFjUEtIU2R6LVBva2VyLVNtdTRUNEYxM0NNenJNeVdoeHhyTHVYMzI0eVdOQ3l1UVZ4d2lCT0M2Wk5oZUdqTmdUMmRvS04zT1BWb01CWXd1cGF1VXBIV0tTWUkxM19ZVzR3cnlFLVRwR0lDS2djSzlaVXd6RTQ?oc=5"
+   },
+   {
+    "cat": "個股",
+    "t": "10/29 盤後→10/30",
+    "ah": false,
+    "tk": [
+     "COIN"
+    ],
+    "dir": "down",
+    "h": "Coinbase 財報後跌 10.62%；據報北韓自 Binance 盜走 64 億美元加密資產",
+    "b": "Coinbase 10/29 盤後公布財報，10/30 收跌 10.62%，與選擇權事前隱含波動 ±10.96% 相當（漲跌榜郵件）；10 月累跌約 26%。24/7 Wall St. 盤前報導北韓駭客 20 分鐘內自 Binance 盜走 64 億美元、為史上最大加密竊案（單一來源），TradingView 盤中將其與英特爾、亞馬遜並列為股市重挫原因。",
+    "why": "加密資產安全事件與風險偏好下降同時打擊加密概念股；下週觀察交易量與監管反應。",
+    "s": [
+     "24/7 Wall St.",
+     "TradingView"
+    ],
+    "u": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNbGoybDBSSG5wZUl3WEJlMVNOeDlhVDhOSGR0amhtT3RSeklTdjBGNjBENkVCdWllMnprNTR4WFVKdllIOXJaamEwRmNWX0hYMUpmQ3hvaHFUNFVxM1FpMG5vVkEyejJpbVpTMWl5V0VoV2Y2T1N2X1gwcmFrLUtUR1J4UHBRMEFoa3prWjlhU2R0dmx3RTJkaUdhdnNSTC1jZm05OEp2TXh0X0VaTDh2aUZNaExINkJHc1M3eTNiM2FSdFprVEJjd0gwM3R1YThQVzRkM1p4akpEdnRIUkV5ZTliaU5SMkFDdTRJ?oc=5"
+   },
+   {
+    "cat": "行事曆",
+    "t": "11/2–11/6",
+    "ah": false,
+    "tk": [
+     "AAPL",
+     "AMD",
+     "QCOM"
+    ],
+    "dir": "",
+    "h": "下週關鍵：蘋果 11/2 盤後財報、AMD 11/3、高通與高意 11/4，11/3 期中選舉、ISM 與非農就業",
+    "b": "蘋果將於 11/2（週一）美東 16:30 公布 FY26 第四季財報，為新任執行長 John Ternus 首場法說；AMD 11/3、高通與高意 11/4 公布財報。11/3 美國期中選舉，週內另有 ISM 製造業／服務業 PMI 與週五非農就業報告。",
+    "why": "英特爾已預告記憶體成本壓抑終端需求，蘋果毛利指引與 AMD、高通的 PC／手機展望將決定晶片賣壓是否延續；非農若偏熱，將強化 Fed 官員續升息的說法。",
+    "s": [
+     "CMC Markets",
+     "WSJ",
+     "MacRumors"
+    ],
+    "u": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZzdUSXdjZW01Wk1EX3Itdk9TV1Q0cTNmM2g0dTByNGlzd1ZtX0d0UGxaM255YmJkcFNHWXUyN2tMRF9CcGZwWkFoOGNObmhwVTNMVzNWUERSVWRBUHR6SmhwS0VfT05MVWZlTHM0ZHNrQmxNTTVlLS1LMXJUZGdHYnkwZjJKbkNySDdabWVhSmx2V3lFbEpTVUF6eFVZbl9VNkpkSjllVGdySi1ya2xYTw?oc=5"
+   },
+   {
+    "cat": "政策",
+    "t": "10/30",
+    "ah": false,
+    "tk": [
+     "TSLA"
+    ],
+    "dir": "",
+    "h": "特斯拉 Cybercab 自我認證回覆 NHTSA 期限到期，股價小跌 0.87%",
+    "b": "NHTSA 9 月以特別命令要求特斯拉說明 Cybercab（無方向盤與踏板）自我認證的技術依據，期限延至 10/30；特斯拉當日收跌 0.87%，為權值股中最抗跌。截至收盤未見回覆內容報導。",
+    "why": "回覆內容若引發 NHTSA 進一步行動，可能影響 Robotaxi 擴張時程；目前股價反應有限。",
+    "s": [
+     "Yahoo Finance",
+     "Drive Tesla Canada"
+    ],
+    "u": "https://news.google.com/rss/articles/CBMingFBVV95cUxNWTg3d2xFc3ZQLXVBdVM4eHdmY1NidDBrREFGMjJ3eUd6dlhUSi1OLXRtWWZOVUNOc2ROTmdQaEg0eHE2eDZwUmF4eVFLR1pZWWNSa0x2eVB1MWlfbjJITEowRU9KaWpCTWphdmFMNEVyLWtaelpRRU1Ta3RGZ2FMTDhkeUdwVlRsd19NNmRGWDNWb1JDS2V0SWNubnBWZw?oc=5"
+   }
+  ]
  }
 }

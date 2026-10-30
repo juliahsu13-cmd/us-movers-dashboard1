@@ -1,5 +1,5 @@
 {
- "latest_date": "2026-10-29",
+ "latest_date": "2026-10-30",
  "latest_indices": [
   "INDU",
   "NDX",
@@ -7,10 +7,12 @@
   "SPX"
  ],
  "missing_indices": [],
- "days_in_page": 18,
- "problems": [],
+ "days_in_page": 19,
+ "problems": [
+  "2026-10-30: 無 US Market Wrap"
+ ],
  "out": "out/us-movers.html",
- "bytes": 4801779,
+ "bytes": 4978699,
  "out_mobile": "out/us-movers-mobile.html",
- "bytes_mobile": 4805253
+ "bytes_mobile": 4982173
 }
