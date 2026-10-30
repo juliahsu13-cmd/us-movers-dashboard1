@@ -219,6 +219,15 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:6px;
 .nlist .ni b{color:var(--ink);font-weight:600}
 .nlist .ns{margin:4px 0 0;font-size:12px;color:var(--muted)}
 .nlist .ns a{color:var(--accent)}
+.nlist li.wrap{background:var(--accent-soft);border-radius:6px;padding:12px 10px}
+.nlist li.wrap .nr{color:var(--accent)}
+.nlist .wpt{margin:4px 0 0;padding-left:14px;text-indent:-14px;font-size:15px;line-height:1.7;max-width:none}
+.nlist .wpt::before{content:"•";display:inline-block;width:14px;text-indent:0;color:var(--accent)}
+.nlist .wfull{margin-top:6px}
+.nlist .wfull summary{display:inline-block;padding:2px 0;color:var(--accent);font-size:14px;cursor:pointer}
+.nlist .wfull summary:hover{background:none;text-decoration:underline}
+.nlist .wfull[open] summary{margin-bottom:4px}
+.nlist .wh{margin:10px 0 0;font-size:14px;font-weight:700;color:var(--ink)}
 .overlap{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:grid;gap:8px}
 .overlap h2,.sec h2{font-size:13px;letter-spacing:.08em;color:var(--muted);margin:0;font-weight:500}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
@@ -997,21 +1006,30 @@ function renderMega(){
 
 // 重點新聞：每日排程以外資交易員角度挑選、依對盤面影響排序（含盤後財報），每則附原文連結
 function renderNews(){
-  const day = NEWS?.[state.date], items = day?.items || [];
-  $("#news-sum").textContent = items.length ? `${state.date}（美東）・${items.length} 則・依對盤面影響排序` : "";
+  const day = NEWS?.[state.date], items = day?.items || [], w = day?.wrap;
+  $("#news-sum").textContent = items.length || w ? `${state.date}（美東）・${w ? "Bloomberg 收盤綜述＋" : ""}${items.length} 則・依對盤面影響排序` : "";
   $("#news-lead").hidden = !day?.lead;
   if (day?.lead) $("#news-lead").textContent = day.lead;
   const tkHTML = tk => (tk || []).map(t => {
     const p = MEGA?.days?.[state.date]?.[t]?.p;
     return `<span class="tkc ${p == null ? "" : dir(p)}">${esc(t)}${p == null ? "" : " " + sign(p)}</span>`;
   }).join("");
-  $("#news-list").innerHTML = items.length ? items.map((x, i) => `<li class="${i < 3 ? "top" : ""}"><span class="nr">${i + 1}</span><div>
+  // 首條：Bloomberg Markets Wrap 中文重點（每日 08:50 排程整理），展開看分段詳細摘要
+  const link = (u, t) => u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${t}</a>` : t;
+  const wrapHTML = w ? `<li class="top wrap"><span class="nr">★</span><div>
+      <p class="nm"><span class="cat ah">美股盤後</span><span>${esc(w.t || "")}</span><span>Bloomberg Markets Wrap</span></p>
+      <h3>${link(w.u, `${esc(w.d || "")} 美股盤後｜${esc(w.h)}`)}</h3>
+      ${(w.pts || []).map(p => `<p class="wpt">${esc(p)}</p>`).join("")}
+      ${w.sec?.length ? `<details class="wfull"><summary>展開詳細內容</summary>${w.sec.map(s => `<p class="wh">${esc(s.h)}</p>${(s.p || []).map(p => `<p class="nb">${esc(p)}</p>`).join("")}`).join("")}</details>` : ""}
+      <p class="ns">來源：${(w.s || ["Bloomberg"]).map(esc).join("、")}${w.u ? `・${link(w.u, "原文 ›")}` : ""}</p>
+    </div></li>` : "";
+  $("#news-list").innerHTML = wrapHTML + (items.length ? items.map((x, i) => `<li class="${i < 3 ? "top" : ""}"><span class="nr">${i + 1}</span><div>
       <p class="nm"><span class="cat ${x.ah ? "ah" : ""}">${esc(x.cat)}</span>${x.t ? `<span>${esc(x.t)}</span>` : ""}${tkHTML(x.tk)}</p>
       <h3 class="${x.dir || ""}">${x.u ? `<a href="${esc(x.u)}" target="_blank" rel="noopener">${esc(x.h)}</a>` : esc(x.h)}</h3>
       <p class="nb">${esc(x.b)}</p>
       ${x.why ? `<p class="ni"><b>盤面影響：</b>${esc(x.why)}</p>` : ""}
       <p class="ns">來源：${(x.s || []).map(esc).join("、")}${x.u ? `・<a href="${esc(x.u)}" target="_blank" rel="noopener">原文 ›</a>` : ""}</p>
-    </div></li>`).join("") : `<li><span></span><p class="empty-note">這一天沒有整理重點新聞。</p></li>`;
+    </div></li>`).join("") : w ? "" : `<li><span></span><p class="empty-note">這一天沒有整理重點新聞。</p></li>`);
   $("#news-src").textContent = "選稿：以高盛／大摩級外資分析師兼交易員的角度，只收能解釋當日盤面方向與類股強弱、或改變未來 1–5 天定價的新聞（含收盤後財報）；同一事件只留一則。標題紅綠＝對相關標的的方向，代號旁為當日收盤漲跌（盤後變動未計）。";
 }
 
