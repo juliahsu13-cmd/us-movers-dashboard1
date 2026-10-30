@@ -246,6 +246,10 @@ select{background:var(--surface);border:1px solid var(--line);border-radius:6px;
 .nlist .wfull summary{display:inline-block;padding:2px 0;color:var(--accent);font-size:14px;cursor:pointer}
 .nlist .wfull summary:hover{background:none;text-decoration:underline}
 .nlist .wfull[open] summary{margin-bottom:4px}
+.nlist .uwin{display:grid;gap:12px;margin-top:6px;padding:12px 0 2px;border-top:1px solid var(--line)}
+.nlist .uwin .uw-title{display:none}
+.nlist .uwin li{display:block;grid-template-columns:none;padding:0 0 0 16px;border-bottom:0}
+.nlist .uwin .uw-key{background:var(--surface)}
 .nlist .wh{margin:10px 0 0;font-size:14px;font-weight:700;color:var(--ink)}
 .overlap{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:grid;gap:8px}
 .overlap h2,.sec h2{font-size:13px;letter-spacing:.08em;color:var(--muted);margin:0;font-weight:500}
@@ -1033,10 +1037,7 @@ function renderMega(){
 }
 
 // US Market Wrap：每日以外資交易員視角撰寫的美股收盤報導（data/us_wrap/YYYY-MM-DD.md），顯示在權值個股之後
-function renderUSWrap(){
-  const md = USWRAP?.[state.date];
-  $("#uswrap").hidden = state.tab !== "MEGA" || !md;
-  if (!md) { $("#uswrap-body").innerHTML = ""; $("#uswrap-sum").textContent = ""; return; }
+function uswrapHTML(md){
   const inl = s => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
   let list = null, sec = "", titleSeen = false, timeNext = false;
   const blocks = [];
@@ -1066,7 +1067,13 @@ function renderUSWrap(){
   }
   if (list) cur.html.push(`<ul>${list.join("")}</ul>`);
   blocks.push(cur);
-  $("#uswrap-body").innerHTML = blocks.filter(b => b.html.length).map(b => b.cls ? `<div class="uw ${b.cls}">${b.html.join("")}</div>` : b.html.join("")).join("");
+  return blocks.filter(b => b.html.length).map(b => b.cls ? `<div class="uw ${b.cls}">${b.html.join("")}</div>` : b.html.join("")).join("");
+}
+function renderUSWrap(){
+  const md = USWRAP?.[state.date];
+  $("#uswrap").hidden = state.tab !== "MEGA" || !md;
+  if (!md) { $("#uswrap-body").innerHTML = ""; $("#uswrap-sum").textContent = ""; return; }
+  $("#uswrap-body").innerHTML = uswrapHTML(md);
   $("#uswrap-sum").textContent = `${state.date}（美東）・外資交易員視角・事實底：Bloomberg Markets Wrap＋四大漲跌榜＋重點新聞`;
 }
 
@@ -1081,21 +1088,27 @@ function renderNews(){
     return `<span class="tkc ${p == null ? "" : dir(p)}">${esc(t)}${p == null ? "" : " " + sign(p)}</span>`;
   }).join("");
   // 首條：Bloomberg Markets Wrap 中文重點（每日 08:50 排程整理），展開看分段詳細摘要
-  const link = (u, t) => u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${t}</a>` : t;
+  // 連結不導向 Bloomberg（終端連結一般讀者打不開）；首條點標題在頁內展開中文全文
+  const okU = u => u && !/bloomberg\./i.test(u) ? u : "";
+  const full = USWRAP?.[state.date];
+  const fullHTML = full ? `<div class="uwin">${uswrapHTML(full)}</div>`
+    : (w?.sec || []).map(s => `<p class="wh">${esc(s.h)}</p>${(s.p || []).map(p => `<p class="nb">${esc(p)}</p>`).join("")}`).join("");
   const wrapHTML = w ? `<li class="top wrap"><span class="nr">★</span><div>
       <p class="nm"><span class="cat ah">美股盤後</span><span>${esc(w.t || "")}</span><span>Bloomberg Markets Wrap</span></p>
-      <h3>${link(w.u, `${esc(w.d || "")} 美股盤後｜${esc(w.h)}`)}</h3>
+      <h3>${fullHTML ? `<a href="#" class="wopen">${esc(w.d || "")} 美股盤後｜${esc(w.h)}</a>` : `${esc(w.d || "")} 美股盤後｜${esc(w.h)}`}</h3>
       ${(w.pts || []).map(p => `<p class="wpt">${esc(p)}</p>`).join("")}
-      ${w.sec?.length ? `<details class="wfull"><summary>展開詳細內容</summary>${w.sec.map(s => `<p class="wh">${esc(s.h)}</p>${(s.p || []).map(p => `<p class="nb">${esc(p)}</p>`).join("")}`).join("")}</details>` : ""}
-      <p class="ns">來源：${(w.s || ["Bloomberg"]).map(esc).join("、")}${w.u ? `・${link(w.u, "原文 ›")}` : ""}</p>
+      ${fullHTML ? `<details class="wfull"><summary>${full ? "閱讀中文全文 ›" : "展開詳細內容"}</summary>${fullHTML}</details>` : ""}
+      <p class="ns">來源：${(w.s || ["Bloomberg"]).map(esc).join("、")}${full ? "・全文為外資交易員視角中文報導（事實底：Bloomberg＋四大漲跌榜＋重點新聞）" : ""}</p>
     </div></li>` : "";
   $("#news-list").innerHTML = wrapHTML + (items.length ? items.map((x, i) => `<li class="${i < 3 ? "top" : ""}"><span class="nr">${i + 1}</span><div>
       <p class="nm"><span class="cat ${x.ah ? "ah" : ""}">${esc(x.cat)}</span>${x.t ? `<span>${esc(x.t)}</span>` : ""}${tkHTML(x.tk)}</p>
-      <h3 class="${x.dir || ""}">${x.u ? `<a href="${esc(x.u)}" target="_blank" rel="noopener">${esc(x.h)}</a>` : esc(x.h)}</h3>
+      <h3 class="${x.dir || ""}">${okU(x.u) ? `<a href="${esc(x.u)}" target="_blank" rel="noopener">${esc(x.h)}</a>` : esc(x.h)}</h3>
       <p class="nb">${esc(x.b)}</p>
       ${x.why ? `<p class="ni"><b>盤面影響：</b>${esc(x.why)}</p>` : ""}
-      <p class="ns">來源：${(x.s || []).map(esc).join("、")}${x.u ? `・<a href="${esc(x.u)}" target="_blank" rel="noopener">原文 ›</a>` : ""}</p>
+      <p class="ns">來源：${(x.s || []).map(esc).join("、")}${okU(x.u) ? `・<a href="${esc(x.u)}" target="_blank" rel="noopener">原文 ›</a>` : ""}</p>
     </div></li>`).join("") : w ? "" : `<li><span></span><p class="empty-note">這一天沒有整理重點新聞。</p></li>`);
+  const wo = $("#news-list .wopen");
+  if (wo) wo.onclick = e => { e.preventDefault(); const d = wo.closest("li").querySelector(".wfull"); d.open = !d.open; if (d.open) d.scrollIntoView({block: "nearest", behavior: "smooth"}); };
   $("#news-src").textContent = "選稿：以高盛／大摩級外資分析師兼交易員的角度，只收能解釋當日盤面方向與類股強弱、或改變未來 1–5 天定價的新聞（含收盤後財報）；同一事件只留一則。標題紅綠＝對相關標的的方向，代號旁為當日收盤漲跌（盤後變動未計）。";
 }
 
