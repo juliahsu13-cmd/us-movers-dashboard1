@@ -1074,8 +1074,9 @@ function renderMega(){
   if (!day) return;
   const names = MEGA.names || {};
   // 今日市場整合說明：四大指數、油價美債、權值股的綜合判讀（每日排程撰寫）
-  const sm = NOTES?.[state.date]?._summary;
-  $("#mega-lead").hidden = !sm;
+  // 2026-10-30 起不在儀表板顯示（使用者要求）；資料仍保留在 megacap_notes.json
+  const sm = null;
+  $("#mega-lead").hidden = true;
   if (sm) $("#mega-lead").innerHTML = `<p class="eyebrow">今日市場整合說明 · ${state.date}</p>
     <h2>${esc(sm.h)}</h2>${String(sm.b || "").split(/\n+/).filter(Boolean).map(p => `<p>${esc(p)}</p>`).join("")}${sm.k?.length ? `<p class="mk-h">核心重點與盯盤</p><ul class="mk">${sm.k.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}${sm.s?.length ? `<p class="ns">來源：${sm.s.map(esc).join("、")}</p>` : ""}`;
   // 區間模式下以區間漲跌排序與畫條；當日漲跌幅放在名稱旁
